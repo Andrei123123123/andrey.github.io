@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+# Tennis · Tenerife — Лендинг теннисного кемпа
 
-## Project info
+Сайт-визитка теннисного кемпа на Тенерифе (сентябрь 2026).
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🗂 Структура проекта
 
-## How can I edit this code?
+```
+src/
+├── assets/                  ← 📸 КАРТИНКИ (замени на свои)
+│   ├── hero-tenerife.jpg    — Главное фото в шапке (1920×1080)
+│   ├── visa-support.jpg     — Фото для секции «Визовая поддержка» (640×640)
+│   ├── all-inclusive.jpg    — Фото для секции «Полный тур» (640×640)
+│   └── community.jpg       — Фото для секции «Community» (640×640)
+│
+├── components/
+│   ├── Advantages.tsx       ← ✏️ Секция «Наши преимущества» (тексты, фичи)
+│   ├── SectionTag.tsx       — Компонент тега секции
+│   └── SectionTitle.tsx     — Компонент заголовка секции
+│
+├── pages/
+│   └── Index.tsx            ← ✏️ ГЛАВНАЯ СТРАНИЦА (все секции, тексты, цены, FAQ)
+│
+├── index.css                ← 🎨 ДИЗАЙН-СИСТЕМА (цвета, шрифты)
+└── App.tsx                  — Роутинг
 
-There are several ways of editing your application.
+tailwind.config.ts           ← 🎨 Цвета и шрифты для Tailwind
+```
 
-**Use Lovable**
+## 📸 Как заменить картинки
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+1. Положи свои фото в папку `src/assets/`
+2. Назови их так же или обнови импорты в компонентах
 
-Changes made via Lovable will be committed automatically to this repo.
+| Файл | Размер | Где используется |
+|------|--------|-----------------|
+| `hero-tenerife.jpg` | 1920×1080 | Фон шапки (пока не подключен) |
+| `visa-support.jpg` | 640×640 | Карточка «Визовая поддержка» |
+| `all-inclusive.jpg` | 640×640 | Карточка «Полный тур» |
+| `community.jpg` | 640×640 | Карточка «Community» |
 
-**Use your preferred IDE**
+## ✏️ Что менять для обновления контента
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Тексты, даты, цены
+📄 **`src/pages/Index.tsx`**:
+- Заголовки и описания всех секций
+- Программа по дням (массив `days`)
+- FAQ (массив `faqs`)
+- Цены и тарифы
+- Ссылка на Telegram (`https://t.me/username` — замени!)
+- Количество мест
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Секция «Наши преимущества»
+📄 **`src/components/Advantages.tsx`** — три карточки:
+- Визовая поддержка, Полный тур, Community
 
-Follow these steps:
+### Цвета
+📄 **`src/index.css`** — CSS-переменные:
+- `--forest` — тёмно-зелёный
+- `--gold` — золотой (акценты)
+- `--cream` — кремовый фон
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🚀 Запуск
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📦 Технологии
+React + TypeScript + Vite + Tailwind CSS  
+Шрифты: Cormorant Garamond + Jost
