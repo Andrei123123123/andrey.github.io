@@ -6,6 +6,7 @@ const Index = () => {
   const containerRef = useScrollReveal();
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [tennisLevel, setTennisLevel] = useState<string | null>(null);
 
   const toggleFaq = useCallback((i: number) => {
     setFaqOpen((prev) => (prev === i ? null : i));
