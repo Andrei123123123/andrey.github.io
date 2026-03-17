@@ -178,7 +178,7 @@ const Index = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px]">
           {[
             { big: "12", label: "Участников максимум.\nКамерный формат." },
-            { big: "2", label: "Тренировки в день\nпо 1,5 часа каждая." },
+            { big: "7", label: "Тренировок по 2 часа\nкаждый вечер." },
             { big: "3", label: "Корта в академии\nTenerife Tennis Academy." },
             { big: "7", label: "Дней. Один итоговый\nтурнир в последний день." },
           ].map((f) => (
