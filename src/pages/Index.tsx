@@ -354,7 +354,12 @@ const Index = () => {
                   <button
                     key={level}
                     type="button"
-                    className="py-3 bg-card/5 border border-gold/15 text-text-muted-custom font-body text-[12px] font-light cursor-pointer hover:border-gold/50 hover:text-sand-light focus:border-gold focus:text-gold transition-colors duration-300"
+                    onClick={() => setTennisLevel(level)}
+                    className={`py-3 border font-body text-[12px] font-light cursor-pointer transition-colors duration-300 ${
+                      tennisLevel === level
+                        ? "bg-gold/15 border-gold text-gold"
+                        : "bg-card/5 border-gold/15 text-text-muted-custom hover:border-gold/50 hover:text-sand-light"
+                    }`}
                   >
                     {level}
                   </button>
