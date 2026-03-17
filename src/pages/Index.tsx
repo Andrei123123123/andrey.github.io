@@ -347,7 +347,17 @@ const Index = () => {
             </div>
             <div className="flex flex-col gap-1.5">
               <label className="text-[9px] tracking-[2px] uppercase text-text-muted-custom/60">Уровень тенниса</label>
-              <input className="bg-card/5 border border-gold/15 py-3.5 px-5 text-sand-light font-body text-[13px] font-light outline-none focus:border-gold/50 transition-colors placeholder:text-text-muted-custom/40" type="text" placeholder="Новичок / любитель / уверенный игрок" />
+              <div className="grid grid-cols-3 gap-[2px]">
+                {["Новичок", "Любитель", "Уверенный"].map((level) => (
+                  <button
+                    key={level}
+                    type="button"
+                    className="py-3 bg-card/5 border border-gold/15 text-text-muted-custom font-body text-[12px] font-light cursor-pointer hover:border-gold/50 hover:text-sand-light focus:border-gold focus:text-gold transition-colors duration-300"
+                  >
+                    {level}
+                  </button>
+                ))}
+              </div>
             </div>
             <button
               className={`mt-2 py-[18px] w-full font-body text-[11px] font-medium tracking-[3px] uppercase border-none cursor-pointer transition-colors duration-300 ${
