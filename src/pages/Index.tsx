@@ -246,7 +246,7 @@ const Index = () => {
             <div className="h-px bg-forest/10 my-7" />
             <ul className="flex flex-col gap-3">
               {[
-                "6 тренировок × 1.5ч в Tenerife Tennis Academy",
+                "7 тренировок × 2ч в Tenerife Tennis Academy",
                 "Все активности по программе",
                 "Трансферы по острову",
                 "Итоговый турнир и банкет в замке Сан-Мигель",
