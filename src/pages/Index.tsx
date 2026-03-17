@@ -1,6 +1,8 @@
 import { useState, useCallback } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Advantages from "@/components/Advantages";
+import TrainerSection from "@/components/TrainerSection";
+import Testimonials from "@/components/Testimonials";
 
 const Index = () => {
   const containerRef = useScrollReveal();
@@ -28,7 +30,14 @@ const Index = () => {
     { q: "Можно ли поехать одному?", a: "Да. Большинство участников едут именно так. Формат малой группы помогает познакомиться быстро — общие тренировки, совместные активности, вечера. К третьему дню группа становится командой." },
     { q: "Что взять с собой?", a: "Теннисные кроссовки (обязательно), удобную форму для корта, купальник, лёгкую куртку для Тейде — там прохладно даже в сентябре. Ракетки есть в академии, но если привезёте свою — лучше. Мячи включены." },
     { q: "Как забронировать место?", a: "Напишите нам в Telegram или заполните форму ниже. Мы свяжемся, ответим на все вопросы и зафиксируем место. Группа — 12 человек, места заканчиваются." },
-    { q: "Это первый кемп? Можно ли вам доверять?", a: "Да, это первый сезон Tennis · Tenerife. Но за организацией стоят люди с опытом в спортивных мероприятиях и путешествиях. Тренировки проводит лицензированная Tenerife Tennis Academy. Мы работаем прозрачно: договор, чёткий список услуг, гарантия возврата депозита если кемп не состоится. Готовы ответить на любые вопросы лично в Telegram." },
+    { q: "Это первый кемп или вы уже проводили раньше?", a: "Да, это первый сезон Tennis · Tenerife. Но за организацией стоят люди с опытом в спортивных мероприятиях и путешествиях. Тренировки проводит лицензированная Tenerife Tennis Academy. Мы работаем прозрачно: договор, чёткий список услуг, гарантия возврата депозита." },
+    { q: "Что если я передумаю — можно вернуть деньги?", a: "Да. Депозит возвращается полностью, если кемп не состоится. При отмене по вашей инициативе — возврат зависит от сроков: более чем за 30 дней до начала — 100%, за 14–30 дней — 50%. Детали обсуждаем индивидуально." },
+  ];
+
+  const heroPhotos = [
+    { label: "Корт + океан", aspect: "aspect-[4/3]" },
+    { label: "Тренировка группы", aspect: "aspect-[4/3]" },
+    { label: "Закат Тенерифе", aspect: "aspect-[4/3]" },
   ];
 
   return (
@@ -44,23 +53,12 @@ const Index = () => {
           backgroundSize: "80px 80px"
         }} />
 
-        {/* Court lines */}
-        <div className="absolute right-[-40px] top-1/2 -translate-y-1/2 w-[520px] h-[380px] opacity-[0.06]">
-          <svg viewBox="0 0 520 380" fill="none" className="w-full h-full">
-            <rect x="20" y="20" width="480" height="340" stroke="white" strokeWidth="2"/>
-            <rect x="60" y="20" width="400" height="340" stroke="white" strokeWidth="1"/>
-            <line x1="260" y1="20" x2="260" y2="360" stroke="white" strokeWidth="1.5"/>
-            <line x1="20" y1="190" x2="500" y2="190" stroke="white" strokeWidth="1"/>
-            <rect x="60" y="107" width="400" height="166" stroke="white" strokeWidth="1"/>
-            <line x1="260" y1="107" x2="260" y2="273" stroke="white" strokeWidth="1"/>
-          </svg>
-        </div>
-
         {/* Nav */}
         <nav className="relative z-10 py-9 px-8 lg:px-16 flex justify-between items-center">
           <span className="font-display text-[15px] italic text-gold tracking-[3px] uppercase">Tennis · Tenerife</span>
           <ul className="hidden md:flex gap-10 list-none">
             {[
+              { href: "#trainer", label: "Тренер" },
               { href: "#advantages", label: "Преимущества" },
               { href: "#programme", label: "Программа" },
               { href: "#format", label: "Формат" },
@@ -77,43 +75,95 @@ const Index = () => {
         </nav>
 
         {/* Hero content */}
-        <div className="relative z-10 flex flex-col justify-center px-8 lg:px-16 max-w-[760px]">
-          <p className="animate-fade-up flex items-center gap-4 text-[10px] tracking-[4px] uppercase text-gold mb-8" style={{ animationDelay: "0.1s" }}>
-            <span className="block w-8 h-px bg-gold" />
-            Тенерифе · Сентябрь 2026
-          </p>
-          <h1 className="animate-fade-up font-display font-light text-[clamp(52px,7vw,88px)] leading-[1.0] text-sand-light tracking-[-1px]" style={{ animationDelay: "0.25s" }}>
-            Теннис.<br /><em className="italic text-gold-light block">Тенерифе.</em><br />Сентябрь.
-          </h1>
-          <p className="animate-fade-up mt-7 text-[15px] font-light text-text-muted-custom leading-[1.7] max-w-[440px] tracking-[0.3px]" style={{ animationDelay: "0.4s" }}>
-            7 дней, 7 тренировок по 2 часа, 12 человек. Европа без лишнего. Каждое утро — океан или вулкан. Каждый вечер — корт.
-          </p>
-          <div className="animate-fade-up mt-[52px] flex items-center gap-10" style={{ animationDelay: "0.55s" }}>
-            <a href="#cta" className="inline-block py-4 px-10 bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-gold-light hover:-translate-y-px transition-all duration-300">
-              Забронировать место
-            </a>
-            <span className="text-[11px] text-text-muted-custom/70 tracking-[1px]">Осталось 12 мест</span>
+        <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12 px-8 lg:px-16">
+          {/* Left — text */}
+          <div className="flex-1 flex flex-col justify-center max-w-[660px]">
+            <p className="animate-fade-up flex items-center gap-4 text-[10px] tracking-[4px] uppercase text-gold mb-8" style={{ animationDelay: "0.1s" }}>
+              <span className="block w-8 h-px bg-gold" />
+              Тенерифе · Сентябрь 2026
+            </p>
+            <h1 className="animate-fade-up font-display font-light text-[clamp(48px,6vw,82px)] leading-[1.0] text-sand-light tracking-[-1px]" style={{ animationDelay: "0.25s" }}>
+              Теннис.<br /><em className="italic text-gold-light block">Тенерифе.</em><br />Сентябрь.
+            </h1>
+            <p className="animate-fade-up mt-7 text-[15px] font-light text-text-muted-custom leading-[1.7] max-w-[440px] tracking-[0.3px]" style={{ animationDelay: "0.4s" }}>
+              7 дней, 12 тренировок по 2 часа, 12 человек. Европа без лишнего. Каждое утро — океан или вулкан. Каждый вечер — корт.
+            </p>
+            <div className="animate-fade-up mt-[48px] flex items-center gap-10" style={{ animationDelay: "0.55s" }}>
+              <a href="#cta" className="inline-block py-4 px-10 bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-gold-light hover:-translate-y-px transition-all duration-300">
+                Забронировать место
+              </a>
+              <span className="text-[11px] text-text-muted-custom/70 tracking-[1px]">Осталось 12 мест</span>
+            </div>
+          </div>
+
+          {/* Right — photo grid */}
+          <div className="animate-fade-up flex-1 max-w-[480px] w-full" style={{ animationDelay: "0.5s" }}>
+            <div className="grid grid-cols-2 gap-[3px]">
+              {/* Large photo */}
+              <div className="col-span-2 aspect-[16/9] bg-forest-light border border-gold/15 flex items-center justify-center relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-t from-forest/60 to-transparent" />
+                <div className="text-center relative z-10">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-gold/40 mx-auto mb-2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <path d="m21 15-5-5L5 21" />
+                  </svg>
+                  <p className="text-[10px] tracking-[2px] uppercase text-gold/50">{heroPhotos[0].label}</p>
+                </div>
+              </div>
+              {/* Two smaller photos */}
+              {heroPhotos.slice(1).map((p) => (
+                <div key={p.label} className="aspect-[4/3] bg-forest-light border border-gold/15 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest/60 to-transparent" />
+                  <div className="text-center relative z-10">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-gold/40 mx-auto mb-1">
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <path d="m21 15-5-5L5 21" />
+                    </svg>
+                    <p className="text-[9px] tracking-[2px] uppercase text-gold/50">{p.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Hero footer stats */}
-        <div className="animate-fade-up relative z-10 py-9 px-8 lg:px-16 flex gap-16 flex-wrap border-t border-gold/10" style={{ animationDelay: "0.7s" }}>
+        <div className="animate-fade-up relative z-10 py-9 px-8 lg:px-16 flex gap-12 lg:gap-16 flex-wrap items-center border-t border-gold/10" style={{ animationDelay: "0.7s" }}>
           {[
             { num: "7", label: "Дней" },
-            { num: "7", label: "Тренировок" },
+            { num: "12", label: "Тренировок" },
             { num: "12", label: "Участников" },
-            { num: "1", label: "Тренер · RU" },
           ].map((s) => (
             <div key={s.label} className="flex flex-col gap-1">
               <span className="font-display text-[36px] font-light text-gold leading-none">{s.num}</span>
               <span className="text-[9px] tracking-[2.5px] uppercase text-text-muted-custom">{s.label}</span>
             </div>
           ))}
+          {/* Trainer avatar */}
+          <div className="flex items-center gap-3 ml-auto">
+            <div className="w-11 h-11 rounded-full bg-forest-light border border-gold/25 flex items-center justify-center overflow-hidden">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold/50">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-[12px] text-sand-light font-light">[Имя тренера]</p>
+              <p className="text-[9px] tracking-[2px] uppercase text-text-muted-custom">Тренер · RU</p>
+            </div>
+          </div>
         </div>
       </section>
 
+      {/* ─── TRAINER ─── */}
+      <div id="trainer">
+        <TrainerSection />
+      </div>
+
       {/* ─── WHY ─── */}
-      <section className="bg-cream py-[120px] px-8 lg:px-16">
+      <section className="bg-sand-light py-[120px] px-8 lg:px-16">
         <p className="flex items-center gap-4 text-[9px] tracking-[4px] uppercase text-gold mb-5">
           <span className="block w-6 h-px bg-gold" />
           Почему это работает
@@ -137,8 +187,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── ADVANTAGES (NEW) ─── */}
+      {/* ─── ADVANTAGES ─── */}
       <Advantages />
+
+      {/* ─── TESTIMONIALS ─── */}
+      <Testimonials />
 
       {/* ─── PROGRAMME ─── */}
       <section className="bg-sand-light py-[120px] px-8 lg:px-16" id="programme">
@@ -180,11 +233,11 @@ const Index = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px]">
           {[
             { big: "12", label: "Участников максимум.\nКамерный формат." },
-            { big: "7", label: "Тренировок по 2 часа\nкаждый вечер." },
+            { big: "12", label: "Тренировок по 2 часа\nза 7 дней кемпа." },
             { big: "3", label: "Корта в академии\nTenerife Tennis Academy." },
             { big: "7", label: "Дней. Один итоговый\nтурнир в последний день." },
           ].map((f) => (
-            <div key={f.big} className="reveal p-12 border border-gold/10">
+            <div key={f.big + f.label} className="reveal p-12 border border-gold/10">
               <div className="font-display text-[72px] font-light text-gold leading-none">{f.big}</div>
               <p className="text-[11px] tracking-[1px] text-text-muted-custom/70 mt-3 leading-[1.5] font-light whitespace-pre-line">{f.label}</p>
             </div>
@@ -199,7 +252,7 @@ const Index = () => {
                 "Виза — приглашение от Tenerife Tennis Academy",
                 "Жильё на 7 ночей",
                 "Аренда кортов и ракеток",
-                "Русскоязычный тренер, все тренировки",
+                "Русскоязычный тренер, все 12 тренировок",
                 "Трансферы по острову по программе",
                 "Все активности по расписанию",
                 "Итоговый турнир и банкет в Сан-Мигель",
@@ -248,8 +301,8 @@ const Index = () => {
             <div className="h-px bg-forest/10 my-7" />
             <ul className="flex flex-col gap-3">
               {[
-                "7 тренировок × 2ч в Tenerife Tennis Academy",
                 "Жильё на 7 ночей рядом с академией",
+                "12 тренировок × 2ч в Tenerife Tennis Academy",
                 "Все активности по программе",
                 "Трансферы по острову",
                 "Итоговый турнир и банкет в замке Сан-Мигель",
@@ -273,7 +326,7 @@ const Index = () => {
                 "Остаток — до вылета или по договорённости",
                 "Жильё и перелёт — отдельно, помогаем подобрать",
                 "Визовое приглашение от академии — бесплатно",
-                "Полный возврат депозита, если кемп не состоится",
+                "Депозит возвращается полностью, если кемп не состоится",
               ].map((f) => (
                 <li key={f} className="text-[13px] text-text-muted-custom flex gap-3 items-start">
                   <span className="text-gold text-[12px] flex-shrink-0 mt-px">✓</span>
@@ -374,6 +427,9 @@ const Index = () => {
             >
               {submitted ? "Заявка отправлена ✓" : "Забронировать место"}
             </button>
+            <p className="text-center text-[10px] text-text-muted-custom/50 font-light -mt-1">
+              Без обязательств — просто свяжемся и ответим на вопросы
+            </p>
             <p className="text-center text-[10px] text-text-muted-custom/40 tracking-[2px] uppercase my-1">или</p>
             <a
               href="https://t.me/username"
@@ -387,9 +443,21 @@ const Index = () => {
       </section>
 
       {/* ─── FOOTER ─── */}
-      <footer className="bg-[#111710] py-10 px-8 lg:px-16 flex justify-between items-center">
+      <footer className="bg-[hsl(137,22%,8%)] py-10 px-8 lg:px-16 flex flex-col sm:flex-row justify-between items-center gap-6">
         <span className="font-display text-[16px] italic text-gold tracking-[3px]">Tennis · Tenerife · 2026</span>
-        <span className="text-[10px] tracking-[1px] text-text-muted-custom/40">14 — 21 сентября 2026 · Tenerife Tennis Academy</span>
+        <span className="text-[10px] tracking-[1px] text-text-muted-custom/40">14 — 20 сентября 2026 · Tenerife Tennis Academy</span>
+        <div className="flex items-center gap-5">
+          <a href="https://t.me/username" className="text-text-muted-custom/40 hover:text-gold transition-colors duration-300" aria-label="Telegram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.496.969z"/></svg>
+          </a>
+          <a href="https://instagram.com/username" className="text-text-muted-custom/40 hover:text-gold transition-colors duration-300" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="5" />
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+        </div>
       </footer>
     </div>
   );
