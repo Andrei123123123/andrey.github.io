@@ -6,6 +6,7 @@ const Index = () => {
   const containerRef = useScrollReveal();
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [tennisLevel, setTennisLevel] = useState<string | null>(null);
 
   const toggleFaq = useCallback((i: number) => {
     setFaqOpen((prev) => (prev === i ? null : i));
@@ -27,6 +28,7 @@ const Index = () => {
     { q: "Можно ли поехать одному?", a: "Да. Большинство участников едут именно так. Формат малой группы помогает познакомиться быстро — общие тренировки, совместные активности, вечера. К третьему дню группа становится командой." },
     { q: "Что взять с собой?", a: "Теннисные кроссовки (обязательно), удобную форму для корта, купальник, лёгкую куртку для Тейде — там прохладно даже в сентябре. Ракетки есть в академии, но если привезёте свою — лучше. Мячи включены." },
     { q: "Как забронировать место?", a: "Напишите нам в Telegram или заполните форму ниже. Мы свяжемся, ответим на все вопросы и зафиксируем место. Группа — 12 человек, места заканчиваются." },
+    { q: "Это первый кемп? Можно ли вам доверять?", a: "Да, это первый сезон Tennis · Tenerife. Но за организацией стоят люди с опытом в спортивных мероприятиях и путешествиях. Тренировки проводит лицензированная Tenerife Tennis Academy. Мы работаем прозрачно: договор, чёткий список услуг, гарантия возврата депозита если кемп не состоится. Готовы ответить на любые вопросы лично в Telegram." },
   ];
 
   return (
@@ -84,7 +86,7 @@ const Index = () => {
             Теннис.<br /><em className="italic text-gold-light block">Тенерифе.</em><br />Сентябрь.
           </h1>
           <p className="animate-fade-up mt-7 text-[15px] font-light text-text-muted-custom leading-[1.7] max-w-[440px] tracking-[0.3px]" style={{ animationDelay: "0.4s" }}>
-            7 дней, 14 тренировок, 12 человек. Европа без лишнего. Каждое утро — океан или вулкан. Каждый вечер — корт.
+            7 дней, 7 тренировок по 2 часа, 12 человек. Европа без лишнего. Каждое утро — океан или вулкан. Каждый вечер — корт.
           </p>
           <div className="animate-fade-up mt-[52px] flex items-center gap-10" style={{ animationDelay: "0.55s" }}>
             <a href="#cta" className="inline-block py-4 px-10 bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-gold-light hover:-translate-y-px transition-all duration-300">
@@ -98,7 +100,7 @@ const Index = () => {
         <div className="animate-fade-up relative z-10 py-9 px-8 lg:px-16 flex gap-16 flex-wrap border-t border-gold/10" style={{ animationDelay: "0.7s" }}>
           {[
             { num: "7", label: "Дней" },
-            { num: "14", label: "Тренировок" },
+            { num: "7", label: "Тренировок" },
             { num: "12", label: "Участников" },
             { num: "1", label: "Тренер · RU" },
           ].map((s) => (
@@ -123,7 +125,7 @@ const Index = () => {
           {[
             { num: "01", title: "Теннис каждый день", text: "Тренировки с русскоязычным тренером Tenerife Tennis Academy. Два часа вечером в малой группе до 12 человек — каждый получает внимание. Подача, техника, игровая практика. С нуля или с уровнем — не важно." },
             { num: "02", title: "Остров целиком", text: "Яхта, вулкан Тейде, ущелье Маска, сёрфинг, банкет в замке — каждый день другая Канария. Утро для приключений, вечер для корта. Семь дней без повторений." },
-            { num: "03", title: "Всё под ключ", text: "Виза с приглашением от академии, жильё, корты, трансферы по острову — организовано за тебя. Ты берёшь ракетку и паспорт. Остальное — наша работа." },
+            { num: "03", title: "Всё под ключ", text: "Виза с приглашением от академии, жильё, корты, трансферы по острову — организовано за тебя. Ты берёшь ракетку. Остальное — наша работа." },
           ].map((c) => (
             <div key={c.num} className="reveal bg-forest p-[52px_44px] relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
               <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gold scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-400" />
@@ -178,7 +180,7 @@ const Index = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px]">
           {[
             { big: "12", label: "Участников максимум.\nКамерный формат." },
-            { big: "2", label: "Тренировки в день\nпо 1,5 часа каждая." },
+            { big: "7", label: "Тренировок по 2 часа\nкаждый вечер." },
             { big: "3", label: "Корта в академии\nTenerife Tennis Academy." },
             { big: "7", label: "Дней. Один итоговый\nтурнир в последний день." },
           ].map((f) => (
@@ -246,7 +248,8 @@ const Index = () => {
             <div className="h-px bg-forest/10 my-7" />
             <ul className="flex flex-col gap-3">
               {[
-                "6 тренировок × 1.5ч в Tenerife Tennis Academy",
+                "7 тренировок × 2ч в Tenerife Tennis Academy",
+                "Жильё на 7 ночей рядом с академией",
                 "Все активности по программе",
                 "Трансферы по острову",
                 "Итоговый турнир и банкет в замке Сан-Мигель",
@@ -270,7 +273,7 @@ const Index = () => {
                 "Остаток — до вылета или по договорённости",
                 "Жильё и перелёт — отдельно, помогаем подобрать",
                 "Визовое приглашение от академии — бесплатно",
-                "Минимальная группа для запуска — 9 человек",
+                "Полный возврат депозита, если кемп не состоится",
               ].map((f) => (
                 <li key={f} className="text-[13px] text-text-muted-custom flex gap-3 items-start">
                   <span className="text-gold text-[12px] flex-shrink-0 mt-px">✓</span>
@@ -346,7 +349,22 @@ const Index = () => {
             </div>
             <div className="flex flex-col gap-1.5">
               <label className="text-[9px] tracking-[2px] uppercase text-text-muted-custom/60">Уровень тенниса</label>
-              <input className="bg-card/5 border border-gold/15 py-3.5 px-5 text-sand-light font-body text-[13px] font-light outline-none focus:border-gold/50 transition-colors placeholder:text-text-muted-custom/40" type="text" placeholder="Новичок / любитель / уверенный игрок" />
+              <div className="grid grid-cols-3 gap-[2px]">
+                {["Новичок", "Любитель", "Уверенный"].map((level) => (
+                  <button
+                    key={level}
+                    type="button"
+                    onClick={() => setTennisLevel(level)}
+                    className={`py-3 border font-body text-[12px] font-light cursor-pointer transition-colors duration-300 ${
+                      tennisLevel === level
+                        ? "bg-gold/15 border-gold text-gold"
+                        : "bg-card/5 border-gold/15 text-text-muted-custom hover:border-gold/50 hover:text-sand-light"
+                    }`}
+                  >
+                    {level}
+                  </button>
+                ))}
+              </div>
             </div>
             <button
               className={`mt-2 py-[18px] w-full font-body text-[11px] font-medium tracking-[3px] uppercase border-none cursor-pointer transition-colors duration-300 ${
