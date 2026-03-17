@@ -98,7 +98,7 @@ const Index = () => {
         <div className="animate-fade-up relative z-10 py-9 px-8 lg:px-16 flex gap-16 flex-wrap border-t border-gold/10" style={{ animationDelay: "0.7s" }}>
           {[
             { num: "7", label: "Дней" },
-            { num: "14", label: "Тренировок" },
+            { num: "7", label: "Тренировок" },
             { num: "12", label: "Участников" },
             { num: "1", label: "Тренер · RU" },
           ].map((s) => (
