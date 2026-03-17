@@ -84,7 +84,7 @@ const Index = () => {
             Теннис.<br /><em className="italic text-gold-light block">Тенерифе.</em><br />Сентябрь.
           </h1>
           <p className="animate-fade-up mt-7 text-[15px] font-light text-text-muted-custom leading-[1.7] max-w-[440px] tracking-[0.3px]" style={{ animationDelay: "0.4s" }}>
-            7 дней, 14 тренировок, 12 человек. Европа без лишнего. Каждое утро — океан или вулкан. Каждый вечер — корт.
+            7 дней, 7 тренировок по 2 часа, 12 человек. Европа без лишнего. Каждое утро — океан или вулкан. Каждый вечер — корт.
           </p>
           <div className="animate-fade-up mt-[52px] flex items-center gap-10" style={{ animationDelay: "0.55s" }}>
             <a href="#cta" className="inline-block py-4 px-10 bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-gold-light hover:-translate-y-px transition-all duration-300">
