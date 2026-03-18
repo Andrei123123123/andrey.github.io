@@ -25,10 +25,10 @@ const TrainerSection = () => {
         {/* Info */}
         <div>
           <h2 className="font-display font-light text-[clamp(32px,4vw,48px)] text-forest leading-[1.15] mb-2">
-            Твой тренер.
+            Человек, которому<br />вы доверите корт.
           </h2>
-          <p className="font-display text-[clamp(24px,3vw,36px)] italic text-gold leading-[1.2] mb-8">
-            Русскоязычный. На месте.
+          <p className="font-display text-[clamp(20px,2.5vw,28px)] italic text-gold leading-[1.2] mb-8">
+            Русскоязычный. Живёт на Тенерифе.
           </p>
 
           <div className="mb-8">
@@ -42,8 +42,8 @@ const TrainerSection = () => {
               {[
                 "Лицензированный тренер Tenerife Tennis Academy",
                 "Более 10 лет тренерского опыта",
-                "Работает с игроками любого уровня — от нуля до турнирного",
-                "Русскоязычный, живёт на Тенерифе",
+                "Работает с любым уровнем — от первого удара до турнирной подготовки",
+                "Русскоязычный, живёт на Тенерифе постоянно",
               ].map((line) => (
                 <p key={line} className="text-[13px] text-text-body leading-[1.7] font-light flex gap-3 items-start">
                   <span className="text-gold flex-shrink-0">—</span>
@@ -55,7 +55,7 @@ const TrainerSection = () => {
 
           <blockquote className="border-l-2 border-gold/30 pl-6 mb-10">
             <p className="font-display text-[18px] italic text-forest/80 leading-[1.6]">
-              «Теннис на Тенерифе — это другой опыт. Здесь нет суеты, есть океан, горы и корт. Моя задача — чтобы каждый уехал с новым уровнем игры и энергией.»
+              «На Тенерифе люди раскрываются по-другому. Нет городского стресса, есть океан и корт. За неделю я вижу, как меняется не только техника — меняется человек.»
             </p>
           </blockquote>
 
@@ -66,7 +66,7 @@ const TrainerSection = () => {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.496.969z" />
             </svg>
-            Написать тренеру в Telegram
+            Написать тренеру
           </a>
         </div>
       </div>
