@@ -5,7 +5,7 @@ import TrainerSection from "@/components/TrainerSection";
 import Testimonials from "@/components/Testimonials";
 import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { Star, Check, MapPin, Plane, Users, Trophy, Wine, Mountain, Waves, Sun, Utensils, Camera } from "lucide-react";
+import { Star, Check, MapPin, Plane, Users, Trophy, Wine, Mountain, Waves, Sun, Utensils, Camera, ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero-tenerife.jpg";
 
 const Index = () => {
@@ -20,12 +20,12 @@ const Index = () => {
   }, []);
 
   const days = [
-    { date: "14", weekday: "Пн", theme: "Прилёт. Пляж. Волейбол.", tennis: "Теннис 16–18" },
+    { date: "14", weekday: "Пн", theme: "Прилёт. Пляж. Первый закат.", tennis: "Теннис 16–18" },
     { date: "15", weekday: "Вт", label: "Горы", theme: "Ущелье Маска. Запад острова.", tennis: "Теннис 16–18" },
-    { date: "16", weekday: "Ср", label: "Море", theme: "Яхта. Пляж Айдохо.", tennis: "Теннис 16–18" },
-    { date: "17", weekday: "Чт", label: "Море", theme: "Два пляжа.", tennis: "Теннис 16–18" },
-    { date: "18", weekday: "Пт", label: "Горы", theme: "Вулкан Тейде.", tennis: "Теннис 16–18" },
-    { date: "19", weekday: "Сб", label: "Море", theme: "Сёрфинг. Купание.", tennis: "Теннис 16–18" },
+    { date: "16", weekday: "Ср", label: "Море", theme: "Яхта. Пляж. Ресторан на закате.", tennis: "Теннис 16–18" },
+    { date: "17", weekday: "Чт", label: "Отдых", theme: "Два пляжа. Свободный вечер.", tennis: "Теннис 16–18" },
+    { date: "18", weekday: "Пт", label: "Горы", theme: "Вулкан Тейде. 3 718 м над облаками.", tennis: "Теннис 16–18" },
+    { date: "19", weekday: "Сб", label: "Море", theme: "Сёрфинг. Океанское купание.", tennis: "Теннис 16–18" },
     { date: "20", weekday: "Вс", label: "Финал", theme: "Замок Сан-Мигель. Банкет.", tennis: "Теннис + турнир", finale: true },
   ];
 
@@ -92,26 +92,13 @@ const Index = () => {
 
   return (
     <div ref={containerRef}>
-      {/* ─── HERO — full-screen with video/image background ─── */}
+      {/* ─── HERO — full-screen lifestyle ─── */}
       <section className="min-h-screen relative flex flex-col overflow-hidden">
-        {/* Background — video placeholder, using hero image as fallback */}
         <div className="absolute inset-0">
-          <img
-            src={heroImg}
-            alt="Тенерифе — океан и корт"
-            className="w-full h-full object-cover"
-          />
-          {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-forest/70" />
-          {/* Gradient bottom for depth */}
-          <div className="absolute inset-0 bg-gradient-to-t from-forest via-transparent to-forest/30" />
+          <img src={heroImg} alt="Тенерифе — океан, теннис и закат" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-forest/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/20 to-forest/40" />
         </div>
-
-        {/* Video placeholder comment — replace img with <video> when ready:
-          <video autoPlay muted loop playsInline className="w-full h-full object-cover">
-            <source src="/video/hero.mp4" type="video/mp4" />
-          </video>
-        */}
 
         {/* Nav */}
         <nav className="relative z-10 py-9 px-6 lg:px-16 flex justify-between items-center">
@@ -133,91 +120,122 @@ const Index = () => {
           </ul>
           <div className="hidden md:block">
             <a href="#cta" className="inline-block py-3 px-7 border border-gold/40 text-gold font-body text-[10px] font-medium tracking-[2.5px] uppercase no-underline hover:bg-gold/10 transition-colors duration-300">
-              Забронировать
+              Записаться
             </a>
           </div>
           <MobileMenu />
         </nav>
 
-        {/* Hero content — centered on mobile, left-aligned on desktop */}
+        {/* Hero content */}
         <div className="relative z-10 flex-1 flex items-center px-6 lg:px-16 pb-12">
-          <div className="max-w-[700px]">
+          <div className="max-w-[740px]">
             <p className="animate-fade-up flex items-center gap-4 text-[10px] tracking-[4px] uppercase text-gold mb-8" style={{ animationDelay: "0.1s" }}>
               <span className="block w-8 h-px bg-gold" />
-              Канарские острова · Сентябрь 2026
-            </p>
-            <h1 className="animate-fade-up font-display font-light text-[clamp(40px,6vw,80px)] leading-[1.02] text-sand-light tracking-[-1px]" style={{ animationDelay: "0.25s" }}>
-              Теннис. Океан.<br />
-              <em className="italic text-gold-light">Неделя другой жизни.</em>
-            </h1>
-            <p className="animate-fade-up mt-7 text-[15px] md:text-[17px] font-light text-sand/70 leading-[1.75] max-w-[520px] tracking-[0.3px]" style={{ animationDelay: "0.4s" }}>
-              7 дней на Тенерифе в компании 12 единомышленников. Тренировки на берегу океана, вулканы, яхта, сёрфинг и банкет в средневековом замке. Не спортлагерь — европейский lifestyle-опыт.
+              Канарские острова · Испания · Европа
             </p>
 
-            {/* Bullets */}
-            <ul className="animate-fade-up mt-8 flex flex-col gap-3" style={{ animationDelay: "0.48s" }}>
+            <h1 className="animate-fade-up font-display font-light text-[clamp(38px,5.5vw,72px)] leading-[1.05] text-sand-light tracking-[-0.5px]" style={{ animationDelay: "0.25s" }}>
+              Теннис + lifestyle<br />experience
+              <em className="italic text-gold-light"> на Тенерифе</em>
+            </h1>
+
+            <p className="animate-fade-up mt-5 font-display text-[clamp(18px,2.5vw,26px)] italic text-sand/60 leading-[1.5]" style={{ animationDelay: "0.35s" }}>
+              7 дней в Европе: спорт, океан, путешествия<br className="hidden sm:block" /> и сильное окружение
+            </p>
+
+            <p className="animate-fade-up mt-7 text-[15px] md:text-[16px] font-light text-sand/55 leading-[1.8] max-w-[540px]" style={{ animationDelay: "0.42s" }}>
+              Не спортлагерь. Не отпуск у бассейна. А неделя жизни на Тенерифе с теннисом, людьми и атмосферой, в которую хочется вернуться.
+            </p>
+
+            {/* Lifestyle bullets */}
+            <div className="animate-fade-up mt-8 grid grid-cols-2 gap-x-8 gap-y-3" style={{ animationDelay: "0.48s" }}>
               {[
-                "Тенерифе, Испания — визовая поддержка включена",
-                "12 тренировок с тренером Tenerife Tennis Academy",
-                "Яхта · вулкан Тейде · сёрфинг · замок Сан-Мигель",
-                "Группа до 12 человек. Полная организация «под ключ»",
+                "Тренировки на берегу океана",
+                "Яхта вдоль побережья",
+                "Вулкан Тейде · 3 718 м",
+                "Сёрфинг и чёрные пляжи",
+                "Банкет в средневековом замке",
+                "12 единомышленников",
               ].map((b) => (
-                <li key={b} className="text-[13px] text-sand/60 flex items-center gap-3">
-                  <span className="w-1 h-1 rounded-full bg-gold flex-shrink-0" />
+                <p key={b} className="text-[13px] text-sand/50 flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
                   {b}
-                </li>
+                </p>
               ))}
-            </ul>
+            </div>
 
             <div className="animate-fade-up mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-5" style={{ animationDelay: "0.55s" }}>
-              <a href="#cta" className="inline-block py-4 px-10 bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-gold-light hover:-translate-y-px transition-all duration-300">
+              <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-gold-light hover:-translate-y-px transition-all duration-300">
                 Хочу поехать
+                <ArrowRight size={14} />
               </a>
-              <a href="#pricing" className="inline-block py-4 px-10 border border-gold/30 text-gold font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-gold/10 transition-all duration-300">
-                Смотреть пакеты
+              <a href="#programme" className="inline-block py-4 px-10 border border-gold/30 text-gold font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-gold/10 transition-all duration-300">
+                Как это выглядит
               </a>
             </div>
 
-            <div className="animate-fade-up mt-6 flex items-center gap-3" style={{ animationDelay: "0.6s" }}>
+            <div className="animate-fade-up mt-6 flex items-center gap-4" style={{ animationDelay: "0.6s" }}>
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-[11px] text-sand/50 tracking-[1px]">Осталось 12 мест · 14–20 сентября 2026</span>
+              <span className="text-[11px] text-sand/45 tracking-[1px]">Осталось 8 мест из 12 · сентябрь 2026</span>
             </div>
           </div>
         </div>
 
-        {/* Hero footer stats */}
+        {/* Hero bottom — emotional stats */}
         <div className="animate-fade-up relative z-10 py-8 px-6 lg:px-16 flex gap-10 lg:gap-16 flex-wrap items-center border-t border-gold/10" style={{ animationDelay: "0.7s" }}>
           {[
-            { num: "7", label: "Дней" },
-            { num: "12", label: "Тренировок" },
-            { num: "12", label: "Участников" },
-            { num: "1", label: "Тренер RU" },
+            { num: "7", label: "дней в Европе" },
+            { num: "12", label: "тренировок" },
+            { num: "12", label: "участников max" },
+            { num: "+25°", label: "в сентябре" },
           ].map((s) => (
             <div key={s.label} className="flex flex-col gap-1">
               <span className="font-display text-[32px] lg:text-[36px] font-light text-gold leading-none">{s.num}</span>
-              <span className="text-[9px] tracking-[2.5px] uppercase text-sand/40">{s.label}</span>
+              <span className="text-[9px] tracking-[2.5px] uppercase text-sand/35">{s.label}</span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ─── "NOT JUST A CAMP" (About) ─── */}
-      <section className="bg-cream py-[100px] lg:py-[120px] px-6 lg:px-16" id="about">
-        <div className="max-w-[800px] mx-auto text-center">
-          <p className="flex items-center justify-center gap-4 text-[9px] tracking-[4px] uppercase text-gold mb-5">
-            <span className="block w-6 h-px bg-gold" />
+      {/* ─── EMOTIONAL HOOK — "Not just a camp" ─── */}
+      <section className="bg-forest py-[100px] lg:py-[140px] px-6 lg:px-16 relative overflow-hidden" id="about">
+        <div className="absolute left-[-200px] top-[-200px] w-[600px] h-[600px] rounded-full border border-gold/5" />
+        <div className="max-w-[900px] mx-auto text-center relative z-10">
+          <p className="flex items-center justify-center gap-4 text-[9px] tracking-[4px] uppercase text-gold mb-6">
+            <span className="block w-8 h-px bg-gold" />
             Это не кемп
-            <span className="block w-6 h-px bg-gold" />
+            <span className="block w-8 h-px bg-gold" />
           </p>
-          <h2 className="font-display font-light text-[clamp(32px,4.5vw,56px)] text-forest leading-[1.12] mb-6">
+          <h2 className="font-display font-light text-[clamp(34px,5vw,60px)] text-sand-light leading-[1.1] mb-8">
             Забудьте слово<br /><em className="italic text-gold">«спортивный лагерь».</em>
           </h2>
-          <p className="text-[15px] text-text-body leading-[1.8] font-light max-w-[600px] mx-auto">
-            Представьте: вы просыпаетесь с видом на Атлантику. Утром — вулкан или яхта. Вечером — два часа тенниса на профессиональных кортах. А между ними — закаты, разговоры, океанский ветер и люди, с которыми хочется оставаться на связи.
-          </p>
-          <p className="text-[15px] text-text-body leading-[1.8] font-light max-w-[600px] mx-auto mt-4">
-            Это опыт, который меняет настроение на месяцы вперёд.
-          </p>
+
+          <div className="max-w-[640px] mx-auto">
+            <p className="text-[16px] md:text-[18px] text-sand/60 leading-[1.85] font-light">
+              Представьте: утром вы стоите на краю вулкана — 3 718 метров над облаками. Днём — яхта вдоль побережья. Вечером — два часа тенниса на профессиональных кортах с видом на Атлантику.
+            </p>
+            <p className="text-[16px] md:text-[18px] text-sand/60 leading-[1.85] font-light mt-5">
+              А между всем этим — закаты, рестораны, разговоры с людьми, с которыми хочется оставаться на связи. Океанский ветер. Температура +25. Ощущение, что вы живёте, а не отдыхаете.
+            </p>
+            <p className="font-display italic text-[clamp(20px,2.5vw,28px)] text-gold mt-10 leading-[1.4]">
+              Это опыт, который меняет настроение на месяцы вперёд.
+            </p>
+          </div>
+
+          {/* Visual lifestyle grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-[2px] mt-14">
+            {[
+              { emoji: "🌅", text: "Закаты над океаном" },
+              { emoji: "🍷", text: "Рестораны и вино" },
+              { emoji: "🏄", text: "Сёрфинг и пляжи" },
+              { emoji: "🎾", text: "Теннис каждый день" },
+            ].map((item) => (
+              <div key={item.text} className="reveal p-6 lg:p-8 border border-gold/10 text-center">
+                <span className="text-[28px] block mb-3">{item.emoji}</span>
+                <p className="text-[12px] text-sand/45 tracking-[1.5px] uppercase">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -231,14 +249,14 @@ const Index = () => {
           Если вы узнаёте себя —<br /><em className="italic text-gold">вам сюда.</em>
         </h2>
         <p className="text-[14px] text-text-body leading-[1.7] font-light max-w-[540px] mb-[60px]">
-          Это не про профессиональный спорт. Это про людей, которые ценят опыт, новые впечатления и качественный отдых.
+          Это не про профессиональный спорт. Это про людей, которые ценят опыт, новые впечатления и качественный отдых в Европе.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[2px]">
           {[
-            { icon: "🎾", title: "Теннисист-любитель", text: "Играете раз в неделю или раз в год. Хотите прокачать уровень в идеальных условиях — тёплый климат, профессиональный тренер, без спешки." },
-            { icon: "✈️", title: "Путешественник", text: "Устали от пляжных all-inclusive. Ищете опыт, а не просто отпуск. Хотите увидеть Тенерифе не из окна автобуса." },
+            { icon: "🎾", title: "Теннисист-любитель", text: "Играете раз в неделю или раз в год. Хотите прокачать уровень: тёплый климат, профессиональный тренер, океан за кортом." },
+            { icon: "✈️", title: "Путешественник", text: "Устали от пляжных all-inclusive. Ищете опыт, а не просто отпуск. Хотите увидеть Канары не из окна автобуса." },
             { icon: "👥", title: "Нетворкер", text: "Хотите провести неделю в компании 12 интересных людей. Не случайные попутчики — единомышленники." },
-            { icon: "🔄", title: "Перезагрузка", text: "Нужен разрыв шаблона. Новый ритм, новые люди, новая среда. Океан вместо офиса. Корт вместо зума." },
+            { icon: "🔄", title: "Перезагрузка", text: "Нужен разрыв шаблона. Океан вместо офиса. Корт вместо зума. Закат вместо экрана." },
           ].map((c) => (
             <div key={c.title} className="reveal bg-card p-8 lg:p-10 group hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
               <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gold scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-400" />
@@ -280,17 +298,17 @@ const Index = () => {
             {
               icon: <Sun size={28} className="text-gold" />,
               title: "Lifestyle",
-              items: ["Закаты на океане", "Банкет в замке Сан-Мигель", "Утренние пробежки по набережной", "Свободное время для себя"],
+              items: ["Закаты на океане", "Рестораны и ужины", "Банкет в замке Сан-Мигель", "Свободное время для себя"],
             },
             {
               icon: <Mountain size={28} className="text-gold" />,
               title: "Путешествия",
-              items: ["Вулкан Тейде (3 718 м)", "Ущелье Маска", "Яхта вдоль побережья", "Сёрфинг и два пляжа"],
+              items: ["Вулкан Тейде (3 718 м)", "Ущелье Маска", "Яхта вдоль побережья", "Сёрфинг и чёрные пляжи"],
             },
             {
               icon: <Users size={28} className="text-gold" />,
               title: "Комьюнити",
-              items: ["Группа до 12 человек", "Совместные активности", "Нетворкинг каждый день", "Закрытый чат после кемпа"],
+              items: ["Группа до 12 человек", "Совместные приключения", "Нетворкинг каждый день", "Закрытый чат после кемпа"],
             },
           ].map((cat) => (
             <div key={cat.title} className="reveal p-8 lg:p-10 border border-gold/10">
@@ -306,6 +324,15 @@ const Index = () => {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* ─── MID-PAGE CTA after "What's Included" ─── */}
+        <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 reveal">
+          <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-gold-light transition-all duration-300">
+            Записаться в кемп
+            <ArrowRight size={14} />
+          </a>
+          <p className="text-[12px] text-sand/35 tracking-[1px]">Группа до 12 человек · осталось 8 мест</p>
         </div>
       </section>
 
@@ -343,6 +370,15 @@ const Index = () => {
             </div>
           ))}
         </div>
+
+        {/* ─── MID-PAGE CTA after Programme ─── */}
+        <div className="mt-16 flex flex-col sm:flex-row items-center gap-6 reveal">
+          <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-forest text-gold font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-forest-mid transition-all duration-300">
+            Получить программу и даты
+            <ArrowRight size={14} />
+          </a>
+          <p className="text-[12px] text-text-muted-custom tracking-[1px]">Ответим за 2 часа</p>
+        </div>
       </section>
 
       {/* ─── LOCATION ─── */}
@@ -353,17 +389,16 @@ const Index = () => {
           Локация
         </p>
         <h2 className="font-display font-light text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.15] max-w-[560px] mb-6 relative z-10">
-          Тенерифе.<br /><em className="italic text-gold">Вечная весна.</em>
+          Тенерифе.<br /><em className="italic text-gold">Остров вечной весны.</em>
         </h2>
-        <p className="text-[14px] text-sand/50 leading-[1.75] font-light max-w-[540px] mb-[60px] relative z-10">
-          Канарские острова, Испания. +25°C в сентябре. Вулкан Тейде — третий по высоте в мире на острове. Чёрные и белые пляжи. 
-          Европейский сервис без европейских цен.
+        <p className="text-[15px] text-sand/50 leading-[1.75] font-light max-w-[560px] mb-[60px] relative z-10">
+          Канарские острова, Испания. Европа без европейского холода. +25°C в сентябре. Вулкан, океан, чёрные пляжи — и всё это в зоне Шенгена.
         </p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-[2px] relative z-10">
           {[
-            { icon: <MapPin size={20} />, label: "Канарские острова", sub: "Испания, ЕС" },
-            { icon: <Mountain size={20} />, label: "+25°C в сентябре", sub: "300 солнечных дней" },
-            { icon: <Waves size={20} />, label: "Атлантический океан", sub: "Пляжи в 15 мин" },
+            { icon: <MapPin size={20} />, label: "Канарские острова", sub: "Испания · Евросоюз" },
+            { icon: <Sun size={20} />, label: "+25°C в сентябре", sub: "300 солнечных дней в году" },
+            { icon: <Waves size={20} />, label: "Атлантический океан", sub: "Пляжи в 15 минутах" },
             { icon: <Plane size={20} />, label: "4.5 часа из Москвы", sub: "Прямые рейсы" },
           ].map((item) => (
             <div key={item.label} className="reveal p-8 border border-gold/10">
@@ -375,7 +410,7 @@ const Index = () => {
         </div>
         {/* Location photo placeholders */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-[3px] mt-[60px] relative z-10">
-          {["Вулкан Тейде", "Океанский пляж", "Tenerife Tennis Academy"].map((label) => (
+          {["Вулкан Тейде · 3 718 м", "Чёрный пляж · Атлантика", "Tenerife Tennis Academy"].map((label) => (
             <div key={label} className="aspect-[16/9] bg-forest-light border border-gold/10 flex items-center justify-center">
               <p className="text-[10px] tracking-[2px] uppercase text-gold/40">{label}</p>
             </div>
@@ -464,7 +499,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div>
               <p className="font-display text-[20px] text-forest mb-1">Депозит — 30% от стоимости</p>
-              <p className="text-[13px] text-text-body font-light">Остаток — до вылета или по договорённости. Возможна оплата в рублях или евро.</p>
+              <p className="text-[13px] text-text-body font-light">Остаток — до вылета или по договорённости. Оплата в рублях или евро.</p>
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               <div className="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center">
@@ -512,19 +547,35 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── FINAL CTA ─── */}
-      <section className="bg-forest py-[100px] lg:py-[120px] px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center relative overflow-hidden" id="cta">
+      {/* ─── FINAL CTA — strong close ─── */}
+      <section className="bg-forest py-[100px] lg:py-[140px] px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center relative overflow-hidden" id="cta">
         <div className="absolute right-[-100px] top-[-100px] w-[500px] h-[500px] rounded-full border border-gold/5" />
         <div className="absolute right-[-60px] top-[-60px] w-[360px] h-[360px] rounded-full border border-gold/5" />
 
         <div className="relative z-10">
-          <h2 className="font-display font-light text-[clamp(36px,4vw,56px)] text-sand-light leading-[1.1] mb-5">
-            Осталось<br /><em className="italic text-gold">12 мест.</em>
+          <p className="flex items-center gap-4 text-[9px] tracking-[4px] uppercase text-gold mb-8">
+            <span className="block w-6 h-px bg-gold" />
+            Последний шаг
+          </p>
+          <h2 className="font-display font-light text-[clamp(36px,4.5vw,60px)] text-sand-light leading-[1.08] mb-5">
+            Через полгода вы<br />будете вспоминать<br /><em className="italic text-gold">эту неделю.</em>
           </h2>
-          <p className="text-[15px] text-sand/50 leading-[1.7] max-w-[400px] mt-6">
+          <p className="text-[15px] text-sand/50 leading-[1.75] max-w-[420px] mt-6">
             14–20 сентября 2026. Визу нужно начать оформлять за 6 недель. Чем раньше решитесь — тем спокойнее.
           </p>
-          <div className="mt-8 flex flex-col gap-4">
+
+          {/* Urgency block */}
+          <div className="mt-8 p-6 border border-gold/15 max-w-[380px]">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-2.5 h-2.5 rounded-full bg-gold animate-pulse" />
+              <span className="font-display text-[20px] text-gold">Осталось 8 мест из 12</span>
+            </div>
+            <p className="text-[12px] text-sand/40 leading-[1.6]">
+              Группа строго до 12 человек. Мы не добираем — когда места заканчиваются, запись закрывается.
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3">
             {[
               "Ответим на любые вопросы за 2 часа",
               "Поможем с визой и билетами",
@@ -594,10 +645,10 @@ const Index = () => {
               }`}
               onClick={() => setSubmitted(true)}
             >
-              {submitted ? "Заявка отправлена ✓" : "Забронировать место"}
+              {submitted ? "Заявка отправлена ✓" : "Записаться в кемп"}
             </button>
             <p className="text-center text-[10px] text-sand/30 font-light -mt-1">
-              Без обязательств — просто свяжемся и ответим на вопросы
+              Без обязательств — свяжемся и ответим на вопросы
             </p>
             <p className="text-center text-[10px] text-sand/20 tracking-[2px] uppercase my-1">или</p>
             <a
