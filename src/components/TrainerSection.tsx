@@ -60,7 +60,9 @@ const TrainerSection = () => {
           </blockquote>
 
           <a
-            href="https://t.me/username"
+            href="https://t.me/oceaninthesky"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 py-4 px-8 bg-forest text-gold font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-forest-mid transition-colors duration-300"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

@@ -39,7 +39,7 @@ const MobileMenu = () => {
       >
         <div className="flex justify-between items-center py-9 px-8">
           <span className="font-display text-[15px] italic text-gold tracking-[3px] uppercase">
-            Tennis · Tenerife
+            Tennis · Padel · Tenerife
           </span>
           <button
             onClick={() => setOpen(false)}
