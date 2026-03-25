@@ -511,6 +511,32 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ─── FOUR STEPS ─── */}
+      <section className="bg-cream py-[100px] lg:py-[120px] px-6 lg:px-16">
+        <p className="flex items-center gap-4 text-[9px] tracking-[4px] uppercase text-gold mb-5">
+          <span className="block w-6 h-px bg-gold" />
+          Как это работает
+        </p>
+        <h2 className="font-display font-light text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] max-w-[560px] mb-[72px]">
+          Четыре шага<br /><em className="italic text-gold">до кемпа.</em>
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px]">
+          {[
+            { num: "1", title: "Напишите нам", text: "В Telegram @oceaninthesky. Ответим на вопросы, подберём турпакет." },
+            { num: "2", title: "Бронируем место", text: "Депозит 30% от спортивного пакета (255\u202F€). Место зафиксировано." },
+            { num: "3", title: "Оформляем поездку", text: "Туроператор берёт на себя перелёт, отель, визу, страховку. Вам не нужно искать самим." },
+            { num: "4", title: "Летим на Тенерифе", text: "14 сентября. Ракетка, паспорт, хорошее настроение." },
+          ].map((step) => (
+            <div key={step.num} className="reveal bg-forest p-8 lg:p-10 group hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
+              <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gold scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-400" />
+              <span className="font-display text-[48px] font-light text-gold leading-none block mb-5">{step.num}</span>
+              <h3 className="font-display text-[18px] font-normal text-sand-light mb-3 leading-[1.2]">{step.title}</h3>
+              <p className="text-[13px] leading-[1.75] text-text-muted font-light">{step.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ─── FAQ ─── */}
       <section className="bg-sand-light py-[100px] lg:py-[120px] px-6 lg:px-16" id="faq">
         <p className="flex items-center gap-4 text-[9px] tracking-[4px] uppercase text-gold mb-5">
