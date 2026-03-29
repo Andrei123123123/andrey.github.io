@@ -4,8 +4,10 @@ Tennis + padel camp landing page — design system: forest green + gold + cream/
 - Training count: 6 sessions (1/day × 1.5h each, every evening 16-18)
 - Camp dates: 14–20 September 2026 (7 days)
 - Group size: max 12
-- 2 packages: Sport 850€, Tour from 116,000₽ via operator
-- Deposit: 30% of sport package (255€) with full refund guarantee if camp doesn't happen
+- 2 packages: Sport 900€, Tour 200,000₽ (flight 90k, villa, chef meals, visa 20k, insurance)
+- Deposit: 30% of sport package (270€) with full refund guarantee if camp doesn't happen
+- Hero: background video from Pexels (tennis at beach) with poster fallback
+- Day cards (14-20): hover-reveal images with descriptions for each day
 - This is the FIRST camp season — acknowledged in FAQ
 - Numbers unified: 7 days, 6 trainings, 12 participants, 2 sports
 - Added padel as second sport option (tennis or padel)
