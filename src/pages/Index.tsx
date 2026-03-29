@@ -4,31 +4,61 @@ import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Check, ArrowRight, MapPin, Sun } from "lucide-react";
 import heroImg from "@/assets/hero-tenerife.jpg";
+import day14 from "@/assets/day-14.jpg";
+import day15 from "@/assets/day-15.jpg";
+import day16 from "@/assets/day-16.jpg";
+import day17 from "@/assets/day-17.jpg";
+import day18 from "@/assets/day-18.jpg";
+import day19 from "@/assets/day-19.jpg";
+import day20 from "@/assets/day-20.jpg";
+import bgFormats from "@/assets/bg-formats.jpg";
+import bgLocation from "@/assets/bg-location.jpg";
+import bgPricing from "@/assets/bg-pricing.jpg";
 
 const Index = () => {
   const containerRef = useScrollReveal();
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
+  const [hoveredDay, setHoveredDay] = useState<string | null>(null);
   const toggleFaq = useCallback((i: number) => {
     setFaqOpen((prev) => (prev === i ? null : i));
   }, []);
 
   const faqs = [
-    { q: "Нужна ли виза?", a: "Да, шенгенская. Наш оператор оформляет приглашение, документы и подачу. Стоимость от 16 000 ₽ входит в турпакет. Срок — 2–4 недели." },
+    { q: "Нужна ли виза?", a: "Да, шенгенская. Наш оператор оформляет приглашение, документы и подачу. Стоимость 20 000 ₽ входит в турпакет. Срок — 2–4 недели." },
     { q: "Какой уровень нужен?", a: "Любой. Новичок — научим основам. Любитель — прокачаем технику и тактику. Можно выбрать теннис или падел." },
     { q: "Можно поехать одному?", a: "Да. 80% участников едут одни. К третьему дню группа становится командой." },
-    { q: "Что входит в 850 €?", a: "6 тренировок, яхта, Тейде, Маска, сёрфинг, турнир, банкет, трансферы, организация. Перелёт и отель — отдельно через турпакет." },
+    { q: "Что входит в 900 €?", a: "6 тренировок, яхта, Тейде, Маска, сёрфинг, турнир, банкет, трансферы, организация. Перелёт и отель — отдельно через турпакет." },
     { q: "Можно вернуть деньги?", a: "Кемп не состоялся — 100% возврат. Отмена за 30+ дней — 100%. За 14–30 дней — 50%." },
     { q: "Что взять с собой?", a: "Спортивную обувь, купальник, лёгкую куртку для Тейде. Ракетки есть в академии." },
   ];
 
+  const days = [
+    { d: "14", wd: "Пн", am: "Прилёт, трансфер на виллу, пляж", pm: "Теннис / падел", img: day14, desc: "Встреча в аэропорту, трансфер на виллу с видом на океан. Знакомство с группой. Вечерняя тренировка на профессиональном корте." },
+    { d: "15", wd: "Вт", am: "Ущелье Маска", pm: "Теннис / падел", img: day15, desc: "Поход по знаменитому ущелью Маска — одному из самых красивых маршрутов Канарских островов. Вечером — тренировка." },
+    { d: "16", wd: "Ср", am: "Яхта на закате", pm: "Теннис / падел", img: day16, desc: "Морская прогулка на яхте вдоль побережья. Купание в открытом океане, наблюдение за дельфинами. Вечер — корт." },
+    { d: "17", wd: "Чт", am: "Свободный день", pm: "Теннис / падел", img: day17, desc: "Отдых у бассейна на вилле, чёрный пляж, шоппинг или спа. Вечером — тренировка с индивидуальными рекомендациями тренера." },
+    { d: "18", wd: "Пт", am: "Вулкан Тейде", pm: "Теннис / падел", img: day18, desc: "Поездка на вулкан Тейде (3 718 м) — высшую точку Испании. Виды над облаками. Вечерняя тренировка." },
+    { d: "19", wd: "Сб", am: "Сёрфинг", pm: "Теннис / падел", img: day19, desc: "Урок сёрфинга на волнах Атлантики с инструктором. Подходит для любого уровня. Вечером — предтурнирная тренировка." },
+    { d: "20", wd: "Вс", am: "Замок Сан-Мигель", pm: "Турнир + банкет", img: day20, desc: "Финальный день. Дружеский турнир утром, награждение. Вечером — банкет в средневековом замке Сан-Мигель.", last: true },
+  ];
+
   return (
     <div ref={containerRef}>
-      {/* ─── HERO ─── */}
+      {/* ─── HERO with VIDEO ─── */}
       <section className="min-h-screen relative flex flex-col overflow-hidden" id="hero">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="Теннисный корт на Тенерифе" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-forest/65" />
-          <div className="absolute inset-0 bg-gradient-to-t from-forest via-transparent to-forest/30" />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={heroImg}
+            className="w-full h-full object-cover"
+          >
+            <source src="https://videos.pexels.com/video-files/854195/854195-hd_1920_1080_25fps.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-forest/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest via-transparent to-forest/40" />
         </div>
 
         <nav className="relative z-10 py-8 px-6 lg:px-16 flex justify-between items-center">
@@ -36,7 +66,7 @@ const Index = () => {
           <ul className="hidden md:flex gap-10 list-none">
             {[
               { href: "#formats", label: "Форматы" },
-              { href: "#trainer", label: "Тренер" },
+              { href: "#week", label: "Неделя" },
               { href: "#pricing", label: "Цены" },
               { href: "#faq", label: "FAQ" },
             ].map((l) => (
@@ -105,66 +135,81 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── TRAINING FORMATS ─── */}
-      <section className="bg-forest py-20 lg:py-28 px-6 lg:px-16" id="formats">
-        <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-sand-light leading-[1.15] mb-12">
-          Форматы занятий
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
-          {[
-            { title: "Теннис", desc: "Классика. Удары, подачи, тактика. Для тех, кто хочет играть лучше или начать с нуля.", items: ["Техника ударов", "Подача и приём", "Тактика одиночной и парной игры"] },
-            { title: "Падел", desc: "Популярный ракеточный спорт. Проще входить, но не менее азартный. Кортов полно.", items: ["Основы для новичков", "Стратегия у стенки", "Парная игра"] },
-            { title: "Турнир", desc: "Финальный день — дружеский турнир среди участников. Призы, эмоции, банкет.", items: ["Одиночный и парный формат", "Судейство тренером", "Награждение на банкете"] },
-          ].map((f) => (
-            <div key={f.title} className="reveal p-8 lg:p-10 border border-gold/10">
-              <h3 className="font-display text-[22px] text-sand-light mb-3">{f.title}</h3>
-              <p className="text-[15px] leading-[1.65] text-sand/55 font-light mb-6">{f.desc}</p>
-              <ul className="flex flex-col gap-2">
-                {f.items.map((item) => (
-                  <li key={item} className="text-[14px] text-sand/45 flex items-start gap-3">
-                    <span className="text-gold mt-0.5">—</span>{item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+      {/* ─── TRAINING FORMATS (with bg image) ─── */}
+      <section className="relative py-20 lg:py-28 px-6 lg:px-16 overflow-hidden" id="formats">
+        <div className="absolute inset-0">
+          <img src={bgFormats} alt="" className="w-full h-full object-cover" loading="lazy" />
+          <div className="absolute inset-0 bg-forest/88" />
         </div>
+        <div className="relative z-10">
+          <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-sand-light leading-[1.15] mb-12">
+            Форматы занятий
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
+            {[
+              { title: "Теннис", desc: "Классика. Удары, подачи, тактика. Для тех, кто хочет играть лучше или начать с нуля.", items: ["Техника ударов", "Подача и приём", "Тактика одиночной и парной игры"] },
+              { title: "Падел", desc: "Популярный ракеточный спорт. Проще входить, но не менее азартный. Кортов полно.", items: ["Основы для новичков", "Стратегия у стенки", "Парная игра"] },
+              { title: "Турнир", desc: "Финальный день — дружеский турнир среди участников. Призы, эмоции, банкет.", items: ["Одиночный и парный формат", "Судейство тренером", "Награждение на банкете"] },
+            ].map((f) => (
+              <div key={f.title} className="reveal p-8 lg:p-10 border border-gold/10 bg-forest/40 backdrop-blur-sm">
+                <h3 className="font-display text-[22px] text-sand-light mb-3">{f.title}</h3>
+                <p className="text-[15px] leading-[1.65] text-sand/55 font-light mb-6">{f.desc}</p>
+                <ul className="flex flex-col gap-2">
+                  {f.items.map((item) => (
+                    <li key={item} className="text-[14px] text-sand/45 flex items-start gap-3">
+                      <span className="text-gold mt-0.5">—</span>{item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
 
-        {/* CTA */}
-        <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-5 reveal">
-          <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-gold-light transition-all duration-300">
-            Записаться <ArrowRight size={14} />
-          </a>
-          <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="text-[13px] text-sand/40 hover:text-gold transition-colors no-underline">
-            или написать в Telegram →
-          </a>
+          <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-5 reveal">
+            <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-gold-light transition-all duration-300">
+              Записаться <ArrowRight size={14} />
+            </a>
+            <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="text-[13px] text-sand/40 hover:text-gold transition-colors no-underline">
+              или написать в Telegram →
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* ─── HOW IT WORKS (daily) ─── */}
-      <section className="bg-cream py-20 lg:py-28 px-6 lg:px-16">
+      {/* ─── HOW THE WEEK GOES (interactive day cards) ─── */}
+      <section className="bg-cream py-20 lg:py-28 px-6 lg:px-16" id="week">
         <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-4">
           Как проходит неделя
         </h2>
         <p className="reveal text-[15px] text-text-body leading-[1.6] font-light max-w-[480px] mb-12">
-          Каждый день — новое приключение утром и тренировка вечером.
+          Каждый день — новое приключение утром и тренировка вечером. Наведите на карточку, чтобы узнать подробности.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-[2px]">
-          {[
-            { d: "14", wd: "Пн", am: "Прилёт, пляж", pm: "Теннис / падел" },
-            { d: "15", wd: "Вт", am: "Ущелье Маска", pm: "Теннис / падел" },
-            { d: "16", wd: "Ср", am: "Яхта на закате", pm: "Теннис / падел" },
-            { d: "17", wd: "Чт", am: "Свободный день", pm: "Теннис / падел" },
-            { d: "18", wd: "Пт", am: "Вулкан Тейде", pm: "Теннис / падел" },
-            { d: "19", wd: "Сб", am: "Сёрфинг", pm: "Теннис / падел" },
-            { d: "20", wd: "Вс", am: "Замок Сан-Мигель", pm: "Турнир + банкет", last: true },
-          ].map((day) => (
-            <div key={day.d} className={`reveal p-5 lg:p-7 flex flex-col gap-3 ${day.last ? "bg-forest" : "bg-card"}`}>
-              <span className={`font-display text-[36px] font-light leading-none ${day.last ? "text-gold" : "text-forest"}`}>{day.d}</span>
-              <span className={`text-[9px] tracking-[2px] uppercase ${day.last ? "text-sand/40" : "text-text-muted-custom"}`}>{day.wd}</span>
-              <div className={`h-px ${day.last ? "bg-gold/15" : "bg-forest/10"}`} />
-              <p className={`text-[13px] leading-[1.4] font-light ${day.last ? "text-sand-light" : "text-text-body"}`}>{day.am}</p>
-              <p className={`text-[12px] font-normal ${day.last ? "text-gold" : "text-gold"}`}>{day.pm}</p>
+          {days.map((day) => (
+            <div
+              key={day.d}
+              className="reveal relative group cursor-pointer overflow-hidden"
+              onMouseEnter={() => setHoveredDay(day.d)}
+              onMouseLeave={() => setHoveredDay(null)}
+            >
+              {/* Default state */}
+              <div className={`p-5 lg:p-7 flex flex-col gap-3 transition-all duration-500 ${day.last ? "bg-forest" : "bg-card"} ${hoveredDay === day.d ? "opacity-0" : "opacity-100"}`}>
+                <span className={`font-display text-[36px] font-light leading-none ${day.last ? "text-gold" : "text-forest"}`}>{day.d}</span>
+                <span className={`text-[9px] tracking-[2px] uppercase ${day.last ? "text-sand/40" : "text-text-muted-custom"}`}>{day.wd}</span>
+                <div className={`h-px ${day.last ? "bg-gold/15" : "bg-forest/10"}`} />
+                <p className={`text-[13px] leading-[1.4] font-light ${day.last ? "text-sand-light" : "text-text-body"}`}>{day.am}</p>
+                <p className="text-[12px] font-normal text-gold">{day.pm}</p>
+              </div>
+
+              {/* Hover state with image */}
+              <div className={`absolute inset-0 transition-all duration-500 ${hoveredDay === day.d ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+                <img src={day.img} alt={`День ${day.d}`} className="w-full h-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-forest/75 flex flex-col justify-end p-4">
+                  <span className="font-display text-[28px] text-gold leading-none mb-1">{day.d}</span>
+                  <span className="text-[9px] tracking-[2px] uppercase text-gold/60 mb-2">{day.wd} · {day.am}</span>
+                  <p className="text-[11px] leading-[1.5] text-sand/70 font-light">{day.desc}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -188,7 +233,6 @@ const Index = () => {
           ))}
         </div>
 
-        {/* CTA */}
         <div className="mt-14 flex flex-col sm:flex-row items-center gap-5 reveal">
           <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-forest text-gold font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-forest-mid transition-all duration-300">
             Записаться <ArrowRight size={14} />
@@ -199,54 +243,66 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── PRICING ─── */}
-      <section className="bg-cream py-20 lg:py-28 px-6 lg:px-16" id="pricing">
-        <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-12">
-          Стоимость
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] max-w-[900px]">
-          {/* Sport */}
-          <div className="reveal bg-forest p-8 lg:p-12 flex flex-col">
-            <p className="text-[10px] tracking-[3px] uppercase text-gold/60 mb-4">Спортивный пакет</p>
-            <div className="font-display text-[52px] font-light text-gold leading-none mb-2">€850</div>
-            <p className="text-[13px] text-sand/40 mb-8">на человека</p>
-            <ul className="flex flex-col gap-3 flex-1">
-              {["6 тренировок теннис/падел", "Яхта, Тейде, Маска, сёрфинг", "Турнир и банкет в замке", "Трансферы по острову", "Организация"].map((f) => (
-                <li key={f} className="text-[14px] text-sand/55 flex gap-3 items-start">
-                  <Check size={14} className="text-gold flex-shrink-0 mt-0.5" />{f}
-                </li>
-              ))}
-            </ul>
-            <a href="#cta" className="mt-8 py-4 text-center font-body text-[11px] font-medium tracking-[3px] uppercase no-underline bg-gold text-forest hover:bg-gold-light transition-all duration-300 block">
-              Записаться
-            </a>
-          </div>
-
-          {/* Tour */}
-          <div className="reveal bg-card p-8 lg:p-12 flex flex-col">
-            <p className="text-[10px] tracking-[3px] uppercase text-text-muted-custom mb-4">Турпакет · через оператора</p>
-            <div className="font-display text-[44px] font-light text-forest leading-none mb-2">от 116 000 ₽</div>
-            <p className="text-[13px] text-text-muted-custom mb-8">перелёт + отель + виза + страховка</p>
-            <ul className="flex flex-col gap-3 flex-1">
-              {["Перелёт от 60 000 ₽", "Проживание от 40 000 ₽", "Виза от 16 000 ₽", "Страховка"].map((f) => (
-                <li key={f} className="text-[14px] text-text-body flex gap-3 items-start">
-                  <Check size={14} className="text-gold flex-shrink-0 mt-0.5" />{f}
-                </li>
-              ))}
-            </ul>
-            <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="mt-8 py-4 text-center font-body text-[11px] font-medium tracking-[3px] uppercase no-underline border border-gold/30 text-gold hover:bg-gold/5 transition-all duration-300 block">
-              Узнать подробнее
-            </a>
-          </div>
+      {/* ─── PRICING (with bg image) ─── */}
+      <section className="relative py-20 lg:py-28 px-6 lg:px-16 overflow-hidden" id="pricing">
+        <div className="absolute inset-0">
+          <img src={bgPricing} alt="" className="w-full h-full object-cover" loading="lazy" />
+          <div className="absolute inset-0 bg-cream/92" />
         </div>
+        <div className="relative z-10">
+          <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-12">
+            Стоимость
+          </h2>
 
-        <div className="max-w-[900px] mt-[2px] bg-card p-6 lg:p-8 reveal flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div>
-            <p className="font-display text-[18px] text-forest">Депозит — 255 € (30%)</p>
-            <p className="text-[14px] text-text-body font-light">Полный возврат, если кемп не состоится.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] max-w-[900px]">
+            {/* Sport */}
+            <div className="reveal bg-forest p-8 lg:p-12 flex flex-col">
+              <p className="text-[10px] tracking-[3px] uppercase text-gold/60 mb-4">Спортивный пакет</p>
+              <div className="font-display text-[52px] font-light text-gold leading-none mb-2">€900</div>
+              <p className="text-[13px] text-sand/40 mb-8">на человека</p>
+              <ul className="flex flex-col gap-3 flex-1">
+                {["6 тренировок теннис/падел", "Яхта, Тейде, Маска, сёрфинг", "Турнир и банкет в замке", "Трансферы по острову", "Организация"].map((f) => (
+                  <li key={f} className="text-[14px] text-sand/55 flex gap-3 items-start">
+                    <Check size={14} className="text-gold flex-shrink-0 mt-0.5" />{f}
+                  </li>
+                ))}
+              </ul>
+              <a href="#cta" className="mt-8 py-4 text-center font-body text-[11px] font-medium tracking-[3px] uppercase no-underline bg-gold text-forest hover:bg-gold-light transition-all duration-300 block">
+                Записаться
+              </a>
+            </div>
+
+            {/* Tour */}
+            <div className="reveal bg-card p-8 lg:p-12 flex flex-col">
+              <p className="text-[10px] tracking-[3px] uppercase text-text-muted-custom mb-4">Турпакет · через оператора</p>
+              <div className="font-display text-[44px] font-light text-forest leading-none mb-2">200 000 ₽</div>
+              <p className="text-[13px] text-text-muted-custom mb-8">перелёт + вилла + питание + виза + страховка</p>
+              <ul className="flex flex-col gap-3 flex-1">
+                {[
+                  "Перелёт — 90 000 ₽",
+                  "Проживание на вилле с бассейном",
+                  "Питание от повара",
+                  "Виза — 20 000 ₽",
+                  "Страховка",
+                ].map((f) => (
+                  <li key={f} className="text-[14px] text-text-body flex gap-3 items-start">
+                    <Check size={14} className="text-gold flex-shrink-0 mt-0.5" />{f}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="mt-8 py-4 text-center font-body text-[11px] font-medium tracking-[3px] uppercase no-underline border border-gold/30 text-gold hover:bg-gold/5 transition-all duration-300 block">
+                Узнать подробнее
+              </a>
+            </div>
           </div>
-          <a href="#cta" className="text-[12px] text-gold tracking-[2px] uppercase no-underline hover:underline">Забронировать →</a>
+
+          <div className="max-w-[900px] mt-[2px] bg-card p-6 lg:p-8 reveal flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <p className="font-display text-[18px] text-forest">Депозит — 270 € (30%)</p>
+              <p className="text-[14px] text-text-body font-light">Полный возврат, если кемп не состоится.</p>
+            </div>
+            <a href="#cta" className="text-[12px] text-gold tracking-[2px] uppercase no-underline hover:underline">Забронировать →</a>
+          </div>
         </div>
       </section>
 
@@ -301,26 +357,32 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── LOCATION (brief) ─── */}
-      <section className="bg-forest py-20 lg:py-28 px-6 lg:px-16">
-        <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-sand-light leading-[1.15] mb-6">
-          Тенерифе
-        </h2>
-        <p className="reveal text-[15px] text-sand/50 leading-[1.65] font-light max-w-[500px] mb-12">
-          Канарские острова, Испания. +25°C в сентябре. 4,5 часа из Москвы. Шенгенская зона.
-        </p>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[2px]">
-          {[
-            { label: "Канарские острова", sub: "Испания · Евросоюз" },
-            { label: "+25°C в сентябре", sub: "300 солнечных дней" },
-            { label: "Атлантический океан", sub: "Пляжи в 15 мин" },
-            { label: "4,5 ч из Москвы", sub: "Прямые рейсы" },
-          ].map((item) => (
-            <div key={item.label} className="reveal p-6 border border-gold/10">
-              <p className="font-display text-[16px] text-sand-light mb-1">{item.label}</p>
-              <p className="text-[12px] text-sand/40">{item.sub}</p>
-            </div>
-          ))}
+      {/* ─── LOCATION (with bg image) ─── */}
+      <section className="relative py-20 lg:py-28 px-6 lg:px-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={bgLocation} alt="" className="w-full h-full object-cover" loading="lazy" />
+          <div className="absolute inset-0 bg-forest/85" />
+        </div>
+        <div className="relative z-10">
+          <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-sand-light leading-[1.15] mb-6">
+            Тенерифе
+          </h2>
+          <p className="reveal text-[15px] text-sand/50 leading-[1.65] font-light max-w-[500px] mb-12">
+            Канарские острова, Испания. +25°C в сентябре. 4,5 часа из Москвы. Шенгенская зона.
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-[2px]">
+            {[
+              { label: "Канарские острова", sub: "Испания · Евросоюз" },
+              { label: "+25°C в сентябре", sub: "300 солнечных дней" },
+              { label: "Атлантический океан", sub: "Пляжи в 15 мин" },
+              { label: "4,5 ч из Москвы", sub: "Прямые рейсы" },
+            ].map((item) => (
+              <div key={item.label} className="reveal p-6 border border-gold/10 bg-forest/30 backdrop-blur-sm">
+                <p className="font-display text-[16px] text-sand-light mb-1">{item.label}</p>
+                <p className="text-[12px] text-sand/40">{item.sub}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -353,7 +415,7 @@ const Index = () => {
           Записаться в кемп
         </h2>
         <p className="reveal text-[15px] text-sand/50 leading-[1.6] max-w-[440px] mx-auto mb-4">
-          850 € — спортивный пакет. Группа до 12 человек.<br />
+          900 € — спортивный пакет. Группа до 12 человек.<br />
           14–20 сентября 2026.
         </p>
         <p className="reveal text-[13px] text-sand/35 mb-10">Осталось 8 мест</p>
