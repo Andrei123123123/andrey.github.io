@@ -2,15 +2,12 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "#about", label: "О проекте" },
-  { href: "#for-whom", label: "Для кого" },
-  { href: "#whats-included", label: "Что входит" },
-  { href: "#trainer", label: "Тренер" },
   { href: "#programme", label: "Программа" },
-  { href: "#location", label: "Локация" },
-  { href: "#pricing", label: "Пакеты" },
+  { href: "#trainer", label: "Тренер" },
+  { href: "#format", label: "Формат" },
+  { href: "#pricing", label: "Стоимость" },
+  { href: "#reviews", label: "Отзывы" },
   { href: "#faq", label: "FAQ" },
-  { href: "#cta", label: "Забронировать" },
 ];
 
 const MobileMenu = () => {
@@ -31,7 +28,6 @@ const MobileMenu = () => {
         <Menu size={20} />
       </button>
 
-      {/* Overlay */}
       <div
         className={`fixed inset-0 z-50 bg-forest/95 backdrop-blur-sm flex flex-col transition-opacity duration-300 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
