@@ -152,7 +152,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── 02. ЗАЧЕМ ВАМ КЕМП ─── */}
+
       <section className="bg-cream py-20 lg:py-28 px-6 lg:px-16" id="why">
         <div className="max-w-[1000px]">
           <p className="reveal text-[11px] tracking-[3px] uppercase text-gold mb-4">Зачем ехать на кемп</p>
