@@ -12,17 +12,7 @@ import day18 from "@/assets/day-18.jpg";
 import day19 from "@/assets/day-19.jpg";
 import day20 from "@/assets/day-20.jpg";
 import bgFormats from "@/assets/bg-formats.jpg";
-import bgLocation from "@/assets/bg-location.jpg";
 import bgPricing from "@/assets/bg-pricing.jpg";
-import dayMorning from "@/assets/day-morning.jpg";
-import dayActivity from "@/assets/day-activity.jpg";
-import dayTennis from "@/assets/day-tennis.jpg";
-import dayEvening from "@/assets/day-evening.jpg";
-import gal1 from "@/assets/gal-1.jpg";
-import gal2 from "@/assets/gal-2.jpg";
-import gal3 from "@/assets/gal-3.jpg";
-import gal4 from "@/assets/gal-4.jpg";
-import gal5 from "@/assets/gal-5.jpg";
 
 const BOOKED = 4;
 const TOTAL = 12;
@@ -70,13 +60,6 @@ const Index = () => {
     { d: "20", wd: "Вс", am: "Замок Сан-Мигель", pm: "Турнир + банкет", img: day20, desc: "Финальный дружеский турнир. Награждение. Вечером — банкет в средневековом замке Сан-Мигель. Прощальный ужин.", last: true },
   ];
 
-  const timeline = [
-    { time: "08:00", title: "Утро без будильника", text: "Общий завтрак. Никто не торопится. Кто-то уже в бассейне, кто-то смотрит на океан с кофе. Сегодня в программе горы — выезд в 10.", img: dayMorning, alt: "Завтрак у бассейна" },
-    { time: "10:00 — 15:00", title: "Остров", text: "Сегодня — ущелье Маска. Два часа вниз по каньону к морю, потом лодка обратно. Это не экскурсия — это маршрут, который большинство туристов не видит.", img: dayActivity, alt: "Активность на острове", reverse: true },
-    { time: "16:00 — 18:00", title: "Корт", text: "Каждый день в это время. Тренер разбирает подачу — твою конкретно, не в общем. Потом сеты. К концу недели ты бьёшь иначе, чем в первый день.", img: dayTennis, alt: "Теннис на корте" },
-    { time: "19:30", title: "Вечер — твой", text: "Никакой программы. Ужин куда хочешь. Обычно все идут вместе — к третьему дню группа уже не расходится.", img: dayEvening, alt: "Вечер на Тенерифе", reverse: true },
-  ];
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormSent(true);
@@ -93,7 +76,7 @@ const Index = () => {
             { href: "#trainer", label: "Тренер" },
             { href: "#format", label: "Формат" },
             { href: "#pricing", label: "Стоимость" },
-            { href: "#reviews", label: "Отзывы" },
+            { href: "#faq", label: "FAQ" },
           ].map((l) => (
             <li key={l.href}>
               <a href={l.href} className="text-[11px] tracking-[2.5px] uppercase text-sand/80 no-underline hover:text-gold transition-colors duration-300">{l.label}</a>
@@ -134,7 +117,6 @@ const Index = () => {
               </a>
             </div>
 
-            {/* Spots counter */}
             <div className="animate-fade-up mt-8 flex flex-col gap-1.5" style={{ animationDelay: "0.4s" }}>
               <div className="w-[120px] h-[2px] bg-gold/20">
                 <div className="h-full bg-gold transition-all duration-1000" style={{ width: `${(BOOKED / TOTAL) * 100}%` }} />
@@ -146,7 +128,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Hero stats */}
         <div className="relative z-10 px-6 lg:px-16 pb-12 flex flex-wrap gap-8 lg:gap-16">
           {[
             { num: "7", label: "Дней" },
@@ -158,66 +139,6 @@ const Index = () => {
             <div key={s.label} className="animate-fade-up" style={{ animationDelay: "0.5s" }}>
               <span className="font-display text-[36px] font-light text-gold leading-none block">{s.num}</span>
               <span className="text-[10px] tracking-[2px] uppercase text-sand/40 mt-1 block">{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ─── SOCIAL PROOF ─── */}
-      <section className="bg-cream py-10 px-6 lg:px-16">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-16 text-center">
-          <div className="flex items-center gap-3">
-            <span className="text-gold text-[20px]">🎾</span>
-            <div>
-              <p className="font-display text-[15px] text-forest">Tenerife Tennis Academy</p>
-              <p className="text-[12px] text-text-muted-custom">Официальный партнёр</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="text-gold text-[20px]">👥</span>
-            <div>
-              <p className="font-display text-[15px] text-forest">Первый выезд</p>
-              <p className="text-[12px] text-text-muted-custom">по этому маршруту</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="text-gold text-[20px]">⭐</span>
-            <div>
-              <p className="font-display text-[15px] text-forest">Организатор — @oceaninthesky</p>
-              <p className="text-[12px] text-text-muted-custom">и команда Tenerife Tennis Academy</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── WHY THIS CAMP ─── */}
-      <section className="bg-sand-light py-20 lg:py-28 px-6 lg:px-16">
-        <p className="reveal text-[11px] tracking-[3px] uppercase text-gold mb-4">Чем это отличается</p>
-        <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-12 max-w-[600px]">
-          Почему не просто поехать<br />на Тенерифе самому?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
-          {[
-            {
-              num: "01",
-              title: "Теннис, который даёт прогресс",
-              text: "Русскоязычный тренер знает вас в лицо. Группа 12 человек — не групповой урок в фитнесе. Каждая тренировка строится под уровень. Разбор подачи, игровые сеты, работа над ошибками."
-            },
-            {
-              num: "02",
-              title: "Тенерифе, который не покажет турпакет",
-              text: "Не отель-бассейн-ресторан. Ущелье Маска, вулкан Тейде на рассвете, яхта к скрытому пляжу, банкет в замке. Всё в программе, уже оплачено, уже организовано."
-            },
-            {
-              num: "03",
-              title: "Группа, которая становится командой",
-              text: "Большинство едет в одиночку. К третьему дню группа уже вместе завтракает. Малая группа — это не про теннис, это про людей. Активные 25–45, без снобизма."
-            },
-          ].map((c) => (
-            <div key={c.num} className="reveal bg-card p-8 lg:p-10">
-              <span className="font-display text-[48px] font-light text-gold/20 leading-none block mb-4">{c.num}</span>
-              <h3 className="font-display text-[20px] text-forest mb-3">{c.title}</h3>
-              <p className="text-[15px] leading-[1.7] text-text-body font-light">{c.text}</p>
             </div>
           ))}
         </div>
@@ -273,7 +194,7 @@ const Index = () => {
           Программа по дням
         </h2>
         <p className="reveal text-[15px] text-text-body leading-[1.6] font-light max-w-[560px] mb-12">
-          Маршрут составлен так, чтобы каждый день был непохож на предыдущий. Горы чередуются с морем, активность — с восстановлением. Теннис каждый вечер в одно и то же время.
+          Каждый день — новый маршрут. Горы, море, активность, восстановление. Теннис каждый вечер в одно и то же время.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-[2px]">
           {days.map((day) => (
@@ -314,30 +235,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── DAY IN CAMP (timeline) ─── */}
-      <section className="bg-cream py-20 lg:py-28 px-6 lg:px-16">
-        <p className="reveal text-[11px] tracking-[3px] uppercase text-gold mb-4">Как это выглядит</p>
-        <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-16">
-          Один день. <em className="italic text-gold">Изнутри.</em>
-        </h2>
-
-        <div className="flex flex-col">
-          {timeline.map((item, i) => (
-            <div key={i} className={`reveal grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center py-12 lg:py-16 border-t border-forest/8 ${item.reverse ? "lg:[direction:rtl]" : ""}`}>
-              <div className={`aspect-[4/3] overflow-hidden ${item.reverse ? "lg:order-2 [direction:ltr]" : ""}`}>
-                <img src={item.img} alt={item.alt} className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" loading="lazy" />
-              </div>
-              <div className={`flex flex-col gap-4 ${item.reverse ? "lg:order-1 [direction:ltr]" : ""}`}>
-                <span className="text-[10px] tracking-[3px] uppercase text-gold">{item.time}</span>
-                <h3 className="font-display text-[28px] lg:text-[32px] font-light text-forest leading-[1.2]">{item.title}</h3>
-                <p className="text-[15px] leading-[1.8] text-text-body font-light max-w-[440px]">{item.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ─── FORMAT + INCLUDED (with bg image) ─── */}
+      {/* ─── FORMAT + INCLUDED ─── */}
       <section className="relative py-20 lg:py-28 px-6 lg:px-16 overflow-hidden" id="format">
         <div className="absolute inset-0">
           <img src={bgFormats} alt="" className="w-full h-full object-cover" loading="lazy" />
@@ -386,38 +284,10 @@ const Index = () => {
               </ul>
             </div>
           </div>
-
-          <div className="mt-14 flex flex-col sm:flex-row items-center gap-5 reveal">
-            <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-gold-light transition-all duration-300">
-              Забронировать <ArrowRight size={14} />
-            </a>
-            <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="text-[13px] text-sand/40 hover:text-gold transition-colors no-underline">
-              или написать в Telegram →
-            </a>
-          </div>
         </div>
       </section>
 
-      {/* ─── QUOTE BREAK ─── */}
-      <section className="bg-forest py-20 lg:py-28 px-6 lg:px-16 flex justify-center items-center text-center">
-        <div className="max-w-[680px] flex flex-col items-center gap-8">
-          <span className="font-display text-[120px] leading-[0.6] text-gold/20 block">"</span>
-          <blockquote className="font-display text-[clamp(24px,4vw,40px)] font-light italic text-sand-light leading-[1.3]">
-            К третьему дню я перестал проверять телефон.
-          </blockquote>
-          <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-forest-light border border-gold/30 flex items-center justify-center">
-              <span className="font-display text-[14px] text-gold">М</span>
-            </div>
-            <div className="text-left">
-              <span className="text-[13px] text-sand tracking-[1px] block">Михаил</span>
-              <span className="text-[10px] tracking-[2px] uppercase text-text-muted-custom block mt-0.5">Москва · участник кемпа</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── PRICING (with bg image) ─── */}
+      {/* ─── PRICING ─── */}
       <section className="relative py-20 lg:py-28 px-6 lg:px-16 overflow-hidden" id="pricing">
         <div className="absolute inset-0">
           <img src={bgPricing} alt="" className="w-full h-full object-cover" loading="lazy" />
@@ -469,7 +339,6 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Payment conditions */}
           <div className="max-w-[900px] mt-[2px] bg-card p-6 lg:p-8 reveal">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
@@ -488,39 +357,6 @@ const Index = () => {
           </div>
           <p className="text-[12px] text-text-muted-custom mt-4 max-w-[900px]">Цены действительны при бронировании до 1 августа 2026. После — уточняйте наличие мест.</p>
         </div>
-      </section>
-
-      {/* ─── REVIEWS ─── */}
-      <section className="bg-sand-light py-20 lg:py-28 px-6 lg:px-16" id="reviews">
-        <p className="reveal text-[11px] tracking-[3px] uppercase text-gold mb-4">Отзывы</p>
-        <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-12">
-          Что говорят участники
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
-          {[
-            { name: "Алексей К.", city: "Москва", text: "Ожидал теннис, а получил полноценный перезапуск. Тренировки, океан, компания — всё сложилось. Уже планирую вернуться." },
-            { name: "Марина С.", city: "Санкт-Петербург", text: "Ехала одна и переживала. К третьему дню мы были командой. За неделю мой уровень вырос больше, чем за год дома." },
-            { name: "Дмитрий Р.", city: "Дубай", text: "Организация на высшем уровне. Визу помогли, трансферы, жильё — не думал ни о чём. Вулкан Тейде и банкет в замке — отдельный шедевр." },
-          ].map((t) => (
-            <div key={t.name} className="reveal bg-card p-8 lg:p-10 flex flex-col gap-6 group hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
-              <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gold scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500" />
-              <span className="font-display text-[60px] leading-[0.8] text-gold/15 block">"</span>
-              <p className="text-[15px] text-text-body leading-[1.7] font-light flex-1">«{t.text}»</p>
-              <div className="flex items-center gap-3 pt-4 border-t border-forest/10">
-                <div className="w-10 h-10 rounded-full bg-forest/10 border border-gold/20 flex items-center justify-center flex-shrink-0">
-                  <span className="font-display text-[14px] text-forest">{t.name.charAt(0)}</span>
-                </div>
-                <div>
-                  <p className="text-[14px] font-normal text-forest">{t.name}</p>
-                  <p className="text-[12px] text-text-muted-custom">{t.city}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="text-center text-[11px] text-text-muted-custom/60 mt-6 tracking-[1px]">
-          * Первый выезд по этому маршруту. Отзывы — о предыдущих поездках с теми же организаторами.
-        </p>
       </section>
 
       {/* ─── FAQ ─── */}
@@ -543,25 +379,6 @@ const Index = () => {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ─── GALLERY ─── */}
-      <section className="bg-sand-light pt-16 pb-0">
-        <p className="text-[11px] tracking-[3px] uppercase text-gold px-6 lg:px-16 mb-8">Атмосфера</p>
-        <div className="grid grid-cols-3 gap-[3px]" style={{ gridTemplateRows: "300px 300px" }}>
-          <div className="row-span-2 overflow-hidden">
-            <img src={gal1} alt="Теннисный корт" className="w-full h-full object-cover hover:scale-[1.04] transition-transform duration-500" loading="lazy" />
-          </div>
-          <div className="overflow-hidden">
-            <img src={gal2} alt="Группа участников" className="w-full h-full object-cover hover:scale-[1.04] transition-transform duration-500" loading="lazy" />
-          </div>
-          <div className="overflow-hidden">
-            <img src={gal3} alt="Тенерифе" className="w-full h-full object-cover hover:scale-[1.04] transition-transform duration-500" loading="lazy" />
-          </div>
-          <div className="col-span-2 overflow-hidden">
-            <img src={gal4} alt="Вулкан Тейде" className="w-full h-full object-cover hover:scale-[1.04] transition-transform duration-500" loading="lazy" />
-          </div>
         </div>
       </section>
 
