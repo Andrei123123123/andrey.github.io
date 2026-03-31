@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { Check, ArrowRight, MapPin, Sun, Plane, Clock, Users, Target, Zap, Heart, Trophy, Mountain } from "lucide-react";
+import { Check, ArrowRight, MapPin, Sun, Plane, Zap, Mountain } from "lucide-react";
 import heroImg from "@/assets/hero-tenerife.jpg";
 import day14 from "@/assets/day-14.jpg";
 import day15 from "@/assets/day-15.jpg";
