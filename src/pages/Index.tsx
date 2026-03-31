@@ -152,53 +152,7 @@ const Index = () => {
         </div>
       </section>
 
-
-          <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-12">
-            Чем кемп отличается от обычных тренировок
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: <Target size={28} />, title: "Прогресс за неделю", desc: "6 тренировок подряд дают результат, который дома занимает 2–3 месяца. Погружение, видеоразбор, ежедневная практика." },
-              { icon: <Sun size={28} />, title: "Идеальные условия", desc: "25°C, открытые корты, нет ветра, нет дождя. Сентябрь на Тенерифе — лучший месяц для спорта на улице." },
-              { icon: <Users size={28} />, title: "Компания по уровню", desc: "12 человек, разбивка по уровням. Играете с равными, тренер знает каждого. Не потеряетесь в толпе." },
-              { icon: <Heart size={28} />, title: "Отдых, а не только спорт", desc: "Яхта, вулкан Тейде, сёрфинг, ущелье Маска. Каждое утро — приключение. Каждый вечер — корт." },
-            ].map((card) => (
-              <div key={card.title} className="reveal p-6 bg-card border border-border">
-                <div className="text-gold mb-4">{card.icon}</div>
-                <h3 className="font-display text-[18px] text-forest mb-2">{card.title}</h3>
-                <p className="text-[14px] text-text-body leading-[1.6] font-light">{card.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 03. ДЛЯ КОГО ─── */}
-      <section className="bg-sand-light py-20 lg:py-28 px-6 lg:px-16" id="audience">
-        <div className="max-w-[1000px]">
-          <p className="reveal text-[11px] tracking-[3px] uppercase text-gold mb-4">Для кого</p>
-          <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-12">
-            Этот кемп для вас, если вы:
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { emoji: "🎾", title: "Любитель тенниса", desc: "Играете 1–3 раза в неделю и хотите прогрессировать. Уровень от новичка до 3.0 NTRP. Хотите поставить подачу, улучшить удары, понять тактику." },
-              { emoji: "✈️", title: "Ищете активный отдых", desc: "Надоели пляжные «овощные» отпуска. Хотите совместить спорт, путешествие и новые знакомства в одной поездке." },
-              { emoji: "👥", title: "Хотите компанию", desc: "Не с кем поехать? 80% участников едут одни. К третьему дню группа становится командой. Уезжаете с друзьями." },
-            ].map((p) => (
-              <div key={p.title} className="reveal p-8 bg-card border border-border">
-                <span className="text-[32px] block mb-4">{p.emoji}</span>
-                <h3 className="font-display text-[18px] text-forest mb-3">{p.title}</h3>
-                <p className="text-[14px] text-text-body leading-[1.6] font-light">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 04. ПРОГРАММА ПО ДНЯМ (Accordion) ─── */}
+      {/* ─── ПРОГРАММА ПО ДНЯМ (Accordion) ─── */}
       <section className="bg-cream py-20 lg:py-28 px-6 lg:px-16" id="programme">
         <div className="max-w-[900px]">
           <p className="reveal text-[11px] tracking-[3px] uppercase text-gold mb-4">14–20 сентября 2026</p>
@@ -250,7 +204,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── 05. ТРЕНЕР ─── */}
+      {/* ─── ТРЕНЕР ─── */}
       <section className="bg-sand-light py-20 lg:py-28 px-6 lg:px-16" id="trainer">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-[1000px]">
           <div className="relative">
@@ -292,7 +246,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── 06. МЕСТО — ТЕНЕРИФЕ ─── */}
+      {/* ─── МЕСТО — ТЕНЕРИФЕ ─── */}
       <section className="relative py-20 lg:py-28 px-6 lg:px-16 overflow-hidden" id="location">
         <div className="absolute inset-0">
           <img src={bgFormats} alt="" className="w-full h-full object-cover" loading="lazy" />
@@ -358,8 +312,7 @@ const Index = () => {
         </div>
       </section>
 
-
-      {/* ─── 08. ЦЕНА И ТАРИФЫ ─── */}
+      {/* ─── ЦЕНА И ТАРИФЫ ─── */}
       <section className="relative py-20 lg:py-28 px-6 lg:px-16 overflow-hidden" id="pricing">
         <div className="absolute inset-0">
           <img src={bgPricing} alt="" className="w-full h-full object-cover" loading="lazy" />
@@ -372,7 +325,6 @@ const Index = () => {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px]">
-            {/* Sport */}
             <div className="reveal bg-forest p-8 lg:p-12 flex flex-col">
               <p className="text-[11px] tracking-[3px] uppercase text-gold/60 mb-4">Спортивный пакет</p>
               <div className="font-display text-[52px] font-light text-gold leading-none mb-2">€900</div>
@@ -389,7 +341,6 @@ const Index = () => {
               </a>
             </div>
 
-            {/* Tour */}
             <div className="reveal bg-card p-8 lg:p-12 flex flex-col">
               <p className="text-[11px] tracking-[3px] uppercase text-text-muted-custom mb-4">Турпакет · через оператора</p>
               <div className="font-display text-[44px] font-light text-forest leading-none mb-2">200 000 ₽</div>
@@ -433,7 +384,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── 09. FAQ ─── */}
+      {/* ─── FAQ ─── */}
       <section className="bg-sand-light py-20 lg:py-28 px-6 lg:px-16" id="faq">
         <div className="max-w-[680px]">
           <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-12">
@@ -456,7 +407,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── 10. ФИНАЛЬНЫЙ CTA + ФОРМА ─── */}
+      {/* ─── ФИНАЛЬНЫЙ CTA + ФОРМА ─── */}
       <section className="bg-forest py-20 lg:py-28 px-6 lg:px-16" id="cta">
         <div className="max-w-[600px] mx-auto text-center">
           <h2 className="reveal font-display font-light text-[clamp(28px,4vw,44px)] text-sand-light leading-[1.1] mb-2">
@@ -466,7 +417,6 @@ const Index = () => {
             Ответим в течение 2 часов в рабочее время
           </p>
 
-          {/* Мессенджеры — приоритет */}
           <div className="reveal flex flex-col sm:flex-row gap-3 mb-10">
             <a
               href="https://wa.me/?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%BA%D0%B5%D0%BC%D0%BF%D0%B5"
