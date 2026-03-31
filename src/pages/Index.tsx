@@ -361,31 +361,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── 07. ОТЗЫВЫ (placeholder — первый кемп) ─── */}
-      <section className="bg-cream py-20 lg:py-28 px-6 lg:px-16" id="reviews">
-        <div className="max-w-[900px]">
-          <p className="reveal text-[11px] tracking-[3px] uppercase text-gold mb-4">Отзывы</p>
-          <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-8">
-            Первый сезон кемпа
-          </h2>
-          <p className="reveal text-[15px] text-text-body leading-[1.6] font-light mb-10">
-            Это первый кемп — отзывов пока нет. Но вот что говорят ученики тренера:
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { name: "Участник 1", text: "«За неделю тренировок поставили подачу, которую я не мог освоить 3 года»", tag: "О прогрессе" },
-              { name: "Участник 2", text: "«Познакомился с людьми, с которыми до сих пор играю каждую неделю»", tag: "Об атмосфере" },
-              { name: "Участник 3", text: "«Ехал один, боялся что буду чужим — оказался неправ с первого вечера»", tag: "Для скептиков" },
-            ].map((r) => (
-              <div key={r.name} className="reveal p-6 bg-card border border-border">
-                <span className="text-[10px] tracking-[2px] uppercase text-gold mb-3 block">{r.tag}</span>
-                <p className="text-[15px] text-text-body leading-[1.6] font-light italic mb-4">{r.text}</p>
-                <p className="text-[13px] text-text-muted-custom">— {r.name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ─── 08. ЦЕНА И ТАРИФЫ ─── */}
       <section className="relative py-20 lg:py-28 px-6 lg:px-16 overflow-hidden" id="pricing">
