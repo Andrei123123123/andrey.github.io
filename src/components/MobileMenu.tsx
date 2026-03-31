@@ -4,9 +4,8 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "#programme", label: "Программа" },
   { href: "#trainer", label: "Тренер" },
-  { href: "#format", label: "Формат" },
+  { href: "#location", label: "Тенерифе" },
   { href: "#pricing", label: "Стоимость" },
-  { href: "#reviews", label: "Отзывы" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -35,7 +34,7 @@ const MobileMenu = () => {
       >
         <div className="flex justify-between items-center py-9 px-8">
           <span className="font-display text-[15px] italic text-gold tracking-[3px] uppercase">
-            Tennis · Padel · Tenerife
+            Tennis · Tenerife
           </span>
           <button
             onClick={() => setOpen(false)}
