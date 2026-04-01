@@ -321,7 +321,7 @@ const Index = () => {
         <div className="relative z-10 max-w-[900px]">
           <p className="reveal text-[11px] tracking-[3px] uppercase text-gold mb-4">Стоимость</p>
           <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-12">
-            Два пакета. Всё прозрачно.
+            Два пакета
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px]">
