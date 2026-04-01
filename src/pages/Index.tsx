@@ -263,7 +263,7 @@ const Index = () => {
               { icon: <Sun size={24} />, num: "25–27°C", label: "Температура воздуха" },
               { icon: <Zap size={24} />, num: "55–60%", label: "Влажность · нет жары" },
               { icon: <Mountain size={24} />, num: "300+", label: "Солнечных дней в году" },
-              { icon: <Plane size={24} />, num: "~5 ч", label: "перелет с одной пересадкой" },
+              { icon: <Plane size={24} />, num: "~9 ч", label: "перелет с одной пересадкой" },
             ].map((f) => (
               <div key={f.label} className="reveal p-6 border border-gold/10 bg-forest/30 backdrop-blur-sm text-center">
                 <div className="text-gold mb-2 flex justify-center">{f.icon}</div>
@@ -293,7 +293,7 @@ const Index = () => {
               <h3 className="font-display text-[18px] text-sand-light mb-4">Как добраться</h3>
               <ul className="flex flex-col gap-3">
                 {[
-                  "Прямые рейсы из Москвы — ~5 часов",
+                  "Рейсы с минимумом пересадок ",
                   "Аэропорт Тенерифе Юг (TFS) — ближайший к кортам",
                   "Трансфер аэропорт → вилла включён",
                   "Помогаем с выбором рейсов",
