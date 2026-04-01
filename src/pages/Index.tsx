@@ -141,7 +141,7 @@ const Index = () => {
                 Теннис на Тенерифе.<br /><em className="italic text-gold">7 дней, которые меняют игру</em>
               </h1>
 
-              <p className="animate-fade-up mt-6 text-[17px] text-sand/70 leading-[1.6]" style={{ animationDelay: "0.15s" }}>
+              <p className="animate-fade-up mt-6 text-[18px] text-sand/80 leading-[1.65] font-medium" style={{ animationDelay: "0.15s" }}>
                 Сентябрь 2026 · 25°C · группы по уровням · {TOTAL} участников
               </p>
 
