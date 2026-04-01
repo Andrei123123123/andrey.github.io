@@ -112,7 +112,7 @@ const Index = () => {
             </h1>
 
             <p className="animate-fade-up mt-5 text-[15px] text-sand/70 leading-[1.6]" style={{ animationDelay: "0.15s" }}>
-              Сентябрь 2026 · 25°C · группы по уровням · {TOTAL} участников максимум
+              Сентябрь 2026 · 25°C · группы по уровням · {TOTAL} участников
             </p>
 
             <ul className="animate-fade-up mt-6 flex flex-col gap-2.5 list-none" style={{ animationDelay: "0.2s" }}>
