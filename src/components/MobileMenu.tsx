@@ -2,12 +2,10 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "#for-whom", label: "Для кого" },
-  { href: "#packages", label: "Форматы" },
   { href: "#programme", label: "Программа" },
   { href: "#trainer", label: "Тренер" },
+  { href: "#location", label: "Тенерифе" },
   { href: "#pricing", label: "Стоимость" },
-  { href: "#gallery", label: "Галерея" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -66,7 +64,7 @@ const MobileMenu = () => {
             onClick={() => setOpen(false)}
             className="block w-full py-4 text-center bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline"
           >
-            Записаться на тренировку
+            Забронировать место
           </a>
         </div>
       </div>
