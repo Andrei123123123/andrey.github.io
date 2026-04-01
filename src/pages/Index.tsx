@@ -128,7 +128,8 @@ const Index = () => {
                 "Оформляем шенген с пригласительным письмом от Tenerife Tennis Academy",
               ].map((item) => (
                 <li key={item} className="text-[14px] text-sand/60 flex gap-3 items-start">
-                  <Check size={14} className="text-gold flex-shrink-0 mt-0.5" />{item}
+                  <Check size={14} className="text-gold flex-shrink-0 mt-0.5" />
+                  <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<span class="text-gold font-semibold">$1</span>') }} />
                 </li>
               ))}
             </ul>
