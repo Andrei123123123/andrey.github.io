@@ -32,7 +32,6 @@ const WhatsAppIcon = ({ size = 16 }: { size?: number }) => (
 const Index = () => {
   const containerRef = useScrollReveal();
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
-  const [activeDay, setActiveDay] = useState(0);
   const [navScrolled, setNavScrolled] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "", level: "beginner" });
   const [formSent, setFormSent] = useState(false);
