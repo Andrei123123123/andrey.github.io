@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -36,7 +36,7 @@
     --border: 37 30% 82%;
     --input: 37 30% 82%;
     --ring: 37 46% 61%;
-    --radius: 0rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -55,18 +55,16 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
     overflow-x: hidden;
   }
 }
 
-/* Scroll behavior */
 html {
   scroll-behavior: smooth;
 }
 
-/* Hero animations */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -76,7 +74,6 @@ html {
   animation: fadeUp 0.7s ease both;
 }
 
-/* Scroll reveal utility */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
