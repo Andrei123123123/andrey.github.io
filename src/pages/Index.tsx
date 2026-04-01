@@ -263,7 +263,7 @@ const Index = () => {
               { icon: <Sun size={24} />, num: "25–27°C", label: "Температура воздуха" },
               { icon: <Zap size={24} />, num: "55–60%", label: "Влажность · нет жары" },
               { icon: <Mountain size={24} />, num: "300+", label: "Солнечных дней в году" },
-              { icon: <Plane size={24} />, num: "~5 ч", label: "Прямой рейс из Москвы" },
+              { icon: <Plane size={24} />, num: "~5 ч", label: "перелет с одной пересадкой" },
             ].map((f) => (
               <div key={f.label} className="reveal p-6 border border-gold/10 bg-forest/30 backdrop-blur-sm text-center">
                 <div className="text-gold mb-2 flex justify-center">{f.icon}</div>
