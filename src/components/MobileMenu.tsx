@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#programme", label: "Программа" },
-  { href: "#trainer", label: "Тренер" },
+  { href: "#trainer", label: "Команда" },
   { href: "#location", label: "Тенерифе" },
   { href: "#pricing", label: "Стоимость" },
   { href: "#faq", label: "FAQ" },
