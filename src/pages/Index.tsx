@@ -287,8 +287,8 @@ const Index = () => {
           <div className="absolute inset-0 bg-cream/92" />
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[3px] uppercase text-gold mb-4 font-medium">Стоимость</p>
-          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] mb-14">
+          <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-semibold">Стоимость</p>
+          <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] mb-14">
             Два пакета
           </h2>
 
