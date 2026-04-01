@@ -344,7 +344,7 @@ const Index = () => {
           {faqs.map((faq, i) => (
             <div key={i} className="reveal border-b border-forest/10">
               <button className="w-full bg-transparent border-none cursor-pointer py-7 flex justify-between items-center gap-6 text-left" onClick={() => toggleFaq(i)}>
-                <span className="font-display text-[20px] font-medium text-forest leading-[1.3]">{faq.q}</span>
+                <span className="font-display text-[22px] font-semibold text-forest leading-[1.3]">{faq.q}</span>
                 <span className="w-6 h-6 flex-shrink-0 rounded-full border border-gold/40 relative">
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-px bg-gold" />
                   <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-3 bg-gold transition-all duration-300 ${faqOpen === i ? "opacity-0 rotate-90" : ""}`} />
