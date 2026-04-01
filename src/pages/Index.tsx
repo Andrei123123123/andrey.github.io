@@ -338,7 +338,7 @@ const Index = () => {
       {/* ─── FAQ ─── */}
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="faq">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] mb-14">
+          <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] mb-14">
             Частые вопросы
           </h2>
           {faqs.map((faq, i) => (
