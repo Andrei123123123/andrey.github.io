@@ -95,7 +95,7 @@ const Index = () => {
             { href: "#faq", label: "FAQ" },
           ].map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="text-[13px] tracking-[1.5px] uppercase text-sand/80 no-underline hover:text-gold transition-colors duration-300 font-medium">{l.label}</a>
+              <a href={l.href} className="text-[14px] tracking-[1.5px] uppercase text-sand/90 no-underline hover:text-gold transition-colors duration-300 font-semibold">{l.label}</a>
             </li>
           ))}
         </ul>
@@ -141,7 +141,7 @@ const Index = () => {
                 Теннис на Тенерифе.<br /><em className="italic text-gold">7 дней, которые меняют игру</em>
               </h1>
 
-              <p className="animate-fade-up mt-6 text-[17px] text-sand/70 leading-[1.6]" style={{ animationDelay: "0.15s" }}>
+              <p className="animate-fade-up mt-6 text-[18px] text-sand/80 leading-[1.65] font-medium" style={{ animationDelay: "0.15s" }}>
                 Сентябрь 2026 · 25°C · группы по уровням · {TOTAL} участников
               </p>
 
@@ -180,7 +180,7 @@ const Index = () => {
                     "Всё под ключ — делаем за вас",
                     "Оформляем шенген с письмом от академии",
                   ].map((item) => (
-                    <li key={item} className="text-[15px] text-sand/70 flex gap-3 items-start leading-[1.5]">
+                    <li key={item} className="text-[16px] text-sand/80 flex gap-3 items-start leading-[1.6]">
                       <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
@@ -287,8 +287,8 @@ const Index = () => {
           <div className="absolute inset-0 bg-cream/92" />
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[3px] uppercase text-gold mb-4 font-medium">Стоимость</p>
-          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] mb-14">
+          <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-semibold">Стоимость</p>
+          <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] mb-14">
             Два пакета
           </h2>
 
@@ -299,7 +299,7 @@ const Index = () => {
               <p className="text-[14px] text-sand/40 mb-10">на человека</p>
               <ul className="flex flex-col gap-3.5 flex-1">
                 {["6 тренировок теннис/падел (2 ч каждая)", "Видеоразбор техники", "Яхта, Тейде, Маска, сёрфинг", "Турнир и банкет в замке", "Трансферы по острову", "Организация"].map((f) => (
-                  <li key={f} className="text-[15px] text-sand/60 flex gap-3 items-start">
+                  <li key={f} className="text-[16px] text-sand/70 flex gap-3 items-start leading-[1.6]">
                     <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />{f}
                   </li>
                 ))}
@@ -321,7 +321,7 @@ const Index = () => {
                   "Виза — 20 000 ₽",
                   "Страховка",
                 ].map((f) => (
-                  <li key={f} className="text-[15px] text-text-body flex gap-3 items-start">
+                  <li key={f} className="text-[16px] text-text-body flex gap-3 items-start leading-[1.6]">
                     <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />{f}
                   </li>
                 ))}
@@ -331,27 +331,27 @@ const Index = () => {
               </a>
             </div>
           </div>
-          <p className="text-[13px] text-text-muted-custom mt-6">Цены действительны при бронировании до 1 августа 2026.</p>
+          <p className="text-[14px] text-text-muted-custom mt-6 leading-relaxed">Цены действительны при бронировании до 1 августа 2026. Стоимость турпакета и проживания может варьироваться в зависимости от даты бронирования, сезона и выбранных условий — уточняйте актуальную стоимость у организаторов.</p>
         </div>
       </section>
 
       {/* ─── FAQ ─── */}
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="faq">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] mb-14">
+          <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] mb-14">
             Частые вопросы
           </h2>
           {faqs.map((faq, i) => (
             <div key={i} className="reveal border-b border-forest/10">
               <button className="w-full bg-transparent border-none cursor-pointer py-7 flex justify-between items-center gap-6 text-left" onClick={() => toggleFaq(i)}>
-                <span className="font-display text-[20px] font-medium text-forest leading-[1.3]">{faq.q}</span>
+                <span className="font-display text-[22px] font-semibold text-forest leading-[1.3]">{faq.q}</span>
                 <span className="w-6 h-6 flex-shrink-0 rounded-full border border-gold/40 relative">
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-px bg-gold" />
                   <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-3 bg-gold transition-all duration-300 ${faqOpen === i ? "opacity-0 rotate-90" : ""}`} />
                 </span>
               </button>
               <div className="overflow-hidden transition-all duration-400" style={{ maxHeight: faqOpen === i ? "200px" : "0", paddingBottom: faqOpen === i ? "24px" : "0" }}>
-                <p className="text-[16px] leading-[1.7] text-text-body">{faq.a}</p>
+                <p className="text-[17px] leading-[1.75] text-text-body">{faq.a}</p>
               </div>
             </div>
           ))}
