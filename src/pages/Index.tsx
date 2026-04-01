@@ -58,13 +58,13 @@ const Index = () => {
   ];
 
   const days = [
-    { d: "14", wd: "Пн", title: "Прилёт и знакомство", activities: ["Встреча в аэропорту TFS, трансфер на виллу", "Заселение, отдых, пляж", "Знакомство группы за ужином", "Первая вечерняя тренировка — разминка и оценка уровня"], img: day14 },
-    { d: "15", wd: "Вт", title: "Ущелье Маска + корт", activities: ["Ущелье Маска — каньон с 600-метровыми стенами", "Спуск к морю пешком, обратно на лодке", "Обед", "Вечерняя тренировка: работа над техникой ударов"], img: day15 },
-    { d: "16", wd: "Ср", title: "Яхта + корт", activities: ["Морская прогулка вдоль побережья Los Gigantes", "Купание в открытом океане, дельфины", "Обед на яхте", "Вечерняя тренировка: подача и приём"], img: day16 },
-    { d: "17", wd: "Чт", title: "Свободный день + корт", activities: ["Отдых: бассейн, чёрный пляж, шоппинг или спа", "Свободное время на острове", "Обед", "Вечерняя тренировка: индивидуальный разбор ошибок"], img: day17 },
-    { d: "18", wd: "Пт", title: "Вулкан Тейде + корт", activities: ["Тейде (3 718 м) — высшая точка Испании", "Подъём на канатной дороге, виды над облаками", "Обед", "Вечерняя тренировка: тактика и розыгрыши"], img: day18 },
-    { d: "19", wd: "Сб", title: "Сёрфинг + корт", activities: ["Урок сёрфинга с инструктором, любой уровень", "Волны Атлантики, пляж", "Обед", "Предтурнирная тренировка: парные комбинации"], img: day19 },
-    { d: "20", wd: "Вс", title: "Турнир и банкет", activities: ["Финальный дружеский турнир среди участников", "Награждение победителей", "Прощальный банкет в замке Сан-Мигель", "Трансфер в аэропорт (для вечерних рейсов)"], img: day20 },
+    { d: "14", wd: "Пн", title: "Прилёт и знакомство", preview: "Трансфер из аэропорта, заселение на виллу у океана. Вечером — знакомство за ужином и первая тренировка для оценки уровня.", tags: ["Трансфер", "Ужин", "Тренировка"], activities: ["Встреча в аэропорту TFS, трансфер на виллу", "Заселение, отдых, пляж", "Знакомство группы за ужином", "Первая вечерняя тренировка — разминка и оценка уровня"], img: day14 },
+    { d: "15", wd: "Вт", title: "Ущелье Маска + корт", preview: "Легендарный каньон с 600-метровыми стенами — спуск пешком, возврат на лодке. Вечером работа над техникой ударов.", tags: ["Хайкинг", "Каньон", "Техника"], activities: ["Ущелье Маска — каньон с 600-метровыми стенами", "Спуск к морю пешком, обратно на лодке", "Обед", "Вечерняя тренировка: работа над техникой ударов"], img: day15 },
+    { d: "16", wd: "Ср", title: "Яхта + корт", preview: "Морская прогулка вдоль скал Los Gigantes, купание в открытом океане с дельфинами. Вечером — подача и приём.", tags: ["Яхта", "Океан", "Подача"], activities: ["Морская прогулка вдоль побережья Los Gigantes", "Купание в открытом океане, дельфины", "Обед на яхте", "Вечерняя тренировка: подача и приём"], img: day16 },
+    { d: "17", wd: "Чт", title: "Свободный день + корт", preview: "Расслабленный день: бассейн, чёрный вулканический пляж, шоппинг или спа. Вечером — индивидуальный разбор ошибок.", tags: ["Отдых", "Пляж", "Разбор"], activities: ["Отдых: бассейн, чёрный пляж, шоппинг или спа", "Свободное время на острове", "Обед", "Вечерняя тренировка: индивидуальный разбор ошибок"], img: day17 },
+    { d: "18", wd: "Пт", title: "Вулкан Тейде + корт", preview: "Подъём на высшую точку Испании (3 718 м) по канатной дороге — виды над облаками. Вечером тактика и розыгрыши.", tags: ["Вулкан", "3718 м", "Тактика"], activities: ["Тейде (3 718 м) — высшая точка Испании", "Подъём на канатной дороге, виды над облаками", "Обед", "Вечерняя тренировка: тактика и розыгрыши"], img: day18 },
+    { d: "19", wd: "Сб", title: "Сёрфинг + корт", preview: "Урок сёрфинга на волнах Атлантики — подходит для любого уровня. Вечером предтурнирная тренировка парных комбинаций.", tags: ["Сёрфинг", "Волны", "Парная игра"], activities: ["Урок сёрфинга с инструктором, любой уровень", "Волны Атлантики, пляж", "Обед", "Предтурнирная тренировка: парные комбинации"], img: day19 },
+    { d: "20", wd: "Вс", title: "Турнир и банкет", preview: "Финальный дружеский турнир, награждение победителей и прощальный ужин в средневековом замке Сан-Мигель.", tags: ["Турнир", "Награждение", "Банкет"], activities: ["Финальный дружеский турнир среди участников", "Награждение победителей", "Прощальный банкет в замке Сан-Мигель", "Трансфер в аэропорт (для вечерних рейсов)"], img: day20 },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -154,50 +154,74 @@ const Index = () => {
 
       {/* ─── ПРОГРАММА ПО ДНЯМ (Accordion) ─── */}
       <section className="bg-cream py-20 lg:py-28 px-6 lg:px-16" id="programme">
-        <div className="max-w-[900px]">
+        <div className="max-w-[1000px]">
           <p className="reveal text-[11px] tracking-[3px] uppercase text-gold mb-4">14–20 сентября 2026</p>
           <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-4">
             Программа по дням
           </h2>
-          <p className="reveal text-[15px] text-text-body leading-[1.6] font-light mb-10">
+          <p className="reveal text-[15px] text-text-body leading-[1.6] font-light mb-12">
             Каждый день — новый маршрут утром и тренировка вечером. 6 тренировок × 2 часа = 12 часов на корте за неделю.
           </p>
 
-          <div className="flex flex-col gap-[2px]">
-            {days.map((day, i) => (
-              <div key={day.d} className="reveal">
-                <button
-                  className="w-full bg-card border border-border cursor-pointer p-5 flex items-center gap-5 text-left hover:bg-sand-light transition-colors duration-200"
-                  onClick={() => setActiveDay(activeDay === i ? -1 : i)}
-                >
-                  <span className="font-display text-[28px] font-light text-gold leading-none w-10">{day.d}</span>
-                  <div className="flex-1">
-                    <span className="text-[10px] tracking-[2px] uppercase text-text-muted-custom">{day.wd}</span>
-                    <p className="font-display text-[17px] text-forest">{day.title}</p>
-                  </div>
-                  <span className="w-6 h-6 flex-shrink-0 rounded-full border border-gold/40 flex items-center justify-center">
-                    <span className="w-3 h-px bg-gold" />
-                    <span className={`absolute w-px h-3 bg-gold transition-all duration-300 ${activeDay === i ? "opacity-0 rotate-90" : ""}`} />
-                  </span>
-                </button>
-                <div className="overflow-hidden transition-all duration-400" style={{ maxHeight: activeDay === i ? "400px" : "0" }}>
-                  <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-4 p-5 bg-card border-x border-b border-border">
-                    <img src={day.img} alt={`День ${day.d}`} className="w-full h-[140px] object-cover" loading="lazy" />
-                    <ul className="flex flex-col gap-2 list-none">
-                      {day.activities.map((a) => (
-                        <li key={a} className="text-[14px] text-text-body leading-[1.5] font-light flex gap-3 items-start">
-                          <Check size={14} className="text-gold flex-shrink-0 mt-0.5" />{a}
-                        </li>
-                      ))}
-                    </ul>
+          <div className="flex flex-col gap-3">
+            {days.map((day, i) => {
+              const isOpen = activeDay === i;
+              return (
+                <div key={day.d} className="reveal">
+                  <button
+                    className={`w-full cursor-pointer rounded-lg p-5 md:p-6 flex items-start gap-5 text-left transition-all duration-300 border ${isOpen ? "bg-forest border-forest shadow-xl" : "bg-card border-border hover:border-gold/40 hover:shadow-md"}`}
+                    onClick={() => setActiveDay(isOpen ? -1 : i)}
+                  >
+                    <div className={`flex flex-col items-center flex-shrink-0 ${isOpen ? "text-gold" : "text-gold"}`}>
+                      <span className="font-display text-[32px] font-light leading-none">{day.d}</span>
+                      <span className="text-[10px] tracking-[2px] uppercase mt-1 opacity-60">{day.wd}</span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className={`font-display text-[18px] md:text-[20px] transition-colors duration-300 ${isOpen ? "text-sand-light" : "text-forest"}`}>{day.title}</p>
+                      <p className={`text-[13px] leading-[1.5] mt-1.5 font-light transition-colors duration-300 ${isOpen ? "text-sand/60" : "text-text-body/70"}`}>{day.preview}</p>
+                      {!isOpen && (
+                        <div className="flex flex-wrap gap-2 mt-3">
+                          {day.tags.map((tag) => (
+                            <span key={tag} className="text-[10px] tracking-[1px] uppercase px-2.5 py-1 rounded-full bg-gold/10 text-gold border border-gold/20">{tag}</span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <span className={`w-7 h-7 flex-shrink-0 rounded-full border flex items-center justify-center transition-all duration-300 mt-1 ${isOpen ? "border-gold/60 bg-gold/10 rotate-45" : "border-gold/30"}`}>
+                      <span className="w-3 h-px bg-gold" />
+                      <span className={`absolute w-px h-3 bg-gold transition-all duration-300 ${isOpen ? "opacity-0" : ""}`} />
+                    </span>
+                  </button>
+
+                  <div className="overflow-hidden transition-all duration-500 ease-in-out" style={{ maxHeight: isOpen ? "600px" : "0" }}>
+                    <div className="pt-0 px-1">
+                      <div className="rounded-b-lg overflow-hidden bg-forest border border-t-0 border-forest">
+                        <div className="relative">
+                          <img src={day.img} alt={`День ${day.d} — ${day.title}`} className="w-full h-[220px] md:h-[300px] object-cover" loading="lazy" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/30 to-transparent" />
+                          <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                            <p className="font-display text-[14px] text-gold/80 mb-2 tracking-[1px] uppercase">Расписание дня</p>
+                          </div>
+                        </div>
+                        <div className="p-5 md:p-6 pt-2 md:pt-3">
+                          <ul className="flex flex-col gap-3 list-none">
+                            {day.activities.map((a) => (
+                              <li key={a} className="text-[14px] text-sand/70 leading-[1.5] font-light flex gap-3 items-start">
+                                <Check size={14} className="text-gold flex-shrink-0 mt-0.5" />{a}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center gap-5 reveal">
-            <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-forest text-gold font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-forest-mid transition-all duration-300">
+          <div className="mt-12 flex flex-col sm:flex-row items-center gap-5 reveal">
+            <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-forest text-gold font-body text-[11px] font-medium tracking-[3px] uppercase no-underline rounded-lg hover:bg-forest-mid transition-all duration-300">
               Забронировать <ArrowRight size={14} />
             </a>
           </div>
