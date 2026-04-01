@@ -124,6 +124,8 @@ const Index = () => {
                 "Трансфер аэропорт — вилла — аэропорт",
                 "Турнир среди участников в финальный день",
                 "Экскурсии: Тейде, яхта, Маска, сёрфинг",
+                "Делаем **всё под ключ**",
+                "Оформляем шенген с пригласительным письмом от Tenerife Tennis Academy",
               ].map((item) => (
                 <li key={item} className="text-[14px] text-sand/60 flex gap-3 items-start">
                   <Check size={14} className="text-gold flex-shrink-0 mt-0.5" />{item}
