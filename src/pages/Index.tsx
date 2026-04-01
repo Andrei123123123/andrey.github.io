@@ -8,6 +8,8 @@ import WhyUs from "@/components/WhyUs";
 import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
 import LocationSection from "@/components/LocationSection";
+import { Check, ArrowRight } from "lucide-react";
+import heroImg from "@/assets/hero-tenerife.jpg";
 import bgPricing from "@/assets/bg-pricing.jpg";
 
 const BOOKED = 4;
