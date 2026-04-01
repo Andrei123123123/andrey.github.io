@@ -112,7 +112,7 @@ const Index = () => {
             </h1>
 
             <p className="animate-fade-up mt-5 text-[15px] text-sand/70 leading-[1.6]" style={{ animationDelay: "0.15s" }}>
-              Сентябрь 2026 · 25°C · группы по уровням · {TOTAL} участников максимум
+              Сентябрь 2026 · 25°C · группы по уровням · {TOTAL} участников
             </p>
 
             <ul className="animate-fade-up mt-6 flex flex-col gap-2.5 list-none" style={{ animationDelay: "0.2s" }}>
@@ -263,7 +263,7 @@ const Index = () => {
               { icon: <Sun size={24} />, num: "25–27°C", label: "Температура воздуха" },
               { icon: <Zap size={24} />, num: "55–60%", label: "Влажность · нет жары" },
               { icon: <Mountain size={24} />, num: "300+", label: "Солнечных дней в году" },
-              { icon: <Plane size={24} />, num: "~5 ч", label: "Прямой рейс из Москвы" },
+              { icon: <Plane size={24} />, num: "~5 ч", label: "перелет с одной пересадкой" },
             ].map((f) => (
               <div key={f.label} className="reveal p-6 border border-gold/10 bg-forest/30 backdrop-blur-sm text-center">
                 <div className="text-gold mb-2 flex justify-center">{f.icon}</div>
@@ -321,7 +321,7 @@ const Index = () => {
         <div className="relative z-10 max-w-[900px]">
           <p className="reveal text-[11px] tracking-[3px] uppercase text-gold mb-4">Стоимость</p>
           <h2 className="reveal font-display font-light text-[clamp(28px,3.5vw,44px)] text-forest leading-[1.15] mb-12">
-            Два пакета. Всё прозрачно.
+            Два пакета
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px]">
@@ -347,8 +347,8 @@ const Index = () => {
               <p className="text-[13px] text-text-muted-custom mb-8">перелёт + вилла + питание + виза + страховка</p>
               <ul className="flex flex-col gap-3 flex-1">
                 {[
-                  "Перелёт Москва — Тенерифе — 90 000 ₽",
-                  "Проживание на вилле с бассейном",
+                  "Перелёт Москва/Питер — Тенерифе — 90 000 ₽",
+                  "Проживание на вилле у моря",
                   "Питание от повара (3 раза в день)",
                   "Виза — 20 000 ₽",
                   "Страховка",
