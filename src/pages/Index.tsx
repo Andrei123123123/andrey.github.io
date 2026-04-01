@@ -8,15 +8,6 @@ import WhyUs from "@/components/WhyUs";
 import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
 import LocationSection from "@/components/LocationSection";
-import { Check, ArrowRight, MessageCircle } from "lucide-react";
-import heroImg from "@/assets/hero-tenerife.jpg";
-import day14 from "@/assets/day-14.jpg";
-import day15 from "@/assets/day-15.jpg";
-import day16 from "@/assets/day-16.jpg";
-import day17 from "@/assets/day-17.jpg";
-import day18 from "@/assets/day-18.jpg";
-import day19 from "@/assets/day-19.jpg";
-import day20 from "@/assets/day-20.jpg";
 import bgPricing from "@/assets/bg-pricing.jpg";
 
 const BOOKED = 4;
