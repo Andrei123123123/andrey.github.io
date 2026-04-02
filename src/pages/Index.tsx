@@ -142,7 +142,7 @@ const Index = () => {
               </h1>
 
               <p className="animate-fade-up mt-6 text-[18px] text-sand/80 leading-[1.65] font-medium" style={{ animationDelay: "0.15s" }}>
-                Сентябрь 2026 · 25°C · группы по уровням · {TOTAL} участников
+                Вилла на всю группу, повар, корты, трансферы, экскурсии — мы собрали всё, тебе остаётся только прилететь. Теннис или падел каждый вечер, а днём — океан, горы и приключения.
               </p>
 
               <div className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: "0.3s" }}>
