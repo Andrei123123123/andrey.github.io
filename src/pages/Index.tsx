@@ -217,8 +217,8 @@ const Index = () => {
                       <span className="text-[11px] tracking-[2px] uppercase mt-1 opacity-60">{day.wd}</span>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className={`font-display text-[20px] md:text-[22px] font-medium transition-colors duration-300 ${isOpen ? "text-sand-light" : "text-forest"}`}>{day.title}</p>
-                      <p className={`text-[15px] leading-[1.6] mt-2 transition-colors duration-300 ${isOpen ? "text-sand/60" : "text-text-body/70"}`}>{day.preview}</p>
+                      <span className={`block font-display text-[20px] md:text-[22px] font-medium transition-colors duration-300 ${isOpen ? "text-sand-light" : "text-forest"}`}>{day.title}</span>
+                      <span className={`block text-[15px] leading-[1.6] mt-2 transition-colors duration-300 ${isOpen ? "text-sand/60" : "text-text-body/70"}`}>{day.preview}</span>
                       {!isOpen && (
                         <div className="flex flex-wrap gap-2 mt-3">
                           {day.tags.map((tag) => (
@@ -240,7 +240,7 @@ const Index = () => {
                           <img src={day.img} alt={`День ${day.d} — ${day.title}`} className="w-full h-[220px] md:h-[300px] object-cover" loading="lazy" />
                           <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/30 to-transparent" />
                           <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                            <p className="font-display text-[14px] text-gold/80 mb-2 tracking-[1px] uppercase font-medium">Расписание дня</p>
+                            <span className="block font-display text-[14px] text-gold/80 mb-2 tracking-[1px] uppercase font-medium">Расписание дня</span>
                           </div>
                         </div>
                         <div className="p-5 md:p-6 pt-2 md:pt-3">
