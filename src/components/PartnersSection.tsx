@@ -1,4 +1,5 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import vizagoLogo from "@/assets/vizago-logo.jpeg";
 
 const PartnersSection = () => {
   const ref = useScrollReveal();
@@ -15,8 +16,8 @@ const PartnersSection = () => {
           {/* Vizago */}
           <div className="reveal bg-card rounded-lg p-8 lg:p-10 border border-border hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-lg bg-forest/10 border border-gold/20 flex items-center justify-center flex-shrink-0">
-                <span className="font-display text-[20px] font-bold text-forest">V</span>
+              <div className="w-16 h-16 rounded-lg bg-white border border-gold/20 flex items-center justify-center flex-shrink-0 overflow-hidden p-1.5">
+                <img src={vizagoLogo} alt="Vizago" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="font-display text-[22px] font-medium text-forest">Vizago</h3>
