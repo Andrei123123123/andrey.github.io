@@ -1,5 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import vizagoLogo from "@/assets/vizago-logo.jpeg";
+import ttaLogo from "@/assets/tta-logo.png";
 
 const PartnersSection = () => {
   const ref = useScrollReveal();
