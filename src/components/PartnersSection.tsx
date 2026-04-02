@@ -41,8 +41,8 @@ const PartnersSection = () => {
           {/* Tenerife Tennis Academy */}
           <div className="reveal bg-card rounded-lg p-8 lg:p-10 border border-border hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-lg bg-forest/10 border border-gold/20 flex items-center justify-center flex-shrink-0">
-                <span className="text-[28px]">🎾</span>
+              <div className="w-20 h-20 rounded-xl bg-white shadow-md border border-gold/15 flex items-center justify-center flex-shrink-0 overflow-hidden p-2">
+                <img src={ttaLogo} alt="Tenerife Tennis Academy" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="font-display text-[22px] font-medium text-forest">Tenerife Tennis Academy</h3>
