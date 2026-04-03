@@ -21,11 +21,11 @@ const TeamSection = () => {
   return (
     <section ref={ref} className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="trainer">
       <div className="max-w-[1200px] mx-auto">
-        <p className="reveal text-[12px] tracking-[3px] uppercase text-gold mb-4 font-medium">Команда</p>
+        <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-medium">Команда</p>
         <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] mb-6">
           Наша команда
         </h2>
-        <p className="reveal text-[16px] text-text-body leading-[1.7] max-w-[600px] mb-16">
+        <p className="reveal text-[18px] text-text-body leading-[1.7] max-w-[600px] mb-16">
           Два организатора, которые проведут вас через весь процесс — от бронирования до последнего дня на острове. Тренировки ведут профессионалы Tenerife Tennis Academy.
         </p>
 
@@ -41,13 +41,13 @@ const TeamSection = () => {
                       <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
                     </svg>
                   </div>
-                  <p className="text-[11px] tracking-[2px] uppercase text-text-muted-custom">{person.placeholder}</p>
+                  <p className="text-[13px] tracking-[2px] uppercase text-text-muted-custom">{person.placeholder}</p>
                 </div>
               </div>
               <div className="p-8">
                 <h3 className="font-display text-[24px] font-medium text-forest mb-1">{person.name}</h3>
-                <p className="text-[12px] tracking-[2px] uppercase text-gold mb-4 font-medium">{person.role}</p>
-                <p className="text-[15px] text-text-body leading-[1.7]">{person.desc}</p>
+                <p className="text-[13px] tracking-[2px] uppercase text-gold mb-4 font-medium">{person.role}</p>
+                <p className="text-[16px] text-text-body leading-[1.7]">{person.desc}</p>
               </div>
             </div>
           ))}
@@ -61,15 +61,15 @@ const TeamSection = () => {
                 <div className="w-28 h-28 rounded-full bg-gold/10 border-2 border-gold/30 mx-auto mb-6 flex items-center justify-center">
                   <span className="font-display text-[32px] text-gold">🎾</span>
                 </div>
-                <p className="text-[11px] tracking-[2px] uppercase text-sand/50">Логотип академии</p>
+                <p className="text-[13px] tracking-[2px] uppercase text-sand/50">Логотип академии</p>
               </div>
             </div>
             <div className="p-8 lg:p-12 flex flex-col justify-center">
-              <p className="text-[12px] tracking-[3px] uppercase text-gold/60 mb-3 font-medium">Тренеры</p>
+              <p className="text-[13px] tracking-[3px] uppercase text-gold/60 mb-3 font-medium">Тренеры</p>
               <h3 className="font-display text-[28px] font-medium text-sand-light mb-4">
                 Tenerife Tennis Academy
               </h3>
-              <p className="text-[16px] text-sand/70 leading-[1.7] mb-6">
+              <p className="text-[17px] text-sand/70 leading-[1.7] mb-6">
                 Профессиональная академия тенниса на юге Тенерифе. Лицензированные тренеры с международным опытом работают с игроками любого уровня — от первого удара до турнирной подготовки.
               </p>
               <ul className="flex flex-col gap-2.5 mb-8">
@@ -79,7 +79,7 @@ const TeamSection = () => {
                   "Видеоанализ техники ударов",
                   "Русскоязычные тренеры",
                 ].map((item) => (
-                  <li key={item} className="text-[15px] text-sand/60 flex gap-3 items-start">
+                  <li key={item} className="text-[16px] text-sand/60 flex gap-3 items-start">
                     <span className="text-gold flex-shrink-0">—</span>{item}
                   </li>
                 ))}
@@ -88,7 +88,7 @@ const TeamSection = () => {
                 href="https://tenerifetennisacademy.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-gold text-[13px] font-medium tracking-[1px] hover:text-gold-light transition-colors no-underline"
+                className="inline-flex items-center gap-2 text-gold text-[14px] font-medium tracking-[1px] hover:text-gold-light transition-colors no-underline"
               >
                 tenerifetennisacademy.com →
               </a>

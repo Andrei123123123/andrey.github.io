@@ -62,7 +62,7 @@ const MobileMenu = () => {
           <a
             href="#cta"
             onClick={() => setOpen(false)}
-            className="block w-full py-4 text-center bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline"
+            className="block w-full py-4 text-center bg-gold text-forest font-body text-[13px] font-medium tracking-[3px] uppercase no-underline"
           >
             Забронировать место
           </a>

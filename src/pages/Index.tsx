@@ -95,7 +95,7 @@ const Index = () => {
             { href: "#faq", label: "FAQ" },
           ].map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="text-[14px] tracking-[1.5px] uppercase text-sand/90 no-underline hover:text-gold transition-colors duration-300 font-semibold">{l.label}</a>
+              <a href={l.href} className="text-[15px] tracking-[1.5px] uppercase text-sand/90 no-underline hover:text-gold transition-colors duration-300 font-semibold">{l.label}</a>
             </li>
           ))}
         </ul>
@@ -118,7 +118,7 @@ const Index = () => {
               </svg>
             </a>
           </div>
-          <a href="#cta" className="py-2.5 px-6 bg-gold text-forest font-body text-[11px] font-semibold tracking-[2px] uppercase no-underline hover:bg-gold-light transition-colors duration-300 rounded-md">
+          <a href="#cta" className="py-2.5 px-6 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-gold-light transition-colors duration-300 rounded-md">
             Забронировать
           </a>
         </div>
@@ -146,10 +146,10 @@ const Index = () => {
               </p>
 
               <div className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: "0.3s" }}>
-                <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
+                <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
                   Забронировать место <ArrowRight size={16} />
                 </a>
-                <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 py-4 px-8 border-2 border-sand/30 text-sand-light font-body text-[12px] font-medium tracking-[2px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
+                <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 py-4 px-8 border-2 border-sand/30 text-sand-light font-body text-[13px] font-medium tracking-[2px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
                   <TelegramIcon size={18} /> Написать нам
                 </a>
               </div>
@@ -158,7 +158,7 @@ const Index = () => {
                 <div className="w-[140px] h-[3px] bg-gold/20 rounded-full">
                   <div className="h-full bg-gold rounded-full transition-all duration-1000" style={{ width: `${(BOOKED / TOTAL) * 100}%` }} />
                 </div>
-                <span className="text-[13px] tracking-[1px] text-sand/50">
+                <span className="text-[14px] tracking-[1px] text-sand/50">
                   Забронировано: <strong className="text-gold font-semibold">{BOOKED}</strong> из {TOTAL}
                 </span>
               </div>
@@ -167,7 +167,7 @@ const Index = () => {
             {/* Right side — highlights */}
             <div className="animate-fade-up hidden lg:block" style={{ animationDelay: "0.25s" }}>
               <div className="bg-forest/40 backdrop-blur-md border border-gold/15 rounded-lg p-8">
-                <p className="text-[12px] tracking-[3px] uppercase text-gold mb-6 font-semibold">Что входит</p>
+                <p className="text-[13px] tracking-[3px] uppercase text-gold mb-6 font-semibold">Что входит</p>
                 <ul className="flex flex-col gap-3">
                   {[
                     "6 тренировок на открытых кортах (2 ч каждая)",
@@ -180,7 +180,7 @@ const Index = () => {
                     "Всё под ключ — делаем за вас",
                     "Оформляем шенген с письмом от академии",
                   ].map((item) => (
-                    <li key={item} className="text-[16px] text-sand/80 flex gap-3 items-start leading-[1.6]">
+                    <li key={item} className="text-[17px] text-sand/80 flex gap-3 items-start leading-[1.6]">
                       <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
@@ -195,11 +195,11 @@ const Index = () => {
       {/* ─── ПРОГРАММА ПО ДНЯМ ─── */}
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="programme">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[3px] uppercase text-gold mb-4 font-medium">14–20 сентября 2026</p>
+          <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-medium">14–20 сентября 2026</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] mb-4">
             Программа по дням
           </h2>
-          <p className="reveal text-[16px] text-text-body leading-[1.7] mb-14 max-w-[650px]">
+          <p className="reveal text-[17px] text-text-body leading-[1.7] mb-14 max-w-[650px]">
             Каждый день — новый маршрут утром и тренировка вечером. 6 тренировок × 2 часа = 12 часов на корте за неделю.
           </p>
 
@@ -214,15 +214,15 @@ const Index = () => {
                   >
                     <div className="flex flex-col items-center flex-shrink-0 text-gold">
                       <span className="font-display text-[36px] font-medium leading-none">{day.d}</span>
-                      <span className="text-[11px] tracking-[2px] uppercase mt-1 opacity-60">{day.wd}</span>
+                      <span className="text-[12px] tracking-[2px] uppercase mt-1 opacity-60">{day.wd}</span>
                     </div>
                     <div className="flex-1 min-w-0">
                       <span className={`block font-display text-[20px] md:text-[22px] font-medium transition-colors duration-300 ${isOpen ? "text-sand-light" : "text-forest"}`}>{day.title}</span>
-                      <span className={`block text-[15px] leading-[1.6] mt-2 transition-colors duration-300 ${isOpen ? "text-sand/60" : "text-text-body/70"}`}>{day.preview}</span>
+                      <span className={`block text-[16px] leading-[1.6] mt-2 transition-colors duration-300 ${isOpen ? "text-sand/60" : "text-text-body/70"}`}>{day.preview}</span>
                       {!isOpen && (
                         <div className="flex flex-wrap gap-2 mt-3">
                           {day.tags.map((tag) => (
-                            <span key={tag} className="text-[11px] tracking-[1px] uppercase px-3 py-1 rounded-full bg-gold/10 text-gold border border-gold/20 font-medium">{tag}</span>
+                            <span key={tag} className="text-[12px] tracking-[1px] uppercase px-3 py-1 rounded-full bg-gold/10 text-gold border border-gold/20 font-medium">{tag}</span>
                           ))}
                         </div>
                       )}
@@ -240,13 +240,13 @@ const Index = () => {
                           <img src={day.img} alt={`День ${day.d} — ${day.title}`} className="w-full h-[220px] md:h-[300px] object-cover" loading="lazy" />
                           <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/30 to-transparent" />
                           <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                            <span className="block font-display text-[14px] text-gold/80 mb-2 tracking-[1px] uppercase font-medium">Расписание дня</span>
+                            <span className="block font-display text-[15px] text-gold/80 mb-2 tracking-[1px] uppercase font-medium">Расписание дня</span>
                           </div>
                         </div>
                         <div className="p-5 md:p-6 pt-2 md:pt-3">
                           <ul className="flex flex-col gap-3 list-none">
                             {day.activities.map((a) => (
-                              <li key={a} className="text-[15px] text-sand/70 leading-[1.6] flex gap-3 items-start">
+                              <li key={a} className="text-[16px] text-sand/70 leading-[1.6] flex gap-3 items-start">
                                 <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />{a}
                               </li>
                             ))}
@@ -261,7 +261,7 @@ const Index = () => {
           </div>
 
           <div className="mt-14 flex flex-col sm:flex-row items-center gap-5 reveal">
-            <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-forest text-gold font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline rounded-md hover:bg-forest-mid transition-all duration-300">
+            <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-forest text-gold font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline rounded-md hover:bg-forest-mid transition-all duration-300">
               Забронировать <ArrowRight size={16} />
             </a>
           </div>
@@ -294,25 +294,25 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="reveal bg-forest rounded-lg p-8 lg:p-12 flex flex-col shadow-xl">
-              <p className="text-[12px] tracking-[3px] uppercase text-gold/60 mb-4 font-medium">Спортивный пакет</p>
+              <p className="text-[13px] tracking-[3px] uppercase text-gold/60 mb-4 font-medium">Спортивный пакет</p>
               <div className="font-display text-[56px] font-medium text-gold leading-none mb-2">€900</div>
-              <p className="text-[14px] text-sand/40 mb-10">на человека</p>
+              <p className="text-[15px] text-sand/40 mb-10">на человека</p>
               <ul className="flex flex-col gap-3.5 flex-1">
                 {["6 тренировок теннис/падел (2 ч каждая)", "Видеоразбор техники", "Яхта, Тейде, Маска, сёрфинг", "Турнир и банкет в замке", "Трансферы по острову", "Организация"].map((f) => (
-                  <li key={f} className="text-[16px] text-sand/70 flex gap-3 items-start leading-[1.6]">
+                  <li key={f} className="text-[17px] text-sand/70 flex gap-3 items-start leading-[1.6]">
                     <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />{f}
                   </li>
                 ))}
               </ul>
-              <a href="#cta" className="mt-10 py-4 text-center font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline bg-gold text-forest hover:bg-gold-light transition-all duration-300 block rounded-md">
+              <a href="#cta" className="mt-10 py-4 text-center font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline bg-gold text-forest hover:bg-gold-light transition-all duration-300 block rounded-md">
                 Забронировать — €900
               </a>
             </div>
 
             <div className="reveal bg-card rounded-lg p-8 lg:p-12 flex flex-col shadow-xl border border-border">
-              <p className="text-[12px] tracking-[3px] uppercase text-text-muted-custom mb-4 font-medium">Турпакет · через оператора</p>
+              <p className="text-[13px] tracking-[3px] uppercase text-text-muted-custom mb-4 font-medium">Турпакет · через оператора</p>
               <div className="font-display text-[48px] font-medium text-forest leading-none mb-2">200 000 ₽</div>
-              <p className="text-[14px] text-text-muted-custom mb-10">перелёт + вилла + питание + виза + страховка</p>
+              <p className="text-[15px] text-text-muted-custom mb-10">перелёт + вилла + питание + виза + страховка</p>
               <ul className="flex flex-col gap-3.5 flex-1">
                 {[
                   "Перелёт Москва/Питер — Тенерифе — 90 000 ₽",
@@ -321,17 +321,17 @@ const Index = () => {
                   "Виза — 20 000 ₽",
                   "Страховка",
                 ].map((f) => (
-                  <li key={f} className="text-[16px] text-text-body flex gap-3 items-start leading-[1.6]">
+                  <li key={f} className="text-[17px] text-text-body flex gap-3 items-start leading-[1.6]">
                     <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />{f}
                   </li>
                 ))}
               </ul>
-              <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="mt-10 py-4 text-center font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline border-2 border-gold/30 text-gold hover:bg-gold/5 transition-all duration-300 block rounded-md">
+              <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="mt-10 py-4 text-center font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline border-2 border-gold/30 text-gold hover:bg-gold/5 transition-all duration-300 block rounded-md">
                 Узнать подробнее
               </a>
             </div>
           </div>
-          <p className="text-[14px] text-text-muted-custom mt-6 leading-relaxed">Цены действительны при бронировании до 1 августа 2026. Стоимость турпакета и проживания может варьироваться в зависимости от даты бронирования, сезона и выбранных условий — уточняйте актуальную стоимость у организаторов.</p>
+          <p className="text-[15px] text-text-muted-custom mt-6 leading-relaxed">Цены действительны при бронировании до 1 августа 2026. Стоимость турпакета и проживания может варьироваться в зависимости от даты бронирования, сезона и выбранных условий — уточняйте актуальную стоимость у организаторов.</p>
         </div>
       </section>
 
@@ -351,7 +351,7 @@ const Index = () => {
                 </span>
               </button>
               <div className="overflow-hidden transition-all duration-400" style={{ maxHeight: faqOpen === i ? "200px" : "0", paddingBottom: faqOpen === i ? "24px" : "0" }}>
-                <p className="text-[17px] leading-[1.75] text-text-body">{faq.a}</p>
+                <p className="text-[18px] leading-[1.75] text-text-body">{faq.a}</p>
               </div>
             </div>
           ))}
@@ -364,7 +364,7 @@ const Index = () => {
           <h2 className="reveal font-display font-medium text-[clamp(32px,4.5vw,52px)] text-sand-light leading-[1.1] mb-3">
             Осталось {TOTAL - BOOKED} мест
           </h2>
-          <p className="reveal text-[16px] text-sand/50 mb-12 leading-[1.7]">
+          <p className="reveal text-[17px] text-sand/50 mb-12 leading-[1.7]">
             Ответим в течение 2 часов в рабочее время
           </p>
 
@@ -372,25 +372,25 @@ const Index = () => {
             <a
               href="https://wa.me/?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%BA%D0%B5%D0%BC%D0%BF%D0%B5"
               target="_blank" rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-3 py-4 px-8 bg-[hsl(142,70%,35%)] text-white font-body text-[12px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(142,70%,40%)] transition-all duration-300 rounded-md"
+              className="flex-1 inline-flex items-center justify-center gap-3 py-4 px-8 bg-[hsl(142,70%,35%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(142,70%,40%)] transition-all duration-300 rounded-md"
             >
               <WhatsAppIcon size={20} /> WhatsApp
             </a>
             <a
               href="https://t.me/oceaninthesky"
               target="_blank" rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-3 py-4 px-8 bg-[hsl(200,70%,45%)] text-white font-body text-[12px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(200,70%,50%)] transition-all duration-300 rounded-md"
+              className="flex-1 inline-flex items-center justify-center gap-3 py-4 px-8 bg-[hsl(200,70%,45%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(200,70%,50%)] transition-all duration-300 rounded-md"
             >
               <TelegramIcon size={20} /> Telegram
             </a>
           </div>
 
-          <div className="reveal text-[13px] text-sand/30 mb-8 uppercase tracking-[3px] font-medium">или оставьте заявку</div>
+          <div className="reveal text-[14px] text-sand/30 mb-8 uppercase tracking-[3px] font-medium">или оставьте заявку</div>
 
           {formSent ? (
             <div className="reveal bg-forest-light/40 border border-gold/20 p-10 text-center rounded-lg">
               <p className="font-display text-[24px] font-medium text-sand-light mb-3">Заявка принята!</p>
-              <p className="text-[16px] text-sand/60 leading-[1.7]">
+              <p className="text-[17px] text-sand/60 leading-[1.7]">
                 Мы свяжемся в течение 2 часов.<br />
                 Если срочно — напишите в{" "}
                 <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">WhatsApp</a> или{" "}
@@ -400,7 +400,7 @@ const Index = () => {
           ) : (
             <form onSubmit={handleSubmit} className="reveal flex flex-col gap-5 text-left">
               <div>
-                <label className="text-[12px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Имя</label>
+                <label className="text-[13px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Имя</label>
                 <input
                   type="text"
                   required
@@ -411,7 +411,7 @@ const Index = () => {
                 />
               </div>
               <div>
-                <label className="text-[12px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Телефон</label>
+                <label className="text-[13px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Телефон</label>
                 <input
                   type="tel"
                   required
@@ -422,7 +422,7 @@ const Index = () => {
                 />
               </div>
               <div>
-                <label className="text-[12px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Уровень игры</label>
+                <label className="text-[13px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Уровень игры</label>
                 <select
                   value={formData.level}
                   onChange={(e) => setFormData({ ...formData, level: e.target.value })}
@@ -434,10 +434,10 @@ const Index = () => {
                   <option value="advanced" className="bg-forest text-sand-light">Разрядник</option>
                 </select>
               </div>
-              <button type="submit" className="mt-4 py-4 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase cursor-pointer border-none hover:bg-gold-light transition-all duration-300 rounded-md">
+              <button type="submit" className="mt-4 py-4 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase cursor-pointer border-none hover:bg-gold-light transition-all duration-300 rounded-md">
                 Отправить заявку
               </button>
-              <p className="text-[12px] text-sand/25 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+              <p className="text-[13px] text-sand/25 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
             </form>
           )}
         </div>
@@ -448,7 +448,7 @@ const Index = () => {
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div>
             <span className="font-display text-[17px] italic text-gold tracking-[2px] block">Tennis · Tenerife</span>
-            <span className="text-[13px] text-sand/30 mt-1 block">14–20 сентября 2026</span>
+            <span className="text-[14px] text-sand/30 mt-1 block">14–20 сентября 2026</span>
           </div>
           <div className="flex items-center justify-center gap-6">
             <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="Telegram">

@@ -14,8 +14,8 @@
     --cream: 38 38% 96%;
     --gold: 37 46% 61%;
     --gold-light: 37 50% 74%;
-    --text-muted: 138 10% 58%;
-    --text-body: 140 12% 26%;
+    --text-muted: 138 10% 42%;
+    --text-body: 140 15% 18%;
 
     --background: 38 38% 96%;
     --foreground: 140 12% 26%;
@@ -57,7 +57,7 @@
     @apply bg-background text-foreground;
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.7;
     overflow-x: hidden;
   }

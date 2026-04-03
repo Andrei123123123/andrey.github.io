@@ -45,26 +45,26 @@ const Testimonials = () => {
               <Quote size={20} className="text-gold/20" />
             </div>
 
-            <p className="text-[14px] text-text-body leading-[1.75] font-light flex-1">
+            <p className="text-[16px] text-text-body leading-[1.75] font-light flex-1">
               «{t.text}»
             </p>
 
             <div className="flex items-center gap-4 pt-4 border-t border-forest/10">
               <div className="w-10 h-10 rounded-full bg-forest/10 border border-gold/20 flex items-center justify-center flex-shrink-0">
-                <span className="font-display text-[14px] text-forest">
+                <span className="font-display text-[16px] text-forest">
                   {t.name.charAt(0)}
                 </span>
               </div>
               <div>
-                <p className="text-[13px] font-normal text-forest">{t.name}</p>
-                <p className="text-[11px] text-text-muted-custom">{t.city}</p>
+                <p className="text-[15px] font-medium text-forest">{t.name}</p>
+                <p className="text-[13px] text-text-muted-custom">{t.city}</p>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      <p className="text-center text-[11px] text-text-muted-custom/60 mt-8 tracking-[1px]">
+      <p className="text-center text-[13px] text-text-muted-custom/60 mt-8 tracking-[1px]">
         * Имена изменены по просьбе участников. Реальные отзывы.
       </p>
     </section>
