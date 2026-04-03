@@ -351,7 +351,7 @@ const Index = () => {
                 </span>
               </button>
               <div className="overflow-hidden transition-all duration-400" style={{ maxHeight: faqOpen === i ? "200px" : "0", paddingBottom: faqOpen === i ? "24px" : "0" }}>
-                <p className="text-[17px] leading-[1.75] text-text-body">{faq.a}</p>
+                <p className="text-[18px] leading-[1.75] text-text-body">{faq.a}</p>
               </div>
             </div>
           ))}
