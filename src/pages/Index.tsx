@@ -199,7 +199,7 @@ const Index = () => {
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] mb-4">
             Программа по дням
           </h2>
-          <p className="reveal text-[16px] text-text-body leading-[1.7] mb-14 max-w-[650px]">
+          <p className="reveal text-[17px] text-text-body leading-[1.7] mb-14 max-w-[650px]">
             Каждый день — новый маршрут утром и тренировка вечером. 6 тренировок × 2 часа = 12 часов на корте за неделю.
           </p>
 
