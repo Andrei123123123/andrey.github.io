@@ -222,7 +222,7 @@ const Index = () => {
                       {!isOpen && (
                         <div className="flex flex-wrap gap-2 mt-3">
                           {day.tags.map((tag) => (
-                            <span key={tag} className="text-[11px] tracking-[1px] uppercase px-3 py-1 rounded-full bg-gold/10 text-gold border border-gold/20 font-medium">{tag}</span>
+                            <span key={tag} className="text-[12px] tracking-[1px] uppercase px-3 py-1 rounded-full bg-gold/10 text-gold border border-gold/20 font-medium">{tag}</span>
                           ))}
                         </div>
                       )}
