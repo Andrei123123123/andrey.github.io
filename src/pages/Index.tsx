@@ -299,7 +299,7 @@ const Index = () => {
               <p className="text-[15px] text-sand/40 mb-10">на человека</p>
               <ul className="flex flex-col gap-3.5 flex-1">
                 {["6 тренировок теннис/падел (2 ч каждая)", "Видеоразбор техники", "Яхта, Тейде, Маска, сёрфинг", "Турнир и банкет в замке", "Трансферы по острову", "Организация"].map((f) => (
-                  <li key={f} className="text-[16px] text-sand/70 flex gap-3 items-start leading-[1.6]">
+                  <li key={f} className="text-[17px] text-sand/70 flex gap-3 items-start leading-[1.6]">
                     <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />{f}
                   </li>
                 ))}
