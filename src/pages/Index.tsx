@@ -218,7 +218,7 @@ const Index = () => {
                     </div>
                     <div className="flex-1 min-w-0">
                       <span className={`block font-display text-[20px] md:text-[22px] font-medium transition-colors duration-300 ${isOpen ? "text-sand-light" : "text-forest"}`}>{day.title}</span>
-                      <span className={`block text-[15px] leading-[1.6] mt-2 transition-colors duration-300 ${isOpen ? "text-sand/60" : "text-text-body/70"}`}>{day.preview}</span>
+                      <span className={`block text-[16px] leading-[1.6] mt-2 transition-colors duration-300 ${isOpen ? "text-sand/60" : "text-text-body/70"}`}>{day.preview}</span>
                       {!isOpen && (
                         <div className="flex flex-wrap gap-2 mt-3">
                           {day.tags.map((tag) => (
