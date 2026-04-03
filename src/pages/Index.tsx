@@ -214,7 +214,7 @@ const Index = () => {
                   >
                     <div className="flex flex-col items-center flex-shrink-0 text-gold">
                       <span className="font-display text-[36px] font-medium leading-none">{day.d}</span>
-                      <span className="text-[11px] tracking-[2px] uppercase mt-1 opacity-60">{day.wd}</span>
+                      <span className="text-[12px] tracking-[2px] uppercase mt-1 opacity-60">{day.wd}</span>
                     </div>
                     <div className="flex-1 min-w-0">
                       <span className={`block font-display text-[20px] md:text-[22px] font-medium transition-colors duration-300 ${isOpen ? "text-sand-light" : "text-forest"}`}>{day.title}</span>
