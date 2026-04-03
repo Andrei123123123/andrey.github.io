@@ -261,7 +261,7 @@ const Index = () => {
           </div>
 
           <div className="mt-14 flex flex-col sm:flex-row items-center gap-5 reveal">
-            <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-forest text-gold font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline rounded-md hover:bg-forest-mid transition-all duration-300">
+            <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-forest text-gold font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline rounded-md hover:bg-forest-mid transition-all duration-300">
               Забронировать <ArrowRight size={16} />
             </a>
           </div>
