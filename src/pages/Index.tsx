@@ -379,7 +379,7 @@ const Index = () => {
             <a
               href="https://t.me/oceaninthesky"
               target="_blank" rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-3 py-4 px-8 bg-[hsl(200,70%,45%)] text-white font-body text-[12px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(200,70%,50%)] transition-all duration-300 rounded-md"
+              className="flex-1 inline-flex items-center justify-center gap-3 py-4 px-8 bg-[hsl(200,70%,45%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(200,70%,50%)] transition-all duration-300 rounded-md"
             >
               <TelegramIcon size={20} /> Telegram
             </a>
