@@ -118,7 +118,7 @@ const Index = () => {
               </svg>
             </a>
           </div>
-          <a href="#cta" className="py-2.5 px-6 bg-gold text-forest font-body text-[11px] font-semibold tracking-[2px] uppercase no-underline hover:bg-gold-light transition-colors duration-300 rounded-md">
+          <a href="#cta" className="py-2.5 px-6 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-gold-light transition-colors duration-300 rounded-md">
             Забронировать
           </a>
         </div>
