@@ -411,7 +411,7 @@ const Index = () => {
                 />
               </div>
               <div>
-                <label className="text-[12px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Телефон</label>
+                <label className="text-[13px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Телефон</label>
                 <input
                   type="tel"
                   required
