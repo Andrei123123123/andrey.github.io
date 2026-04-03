@@ -294,7 +294,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="reveal bg-forest rounded-lg p-8 lg:p-12 flex flex-col shadow-xl">
-              <p className="text-[12px] tracking-[3px] uppercase text-gold/60 mb-4 font-medium">Спортивный пакет</p>
+              <p className="text-[13px] tracking-[3px] uppercase text-gold/60 mb-4 font-medium">Спортивный пакет</p>
               <div className="font-display text-[56px] font-medium text-gold leading-none mb-2">€900</div>
               <p className="text-[14px] text-sand/40 mb-10">на человека</p>
               <ul className="flex flex-col gap-3.5 flex-1">
