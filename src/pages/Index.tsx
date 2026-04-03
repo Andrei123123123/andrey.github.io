@@ -372,7 +372,7 @@ const Index = () => {
             <a
               href="https://wa.me/?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%BA%D0%B5%D0%BC%D0%BF%D0%B5"
               target="_blank" rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-3 py-4 px-8 bg-[hsl(142,70%,35%)] text-white font-body text-[12px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(142,70%,40%)] transition-all duration-300 rounded-md"
+              className="flex-1 inline-flex items-center justify-center gap-3 py-4 px-8 bg-[hsl(142,70%,35%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(142,70%,40%)] transition-all duration-300 rounded-md"
             >
               <WhatsAppIcon size={20} /> WhatsApp
             </a>
