@@ -131,7 +131,7 @@ const PartnersSection = () => {
             </div>
 
             {/* Footer */}
-            <div className="flex items-center justify-between mt-auto pt-4">
+            <div className="flex flex-wrap items-center justify-between gap-2 mt-auto pt-4">
               <a
                 href="https://tenerifetennisacademy.com/"
                 target="_blank"
@@ -140,7 +140,7 @@ const PartnersSection = () => {
               >
                 tenerifetennisacademy.com →
               </a>
-              <span className="text-[13px] text-text-muted-custom border border-border rounded-full px-3 py-1">Официальный партнёр</span>
+              <span className="text-[12px] sm:text-[13px] text-text-muted-custom border border-border rounded-full px-3 py-1 whitespace-nowrap">Официальный партнёр</span>
             </div>
           </div>
         </div>
