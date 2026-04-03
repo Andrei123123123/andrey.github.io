@@ -167,7 +167,7 @@ const Index = () => {
             {/* Right side — highlights */}
             <div className="animate-fade-up hidden lg:block" style={{ animationDelay: "0.25s" }}>
               <div className="bg-forest/40 backdrop-blur-md border border-gold/15 rounded-lg p-8">
-                <p className="text-[12px] tracking-[3px] uppercase text-gold mb-6 font-semibold">Что входит</p>
+                <p className="text-[13px] tracking-[3px] uppercase text-gold mb-6 font-semibold">Что входит</p>
                 <ul className="flex flex-col gap-3">
                   {[
                     "6 тренировок на открытых кортах (2 ч каждая)",
