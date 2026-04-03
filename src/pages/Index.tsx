@@ -180,7 +180,7 @@ const Index = () => {
                     "Всё под ключ — делаем за вас",
                     "Оформляем шенген с письмом от академии",
                   ].map((item) => (
-                    <li key={item} className="text-[16px] text-sand/80 flex gap-3 items-start leading-[1.6]">
+                    <li key={item} className="text-[17px] text-sand/80 flex gap-3 items-start leading-[1.6]">
                       <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
