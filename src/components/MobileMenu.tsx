@@ -28,10 +28,9 @@ const MobileMenu = () => {
       </button>
 
       <div
-        className={`fixed inset-0 z-50 backdrop-blur-sm flex flex-col transition-opacity duration-300 ${
+        className={`fixed inset-0 z-50 bg-forest/95 backdrop-blur-sm flex flex-col transition-opacity duration-300 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{ backgroundColor: 'hsl(137 22% 14% / 0.95)' }}
       >
         <div className="flex justify-between items-center py-9 px-8">
           <span className="font-display text-[15px] italic text-gold tracking-[3px] uppercase">

@@ -83,7 +83,7 @@ const Index = () => {
   return (
     <div ref={containerRef}>
       {/* ─── STICKY NAV ─── */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 lg:px-16 flex justify-between items-center transition-all duration-300 ${navScrolled ? "backdrop-blur-md shadow-lg" : ""}`} style={navScrolled ? { backgroundColor: 'hsl(137 22% 14% / 0.95)' } : undefined}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 lg:px-16 flex justify-between items-center transition-all duration-300 ${navScrolled ? "bg-forest/95 backdrop-blur-md shadow-lg" : ""}`}>
         <span className="font-display text-[17px] italic text-gold tracking-[2px]">Tennis · Tenerife</span>
 
         <ul className="hidden lg:flex gap-8 list-none">
