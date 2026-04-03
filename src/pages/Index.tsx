@@ -385,7 +385,7 @@ const Index = () => {
             </a>
           </div>
 
-          <div className="reveal text-[13px] text-sand/30 mb-8 uppercase tracking-[3px] font-medium">или оставьте заявку</div>
+          <div className="reveal text-[14px] text-sand/30 mb-8 uppercase tracking-[3px] font-medium">или оставьте заявку</div>
 
           {formSent ? (
             <div className="reveal bg-forest-light/40 border border-gold/20 p-10 text-center rounded-lg">
