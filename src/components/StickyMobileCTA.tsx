@@ -29,7 +29,7 @@ const StickyMobileCTA = () => {
         href="https://t.me/oceaninthesky"
         target="_blank"
         rel="noopener noreferrer"
-        className="block w-full py-3.5 text-center bg-gold text-forest font-body text-[11px] font-medium tracking-[3px] uppercase no-underline"
+        className="block w-full py-3.5 text-center bg-gold text-forest font-body text-[13px] font-medium tracking-[3px] uppercase no-underline"
       >
         Забронировать место
       </a>
