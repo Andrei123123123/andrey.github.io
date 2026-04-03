@@ -400,7 +400,7 @@ const Index = () => {
           ) : (
             <form onSubmit={handleSubmit} className="reveal flex flex-col gap-5 text-left">
               <div>
-                <label className="text-[12px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Имя</label>
+                <label className="text-[13px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Имя</label>
                 <input
                   type="text"
                   required
