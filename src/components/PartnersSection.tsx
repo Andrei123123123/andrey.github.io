@@ -85,20 +85,63 @@ const PartnersSection = () => {
               </div>
               <div>
                 <h3 className="font-display text-[22px] font-semibold text-forest">Tenerife Tennis Academy</h3>
-                <p className="text-[14px] text-text-muted-custom">Теннисная академия</p>
+                <p className="text-[14px] text-text-muted-custom">Теннисная академия · Спортивный партнёр кемпа</p>
               </div>
             </div>
+
             <p className="text-[15px] text-text-body leading-[1.7] mb-6">
-              Профессиональная академия тенниса и падела на юге Тенерифе. Предоставляет корты, тренеров и оборудование для нашего кемпа. Сертифицированные тренеры с международным опытом.
+              Tenerife Tennis Academy — ведущая международная теннисная академия на юге Тенерифе, работающая с 2014 года. Профессиональные корты с покрытием хард и грунт, корты для падела, тренеры с опытом подготовки игроков к NCAA и профессиональным турнирам. Тренировки проходят на открытом воздухе 365 дней в году — лучшие климатические условия для тенниса в Европе.
             </p>
-            <a
-              href="https://tenerifetennisacademy.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-gold text-[14px] font-semibold tracking-[1px] hover:text-gold-light transition-colors no-underline mt-auto"
-            >
-              tenerifetennisacademy.com →
-            </a>
+
+            {/* Stats */}
+            <div className="grid grid-cols-4 gap-3 mb-6 py-4 border-y border-border">
+              <div className="text-center">
+                <p className="font-display text-[22px] font-semibold text-forest">10+</p>
+                <p className="text-[12px] text-text-muted-custom mt-0.5">лет работы</p>
+              </div>
+              <div className="text-center">
+                <p className="font-display text-[22px] font-semibold text-forest">10</p>
+                <p className="text-[12px] text-text-muted-custom mt-0.5">кортов теннис + падел</p>
+              </div>
+              <div className="text-center">
+                <p className="font-display text-[22px] font-semibold text-forest">5</p>
+                <p className="text-[12px] text-text-muted-custom mt-0.5">языков тренеров</p>
+              </div>
+              <div className="text-center">
+                <p className="font-display text-[22px] font-semibold text-forest">365</p>
+                <p className="text-[12px] text-text-muted-custom mt-0.5">дней в году на воздухе</p>
+              </div>
+            </div>
+
+            {/* Checkmarks */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+              {[
+                "Теннис и падел — профессиональные корты хард и грунт",
+                "Русскоязычный тренер в составе команды",
+                "Программы для любого уровня — от первой подачи до подготовки к турнирам",
+                "Спортивное приглашение для оформления шенгенской визы",
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-[14px] text-text-body leading-[1.5]">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Footer */}
+            <div className="flex items-center justify-between mt-auto pt-4">
+              <a
+                href="https://tenerifetennisacademy.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-gold text-[14px] font-semibold tracking-[1px] hover:text-gold-light transition-colors no-underline"
+              >
+                tenerifetennisacademy.com →
+              </a>
+              <span className="text-[13px] text-text-muted-custom border border-border rounded-full px-3 py-1">Официальный партнёр</span>
+            </div>
           </div>
         </div>
       </div>
