@@ -15,8 +15,8 @@ const TrainerSection = () => {
                   <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
                 </svg>
               </div>
-              <p className="text-[10px] tracking-[2px] uppercase text-text-muted-custom">Фото тренера</p>
-              <p className="text-[10px] text-text-muted-custom/50 mt-1">Портрет · крупный план</p>
+              <p className="text-[13px] tracking-[2px] uppercase text-text-muted-custom">Фото тренера</p>
+              <p className="text-[12px] text-text-muted-custom/50 mt-1">Портрет · крупный план</p>
             </div>
           </div>
           <div className="absolute -bottom-4 -right-4 w-32 h-32 border border-gold/15" />
@@ -35,7 +35,7 @@ const TrainerSection = () => {
             <h3 className="font-display text-[24px] font-normal text-forest mb-1">
               [Имя Фамилия]
             </h3>
-            <p className="text-[11px] tracking-[2px] uppercase text-gold mb-6">
+            <p className="text-[13px] tracking-[2px] uppercase text-gold mb-6">
               Тренер · Tenerife Tennis Academy
             </p>
             <div className="flex flex-col gap-3">
@@ -45,7 +45,7 @@ const TrainerSection = () => {
                 "Работает с любым уровнем — от первого удара до турнирной подготовки",
                 "Русскоязычный, живёт на Тенерифе постоянно",
               ].map((line) => (
-                <p key={line} className="text-[13px] text-text-body leading-[1.7] font-light flex gap-3 items-start">
+                <p key={line} className="text-[16px] text-text-body leading-[1.7] font-light flex gap-3 items-start">
                   <span className="text-gold flex-shrink-0">—</span>
                   {line}
                 </p>
@@ -63,7 +63,7 @@ const TrainerSection = () => {
             href="https://t.me/oceaninthesky"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 py-4 px-8 bg-forest text-gold font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:bg-forest-mid transition-colors duration-300"
+            className="inline-flex items-center gap-3 py-4 px-8 bg-forest text-gold font-body text-[13px] font-medium tracking-[3px] uppercase no-underline hover:bg-forest-mid transition-colors duration-300"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.496.969z" />

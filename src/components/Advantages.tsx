@@ -90,20 +90,20 @@ const Advantages = () => {
                 i % 2 === 1 ? "lg:order-1" : ""
               }`}
             >
-              <p className="text-[9px] tracking-[3px] uppercase text-gold/60 mb-3">
+              <p className="text-[12px] tracking-[3px] uppercase text-gold/60 mb-3">
                 {item.subtitle}
               </p>
               <h3 className="font-display text-[28px] lg:text-[36px] font-light text-sand-light mb-5 leading-[1.2]">
                 {item.title}
               </h3>
-              <p className="text-[13px] leading-[1.75] text-text-muted-custom font-light mb-8 max-w-[420px]">
+              <p className="text-[16px] leading-[1.75] text-sand/70 font-light mb-8 max-w-[420px]">
                 {item.description}
               </p>
               <ul className="flex flex-col gap-3">
                 {item.features.map((f) => (
                   <li
                     key={f}
-                    className="text-[13px] text-text-muted-custom flex items-start gap-3"
+                    className="text-[16px] text-sand/70 flex items-start gap-3"
                   >
                     <span className="text-gold font-display flex-shrink-0 mt-px">
                       ✓
