@@ -32,7 +32,6 @@ const MobileMenu = () => {
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-      >
         <div className="flex justify-between items-center py-9 px-8">
           <span className="font-display text-[15px] italic text-gold tracking-[3px] uppercase">
             Tennis · Tenerife
