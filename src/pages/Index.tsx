@@ -326,7 +326,7 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="mt-10 py-4 text-center font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline border-2 border-gold/30 text-gold hover:bg-gold/5 transition-all duration-300 block rounded-md">
+              <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="mt-10 py-4 text-center font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline border-2 border-gold/30 text-gold hover:bg-gold/5 transition-all duration-300 block rounded-md">
                 Узнать подробнее
               </a>
             </div>
