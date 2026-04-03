@@ -304,7 +304,7 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <a href="#cta" className="mt-10 py-4 text-center font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline bg-gold text-forest hover:bg-gold-light transition-all duration-300 block rounded-md">
+              <a href="#cta" className="mt-10 py-4 text-center font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline bg-gold text-forest hover:bg-gold-light transition-all duration-300 block rounded-md">
                 Забронировать — €900
               </a>
             </div>
