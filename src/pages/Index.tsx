@@ -95,7 +95,7 @@ const Index = () => {
             { href: "#faq", label: "FAQ" },
           ].map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="text-[14px] tracking-[1.5px] uppercase text-sand/90 no-underline hover:text-gold transition-colors duration-300 font-semibold">{l.label}</a>
+              <a href={l.href} className="text-[15px] tracking-[1.5px] uppercase text-sand/90 no-underline hover:text-gold transition-colors duration-300 font-semibold">{l.label}</a>
             </li>
           ))}
         </ul>
