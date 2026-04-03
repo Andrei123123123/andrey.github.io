@@ -158,7 +158,7 @@ const Index = () => {
                 <div className="w-[140px] h-[3px] bg-gold/20 rounded-full">
                   <div className="h-full bg-gold rounded-full transition-all duration-1000" style={{ width: `${(BOOKED / TOTAL) * 100}%` }} />
                 </div>
-                <span className="text-[13px] tracking-[1px] text-sand/50">
+                <span className="text-[14px] tracking-[1px] text-sand/50">
                   Забронировано: <strong className="text-gold font-semibold">{BOOKED}</strong> из {TOTAL}
                 </span>
               </div>
