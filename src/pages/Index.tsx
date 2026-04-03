@@ -138,7 +138,7 @@ const Index = () => {
           <div className="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="animate-fade-up font-display font-medium text-[clamp(38px,5vw,68px)] leading-[1.08] text-sand-light tracking-[-0.5px]">
-                Теннис и падел кемп<br />на Тенерифе
+                Теннис и падел кемп<br /><em className="not-italic text-gold">на Канарских островах</em>
               </h1>
 
               <p className="animate-fade-up mt-6 text-[18px] text-sand/80 leading-[1.65] font-medium" style={{ animationDelay: "0.15s" }}>
