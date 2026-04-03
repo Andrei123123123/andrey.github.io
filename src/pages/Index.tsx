@@ -240,7 +240,7 @@ const Index = () => {
                           <img src={day.img} alt={`День ${day.d} — ${day.title}`} className="w-full h-[220px] md:h-[300px] object-cover" loading="lazy" />
                           <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/30 to-transparent" />
                           <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                            <span className="block font-display text-[14px] text-gold/80 mb-2 tracking-[1px] uppercase font-medium">Расписание дня</span>
+                            <span className="block font-display text-[15px] text-gold/80 mb-2 tracking-[1px] uppercase font-medium">Расписание дня</span>
                           </div>
                         </div>
                         <div className="p-5 md:p-6 pt-2 md:pt-3">
