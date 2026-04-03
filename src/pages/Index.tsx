@@ -321,7 +321,7 @@ const Index = () => {
                   "Виза — 20 000 ₽",
                   "Страховка",
                 ].map((f) => (
-                  <li key={f} className="text-[16px] text-text-body flex gap-3 items-start leading-[1.6]">
+                  <li key={f} className="text-[17px] text-text-body flex gap-3 items-start leading-[1.6]">
                     <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />{f}
                   </li>
                 ))}
