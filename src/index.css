@@ -57,7 +57,7 @@
     @apply bg-background text-foreground;
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.7;
     overflow-x: hidden;
   }
