@@ -246,7 +246,7 @@ const Index = () => {
                         <div className="p-5 md:p-6 pt-2 md:pt-3">
                           <ul className="flex flex-col gap-3 list-none">
                             {day.activities.map((a) => (
-                              <li key={a} className="text-[15px] text-sand/70 leading-[1.6] flex gap-3 items-start">
+                              <li key={a} className="text-[16px] text-sand/70 leading-[1.6] flex gap-3 items-start">
                                 <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />{a}
                               </li>
                             ))}
