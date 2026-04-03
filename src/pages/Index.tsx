@@ -390,7 +390,7 @@ const Index = () => {
           {formSent ? (
             <div className="reveal bg-forest-light/40 border border-gold/20 p-10 text-center rounded-lg">
               <p className="font-display text-[24px] font-medium text-sand-light mb-3">Заявка принята!</p>
-              <p className="text-[16px] text-sand/60 leading-[1.7]">
+              <p className="text-[17px] text-sand/60 leading-[1.7]">
                 Мы свяжемся в течение 2 часов.<br />
                 Если срочно — напишите в{" "}
                 <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">WhatsApp</a> или{" "}
