@@ -66,7 +66,7 @@ const TenerifeSection = () => {
               ))}
             </div>
 
-            <div className="absolute bottom-4 left-6">
+            <div className="absolute bottom-12 left-6">
               <p className="text-[14px] text-sand/90 font-medium drop-shadow-lg">{images[current].alt}</p>
             </div>
           </div>

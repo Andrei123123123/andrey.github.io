@@ -81,7 +81,7 @@ const Index = () => {
   };
 
   return (
-    <div ref={containerRef}>
+    <main ref={containerRef}>
       {/* ─── STICKY NAV ─── */}
       <nav className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 lg:px-16 flex justify-between items-center transition-all duration-300 ${navScrolled ? "bg-forest/95 backdrop-blur-md shadow-lg" : ""}`}>
         <span className="font-display text-[17px] italic text-gold tracking-[2px]">Tennis · Tenerife</span>
@@ -128,7 +128,7 @@ const Index = () => {
       {/* ─── 01. HERO ─── */}
       <section className="min-h-screen relative flex flex-col justify-center overflow-hidden" id="hero">
         <div className="absolute inset-0">
-          <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+          <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover" aria-hidden="true">
             <source src="/hero-bg.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0" style={{ background: "linear-gradient(rgba(28,43,30,0.75), rgba(28,43,30,0.75))" }} />
@@ -350,7 +350,7 @@ const Index = () => {
                   <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-3 bg-gold transition-all duration-300 ${faqOpen === i ? "opacity-0 rotate-90" : ""}`} />
                 </span>
               </button>
-              <div className="overflow-hidden transition-all duration-400" style={{ maxHeight: faqOpen === i ? "200px" : "0", paddingBottom: faqOpen === i ? "24px" : "0" }}>
+              <div className="overflow-hidden transition-all duration-400" style={{ maxHeight: faqOpen === i ? "400px" : "0", paddingBottom: faqOpen === i ? "24px" : "0" }}>
                 <p className="text-[18px] leading-[1.75] text-text-body">{faq.a}</p>
               </div>
             </div>
@@ -370,7 +370,7 @@ const Index = () => {
 
           <div className="reveal flex flex-col sm:flex-row gap-4 mb-12">
             <a
-              href="https://wa.me/?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%BA%D0%B5%D0%BC%D0%BF%D0%B5"
+              href="https://wa.me/34600000000?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%BA%D0%B5%D0%BC%D0%BF%D0%B5"
               target="_blank" rel="noopener noreferrer"
               className="flex-1 inline-flex items-center justify-center gap-3 py-4 px-8 bg-[hsl(142,70%,35%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(142,70%,40%)] transition-all duration-300 rounded-md"
             >
@@ -467,13 +467,13 @@ const Index = () => {
             </a>
           </div>
           <div className="md:text-right">
-            <span className="text-[13px] text-sand/25 block">© 2026 Tennis Tenerife</span>
+            <span className="text-[13px] text-sand/40 block">© 2026 Tennis Tenerife</span>
           </div>
         </div>
       </footer>
 
       <StickyMobileCTA />
-    </div>
+    </main>
   );
 };
 
