@@ -277,8 +277,6 @@ const Index = () => {
       {/* ─── ТЕНЕРИФЕ ─── */}
       <TenerifeSection />
 
-      {/* ─── ПАРТНЁРЫ ─── */}
-      <PartnersSection />
 
       {/* ─── ЦЕНА И ТАРИФЫ ─── */}
       <section className="relative py-24 lg:py-32 px-6 lg:px-16 overflow-hidden" id="pricing">
