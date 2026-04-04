@@ -467,7 +467,7 @@ const Index = () => {
             </a>
           </div>
           <div className="md:text-right">
-            <span className="text-[13px] text-sand/25 block">© 2026 Tennis Tenerife</span>
+            <span className="text-[13px] text-sand/40 block">© 2026 Tennis Tenerife</span>
           </div>
         </div>
       </footer>
