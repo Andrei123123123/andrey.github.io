@@ -128,7 +128,7 @@ const Index = () => {
       {/* ─── 01. HERO ─── */}
       <section className="min-h-screen relative flex flex-col justify-center overflow-hidden" id="hero">
         <div className="absolute inset-0">
-          <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+          <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover" aria-hidden="true">
             <source src="/hero-bg.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0" style={{ background: "linear-gradient(rgba(28,43,30,0.75), rgba(28,43,30,0.75))" }} />
