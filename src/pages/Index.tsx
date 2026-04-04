@@ -4,7 +4,7 @@ import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import TeamSection from "@/components/TeamSection";
 import VillaSection from "@/components/VillaSection";
-import PartnersSection from "@/components/PartnersSection";
+
 import TenerifeSection from "@/components/TenerifeSection";
 import { Check, ArrowRight } from "lucide-react";
 import day14 from "@/assets/day-14.jpg";
@@ -277,8 +277,6 @@ const Index = () => {
       {/* ─── ТЕНЕРИФЕ ─── */}
       <TenerifeSection />
 
-      {/* ─── ПАРТНЁРЫ ─── */}
-      <PartnersSection />
 
       {/* ─── ЦЕНА И ТАРИФЫ ─── */}
       <section className="relative py-24 lg:py-32 px-6 lg:px-16 overflow-hidden" id="pricing">
