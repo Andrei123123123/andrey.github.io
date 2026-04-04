@@ -13,8 +13,47 @@ const TeamSection = () => {
           С кем мы работаем
         </h2>
         <p className="reveal text-[18px] text-text-body leading-[1.7] max-w-[600px] mb-16">
-          Два надёжных партнёра, которые обеспечивают всё — от визы и перелётов до профессиональных тренировок на острове.
+          Два организатора и два партнёра, которые обеспечивают всё — от визы и перелётов до профессиональных тренировок на острове.
         </p>
+
+        {/* Organizers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {[
+            {
+              name: "[Организатор 1]",
+              role: "Основатель проекта",
+              desc: "Идейный вдохновитель кемпа. Организует все процессы: от виллы и перелётов до визовой поддержки. Живёт между Москвой и Тенерифе.",
+              placeholder: "Фото организатора",
+            },
+            {
+              name: "[Организатор 2]",
+              role: "Со-организатор",
+              desc: "Отвечает за программу активностей, экскурсии и логистику на острове. Курирует группу на протяжении всего кемпа.",
+              placeholder: "Фото со-организатора",
+            },
+          ].map((person) => (
+            <div key={person.name} className="reveal bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-[4/3] bg-forest/10 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-24 h-24 rounded-full bg-forest/15 border-2 border-gold/30 mx-auto mb-4 flex items-center justify-center">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-gold/40">
+                      <circle cx="12" cy="8" r="4" />
+                      <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                    </svg>
+                  </div>
+                  <p className="text-[13px] tracking-[2px] uppercase text-text-muted-custom">{person.placeholder}</p>
+                </div>
+              </div>
+              <div className="p-8">
+                <h3 className="font-display text-[24px] font-medium text-forest mb-1">{person.name}</h3>
+                <p className="text-[13px] tracking-[2px] uppercase text-gold mb-4 font-medium">{person.role}</p>
+                <p className="text-[16px] text-text-body leading-[1.7]">{person.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-8 font-medium">Партнёры</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Vizago */}
