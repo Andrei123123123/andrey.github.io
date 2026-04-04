@@ -473,7 +473,7 @@ const Index = () => {
       </footer>
 
       <StickyMobileCTA />
-    </div>
+    </main>
   );
 };
 
