@@ -494,6 +494,7 @@ const Index = () => {
       </footer>
 
       <StickyMobileCTA />
+      <FloatingWhatsApp />
     </main>
   );
 };
