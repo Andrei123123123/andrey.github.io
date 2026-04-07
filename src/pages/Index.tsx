@@ -453,7 +453,7 @@ const Index = () => {
               <button type="submit" className="mt-4 py-4 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase cursor-pointer border-none hover:bg-gold-light transition-all duration-300 rounded-md">
                 Отправить заявку
               </button>
-              <p className="text-[13px] text-sand/25 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+              <p className="text-[13px] text-sand/25 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности. Мы не рассылаем спам.</p>
             </form>
           )}
         </div>
