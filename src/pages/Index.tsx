@@ -2,7 +2,9 @@ import { useState, useCallback, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import TeamSection from "@/components/TeamSection";
+import ForWhoSection from "@/components/ForWhoSection";
 import VillaSection from "@/components/VillaSection";
 
 import TenerifeSection from "@/components/TenerifeSection";
@@ -142,8 +144,22 @@ const Index = () => {
               </h1>
 
               <p className="animate-fade-up mt-6 text-[18px] text-sand/80 leading-[1.65] font-medium" style={{ animationDelay: "0.15s" }}>
-                Вилла на всю группу, повар, корты, трансферы, экскурсии — мы собрали всё, тебе остаётся только прилететь. Теннис или падел каждый вечер, а днём — океан, горы и приключения.
+                Кемп для детей 6–16 лет и взрослых игроков любого уровня. Тренируйтесь до 6 часов в день под руководством сертифицированных тренеров. Проживание на вилле с видом на Атлантику включено.
               </p>
+
+              <ul className="animate-fade-up mt-5 flex flex-col gap-2.5" style={{ animationDelay: "0.2s" }}>
+                {[
+                  "300 солнечных дней в году — тренировки не отменяются из-за погоды",
+                  "Тренеры с рейтингом ATP/WTA — индивидуальный подход к каждому",
+                  "Группы до 4 человек на тренера — максимум времени на корте",
+                  "Кемпы от 1 недели — выберите удобный формат",
+                ].map((item) => (
+                  <li key={item} className="text-[15px] text-sand/70 flex gap-2.5 items-start leading-[1.5]">
+                    <Check size={14} className="text-gold flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
 
               <div className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: "0.3s" }}>
                 <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
@@ -191,6 +207,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* ─── ДЛЯ КОГО ─── */}
+      <ForWhoSection />
 
       {/* ─── ПРОГРАММА ПО ДНЯМ ─── */}
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="programme">
@@ -420,22 +439,21 @@ const Index = () => {
                 />
               </div>
               <div>
-                <label className="text-[13px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Уровень игры</label>
+                <label className="text-[13px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Кто будет участвовать?</label>
                 <select
                   value={formData.level}
                   onChange={(e) => setFormData({ ...formData, level: e.target.value })}
                   className="w-full bg-forest-light/40 border border-gold/15 text-sand-light py-4 px-5 text-[16px] outline-none focus:border-gold/40 transition-colors appearance-none rounded-md"
                 >
-                  <option value="beginner" className="bg-forest text-sand-light">Новичок</option>
-                  <option value="starter" className="bg-forest text-sand-light">Начинающий</option>
-                  <option value="intermediate" className="bg-forest text-sand-light">Любитель</option>
-                  <option value="advanced" className="bg-forest text-sand-light">Разрядник</option>
+                  <option value="child" className="bg-forest text-sand-light">Ребёнок</option>
+                  <option value="adult" className="bg-forest text-sand-light">Взрослый</option>
+                  <option value="family" className="bg-forest text-sand-light">Вся семья</option>
                 </select>
               </div>
               <button type="submit" className="mt-4 py-4 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase cursor-pointer border-none hover:bg-gold-light transition-all duration-300 rounded-md">
                 Отправить заявку
               </button>
-              <p className="text-[13px] text-sand/25 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+              <p className="text-[13px] text-sand/25 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности. Мы не рассылаем спам.</p>
             </form>
           )}
         </div>
@@ -468,9 +486,15 @@ const Index = () => {
             <span className="text-[13px] text-sand/40 block">© 2026 Tennis Tenerife</span>
           </div>
         </div>
+        <div className="max-w-[1200px] mx-auto mt-8 pt-6 border-t border-sand/10">
+          <p className="text-[13px] text-sand/25 leading-[1.7]">
+            Теннисный кемп на Тенерифе — теннис и падел для детей и взрослых на Канарских островах. Летний теннисный лагерь с проживанием, питанием и трансфером. Тренировки на профессиональных кортах под руководством сертифицированных тренеров.
+          </p>
+        </div>
       </footer>
 
       <StickyMobileCTA />
+      <FloatingWhatsApp />
     </main>
   );
 };
