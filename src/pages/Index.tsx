@@ -439,16 +439,15 @@ const Index = () => {
                 />
               </div>
               <div>
-                <label className="text-[13px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Уровень игры</label>
+                <label className="text-[13px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Кто будет участвовать?</label>
                 <select
                   value={formData.level}
                   onChange={(e) => setFormData({ ...formData, level: e.target.value })}
                   className="w-full bg-forest-light/40 border border-gold/15 text-sand-light py-4 px-5 text-[16px] outline-none focus:border-gold/40 transition-colors appearance-none rounded-md"
                 >
-                  <option value="beginner" className="bg-forest text-sand-light">Новичок</option>
-                  <option value="starter" className="bg-forest text-sand-light">Начинающий</option>
-                  <option value="intermediate" className="bg-forest text-sand-light">Любитель</option>
-                  <option value="advanced" className="bg-forest text-sand-light">Разрядник</option>
+                  <option value="child" className="bg-forest text-sand-light">Ребёнок</option>
+                  <option value="adult" className="bg-forest text-sand-light">Взрослый</option>
+                  <option value="family" className="bg-forest text-sand-light">Вся семья</option>
                 </select>
               </div>
               <button type="submit" className="mt-4 py-4 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase cursor-pointer border-none hover:bg-gold-light transition-all duration-300 rounded-md">
