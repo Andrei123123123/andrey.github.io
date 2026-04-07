@@ -208,6 +208,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ─── ДЛЯ КОГО ─── */}
+      <ForWhoSection />
+
       {/* ─── ПРОГРАММА ПО ДНЯМ ─── */}
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="programme">
         <div className="max-w-[1200px] mx-auto">
