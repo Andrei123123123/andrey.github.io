@@ -486,6 +486,11 @@ const Index = () => {
             <span className="text-[13px] text-sand/40 block">© 2026 Tennis Tenerife</span>
           </div>
         </div>
+        <div className="max-w-[1200px] mx-auto mt-8 pt-6 border-t border-sand/10">
+          <p className="text-[13px] text-sand/25 leading-[1.7]">
+            Теннисный кемп на Тенерифе — теннис и падел для детей и взрослых на Канарских островах. Летний теннисный лагерь с проживанием, питанием и трансфером. Тренировки на профессиональных кортах под руководством сертифицированных тренеров.
+          </p>
+        </div>
       </footer>
 
       <StickyMobileCTA />
