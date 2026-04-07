@@ -144,8 +144,22 @@ const Index = () => {
               </h1>
 
               <p className="animate-fade-up mt-6 text-[18px] text-sand/80 leading-[1.65] font-medium" style={{ animationDelay: "0.15s" }}>
-                Вилла на всю группу, повар, корты, трансферы, экскурсии — мы собрали всё, тебе остаётся только прилететь. Теннис или падел каждый вечер, а днём — океан, горы и приключения.
+                Кемп для детей 6–16 лет и взрослых игроков любого уровня. Тренируйтесь до 6 часов в день под руководством сертифицированных тренеров. Проживание на вилле с видом на Атлантику включено.
               </p>
+
+              <ul className="animate-fade-up mt-5 flex flex-col gap-2.5" style={{ animationDelay: "0.2s" }}>
+                {[
+                  "300 солнечных дней в году — тренировки не отменяются из-за погоды",
+                  "Тренеры с рейтингом ATP/WTA — индивидуальный подход к каждому",
+                  "Группы до 4 человек на тренера — максимум времени на корте",
+                  "Кемпы от 1 недели — выберите удобный формат",
+                ].map((item) => (
+                  <li key={item} className="text-[15px] text-sand/70 flex gap-2.5 items-start leading-[1.5]">
+                    <Check size={14} className="text-gold flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
 
               <div className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: "0.3s" }}>
                 <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
