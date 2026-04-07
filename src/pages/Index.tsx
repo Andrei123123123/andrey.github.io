@@ -2,7 +2,9 @@ import { useState, useCallback, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import TeamSection from "@/components/TeamSection";
+import ForWhoSection from "@/components/ForWhoSection";
 import VillaSection from "@/components/VillaSection";
 
 import TenerifeSection from "@/components/TenerifeSection";
