@@ -281,8 +281,8 @@ const Index = () => {
       {/* ─── ЦЕНА И ТАРИФЫ ─── */}
       <section className="relative py-24 lg:py-32 px-6 lg:px-16 overflow-hidden" id="pricing">
         <div className="absolute inset-0">
-          <img src={bgPricing} alt="" className="w-full h-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-cream/92" />
+          <img src={bgPricing} alt="" className="w-full h-full object-cover opacity-25" loading="lazy" />
+          <div className="absolute inset-0 bg-cream/80" />
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto">
           <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-semibold">Стоимость</p>
