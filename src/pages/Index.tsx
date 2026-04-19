@@ -154,15 +154,8 @@ const Index = () => {
                 </a>
               </div>
 
-              <div className="animate-fade-up mt-10 flex flex-col gap-2" style={{ animationDelay: "0.4s" }}>
-                <div className="w-[140px] h-[3px] bg-gold/20 rounded-full">
-                  <div className="h-full bg-gold rounded-full transition-all duration-1000" style={{ width: `${(BOOKED / TOTAL) * 100}%` }} />
-                </div>
-                <span className="text-[14px] tracking-[1px] text-sand/50">
-                  Забронировано: <strong className="text-gold font-semibold">{BOOKED}</strong> из {TOTAL}
-                </span>
-              </div>
             </div>
+
 
             {/* Right side — highlights */}
             <div className="animate-fade-up hidden lg:block" style={{ animationDelay: "0.25s" }}>
@@ -360,7 +353,7 @@ const Index = () => {
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="cta">
         <div className="max-w-[700px] mx-auto text-center">
           <h2 className="reveal font-display font-medium text-[clamp(32px,4.5vw,52px)] text-sand-light leading-[1.1] mb-3">
-            Осталось {TOTAL - BOOKED} мест
+            Всего {TOTAL} мест
           </h2>
           <p className="reveal text-[17px] text-sand/50 mb-12 leading-[1.7]">
             Ответим в течение 2 часов в рабочее время
