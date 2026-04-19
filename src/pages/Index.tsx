@@ -154,15 +154,8 @@ const Index = () => {
                 </a>
               </div>
 
-              <div className="animate-fade-up mt-10 flex flex-col gap-2" style={{ animationDelay: "0.4s" }}>
-                <div className="w-[140px] h-[3px] bg-gold/20 rounded-full">
-                  <div className="h-full bg-gold rounded-full transition-all duration-1000" style={{ width: `${(BOOKED / TOTAL) * 100}%` }} />
-                </div>
-                <span className="text-[14px] tracking-[1px] text-sand/50">
-                  Забронировано: <strong className="text-gold font-semibold">{BOOKED}</strong> из {TOTAL}
-                </span>
-              </div>
             </div>
+
 
             {/* Right side — highlights */}
             <div className="animate-fade-up hidden lg:block" style={{ animationDelay: "0.25s" }}>
