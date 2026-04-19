@@ -17,7 +17,7 @@ const PartnersSection = () => {
           {/* Vizago */}
           <div className="reveal bg-card rounded-xl p-8 lg:p-10 border border-border hover:shadow-xl transition-shadow duration-300 flex flex-col">
             <div className="flex items-center gap-4 mb-5">
-              <div className="w-14 h-14 rounded-2xl bg-white shadow-lg border border-gold/15 flex items-center justify-center overflow-hidden p-2 flex-shrink-0">
+              <div className="w-24 h-24 sm:w-20 sm:h-20 lg:w-14 lg:h-14 rounded-2xl bg-white shadow-lg border border-gold/15 flex items-center justify-center overflow-hidden p-3 lg:p-2 flex-shrink-0">
                 <img src={vizagoLogo} alt="Vizago" className="w-full h-full object-contain" />
               </div>
               <div>
@@ -80,7 +80,7 @@ const PartnersSection = () => {
           {/* Tenerife Tennis Academy */}
           <div className="reveal bg-card rounded-xl p-8 lg:p-10 border border-border hover:shadow-xl transition-shadow duration-300 flex flex-col">
             <div className="flex items-center gap-4 mb-5">
-              <div className="w-14 h-14 rounded-2xl bg-white shadow-lg border border-gold/15 flex items-center justify-center overflow-hidden p-2 flex-shrink-0">
+              <div className="w-24 h-24 sm:w-20 sm:h-20 lg:w-14 lg:h-14 rounded-2xl bg-white shadow-lg border border-gold/15 flex items-center justify-center overflow-hidden p-3 lg:p-2 flex-shrink-0">
                 <img src={ttaLogo} alt="Tenerife Tennis Academy" className="w-full h-full object-contain" />
               </div>
               <div>
