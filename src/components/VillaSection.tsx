@@ -98,13 +98,13 @@ const DetailsCarousel = () => (
     <Carousel opts={{ align: "start", loop: true }} className="w-full">
       <CarouselContent className="-ml-4">
         {detailCards.map((card) => (
-          <CarouselItem key={card.title} className="pl-4 md:basis-1/2">
-            <div className="bg-card rounded-lg p-8 border border-border h-full">
-              <h3 className="font-display text-[26px] font-semibold text-forest mb-6">{card.title}</h3>
-              <ul className="flex flex-col gap-3.5">
+          <CarouselItem key={card.title} className="pl-4 sm:basis-1/2 lg:basis-1/3">
+            <div className="bg-card rounded-lg p-6 border border-border h-full">
+              <h3 className="font-display text-[20px] font-semibold text-forest mb-4">{card.title}</h3>
+              <ul className="flex flex-col gap-2.5">
                 {card.items.map((item) => (
-                  <li key={item} className="text-[16px] text-text-body leading-[1.65] flex gap-3 items-start">
-                    <Check size={16} className="text-gold flex-shrink-0 mt-1" />{item}
+                  <li key={item} className="text-[14px] text-text-body leading-[1.55] flex gap-2 items-start">
+                    <Check size={14} className="text-gold flex-shrink-0 mt-1" />{item}
                   </li>
                 ))}
               </ul>
