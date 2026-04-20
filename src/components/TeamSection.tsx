@@ -12,10 +12,10 @@ const TeamSection = () => {
       <div className="max-w-[1200px] mx-auto">
         <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-medium">Команда</p>
         <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] mb-6">
-          С кем мы работаем
+          О нас
         </h2>
         <p className="reveal text-[18px] text-text-body leading-[1.7] max-w-[600px] mb-16">
-          Два организатора и два партнёра, которые обеспечивают всё — от визы и перелётов до профессиональных тренировок на острове.
+          Идея простая: взять всё лучшее из отпуска и добавить теннис. Или наоборот — взять теннис и добавить океан, вулкан, яхту и повара, который готовит национальные блюда каждый день. Мы собрали кемп, в который хотели бы поехать сами. Канарские острова, октябрь, двенадцать мест и вилла у моря.
         </p>
 
         {/* Organizers */}
