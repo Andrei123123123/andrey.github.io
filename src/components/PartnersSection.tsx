@@ -21,7 +21,11 @@ const PartnersSection = () => {
                 <img src={vizagoLogo} alt="Vizago" className="w-full h-full object-contain" />
               </div>
               <div>
-                <h3 className="font-display text-[22px] font-semibold text-forest">ВизаGO</h3>
+                <h3 className="font-display text-[22px] font-semibold text-forest">
+                  <a href="https://vizago.ru/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors no-underline">
+                    ВизаGO
+                  </a>
+                </h3>
                 <p className="text-[14px] text-text-muted-custom">Визовый оператор · Турагент кемпа</p>
               </div>
             </div>
@@ -84,7 +88,11 @@ const PartnersSection = () => {
                 <img src={ttaLogo} alt="Tenerife Tennis Academy" className="w-full h-full object-contain" />
               </div>
               <div>
-                <h3 className="font-display text-[22px] font-semibold text-forest">Tenerife Tennis Academy</h3>
+                <h3 className="font-display text-[22px] font-semibold text-forest">
+                  <a href="https://tenerifetennisacademy.com/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors no-underline">
+                    Tenerife Tennis Academy
+                  </a>
+                </h3>
                 <p className="text-[14px] text-text-muted-custom">Теннисная академия · Спортивный партнёр кемпа</p>
               </div>
             </div>
