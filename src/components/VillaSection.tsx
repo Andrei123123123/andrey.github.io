@@ -3,6 +3,8 @@ import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import livingRoom from "@/assets/villa-living-room.avif";
 import dining from "@/assets/villa-dining.avif";
 import terrace from "@/assets/villa-terrace.avif";
+import pool from "@/assets/villa-pool.avif";
+import bbq from "@/assets/villa-bbq.avif";
 import bedroom1 from "@/assets/villa-bedroom-1.avif";
 import bedroom2 from "@/assets/villa-bedroom-2.avif";
 import bedroom3 from "@/assets/villa-bedroom-3.jpg";
@@ -13,6 +15,8 @@ import bathroom3 from "@/assets/villa-bathroom-3.avif";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const villaImages = [
+  { src: pool, alt: "Бассейн с подогревом" },
+  { src: bbq, alt: "Зона барбекю с бассейном на заднем плане" },
   { src: livingRoom, alt: "Светлая гостиная с панорамными окнами" },
   { src: dining, alt: "Обеденная зона для общих ужинов" },
   { src: terrace, alt: "Терраса для отдыха под солнцем Тенерифе" },
