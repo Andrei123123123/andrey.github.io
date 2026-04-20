@@ -303,7 +303,7 @@ const Index = () => {
             <div className="reveal bg-card rounded-lg p-8 lg:p-12 flex flex-col shadow-xl border border-border">
               <p className="text-[13px] tracking-[3px] uppercase text-text-muted-custom mb-4 font-medium">Турпакет · через оператора</p>
               <div className="font-display text-[48px] font-medium text-forest leading-none mb-2">Индивидуально</div>
-              <p className="text-[15px] text-text-muted-custom mb-10">перелёт + вилла + питание + виза + страховка</p>
+              <p className="text-[15px] text-text-muted-custom mb-10">перелёт + вилла + виза + страховка</p>
               <ul className="flex flex-col gap-3.5 flex-1">
                 {[
                   "Перелёт Москва/Питер — Тенерифе — 90 000 ₽",
