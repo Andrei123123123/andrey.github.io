@@ -65,9 +65,9 @@ const TeamSection = () => {
           {/* Vizago */}
           <div className="reveal bg-card rounded-xl p-8 lg:p-10 border border-border hover:shadow-xl transition-shadow duration-300 flex flex-col">
             <div className="flex items-center gap-5 mb-6">
-              <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-2xl bg-white shadow-lg border border-gold/20 flex items-center justify-center overflow-hidden p-3 flex-shrink-0">
+              <a href="https://vizago.ru/" target="_blank" rel="noopener noreferrer" className="w-24 h-24 lg:w-28 lg:h-28 rounded-2xl bg-white shadow-lg border border-gold/20 flex items-center justify-center overflow-hidden p-3 flex-shrink-0 transition-shadow hover:shadow-xl">
                 <img src={vizagoLogo} alt="Vizago" className="w-full h-full object-contain" />
-              </div>
+              </a>
               <div>
                 <h3 className="font-display text-[22px] font-semibold text-forest">
                   <a href="https://vizago.ru/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors no-underline">
@@ -132,9 +132,9 @@ const TeamSection = () => {
           {/* Tenerife Tennis Academy */}
           <div className="reveal bg-card rounded-xl p-8 lg:p-10 border border-border hover:shadow-xl transition-shadow duration-300 flex flex-col">
             <div className="flex items-center gap-5 mb-6">
-              <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-2xl bg-white shadow-lg border border-gold/20 flex items-center justify-center overflow-hidden p-3 flex-shrink-0">
+              <a href="https://tenerifetennisacademy.com/" target="_blank" rel="noopener noreferrer" className="w-24 h-24 lg:w-28 lg:h-28 rounded-2xl bg-white shadow-lg border border-gold/20 flex items-center justify-center overflow-hidden p-3 flex-shrink-0 transition-shadow hover:shadow-xl">
                 <img src={ttaLogo} alt="Tenerife Tennis Academy" className="w-full h-full object-contain" />
-              </div>
+              </a>
               <div>
                 <h3 className="font-display text-[22px] font-semibold text-forest">
                   <a href="https://tenerifetennisacademy.com/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors no-underline">
