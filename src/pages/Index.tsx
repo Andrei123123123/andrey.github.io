@@ -103,7 +103,7 @@ const Index = () => {
         {/* Social icons + CTA */}
         <div className="hidden md:flex items-center gap-4">
           <div className="flex items-center gap-3">
-            <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="Telegram">
+            <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="Telegram">
               <TelegramIcon size={18} />
             </a>
             <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="WhatsApp">
@@ -149,7 +149,7 @@ const Index = () => {
                 <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
                   Забронировать место <ArrowRight size={16} />
                 </a>
-                <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 py-4 px-8 border-2 border-sand/30 text-sand-light font-body text-[13px] font-medium tracking-[2px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
+                <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 py-4 px-8 border-2 border-sand/30 text-sand-light font-body text-[13px] font-medium tracking-[2px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
                   <TelegramIcon size={18} /> Написать нам
                 </a>
               </div>
@@ -317,7 +317,7 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="mt-10 py-4 text-center font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline border-2 border-gold/30 text-gold hover:bg-gold/5 transition-all duration-300 block rounded-md">
+              <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="mt-10 py-4 text-center font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline border-2 border-gold/30 text-gold hover:bg-gold/5 transition-all duration-300 block rounded-md">
                 Узнать подробнее
               </a>
             </div>
@@ -368,7 +368,7 @@ const Index = () => {
               <WhatsAppIcon size={20} /> WhatsApp
             </a>
             <a
-              href="https://t.me/oceaninthesky"
+              href="https://t.me/tennis_tenerife"
               target="_blank" rel="noopener noreferrer"
               className="flex-1 inline-flex items-center justify-center gap-3 py-4 px-8 bg-[hsl(200,70%,45%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(200,70%,50%)] transition-all duration-300 rounded-md"
             >
@@ -385,7 +385,7 @@ const Index = () => {
                 Мы свяжемся в течение 2 часов.<br />
                 Если срочно — напишите в{" "}
                 <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">WhatsApp</a> или{" "}
-                <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">Telegram</a>.
+                <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">Telegram</a>.
               </p>
             </div>
           ) : (
@@ -442,7 +442,7 @@ const Index = () => {
             <span className="text-[14px] text-sand/30 mt-1 block">14–20 сентября 2026</span>
           </div>
           <div className="flex items-center justify-center gap-6">
-            <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="Telegram">
+            <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="Telegram">
               <TelegramIcon size={22} />
             </a>
             <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="WhatsApp">
