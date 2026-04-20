@@ -1,4 +1,5 @@
 import SectionTag from "./SectionTag";
+import { Check } from "lucide-react";
 import visaImg from "@/assets/visa-support.jpg";
 import allInclusiveImg from "@/assets/all-inclusive.jpg";
 import communityImg from "@/assets/community.jpg";
@@ -105,9 +106,7 @@ const Advantages = () => {
                     key={f}
                     className="text-[16px] text-sand/70 flex items-start gap-3"
                   >
-                    <span className="text-gold font-display flex-shrink-0 mt-px">
-                      ✓
-                    </span>
+                    <Check size={16} strokeWidth={1.7} className="text-gold flex-shrink-0 mt-1" />
                     {f}
                   </li>
                 ))}
