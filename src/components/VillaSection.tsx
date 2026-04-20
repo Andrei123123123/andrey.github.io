@@ -87,16 +87,18 @@ const VillaSection = () => {
         {/* Details grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <div className="reveal bg-card rounded-lg p-8 border border-border">
-            <h3 className="font-display text-[26px] font-semibold text-forest mb-6">🏠 Вилла</h3>
+            <h3 className="font-display text-[26px] font-semibold text-forest mb-6">🏠 Вилла ViVa Royal</h3>
             <ul className="flex flex-col gap-3.5">
               {[
-                "Частная вилла на юге Тенерифе, 10 минут от океана",
-                "Бассейн с подогревом и шезлонги",
-                "Просторные комнаты (1-2 человека в номере)",
-                "Терраса с видом на горы и океан",
-                "Полностью оборудованная кухня",
-                "Wi-Fi, кондиционер, стиральная машина",
-                "Парковка и закрытая территория",
+                "650 м² в престижном районе Чайофа, юг Тенерифе",
+                "10 спален, до 16 гостей — официально признана Советом острова",
+                "Большой сад с пальмами, бассейн с подогревом (5,6 × 3,9 м)",
+                "Зона барбекю, тенистая обеденная зона, шезлонги",
+                "Терраса с панорамой океана и гор",
+                "Полностью оборудованные кухни и просторные гостиные",
+                "Wi-Fi 600 Мбит/с во всех комнатах, кондиционеры",
+                "5 минут до пляжей Лос-Кристианос и Коста-Адехе",
+                "Частная парковка на 5 машин, закрытая территория",
               ].map((item) => (
                 <li key={item} className="text-[16px] text-text-body leading-[1.65] flex gap-3 items-start">
                   <Check size={16} className="text-gold flex-shrink-0 mt-1" />{item}
