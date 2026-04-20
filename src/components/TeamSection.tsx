@@ -28,7 +28,7 @@ const TeamSection = () => {
             },
             {
               name: "Еманаков Иван",
-              link: "https://t.me/oceaninthesky",
+              link: "https://t.me/solonikkillamd",
               role: "Со-организатор",
               desc: "Отвечает за программу активностей, экскурсии и логистику на острове. Курирует группу на протяжении всего кемпа.",
               placeholder: "Фото со-организатора",
