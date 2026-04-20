@@ -119,7 +119,7 @@ const VillaSection = () => {
             <div>
               <h3 className="font-display text-[22px] font-semibold text-gold mb-3">🛂 Виза</h3>
               <p className="text-[16px] text-sand/80 leading-[1.75]">
-                Тенерифе — территория Испании (шенген). Оформляем приглашение от Tenerife Tennis Academy, помогаем с документами. Стоимость визы входит в турпакет.
+                Тенерифе — территория Испании (шенген). Оформляем приглашение от Tenerife Tennis Academy, помогаем с документами., сопровождаем на всех этапах.
               </p>
             </div>
             <div>
