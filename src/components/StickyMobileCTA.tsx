@@ -26,7 +26,7 @@ const StickyMobileCTA = () => {
       style={{ background: "rgba(28,43,30,0.95)", backdropFilter: "blur(10px)" }}
     >
       <a
-        href="https://t.me/oceaninthesky"
+        href="https://t.me/tennis_tenerife"
         target="_blank"
         rel="noopener noreferrer"
         className="block w-full py-3.5 text-center bg-gold text-forest font-body text-[13px] font-medium tracking-[3px] uppercase no-underline"
