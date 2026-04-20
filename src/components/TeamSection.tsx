@@ -2,6 +2,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import vizagoLogo from "@/assets/vizago-logo.jpeg";
 import ttaLogo from "@/assets/tta-logo.png";
 import andreyPhoto from "@/assets/team/andrey-telegram.jpg";
+import ivanPhoto from "@/assets/team/ivan-telegram.jpg";
 
 const TeamSection = () => {
   const ref = useScrollReveal();
@@ -34,6 +35,7 @@ const TeamSection = () => {
               role: "Организатор",
               desc: "Отвечает за всё, что происходит после вашего прилёта. Яхта, Тейде, сёрфинг, банкет — его работа. Два минивэна, расписание активностей и решение любых вопросов на месте — тоже его. Если что-то пойдёт не по плану, он уже знает, что делать.",
               placeholder: "Фото со-организатора",
+              photo: ivanPhoto,
             },
           ].map((person) => (
             <div key={person.name} className="reveal bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-shadow duration-300">
