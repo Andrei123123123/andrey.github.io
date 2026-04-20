@@ -39,7 +39,7 @@ const TeamSection = () => {
             },
           ].map((person) => (
             <div key={person.name} className="reveal bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-shadow duration-300">
-              <div className="aspect-[4/3] bg-forest/10 flex items-center justify-center">
+              <div className="aspect-[4/3] bg-sand-light flex items-center justify-center">
                 {person.photo ? (
                   <div className="h-36 w-36 rounded-full border border-gold/30 bg-card p-1.5 shadow-lg">
                     <img src={person.photo} alt={person.name} className="h-full w-full rounded-full object-cover" />
