@@ -14,7 +14,7 @@ const TeamSection = () => {
         <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] mb-6">
           О нас
         </h2>
-        <p className="reveal text-[18px] text-text-body leading-[1.7] max-w-[600px] mb-16">
+        <p className="reveal max-w-[760px] mb-16 rounded-r-xl border-l-2 border-gold bg-card/45 py-5 pl-6 pr-5 text-[19px] lg:text-[21px] text-forest/85 leading-[1.75] shadow-sm">
           Идея простая: взять всё лучшее из отпуска и добавить теннис. Или наоборот — взять теннис и добавить океан, вулкан, яхту и повара, который готовит национальные блюда каждый день. Мы собрали кемп, в который хотели бы поехать сами. Канарские острова, октябрь, двенадцать мест и вилла у моря.
         </p>
 
