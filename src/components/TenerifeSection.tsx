@@ -6,15 +6,23 @@ import tenerife3 from "@/assets/tenerife-3.jpg";
 import tenerife4 from "@/assets/tenerife-4.jpg";
 import tenerife5 from "@/assets/tenerife-5.jpg";
 import tenerife6 from "@/assets/tenerife-6.jpg";
+import tenerife7 from "@/assets/tenerife-7.jpg";
+import tenerife8 from "@/assets/tenerife-8.jpg";
+import tenerife9 from "@/assets/tenerife-9.jpg";
+import tenerife10 from "@/assets/tenerife-10.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const images = [
   { src: tenerife1, alt: "Побережье Тенерифе — чёрный вулканический пляж" },
   { src: tenerife2, alt: "Вулкан Тейде на закате" },
+  { src: tenerife7, alt: "Вулкан Тейде над облаками на рассвете" },
   { src: tenerife3, alt: "Колоритные улочки Тенерифе" },
+  { src: tenerife9, alt: "Деревня Маска в зелёной долине среди скал" },
   { src: tenerife4, alt: "Скалы Los Gigantes" },
   { src: tenerife5, alt: "Бирюзовые воды у скал Los Gigantes" },
+  { src: tenerife8, alt: "Бирюзовые волны и чёрные вулканические камни" },
   { src: tenerife6, alt: "Чёрный вулканический пляж Тенерифе" },
+  { src: tenerife10, alt: "Закат над Атлантикой с видом на Ла Гомеру" },
 ];
 
 const TenerifeSection = () => {
