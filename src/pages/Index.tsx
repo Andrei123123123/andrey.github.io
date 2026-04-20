@@ -289,7 +289,7 @@ const Index = () => {
               <div className="font-display text-[56px] font-medium text-gold leading-none mb-2">€1250</div>
               <p className="text-[15px] text-sand/40 mb-10">на человека</p>
               <ul className="flex flex-col gap-3.5 flex-1">
-                {["6 тренировок теннис/падел (2 ч каждая)", "Видеоразбор техники", "Яхта, Тейде, Маска, сёрфинг", "Турнир и банкет в замке", "Трансферы по острову", "Организация"].map((f) => (
+                {["6 тренировок теннис/падел (2 ч каждая)", "Питание от повара каждый день", "Яхта, Тейде, пляжи, сёрфинг", "Турнир и банкет в замке", "Трансферы по острову и в аэропорт", "Организация"].map((f) => (
                   <li key={f} className="text-[17px] text-sand/70 flex gap-3 items-start leading-[1.6]">
                     <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />{f}
                   </li>
