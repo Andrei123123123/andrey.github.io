@@ -42,7 +42,7 @@ const Index = () => {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [activeDay, setActiveDay] = useState(0);
   const [navScrolled, setNavScrolled] = useState(false);
-  const [formData, setFormData] = useState({ name: "", phone: "", level: "beginner" });
+  const [formData, setFormData] = useState({ name: "", phone: "" });
   const [formSent, setFormSent] = useState(false);
 
   const toggleFaq = useCallback((i: number) => {
@@ -411,19 +411,6 @@ const Index = () => {
                   className="w-full bg-forest-light/40 border border-gold/15 text-sand-light py-4 px-5 text-[16px] outline-none focus:border-gold/40 transition-colors placeholder:text-sand/20 rounded-md"
                   placeholder="+7 999 999 99 99"
                 />
-              </div>
-              <div>
-                <label className="text-[13px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Уровень игры</label>
-                <select
-                  value={formData.level}
-                  onChange={(e) => setFormData({ ...formData, level: e.target.value })}
-                  className="w-full bg-forest-light/40 border border-gold/15 text-sand-light py-4 px-5 text-[16px] outline-none focus:border-gold/40 transition-colors appearance-none rounded-md"
-                >
-                  <option value="beginner" className="bg-forest text-sand-light">Новичок</option>
-                  <option value="starter" className="bg-forest text-sand-light">Начинающий</option>
-                  <option value="intermediate" className="bg-forest text-sand-light">Любитель</option>
-                  <option value="advanced" className="bg-forest text-sand-light">Разрядник</option>
-                </select>
               </div>
               <button type="submit" className="mt-4 py-4 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase cursor-pointer border-none hover:bg-gold-light transition-all duration-300 rounded-md">
                 Отправить заявку
