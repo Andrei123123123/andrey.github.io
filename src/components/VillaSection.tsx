@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import livingRoom from "@/assets/villa-living-room.avif";
 import dining from "@/assets/villa-dining.avif";
 import terrace from "@/assets/villa-terrace.avif";
@@ -28,6 +29,94 @@ const villaImages = [
   { src: bathroom2, alt: "Ванная с тропическим душем" },
   { src: bathroom3, alt: "Светлая ванная комната" },
 ];
+
+const detailCards: { title: string; items: string[] }[] = [
+  {
+    title: "🏠 Главная вилла",
+    items: [
+      "650 м² в престижном районе Чайофа",
+      "6 спален, до 12 гостей",
+      "4 спальни с собственными ванными",
+      "Большая гостиная и обеденный стол на 8",
+      "Полностью оборудованная кухня",
+    ],
+  },
+  {
+    title: "🛏 Квартира",
+    items: [
+      "Соединена с виллой, прямой выход к бассейну",
+      "3 спальни, гостиная на двух этажах",
+      "Терраса с видом на океан",
+      "Угольный гриль и садовый стол на 6",
+      "Кухня с баром и гостиная с ТВ",
+    ],
+  },
+  {
+    title: "🌿 Студия",
+    items: [
+      "Прямой доступ к бассейну и саду",
+      "Двуспальная кровать 160 см",
+      "Мини-кухня",
+      "Полноценная ванная комната",
+      "Идеально для пары",
+    ],
+  },
+  {
+    title: "🏊 Бассейн и сад",
+    items: [
+      "Бассейн с подогревом 5,6 × 3,9 м",
+      "Контролируемый доступ для детей",
+      "Огромный сад с пальмами и газоном",
+      "Зона барбекю и тенистая столовая",
+      "Шезлонги и зона отдыха с видом на море",
+    ],
+  },
+  {
+    title: "🍽 Питание",
+    items: [
+      "Завтрак, обед и ужин — 3 раза в день",
+      "Персональный повар на вилле",
+      "Средиземноморская кухня из свежих продуктов",
+      "Учитываем аллергии и предпочтения",
+      "Свежие фрукты, соки, снэки — весь день",
+    ],
+  },
+  {
+    title: "📍 Локация и удобства",
+    items: [
+      "5 минут до Лос-Кристианос и Коста-Адехе",
+      "Рядом аквапарк Siam Park",
+      "Wi-Fi 600 Мбит/с во всех комнатах",
+      "Кондиционеры, стиральная машина",
+      "Частная парковка на 5 машин",
+    ],
+  },
+];
+
+const DetailsCarousel = () => (
+  <div className="reveal mb-8">
+    <Carousel opts={{ align: "start", loop: true }} className="w-full">
+      <CarouselContent className="-ml-4">
+        {detailCards.map((card) => (
+          <CarouselItem key={card.title} className="pl-4 md:basis-1/2">
+            <div className="bg-card rounded-lg p-8 border border-border h-full">
+              <h3 className="font-display text-[26px] font-semibold text-forest mb-6">{card.title}</h3>
+              <ul className="flex flex-col gap-3.5">
+                {card.items.map((item) => (
+                  <li key={item} className="text-[16px] text-text-body leading-[1.65] flex gap-3 items-start">
+                    <Check size={16} className="text-gold flex-shrink-0 mt-1" />{item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious className="hidden md:flex -left-4 bg-forest/80 text-gold border-gold/20 hover:bg-forest" />
+      <CarouselNext className="hidden md:flex -right-4 bg-forest/80 text-gold border-gold/20 hover:bg-forest" />
+    </Carousel>
+  </div>
+);
 
 const VillaSection = () => {
   const ref = useScrollReveal();
@@ -84,46 +173,9 @@ const VillaSection = () => {
           </div>
         </div>
 
-        {/* Details grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <div className="reveal bg-card rounded-lg p-8 border border-border">
-            <h3 className="font-display text-[26px] font-semibold text-forest mb-6">🏠 Вилла ViVa Royal</h3>
-            <ul className="flex flex-col gap-3.5">
-              {[
-                "650 м² в престижном районе Чайофа, юг Тенерифе",
-                "10 спален, до 16 гостей — официально признана Советом острова",
-                "Большой сад с пальмами, бассейн с подогревом (5,6 × 3,9 м)",
-                "Зона барбекю, тенистая обеденная зона, шезлонги",
-                "Терраса с панорамой океана и гор",
-                "Полностью оборудованные кухни и просторные гостиные",
-                "Wi-Fi 600 Мбит/с во всех комнатах, кондиционеры",
-                "5 минут до пляжей Лос-Кристианос и Коста-Адехе",
-                "Частная парковка на 5 машин, закрытая территория",
-              ].map((item) => (
-                <li key={item} className="text-[16px] text-text-body leading-[1.65] flex gap-3 items-start">
-                  <Check size={16} className="text-gold flex-shrink-0 mt-1" />{item}
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Details carousel */}
+        <DetailsCarousel />
 
-          <div className="reveal bg-card rounded-lg p-8 border border-border">
-            <h3 className="font-display text-[26px] font-semibold text-forest mb-6">🍽 Питание</h3>
-            <ul className="flex flex-col gap-3.5">
-              {[
-                "Завтрак, обед и ужин — 3 раза в день",
-                "Готовит персональный повар на вилле",
-                "Средиземноморская кухня из свежих продуктов",
-                "Учитываем аллергии и предпочтения",
-                "Свежие фрукты, соки, снэки — весь день",
-              ].map((item) => (
-                <li key={item} className="text-[16px] text-text-body leading-[1.65] flex gap-3 items-start">
-                  <Check size={16} className="text-gold flex-shrink-0 mt-1" />{item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
 
         {/* Flight info */}
         <div className="reveal bg-forest rounded-lg p-8 lg:p-10">
