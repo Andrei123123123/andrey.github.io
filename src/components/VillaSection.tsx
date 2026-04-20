@@ -1,16 +1,28 @@
 import { useState } from "react";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
-import villa1 from "@/assets/villa-1.jpg";
-import villa2 from "@/assets/villa-2.jpg";
-import villa3 from "@/assets/villa-3.jpg";
-import villa4 from "@/assets/villa-4.jpg";
+import livingRoom from "@/assets/villa-living-room.avif";
+import dining from "@/assets/villa-dining.avif";
+import terrace from "@/assets/villa-terrace.avif";
+import bedroom1 from "@/assets/villa-bedroom-1.avif";
+import bedroom2 from "@/assets/villa-bedroom-2.avif";
+import bedroom3 from "@/assets/villa-bedroom-3.jpg";
+import bedroom4 from "@/assets/villa-bedroom-4.avif";
+import bathroom1 from "@/assets/villa-bathroom-1.avif";
+import bathroom2 from "@/assets/villa-bathroom-2.avif";
+import bathroom3 from "@/assets/villa-bathroom-3.avif";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const villaImages = [
-  { src: villa1, alt: "Вилла с бассейном и видом на океан" },
-  { src: villa2, alt: "Просторная спальня с видом на море" },
-  { src: villa3, alt: "Ужин на террасе с видом на океан" },
-  { src: villa4, alt: "Бассейн с подсветкой вечером" },
+  { src: livingRoom, alt: "Светлая гостиная с панорамными окнами" },
+  { src: dining, alt: "Обеденная зона для общих ужинов" },
+  { src: terrace, alt: "Терраса для отдыха под солнцем Тенерифе" },
+  { src: bedroom1, alt: "Уютная спальня с натуральным светом" },
+  { src: bedroom2, alt: "Просторная спальня с видом на сад" },
+  { src: bedroom3, alt: "Спальня с деревянными балками и мягким светом" },
+  { src: bedroom4, alt: "Минималистичная спальня в тёплых тонах" },
+  { src: bathroom1, alt: "Современная ванная комната" },
+  { src: bathroom2, alt: "Ванная с тропическим душем" },
+  { src: bathroom3, alt: "Светлая ванная комната" },
 ];
 
 const VillaSection = () => {
