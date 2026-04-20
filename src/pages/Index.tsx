@@ -109,7 +109,7 @@ const Index = () => {
             <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="WhatsApp">
               <WhatsAppIcon size={18} />
             </a>
-            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="Instagram">
+            <a href="https://instagram.com/tenerife.tennis.camp" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="Instagram">
               <InstagramIcon size={18} />
             </a>
             <a href="https://vk.com/tennistenerife" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="VK">
@@ -448,7 +448,7 @@ const Index = () => {
             <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="WhatsApp">
               <WhatsAppIcon size={22} />
             </a>
-            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="Instagram">
+            <a href="https://instagram.com/tenerife.tennis.camp" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="Instagram">
               <InstagramIcon size={22} />
             </a>
             <a href="https://vk.com/tennistenerife" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="VK">
