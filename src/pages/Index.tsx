@@ -286,7 +286,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="reveal bg-forest rounded-lg p-8 lg:p-12 flex flex-col shadow-xl">
               <p className="text-[13px] tracking-[3px] uppercase text-gold/60 mb-4 font-medium">Спортивный пакет</p>
-              <div className="font-display text-[56px] font-medium text-gold leading-none mb-2">€900</div>
+              <div className="font-display text-[56px] font-medium text-gold leading-none mb-2">€1250</div>
               <p className="text-[15px] text-sand/40 mb-10">на человека</p>
               <ul className="flex flex-col gap-3.5 flex-1">
                 {["6 тренировок теннис/падел (2 ч каждая)", "Видеоразбор техники", "Яхта, Тейде, Маска, сёрфинг", "Турнир и банкет в замке", "Трансферы по острову", "Организация"].map((f) => (
@@ -296,7 +296,7 @@ const Index = () => {
                 ))}
               </ul>
               <a href="#cta" className="mt-10 py-4 text-center font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline bg-gold text-forest hover:bg-gold-light transition-all duration-300 block rounded-md">
-                Забронировать — €900
+                Забронировать — €1250
               </a>
             </div>
 
