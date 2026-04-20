@@ -21,12 +21,14 @@ const TeamSection = () => {
           {[
             {
               name: "Подковыркин Андрей",
+              link: "https://t.me/oceaninthesky",
               role: "Основатель проекта",
               desc: "Идейный вдохновитель кемпа. Организует все процессы: от виллы и перелётов до визовой поддержки. Живёт между Москвой и Тенерифе.",
               placeholder: "Фото организатора",
             },
             {
               name: "Еманаков Иван",
+              link: "https://t.me/oceaninthesky",
               role: "Со-организатор",
               desc: "Отвечает за программу активностей, экскурсии и логистику на острове. Курирует группу на протяжении всего кемпа.",
               placeholder: "Фото со-организатора",
@@ -45,7 +47,11 @@ const TeamSection = () => {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="font-display text-[24px] font-medium text-forest mb-1">{person.name}</h3>
+                <h3 className="font-display text-[24px] font-medium text-forest mb-1">
+                  <a href={person.link} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors no-underline">
+                    {person.name}
+                  </a>
+                </h3>
                 <p className="text-[13px] tracking-[2px] uppercase text-gold mb-4 font-medium">{person.role}</p>
                 <p className="text-[16px] text-text-body leading-[1.7]">{person.desc}</p>
               </div>
