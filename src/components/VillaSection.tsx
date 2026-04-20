@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { BadgeCheck, CarFront, Check, ChefHat, ChevronLeft, ChevronRight, Home, MapPin, Plane, TreePalm, Waves, type LucideIcon } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import livingRoom from "@/assets/villa-living-room.avif";
 import dining from "@/assets/villa-dining.avif";
@@ -30,9 +30,10 @@ const villaImages = [
   { src: bathroom3, alt: "Светлая ванная комната" },
 ];
 
-const detailCards: { title: string; items: string[] }[] = [
+const detailCards: { title: string; icon: LucideIcon; items: string[] }[] = [
   {
-    title: "🏠 Проживание",
+    title: "Проживание",
+    icon: Home,
     items: [
       "Вилла 650 м² в престижной Чайофе",
       "10 спален, до 16 гостей",
@@ -44,7 +45,8 @@ const detailCards: { title: string; items: string[] }[] = [
     ],
   },
   {
-    title: "🏊 Бассейн и сад",
+    title: "Бассейн и сад",
+    icon: Waves,
     items: [
       "Бассейн с подогревом 5,6 × 3,9 м",
       "Контролируемый доступ для детей",
@@ -54,7 +56,8 @@ const detailCards: { title: string; items: string[] }[] = [
     ],
   },
   {
-    title: "🍽 Питание",
+    title: "Питание",
+    icon: ChefHat,
     items: [
       "Завтрак, обед и ужин — 3 раза в день",
       "Персональный повар на вилле",
@@ -64,7 +67,8 @@ const detailCards: { title: string; items: string[] }[] = [
     ],
   },
   {
-    title: "📍 Локация и удобства",
+    title: "Локация и удобства",
+    icon: MapPin,
     items: [
       "5 минут до Лос-Кристианос и Коста-Адехе",
       "Рядом аквапарк Siam Park",
@@ -79,10 +83,17 @@ const DetailsCarousel = () => (
   <div className="reveal mb-8">
     <Carousel opts={{ align: "start", loop: true }} className="w-full">
       <CarouselContent className="-ml-4">
-        {detailCards.map((card) => (
+        {detailCards.map((card) => {
+          const Icon = card.icon;
+          return (
           <CarouselItem key={card.title} className="pl-4 sm:basis-1/2 lg:basis-1/3">
             <div className="bg-card rounded-lg p-6 border border-border h-full">
-              <h3 className="font-display text-[20px] font-semibold text-forest mb-4">{card.title}</h3>
+              <h3 className="font-display text-[20px] font-semibold text-forest mb-4 flex items-center gap-3">
+                <span className="w-9 h-9 rounded-full border border-gold/25 bg-gold/10 text-gold flex items-center justify-center flex-shrink-0">
+                  <Icon size={18} strokeWidth={1.7} />
+                </span>
+                {card.title}
+              </h3>
               <ul className="flex flex-col gap-2.5">
                 {card.items.map((item) => (
                   <li key={item} className="text-[14px] text-text-body leading-[1.55] flex gap-2 items-start">
@@ -92,7 +103,8 @@ const DetailsCarousel = () => (
               </ul>
             </div>
           </CarouselItem>
-        ))}
+          );
+        })}
       </CarouselContent>
       <CarouselPrevious className="hidden md:flex -left-4 bg-forest/80 text-gold border-gold/20 hover:bg-forest" />
       <CarouselNext className="hidden md:flex -right-4 bg-forest/80 text-gold border-gold/20 hover:bg-forest" />
@@ -163,19 +175,25 @@ const VillaSection = () => {
         <div className="reveal bg-forest rounded-lg p-8 lg:p-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-display text-[22px] font-semibold text-gold mb-3">✈️ Перелёт</h3>
+              <h3 className="font-display text-[22px] font-semibold text-gold mb-3 flex items-center gap-3">
+                <Plane size={20} strokeWidth={1.7} />Перелёт
+              </h3>
               <p className="text-[16px] text-sand/80 leading-[1.75]">
                 Рейсы из Москвы и Санкт-Петербурга с одной пересадкой (~9 часов). Аэропорт Тенерифе Юг (TFS). Помогаем с выбором оптимальных рейсов и дат.<br /><br />(Помогаем с подбором авиабилетов и из регионов России)
               </p>
             </div>
             <div>
-              <h3 className="font-display text-[22px] font-semibold text-gold mb-3">🛂 Виза</h3>
+              <h3 className="font-display text-[22px] font-semibold text-gold mb-3 flex items-center gap-3">
+                <BadgeCheck size={20} strokeWidth={1.7} />Виза
+              </h3>
               <p className="text-[16px] text-sand/80 leading-[1.75]">
                 Тенерифе — территория Испании (шенген). Оформляем приглашение от Tenerife Tennis Academy, помогаем с документами., сопровождаем на всех этапах.
               </p>
             </div>
             <div>
-              <h3 className="font-display text-[22px] font-semibold text-gold mb-3">🚗 Трансфер</h3>
+              <h3 className="font-display text-[22px] font-semibold text-gold mb-3 flex items-center gap-3">
+                <CarFront size={20} strokeWidth={1.7} />Трансфер
+              </h3>
               <p className="text-[16px] text-sand/80 leading-[1.75]">
                 Встречаем в аэропорту, довозим до виллы. Все перемещения по острову на экскурсии — включены. Обратный трансфер в аэропорт тоже.
               </p>
