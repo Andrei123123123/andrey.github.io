@@ -1,6 +1,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import vizagoLogo from "@/assets/vizago-logo.jpeg";
 import ttaLogo from "@/assets/tta-logo.png";
+import andreyPhoto from "@/assets/team/andrey-telegram.jpg";
 
 const TeamSection = () => {
   const ref = useScrollReveal();
@@ -25,6 +26,7 @@ const TeamSection = () => {
               role: "Организатор",
                desc: "Теннисист-любитель, который однажды решил, что играть на корте на канарских островах с видом на вулкан лучше, чем на корте у МКАДа. Так появился этот кемп. Отвечает за всё, что происходит до вашего прилёта: вилла, визы, билеты, партнёры, финансы. ",
               placeholder: "Фото организатора",
+              photo: andreyPhoto,
             },
             {
               name: "Еманаков Иван",
@@ -36,15 +38,19 @@ const TeamSection = () => {
           ].map((person) => (
             <div key={person.name} className="reveal bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-[4/3] bg-forest/10 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 rounded-full bg-forest/15 border-2 border-gold/30 mx-auto mb-4 flex items-center justify-center">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-gold/40">
-                      <circle cx="12" cy="8" r="4" />
-                      <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
-                    </svg>
+                {person.photo ? (
+                  <img src={person.photo} alt={person.name} className="h-full w-full object-cover" />
+                ) : (
+                  <div className="text-center">
+                    <div className="w-24 h-24 rounded-full bg-forest/15 border-2 border-gold/30 mx-auto mb-4 flex items-center justify-center">
+                      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-gold/40">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                      </svg>
+                    </div>
+                    <p className="text-[13px] tracking-[2px] uppercase text-text-muted-custom">{person.placeholder}</p>
                   </div>
-                  <p className="text-[13px] tracking-[2px] uppercase text-text-muted-custom">{person.placeholder}</p>
-                </div>
+                )}
               </div>
               <div className="p-8">
                 <h3 className="font-display text-[24px] font-medium text-forest mb-1">
