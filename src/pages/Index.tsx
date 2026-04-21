@@ -159,7 +159,7 @@ const Index = () => {
 
             {/* Right side — highlights */}
             <div className="animate-fade-up hidden lg:block" style={{ animationDelay: "0.25s" }}>
-              <div className="bg-forest/40 backdrop-blur-md border border-gold/15 rounded-lg p-8">
+              <div className="card-premium-dark card-premium-accent backdrop-blur-md p-8 bg-forest/40">
                 <p className="text-[13px] tracking-[3px] uppercase text-gold mb-6 font-semibold">Что входит</p>
                 <ul className="flex flex-col gap-3">
                   {[
@@ -202,7 +202,7 @@ const Index = () => {
               return (
                 <div key={day.d} className="reveal">
                   <button
-                    className={`w-full cursor-pointer rounded-lg p-5 md:p-6 flex items-start gap-5 text-left transition-all duration-300 border ${isOpen ? "bg-forest border-forest shadow-xl" : "bg-card border-border hover:border-gold/40 hover:shadow-md"}`}
+                    className={`w-full cursor-pointer rounded-2xl p-5 md:p-6 flex items-start gap-5 text-left transition-all duration-500 border ${isOpen ? "bg-forest border-gold/30 shadow-[0_2px_4px_rgba(0,0,0,0.12),0_28px_56px_-16px_rgba(0,0,0,0.5)]" : "bg-card border-gold/15 shadow-[0_1px_2px_rgba(28,43,30,0.04),0_8px_24px_-12px_rgba(28,43,30,0.12)] hover:border-gold/30 hover:shadow-[0_2px_4px_rgba(28,43,30,0.05),0_24px_48px_-16px_rgba(28,43,30,0.18)] hover:-translate-y-0.5"}`}
                     onClick={() => setActiveDay(isOpen ? -1 : i)}
                   >
                     <div className="flex flex-col items-center flex-shrink-0 text-gold">
@@ -228,7 +228,7 @@ const Index = () => {
 
                   <div className="overflow-hidden transition-all duration-500 ease-in-out" style={{ maxHeight: isOpen ? "600px" : "0" }}>
                     <div className="pt-0 px-1">
-                      <div className="rounded-b-lg overflow-hidden bg-forest border border-t-0 border-forest">
+                      <div className="rounded-b-2xl overflow-hidden bg-forest border border-t-0 border-gold/20 -mt-2 mx-2 shadow-[0_24px_48px_-16px_rgba(0,0,0,0.4)]">
                         <div className="relative">
                           <img src={day.img} alt={`День ${day.d} — ${day.title}`} className="w-full h-[220px] md:h-[300px] object-cover" loading="lazy" />
                           <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/30 to-transparent" />
@@ -284,7 +284,7 @@ const Index = () => {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="reveal bg-forest rounded-lg p-8 lg:p-12 flex flex-col shadow-xl">
+            <div className="reveal card-premium-dark card-premium-accent p-8 lg:p-12 flex flex-col">
               <p className="text-[13px] tracking-[3px] uppercase text-gold/60 mb-4 font-medium">Спортивный пакет</p>
               <div className="font-display text-[56px] font-medium text-gold leading-none mb-2">€1250</div>
               <p className="text-[15px] text-sand/40 mb-10">на человека</p>
@@ -300,7 +300,7 @@ const Index = () => {
               </a>
             </div>
 
-            <div className="reveal bg-card rounded-lg p-8 lg:p-12 flex flex-col shadow-xl border border-border">
+            <div className="reveal card-premium card-premium-accent p-8 lg:p-12 flex flex-col">
                <p className="text-[13px] tracking-[3px] uppercase text-text-muted-custom mb-4 font-medium">ТУРАГЕНТ</p>
               <div className="font-display font-medium text-forest leading-none mb-2 text-4xl">Индивидуально</div>
               <p className="text-[15px] text-text-muted-custom mb-10">перелёт + вилла + виза + страховка</p>

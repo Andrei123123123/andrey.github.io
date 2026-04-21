@@ -86,3 +86,26 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+@layer components {
+  /* ── Unified premium card system ── */
+  .card-premium {
+    @apply relative bg-card rounded-2xl border border-gold/15 shadow-[0_1px_2px_rgba(28,43,30,0.04),0_8px_24px_-12px_rgba(28,43,30,0.12)] transition-all duration-500;
+  }
+  .card-premium:hover {
+    @apply border-gold/30 shadow-[0_2px_4px_rgba(28,43,30,0.05),0_24px_48px_-16px_rgba(28,43,30,0.18)] -translate-y-0.5;
+  }
+
+  .card-premium-dark {
+    @apply relative bg-forest rounded-2xl border border-gold/20 shadow-[0_1px_2px_rgba(0,0,0,0.1),0_12px_32px_-12px_rgba(0,0,0,0.4)] transition-all duration-500;
+  }
+  .card-premium-dark:hover {
+    @apply border-gold/35 shadow-[0_2px_4px_rgba(0,0,0,0.12),0_28px_56px_-16px_rgba(0,0,0,0.5)] -translate-y-0.5;
+  }
+
+  /* Subtle gold accent stripe used as a unifying premium detail */
+  .card-premium-accent::before {
+    content: "";
+    @apply absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent opacity-70;
+  }
+}

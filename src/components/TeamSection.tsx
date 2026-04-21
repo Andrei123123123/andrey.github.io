@@ -38,7 +38,7 @@ const TeamSection = () => {
               photo: ivanPhoto,
             },
           ].map((person) => (
-            <div key={person.name} className="reveal bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-shadow duration-300">
+            <div key={person.name} className="reveal card-premium overflow-hidden flex flex-col">
               <div className="aspect-[4/3] bg-sand-light flex items-center justify-center">
                 {person.photo ? (
                   <div className="h-36 w-36 rounded-full border border-gold/30 bg-card p-1.5 shadow-lg">
@@ -73,7 +73,7 @@ const TeamSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Vizago */}
-          <div className="reveal bg-card rounded-xl p-8 lg:p-10 border border-border hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <div className="reveal card-premium card-premium-accent p-8 lg:p-10 flex flex-col">
             <div className="flex items-center gap-5 mb-6">
               <a href="https://vizago.ru/" target="_blank" rel="noopener noreferrer" className="w-24 h-24 lg:w-28 lg:h-28 rounded-2xl bg-white shadow-lg border border-gold/20 flex items-center justify-center overflow-hidden p-3 flex-shrink-0 transition-shadow hover:shadow-xl">
                 <img src={vizagoLogo} alt="Vizago" className="w-full h-full object-contain" />
@@ -140,7 +140,7 @@ const TeamSection = () => {
           </div>
 
           {/* Tenerife Tennis Academy */}
-          <div className="reveal bg-card rounded-xl p-8 lg:p-10 border border-border hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <div className="reveal card-premium card-premium-accent p-8 lg:p-10 flex flex-col">
             <div className="flex items-center gap-5 mb-6">
               <a href="https://tenerifetennisacademy.com/" target="_blank" rel="noopener noreferrer" className="w-24 h-24 lg:w-28 lg:h-28 rounded-2xl bg-white shadow-lg border border-gold/20 flex items-center justify-center overflow-hidden p-3 flex-shrink-0 transition-shadow hover:shadow-xl">
                 <img src={ttaLogo} alt="Tenerife Tennis Academy" className="w-full h-full object-contain" />
