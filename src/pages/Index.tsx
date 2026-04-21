@@ -284,7 +284,7 @@ const Index = () => {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="reveal bg-forest rounded-lg p-8 lg:p-12 flex flex-col shadow-xl">
+            <div className="reveal card-premium-dark card-premium-accent p-8 lg:p-12 flex flex-col">
               <p className="text-[13px] tracking-[3px] uppercase text-gold/60 mb-4 font-medium">Спортивный пакет</p>
               <div className="font-display text-[56px] font-medium text-gold leading-none mb-2">€1250</div>
               <p className="text-[15px] text-sand/40 mb-10">на человека</p>
@@ -300,7 +300,7 @@ const Index = () => {
               </a>
             </div>
 
-            <div className="reveal bg-card rounded-lg p-8 lg:p-12 flex flex-col shadow-xl border border-border">
+            <div className="reveal card-premium card-premium-accent p-8 lg:p-12 flex flex-col">
                <p className="text-[13px] tracking-[3px] uppercase text-text-muted-custom mb-4 font-medium">ТУРАГЕНТ</p>
               <div className="font-display font-medium text-forest leading-none mb-2 text-4xl">Индивидуально</div>
               <p className="text-[15px] text-text-muted-custom mb-10">перелёт + вилла + виза + страховка</p>
