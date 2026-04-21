@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Users, Sparkles, MessageCircle, Wine, Calendar, Heart } from "lucide-react";
 import SectionTag from "./SectionTag";
 
@@ -26,13 +27,30 @@ const formatItems = [
 ];
 
 const activities = [
-  { icon: Calendar, label: "Совместные тренировки каждый вечер" },
-  { icon: Wine, label: "Ужины с шеф-поваром на вилле" },
-  { icon: Sparkles, label: "Яхта, вулкан Тейде, сёрфинг" },
-  { icon: Users, label: "Финальный турнир и банкет в замке" },
+  {
+    icon: Calendar,
+    label: "Совместные тренировки каждый вечер",
+    description: "Шесть вечерних тренировок 16:00–18:00 на профессиональных кортах Tenerife Tennis Academy. Делимся на группы по уровню — комфортно и новичкам, и опытным.",
+  },
+  {
+    icon: Wine,
+    label: "Ужины с шеф-поваром на вилле",
+    description: "Каждый вечер личный шеф готовит ужин из локальных продуктов — испанская и канарская кухня. Длинный стол, вино, разговоры до ночи.",
+  },
+  {
+    icon: Sparkles,
+    label: "Яхта, вулкан Тейде, сёрфинг",
+    description: "Морская прогулка к скалам Los Gigantes с дельфинами, подъём на высшую точку Испании 3 718 м и урок сёрфинга в Атлантике — для любого уровня.",
+  },
+  {
+    icon: Users,
+    label: "Финальный турнир и банкет в замке",
+    description: "В последний день — дружеский турнир среди участников, награждение и прощальный ужин в средневековом замке Сан-Мигель с рыцарским шоу.",
+  },
 ];
 
 const CommunitySection = () => {
+  const [activeActivity, setActiveActivity] = useState(0);
   return (
     <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="community">
       <div className="max-w-[1200px] mx-auto">
@@ -70,16 +88,44 @@ const CommunitySection = () => {
               <h3 className="font-display text-[28px] lg:text-[34px] font-light text-sand-light leading-[1.2] mb-8">
                 Активности, после которых <em className="italic text-gold">остаются истории</em>
               </h3>
-              <ul className="flex flex-col gap-4">
-                {activities.map(({ icon: Icon, label }) => (
-                  <li key={label} className="flex items-start gap-4 text-sand/80 text-[16px]">
-                    <span className="w-9 h-9 rounded-full border border-gold/25 bg-gold/10 text-gold flex items-center justify-center flex-shrink-0">
-                      <Icon size={16} strokeWidth={1.7} />
-                    </span>
-                    <span className="pt-1.5">{label}</span>
-                  </li>
-                ))}
+              <ul className="flex flex-col gap-2">
+                {activities.map(({ icon: Icon, label }, i) => {
+                  const isActive = activeActivity === i;
+                  return (
+                    <li key={label}>
+                      <button
+                        type="button"
+                        onMouseEnter={() => setActiveActivity(i)}
+                        onFocus={() => setActiveActivity(i)}
+                        onClick={() => setActiveActivity(i)}
+                        className={`w-full flex items-center gap-4 text-left text-[16px] rounded-lg px-3 py-2.5 -mx-3 transition-all duration-300 cursor-pointer ${
+                          isActive
+                            ? "bg-gold/10 text-sand-light"
+                            : "text-sand/70 hover:text-sand-light hover:bg-gold/5"
+                        }`}
+                      >
+                        <span
+                          className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                            isActive
+                              ? "bg-gold text-forest border border-gold"
+                              : "border border-gold/25 bg-gold/10 text-gold"
+                          }`}
+                        >
+                          <Icon size={16} strokeWidth={1.7} />
+                        </span>
+                        <span>{label}</span>
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
+
+              <div
+                key={activeActivity}
+                className="mt-6 pt-6 border-t border-gold/15 text-[15px] leading-[1.7] text-sand/75 animate-fade-in"
+              >
+                {activities[activeActivity].description}
+              </div>
             </div>
 
             <div className="bg-forest/40 p-10 lg:p-14 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gold/15">
