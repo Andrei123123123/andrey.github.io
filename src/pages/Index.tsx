@@ -202,7 +202,7 @@ const Index = () => {
               return (
                 <div key={day.d} className="reveal">
                   <button
-                    className={`w-full cursor-pointer rounded-lg p-5 md:p-6 flex items-start gap-5 text-left transition-all duration-300 border ${isOpen ? "bg-forest border-forest shadow-xl" : "bg-card border-border hover:border-gold/40 hover:shadow-md"}`}
+                    className={`w-full cursor-pointer rounded-2xl p-5 md:p-6 flex items-start gap-5 text-left transition-all duration-500 border ${isOpen ? "bg-forest border-gold/30 shadow-[0_2px_4px_rgba(0,0,0,0.12),0_28px_56px_-16px_rgba(0,0,0,0.5)]" : "bg-card border-gold/15 shadow-[0_1px_2px_rgba(28,43,30,0.04),0_8px_24px_-12px_rgba(28,43,30,0.12)] hover:border-gold/30 hover:shadow-[0_2px_4px_rgba(28,43,30,0.05),0_24px_48px_-16px_rgba(28,43,30,0.18)] hover:-translate-y-0.5"}`}
                     onClick={() => setActiveDay(isOpen ? -1 : i)}
                   >
                     <div className="flex flex-col items-center flex-shrink-0 text-gold">
@@ -228,7 +228,7 @@ const Index = () => {
 
                   <div className="overflow-hidden transition-all duration-500 ease-in-out" style={{ maxHeight: isOpen ? "600px" : "0" }}>
                     <div className="pt-0 px-1">
-                      <div className="rounded-b-lg overflow-hidden bg-forest border border-t-0 border-forest">
+                      <div className="rounded-b-2xl overflow-hidden bg-forest border border-t-0 border-gold/20 -mt-2 mx-2 shadow-[0_24px_48px_-16px_rgba(0,0,0,0.4)]">
                         <div className="relative">
                           <img src={day.img} alt={`День ${day.d} — ${day.title}`} className="w-full h-[220px] md:h-[300px] object-cover" loading="lazy" />
                           <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/30 to-transparent" />
