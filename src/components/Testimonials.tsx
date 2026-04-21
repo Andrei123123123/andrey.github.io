@@ -32,7 +32,7 @@ const Testimonials = () => {
         {testimonials.map((t) => (
           <div
             key={t.name}
-            className="reveal bg-card p-10 flex flex-col gap-6 group hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden"
+            className="reveal card-premium card-premium-accent p-10 flex flex-col gap-6 group relative overflow-hidden"
           >
             <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gold scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-400" />
 
