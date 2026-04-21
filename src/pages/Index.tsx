@@ -4,6 +4,7 @@ import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import TeamSection from "@/components/TeamSection";
 import VillaSection from "@/components/VillaSection";
+import CommunitySection from "@/components/CommunitySection";
 
 import TenerifeSection from "@/components/TenerifeSection";
 import { Check, ArrowRight } from "lucide-react";
@@ -326,8 +327,10 @@ const Index = () => {
         </div>
       </section>
 
+      <CommunitySection />
+
       {/* ─── FAQ ─── */}
-      <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="faq">
+      <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="faq">
         <div className="max-w-[900px] mx-auto">
           <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] mb-14">
             Частые вопросы
