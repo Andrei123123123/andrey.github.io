@@ -87,9 +87,9 @@ const DetailsCarousel = () => (
           const Icon = card.icon;
           return (
           <CarouselItem key={card.title} className="pl-4 sm:basis-1/2 lg:basis-1/3">
-            <div className="bg-card rounded-lg p-6 border border-border h-full">
+            <div className="card-premium card-premium-accent p-7 h-full">
               <h3 className="font-display text-[20px] font-semibold text-forest mb-4 flex items-center gap-3">
-                <span className="w-9 h-9 rounded-full border border-gold/25 bg-gold/10 text-gold flex items-center justify-center flex-shrink-0">
+                <span className="w-10 h-10 rounded-full border border-gold/30 bg-gradient-to-br from-gold/15 to-gold/5 text-gold flex items-center justify-center flex-shrink-0 shadow-sm">
                   <Icon size={18} strokeWidth={1.7} />
                 </span>
                 {card.title}
@@ -172,11 +172,13 @@ const VillaSection = () => {
 
 
         {/* Flight info */}
-        <div className="reveal bg-forest rounded-lg p-8 lg:p-10">
+        <div className="reveal card-premium-dark p-8 lg:p-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="font-display text-[22px] font-semibold text-gold mb-3 flex items-center gap-3">
-                <Plane size={20} strokeWidth={1.7} />Перелёт
+                <span className="w-10 h-10 rounded-full border border-gold/30 bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <Plane size={18} strokeWidth={1.7} />
+                </span>Перелёт
               </h3>
               <p className="text-[16px] text-sand/80 leading-[1.75]">
                 Рейсы из Москвы и Санкт-Петербурга с одной пересадкой (~9 часов). Аэропорт Тенерифе Юг (TFS). Помогаем с выбором оптимальных рейсов и дат.<br /><br />(Помогаем с подбором авиабилетов и из регионов России)
@@ -184,7 +186,9 @@ const VillaSection = () => {
             </div>
             <div>
               <h3 className="font-display text-[22px] font-semibold text-gold mb-3 flex items-center gap-3">
-                <BadgeCheck size={20} strokeWidth={1.7} />Виза
+                <span className="w-10 h-10 rounded-full border border-gold/30 bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <BadgeCheck size={18} strokeWidth={1.7} />
+                </span>Виза
               </h3>
               <p className="text-[16px] text-sand/80 leading-[1.75]">
                 Тенерифе — территория Испании (шенген). Оформляем приглашение от Tenerife Tennis Academy, помогаем с документами., сопровождаем на всех этапах.
@@ -192,7 +196,9 @@ const VillaSection = () => {
             </div>
             <div>
               <h3 className="font-display text-[22px] font-semibold text-gold mb-3 flex items-center gap-3">
-                <CarFront size={20} strokeWidth={1.7} />Трансфер
+                <span className="w-10 h-10 rounded-full border border-gold/30 bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <CarFront size={18} strokeWidth={1.7} />
+                </span>Трансфер
               </h3>
               <p className="text-[16px] text-sand/80 leading-[1.75]">
                 Встречаем в аэропорту, довозим до виллы. Все перемещения по острову на экскурсии — включены. Обратный трансфер в аэропорт тоже.

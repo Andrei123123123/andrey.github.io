@@ -88,8 +88,8 @@ const TenerifeSection = () => {
             { icon: <Plane size={28} />, num: "~9 ч", label: "Перелёт с пересадкой" },
             { icon: <MapPin size={28} />, num: "∞", label: "Красоты острова" },
           ].map((f) => (
-            <div key={f.label} className="reveal p-6 rounded-lg border border-gold/10 bg-forest-light/50 backdrop-blur-sm text-center">
-              <div className="text-gold mb-3 flex justify-center">{f.icon}</div>
+            <div key={f.label} className="reveal card-premium-dark card-premium-accent p-6 text-center">
+              <div className="w-12 h-12 rounded-full border border-gold/30 bg-gold/10 text-gold mx-auto mb-3 flex items-center justify-center">{f.icon}</div>
               <span className="font-display text-[36px] font-semibold text-gold leading-none block">{f.num}</span>
               <span className="text-[13px] tracking-[1px] text-sand/60 mt-2 block">{f.label}</span>
             </div>
