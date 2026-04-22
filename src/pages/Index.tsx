@@ -447,7 +447,13 @@ const Index = () => {
               </svg>
             </a>
           </div>
-          <div className="md:text-right">
+          <div className="md:text-right space-y-2">
+            <a
+              href="/privacy"
+              className="text-[13px] text-sand/60 hover:text-gold transition-colors block"
+            >
+              Политика конфиденциальности
+            </a>
             <span className="text-[13px] text-sand/40 block">© 2026 Tennis Tenerife</span>
           </div>
         </div>
