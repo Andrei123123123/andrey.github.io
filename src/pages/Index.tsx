@@ -138,44 +138,45 @@ const Index = () => {
         <div className="relative z-10 px-6 lg:px-16 pt-28 pb-16 flex-1 flex items-center">
           <div className="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="animate-fade-up font-display font-medium text-[clamp(38px,5vw,68px)] leading-[1.08] text-sand-light tracking-[-0.5px]">
-                Теннис и падел кемп<br /><em className="not-italic text-gold">на Канарских островах</em>
+              <p className="animate-fade-up text-[13px] tracking-[3px] uppercase text-gold mb-5 font-semibold">
+                14–20 сентября 2026 · Тенерифе
+              </p>
+              <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,5.2vw,72px)] leading-[1.05] text-sand-light tracking-[-0.5px]">
+                Неделя тенниса<br />на Канарах —<br /><em className="not-italic text-gold">всё под ключ</em>
               </h1>
 
-              <p className="animate-fade-up mt-6 text-[18px] text-sand/80 leading-[1.65] font-medium" style={{ animationDelay: "0.15s" }}>
-                Вилла на всю группу, повар, корты, трансферы, экскурсии — мы собрали всё, тебе остаётся только прилететь. Теннис или падел каждый вечер, а днём — океан, горы и приключения.
+              <p className="animate-fade-up mt-6 text-[19px] text-sand/85 leading-[1.6] font-medium max-w-[520px]" style={{ animationDelay: "0.15s" }}>
+                Вилла, корты, повар, трансферы и виза — мы собрали всё. Вы просто прилетаете и играете. Группа до 12 человек.
               </p>
 
               <div className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: "0.3s" }}>
-                <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
-                  Забронировать место <ArrowRight size={16} />
+                <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
+                  <TelegramIcon size={18} /> Узнать детали
                 </a>
-                <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 py-4 px-8 border-2 border-sand/30 text-sand-light font-body text-[13px] font-medium tracking-[2px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
-                  <TelegramIcon size={18} /> Написать нам
+                <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-8 border-2 border-sand/30 text-sand-light font-body text-[13px] font-medium tracking-[2px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
+                  Забронировать <ArrowRight size={16} />
                 </a>
               </div>
 
+              <p className="animate-fade-up mt-5 text-[13px] text-sand/60" style={{ animationDelay: "0.4s" }}>
+                Депозит 270 € · Полный возврат, если кемп не состоится
+              </p>
             </div>
 
 
-            {/* Right side — highlights */}
+            {/* Right side — 4 ключевые выгоды */}
             <div className="animate-fade-up hidden lg:block" style={{ animationDelay: "0.25s" }}>
               <div className="card-premium-dark card-premium-accent backdrop-blur-md p-8 bg-forest/40">
-                <p className="text-[13px] tracking-[3px] uppercase text-gold mb-6 font-semibold">Что входит</p>
-                <ul className="flex flex-col gap-3">
+                <p className="text-[13px] tracking-[3px] uppercase text-gold mb-6 font-semibold">Что вы получаете</p>
+                <ul className="flex flex-col gap-4">
                   {[
-                    "6 тренировок на открытых кортах с видом на океан(2 ч каждая)",
-                    "Видеоразбор техники ударов",
-                    "Проживание на вилле у океана",
-                    "Питание от повара — 3 раза в день",
-                    "Трансфер по всему тенерифе",
-                    "Турнир среди участников в финальный день",
-                    "Экскурсии:  Вулкан Тейде,  яхта в Атлантическом океане, столица Канарских островов - Санта-Крус-де-Тенерифе, сёрфинг",
-                    "Всё под ключ — делаем за вас",
-                    "Оформляем шенген с пригласительным письмом от академии тенниса",
+                    "6 тренировок на кортах с видом на океан",
+                    "Вилла у океана с поваром и трансферами",
+                    "Экскурсии: Тейде, яхта, сёрфинг",
+                    "Шенген-виза по приглашению академии",
                   ].map((item) => (
-                    <li key={item} className="text-[17px] text-sand/80 flex gap-3 items-start leading-[1.6]">
-                      <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />
+                    <li key={item} className="text-[17px] text-sand/85 flex gap-3 items-start leading-[1.5]">
+                      <Check size={18} className="text-gold flex-shrink-0 mt-1" />
                       <span>{item}</span>
                     </li>
                   ))}
