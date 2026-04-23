@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
-import maxLogo from "@/assets/max-logo.png";
+import maxLogo from "@/assets/max-logo-mono.png";
 
 const navLinks = [
   { href: "#programme", label: "Программа" },
@@ -37,7 +37,7 @@ const VKIcon = ({ size = 18 }: { size?: number }) => (
 
 const socials = [
   { href: "https://t.me/tennis_tenerife", label: "Telegram", icon: <TelegramIcon size={18} /> },
-  { href: "https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI", label: "MAX", icon: <img src={maxLogo} alt="" className="w-[18px] h-[18px] rounded-[4px] block" /> },
+  { href: "https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI", label: "MAX", icon: <img src={maxLogo} alt="" className="w-[18px] h-[18px] block" style={{ filter: "brightness(0) invert(1)", opacity: 0.85 }} /> },
   { href: "https://wa.me/", label: "WhatsApp", icon: <WhatsAppIcon size={18} /> },
   { href: "https://instagram.com/tenerife.tennis.camp", label: "Instagram", icon: <InstagramIcon size={18} /> },
   { href: "https://vk.com/tennistenerife", label: "VK", icon: <VKIcon size={18} /> },
