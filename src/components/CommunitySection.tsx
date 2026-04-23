@@ -142,7 +142,7 @@ const CommunitySection = () => {
                 Присоединиться
               </a>
               <p className="text-[13px] text-sand/50 mt-4 text-center">
-                @oceaninthesky · ответим лично
+                @tennis_tenerife · ответим лично
               </p>
             </div>
           </div>
