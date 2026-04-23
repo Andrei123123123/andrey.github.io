@@ -487,6 +487,45 @@ const Index = () => {
       </footer>
 
       <StickyMobileCTA />
+
+      {/* ─── SUCCESS MODAL ─── */}
+      {formSent && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center px-6 animate-fade-in"
+          style={{ background: "rgba(28,43,30,0.85)", backdropFilter: "blur(8px)" }}
+          onClick={() => setFormSent(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="success-title"
+        >
+          <div
+            className="relative max-w-[480px] w-full bg-forest border border-gold/30 rounded-2xl p-10 text-center shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="w-16 h-16 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center mx-auto mb-6">
+              <Check size={32} className="text-gold" strokeWidth={2} />
+            </div>
+            <h3 id="success-title" className="font-display text-[28px] font-medium text-sand-light mb-3">
+              Заявка отправлена!
+            </h3>
+            <p className="text-[16px] text-sand/70 leading-[1.7] mb-8">
+              Спасибо, {formData.name || "друг"}! Мы свяжемся с вами в течение 2 часов.
+              <br />Если срочно — напишите в{" "}
+              <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
+                Telegram
+              </a>
+              .
+            </p>
+            <button
+              type="button"
+              onClick={() => setFormSent(false)}
+              className="w-full py-4 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase border-none rounded-md hover:bg-gold-light transition-colors cursor-pointer"
+            >
+              Отлично
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 };
