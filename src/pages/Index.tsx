@@ -129,9 +129,12 @@ const Index = () => {
 
         {/* Social icons + CTA */}
         <div className="hidden md:flex items-center gap-4">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="Telegram">
               <TelegramIcon size={18} />
+            </a>
+            <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="MAX">
+              <span className="inline-flex items-center justify-center w-[18px] h-[18px] border border-current rounded-[3px] font-display font-semibold text-[11px] leading-none">M</span>
             </a>
             <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="WhatsApp">
               <WhatsAppIcon size={18} />
