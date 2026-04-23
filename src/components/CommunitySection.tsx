@@ -133,7 +133,7 @@ const CommunitySection = () => {
                 Присоединяйтесь к закрытому чату — познакомитесь с участниками ещё до вылета.
               </p>
               <a
-                href="https://t.me/oceaninthesky"
+                href="https://t.me/tennis_tenerife"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 py-4 px-6 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline rounded-md hover:bg-gold/90 transition-all duration-300"
@@ -142,7 +142,7 @@ const CommunitySection = () => {
                 Присоединиться
               </a>
               <p className="text-[13px] text-sand/50 mt-4 text-center">
-                @oceaninthesky · ответим лично
+                @tennis_tenerife · ответим лично
               </p>
             </div>
           </div>
