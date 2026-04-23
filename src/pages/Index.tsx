@@ -18,7 +18,7 @@ import day18 from "@/assets/day-18.jpg";
 import day19 from "@/assets/day-19.jpg";
 import day20 from "@/assets/day-20.jpg";
 import bgPricing from "@/assets/bg-pricing.jpg";
-import maxLogo from "@/assets/max-logo-mono.png";
+
 
 const BOOKED = 4;
 const TOTAL = 12;
