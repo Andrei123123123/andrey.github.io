@@ -165,27 +165,27 @@ const Index = () => {
           <div className="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="animate-fade-up text-[13px] tracking-[3px] uppercase text-gold mb-5 font-semibold">
-                14–20 сентября 2026 · Тенерифе
+                14–20 сентября 2026 · Тенерифе · 12 мест
               </p>
               <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,5.2vw,72px)] leading-[1.05] text-sand-light tracking-[-0.5px]">
                 Неделя тенниса<br />на Канарах —<br /><em className="not-italic text-gold">всё под ключ</em>
               </h1>
 
-              <p className="animate-fade-up mt-6 text-[19px] text-sand/85 leading-[1.6] font-medium max-w-[520px]" style={{ animationDelay: "0.15s" }}>
-                Вилла, корты, повар, трансферы и виза — мы собрали всё. Вы просто прилетаете и играете. Группа до 12 человек.
+              <p className="animate-fade-up mt-6 text-[19px] text-sand/85 leading-[1.6] font-medium max-w-[540px]" style={{ animationDelay: "0.15s" }}>
+                14–20 сентября 2026. Вилла у океана, шесть вечерних тренировок, повар, трансферы и виза. Группа до 12 человек.
               </p>
 
               <div className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: "0.3s" }}>
                 <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
-                  <TelegramIcon size={18} /> Узнать детали
+                  <TelegramIcon size={18} /> Написать организатору
                 </a>
-                <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-8 border-2 border-sand/30 text-sand-light font-body text-[13px] font-medium tracking-[2px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
-                  Забронировать <ArrowRight size={16} />
+                <a href="#programme" className="inline-flex items-center justify-center gap-3 py-4 px-8 border-2 border-sand/30 text-sand-light font-body text-[13px] font-medium tracking-[2px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
+                  Программа по дням <ArrowRight size={16} />
                 </a>
               </div>
 
               <p className="animate-fade-up mt-5 text-[13px] text-sand/60" style={{ animationDelay: "0.4s" }}>
-                Депозит 270 € · Полный возврат, если кемп не состоится
+                Ответим лично в течение дня — без формы и обязательств
               </p>
             </div>
 
