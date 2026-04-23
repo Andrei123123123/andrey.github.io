@@ -18,6 +18,7 @@ import day18 from "@/assets/day-18.jpg";
 import day19 from "@/assets/day-19.jpg";
 import day20 from "@/assets/day-20.jpg";
 import bgPricing from "@/assets/bg-pricing.jpg";
+import maxLogo from "@/assets/max-logo.png";
 
 const BOOKED = 4;
 const TOTAL = 12;
@@ -133,8 +134,8 @@ const Index = () => {
             <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="Telegram">
               <TelegramIcon size={18} />
             </a>
-            <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="MAX">
-              <span className="inline-flex items-center justify-center w-[18px] h-[18px] border border-current rounded-[3px] font-display font-semibold text-[11px] leading-none">M</span>
+            <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity" aria-label="MAX">
+              <img src={maxLogo} alt="MAX" className="w-[18px] h-[18px] rounded-[4px] block" />
             </a>
             <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="WhatsApp">
               <WhatsAppIcon size={18} />
@@ -465,8 +466,8 @@ const Index = () => {
             <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="Telegram">
               <TelegramIcon size={22} />
             </a>
-            <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="MAX">
-              <span className="inline-flex items-center justify-center w-[22px] h-[22px] border border-current rounded-[4px] font-display font-semibold text-[13px] leading-none">M</span>
+            <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="opacity-50 hover:opacity-100 transition-opacity" aria-label="MAX">
+              <img src={maxLogo} alt="MAX" className="w-[22px] h-[22px] rounded-[5px] block" />
             </a>
             <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="WhatsApp">
               <WhatsAppIcon size={22} />
