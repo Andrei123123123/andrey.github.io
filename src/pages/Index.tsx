@@ -91,6 +91,10 @@ const Index = () => {
         throw new Error(error?.message || "Не удалось отправить заявку");
       }
       setFormSent(true);
+      toast({
+        title: "Заявка отправлена ✓",
+        description: "Свяжемся с вами в течение 2 часов.",
+      });
     } catch (err) {
       const message = err instanceof Error ? err.message : "Что-то пошло не так";
       toast({
