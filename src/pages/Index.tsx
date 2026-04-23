@@ -1,5 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import TeamSection from "@/components/TeamSection";
@@ -45,6 +47,7 @@ const Index = () => {
   const [navScrolled, setNavScrolled] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "" });
   const [formSent, setFormSent] = useState(false);
+  const [formSubmitting, setFormSubmitting] = useState(false);
 
   const toggleFaq = useCallback((i: number) => {
     setFaqOpen((prev) => (prev === i ? null : i));
@@ -76,9 +79,28 @@ const Index = () => {
     { d: "20", wd: "Вс", title: "Турнир и банкет", preview: "Финальный дружеский турнир, награждение победителей и прощальный ужин в средневековом замке Сан-Мигель.", tags: ["Турнир", "Награждение", "Банкет"], activities: ["Финальный дружеский турнир среди участников", "Награждение победителей", "Прощальный банкет в замке Сан-Мигель", "Трансфер в аэропорт"], img: day20 },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSent(true);
+    if (formSubmitting) return;
+    setFormSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-booking", {
+        body: { name: formData.name, phone: formData.phone },
+      });
+      if (error || !data?.ok) {
+        throw new Error(error?.message || "Не удалось отправить заявку");
+      }
+      setFormSent(true);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Что-то пошло не так";
+      toast({
+        title: "Ошибка отправки",
+        description: `${message}. Напишите нам в Telegram: @oceaninthesky`,
+        variant: "destructive",
+      });
+    } finally {
+      setFormSubmitting(false);
+    }
   };
 
   return (
