@@ -135,7 +135,7 @@ const Index = () => {
               <TelegramIcon size={18} />
             </a>
             <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="MAX">
-              <img src={maxLogo} alt="MAX" className="w-[18px] h-[18px] block" style={{ filter: "brightness(0) invert(1)", opacity: 0.85 }} />
+              <MaxIcon size={18} />
             </a>
             <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="WhatsApp">
               <WhatsAppIcon size={18} />
