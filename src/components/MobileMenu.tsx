@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
-import maxLogo from "@/assets/max-logo-mono.png";
+
 
 const navLinks = [
   { href: "#programme", label: "Программа" },
@@ -14,6 +14,12 @@ const navLinks = [
 const TelegramIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.496.969z" />
+  </svg>
+);
+
+const MaxIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M5 2h14a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3zm7 4a6 6 0 1 0 3.6 10.8l1.9 1.4a.6.6 0 0 0 .96-.48v-3.06A6 6 0 0 0 12 6zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" />
   </svg>
 );
 
@@ -37,7 +43,7 @@ const VKIcon = ({ size = 18 }: { size?: number }) => (
 
 const socials = [
   { href: "https://t.me/tennis_tenerife", label: "Telegram", icon: <TelegramIcon size={18} /> },
-  { href: "https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI", label: "MAX", icon: <img src={maxLogo} alt="" className="w-[18px] h-[18px] block" style={{ filter: "brightness(0) invert(1)", opacity: 0.85 }} /> },
+  { href: "https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI", label: "MAX", icon: <MaxIcon size={18} /> },
   { href: "https://wa.me/", label: "WhatsApp", icon: <WhatsAppIcon size={18} /> },
   { href: "https://instagram.com/tenerife.tennis.camp", label: "Instagram", icon: <InstagramIcon size={18} /> },
   { href: "https://vk.com/tennistenerife", label: "VK", icon: <VKIcon size={18} /> },

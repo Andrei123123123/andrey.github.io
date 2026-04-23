@@ -18,7 +18,7 @@ import day18 from "@/assets/day-18.jpg";
 import day19 from "@/assets/day-19.jpg";
 import day20 from "@/assets/day-20.jpg";
 import bgPricing from "@/assets/bg-pricing.jpg";
-import maxLogo from "@/assets/max-logo-mono.png";
+
 
 const BOOKED = 4;
 const TOTAL = 12;
@@ -26,6 +26,12 @@ const TOTAL = 12;
 const TelegramIcon = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.496.969z" />
+  </svg>
+);
+
+const MaxIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M5 2h14a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3zm7 4a6 6 0 1 0 3.6 10.8l1.9 1.4a.6.6 0 0 0 .96-.48v-3.06A6 6 0 0 0 12 6zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" />
   </svg>
 );
 
@@ -135,7 +141,7 @@ const Index = () => {
               <TelegramIcon size={18} />
             </a>
             <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="MAX">
-              <img src={maxLogo} alt="MAX" className="w-[18px] h-[18px] block" style={{ filter: "brightness(0) invert(1)", opacity: 0.85 }} />
+              <MaxIcon size={18} />
             </a>
             <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-sand/60 hover:text-gold transition-colors" aria-label="WhatsApp">
               <WhatsAppIcon size={18} />
@@ -467,7 +473,7 @@ const Index = () => {
               <TelegramIcon size={22} />
             </a>
             <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="MAX">
-              <img src={maxLogo} alt="MAX" className="w-[22px] h-[22px] block" style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }} />
+              <MaxIcon size={22} />
             </a>
             <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="WhatsApp">
               <WhatsAppIcon size={22} />
