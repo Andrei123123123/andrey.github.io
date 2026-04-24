@@ -175,7 +175,7 @@ const Index = () => {
           <div className="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="animate-fade-up text-[13px] tracking-[3px] uppercase text-gold mb-5 font-semibold">
-                14–20 сентября 2026 · Тенерифе · 12 мест
+                14–20 сентября 2026 · Тенерифе · осталось {TOTAL - BOOKED} из {TOTAL} мест
               </p>
               <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,5.2vw,72px)] leading-[1.05] text-sand-light tracking-[-0.5px]">
                 Неделя тенниса<br />на Канарах —<br /><em className="not-italic text-gold">всё под ключ</em>
@@ -185,17 +185,17 @@ const Index = () => {
                 14–20 сентября 2026. Вилла у океана, шесть вечерних тренировок, повар, трансферы и виза. Группа до 12 человек.
               </p>
 
-              <div className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: "0.3s" }}>
-                <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
-                  <TelegramIcon size={18} /> Написать организатору
+              <div className="animate-fade-up mt-10 flex flex-col sm:flex-row sm:items-center gap-5" style={{ animationDelay: "0.3s" }}>
+                <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
+                  Забронировать место <ArrowRight size={16} />
                 </a>
-                <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-8 border-2 border-sand/30 text-sand-light font-body text-[13px] font-medium tracking-[2px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
-                  Оставить заявку <ArrowRight size={16} />
+                <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sand/80 font-body text-[14px] tracking-[1px] no-underline hover:text-gold transition-colors duration-300">
+                  <TelegramIcon size={16} /> или написать в Telegram
                 </a>
               </div>
 
               <p className="animate-fade-up mt-5 text-[13px] text-sand/60" style={{ animationDelay: "0.4s" }}>
-                Ответим лично в течение дня — без формы и обязательств
+                Бронь — депозит 270€. Кемп не состоится — 100% возврат.
               </p>
             </div>
 
@@ -317,9 +317,20 @@ const Index = () => {
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto">
           <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-semibold">Стоимость</p>
-          <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] mb-14">
+          <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] mb-6">
             Два пакета
           </h2>
+          <p className="reveal text-[17px] text-text-body/80 leading-[1.7] mb-10 max-w-[680px]">
+            Спортивная часть — фиксированная стоимость. Перелёт, виза и проживание оформляются отдельно через нашего турагента — итоговая поездка <span className="text-forest font-semibold">от ~280 000 ₽</span> из Москвы (≈ €2 800).
+          </p>
+
+          {/* Депозит и гарантия */}
+          <div className="reveal mb-10 inline-flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5 px-5 py-4 bg-forest text-sand rounded-xl border border-gold/30">
+            <span className="font-display text-[20px] text-gold leading-none">270€</span>
+            <span className="text-[14px] leading-[1.5] text-sand/85">
+              Депозит для брони. <span className="text-sand-light font-semibold">Кемп не состоится — 100% возврат.</span>
+            </span>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="reveal card-premium-dark card-premium-accent p-8 lg:p-12 flex flex-col">
@@ -339,8 +350,8 @@ const Index = () => {
             </div>
 
             <div className="reveal card-premium card-premium-accent p-8 lg:p-12 flex flex-col">
-               <p className="text-[13px] tracking-[3px] uppercase text-text-muted-custom mb-4 font-medium">ТУРАГЕНТ</p>
-              <div className="font-display font-medium text-forest leading-none mb-2 text-4xl">Индивидуально</div>
+               <p className="text-[13px] tracking-[3px] uppercase text-text-muted-custom mb-4 font-medium">Полный пакет под ключ</p>
+              <div className="font-display font-medium text-forest leading-none mb-2 text-4xl">от ~160 000 ₽</div>
               <p className="text-[15px] text-text-muted-custom mb-10">перелёт + вилла + виза + страховка</p>
               <ul className="flex flex-col gap-3.5 flex-1">
                 {[
@@ -360,7 +371,7 @@ const Index = () => {
               </a>
             </div>
           </div>
-          <p className="text-[15px] text-text-muted-custom mt-6 leading-relaxed">Цены действительны при бронировании до 1 августа 2026. Стоимость турпакета и проживания может варьироваться в зависимости от даты бронирования, сезона и выбранных условий — уточняйте актуальную стоимость у организаторов.</p>
+          <p className="text-[15px] text-text-muted-custom mt-6 leading-relaxed">Цены действительны при бронировании до 1 августа 2026. Стоимость турпакета может варьироваться в зависимости от даты бронирования и сезона — уточняйте актуальную стоимость у организаторов.</p>
         </div>
       </section>
 
@@ -393,10 +404,13 @@ const Index = () => {
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="cta">
         <div className="max-w-[700px] mx-auto text-center">
           <h2 className="reveal font-display font-medium text-[clamp(32px,4.5vw,52px)] text-sand-light leading-[1.1] mb-3">
-            Всего {TOTAL} мест
+            Осталось {TOTAL - BOOKED} из {TOTAL} мест
           </h2>
-          <p className="reveal text-[17px] text-sand/50 mb-12 leading-[1.7]">
+          <p className="reveal text-[17px] text-sand/50 mb-3 leading-[1.7]">
             Ответим в течение 2 часов в рабочее время
+          </p>
+          <p className="reveal text-[14px] text-gold/80 mb-12 leading-[1.6]">
+            Бронь — депозит 270€. Кемп не состоится — возврат 100%.
           </p>
 
           <div className="reveal flex flex-col sm:flex-row gap-4 mb-12">
@@ -455,7 +469,8 @@ const Index = () => {
               <button type="submit" disabled={formSubmitting} className="mt-4 py-4 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase cursor-pointer border-none hover:bg-gold-light transition-all duration-300 rounded-md disabled:opacity-60 disabled:cursor-not-allowed">
                 {formSubmitting ? "Отправляем..." : "Отправить заявку"}
               </button>
-              <p className="text-[13px] text-sand/25 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+              <p className="text-[13px] text-sand/40 text-center leading-[1.6]">Пришлём подробную программу и ответим лично — без рассылок и спама.</p>
+              <p className="text-[12px] text-sand/25 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
             </form>
           )}
         </div>

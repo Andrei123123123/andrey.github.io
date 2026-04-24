@@ -34,39 +34,33 @@ const CookieConsent = () => {
       role="dialog"
       aria-live="polite"
       aria-label="Уведомление о cookie и политике конфиденциальности"
-      className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 md:px-6 md:pb-6 animate-fade-in"
+      className="fixed bottom-0 left-0 right-0 z-50 animate-fade-in"
+      style={{ background: "rgba(28,43,30,0.95)", backdropFilter: "blur(8px)" }}
     >
-      <div
-        className="max-w-[1100px] mx-auto rounded-lg shadow-[0_20px_60px_-15px_rgba(28,43,30,0.45)] border border-gold/20 px-5 py-4 md:px-7 md:py-5 flex flex-col md:flex-row md:items-center gap-4 md:gap-6"
-        style={{ background: "rgba(28,43,30,0.97)", backdropFilter: "blur(12px)" }}
-      >
-        <p className="font-body text-[13px] md:text-[14px] leading-[1.6] text-sand flex-1">
-          Мы используем cookie для корректной работы сайта и анонимной аналитики.
-          Продолжая просмотр, вы соглашаетесь с{" "}
+      <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-2.5 md:py-3 flex items-center gap-3 md:gap-5 border-t border-gold/15">
+        <p className="font-body text-[12px] md:text-[13px] leading-[1.4] text-sand/80 flex-1">
+          Используем cookie для аналитики.{" "}
           <Link
             to="/privacy"
-            className="text-gold underline underline-offset-2 hover:text-gold/80"
+            className="text-gold/90 underline underline-offset-2 hover:text-gold"
           >
-            Политикой конфиденциальности
+            Политика конфиденциальности
           </Link>
-          .
         </p>
 
-        <div className="flex items-center gap-2 shrink-0">
-          <button
-            onClick={accept}
-            className="px-6 py-3 bg-gold text-forest font-body text-[12px] tracking-[2.5px] uppercase font-medium hover:bg-gold/90 transition-colors rounded-sm"
-          >
-            Принять
-          </button>
-          <button
-            onClick={accept}
-            aria-label="Закрыть"
-            className="p-2 text-sand/60 hover:text-sand transition-colors md:hidden"
-          >
-            <X size={18} />
-          </button>
-        </div>
+        <button
+          onClick={accept}
+          className="px-4 md:px-5 py-1.5 md:py-2 bg-gold/90 text-forest font-body text-[11px] tracking-[2px] uppercase font-semibold hover:bg-gold transition-colors rounded-sm shrink-0"
+        >
+          Ок
+        </button>
+        <button
+          onClick={accept}
+          aria-label="Закрыть"
+          className="p-1 text-sand/50 hover:text-sand transition-colors shrink-0"
+        >
+          <X size={16} />
+        </button>
       </div>
     </div>
   );
