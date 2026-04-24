@@ -195,7 +195,7 @@ const Index = () => {
               </div>
 
               <p className="animate-fade-up mt-5 text-[13px] text-sand/60" style={{ animationDelay: "0.4s" }}>
-                Бронь — депозит 270€. Кемп не состоится — 100% возврат.
+                Ответим лично в течение дня — без формы и обязательств
               </p>
             </div>
 
