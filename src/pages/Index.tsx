@@ -189,8 +189,8 @@ const Index = () => {
                 <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
                   Забронировать место <ArrowRight size={16} />
                 </a>
-                <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sand/80 font-body text-[14px] tracking-[1px] no-underline hover:text-gold transition-colors duration-300">
-                  <TelegramIcon size={16} /> или написать в Telegram
+                <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-[hsl(200,70%,45%)] text-white font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-[hsl(200,70%,50%)] transition-all duration-300 rounded-md">
+                  <TelegramIcon size={16} /> Написать в Telegram
                 </a>
               </div>
 
