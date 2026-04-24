@@ -317,9 +317,20 @@ const Index = () => {
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto">
           <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-semibold">Стоимость</p>
-          <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] mb-14">
+          <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] mb-6">
             Два пакета
           </h2>
+          <p className="reveal text-[17px] text-text-body/80 leading-[1.7] mb-10 max-w-[680px]">
+            Спортивная часть — фиксированная стоимость. Перелёт, виза и проживание оформляются отдельно через нашего турагента — итоговая поездка <span className="text-forest font-semibold">от ~280 000 ₽</span> из Москвы (≈ €2 800).
+          </p>
+
+          {/* Депозит и гарантия */}
+          <div className="reveal mb-10 inline-flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5 px-5 py-4 bg-forest text-sand rounded-xl border border-gold/30">
+            <span className="font-display text-[20px] text-gold leading-none">270€</span>
+            <span className="text-[14px] leading-[1.5] text-sand/85">
+              Депозит для брони. <span className="text-sand-light font-semibold">Кемп не состоится — 100% возврат.</span>
+            </span>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="reveal card-premium-dark card-premium-accent p-8 lg:p-12 flex flex-col">
@@ -339,8 +350,8 @@ const Index = () => {
             </div>
 
             <div className="reveal card-premium card-premium-accent p-8 lg:p-12 flex flex-col">
-               <p className="text-[13px] tracking-[3px] uppercase text-text-muted-custom mb-4 font-medium">ТУРАГЕНТ</p>
-              <div className="font-display font-medium text-forest leading-none mb-2 text-4xl">Индивидуально</div>
+               <p className="text-[13px] tracking-[3px] uppercase text-text-muted-custom mb-4 font-medium">Полный пакет под ключ</p>
+              <div className="font-display font-medium text-forest leading-none mb-2 text-4xl">от ~160 000 ₽</div>
               <p className="text-[15px] text-text-muted-custom mb-10">перелёт + вилла + виза + страховка</p>
               <ul className="flex flex-col gap-3.5 flex-1">
                 {[
@@ -360,7 +371,7 @@ const Index = () => {
               </a>
             </div>
           </div>
-          <p className="text-[15px] text-text-muted-custom mt-6 leading-relaxed">Цены действительны при бронировании до 1 августа 2026. Стоимость турпакета и проживания может варьироваться в зависимости от даты бронирования, сезона и выбранных условий — уточняйте актуальную стоимость у организаторов.</p>
+          <p className="text-[15px] text-text-muted-custom mt-6 leading-relaxed">Цены действительны при бронировании до 1 августа 2026. Стоимость турпакета может варьироваться в зависимости от даты бронирования и сезона — уточняйте актуальную стоимость у организаторов.</p>
         </div>
       </section>
 
