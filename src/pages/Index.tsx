@@ -405,7 +405,7 @@ const Index = () => {
             Ответим в течение 2 часов в рабочее время
           </p>
           <p className="reveal text-[14px] text-gold/80 mb-12 leading-[1.6]">
-            Бронь — депозит 270€. Кемп не состоится — возврат 100%.
+            ​
           </p>
 
           <div className="reveal grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
