@@ -348,7 +348,7 @@ const Index = () => {
                   "Проживание на вилле у моря\n~50 000 р",
                   "Оформление приглашений от теннисной академии для получения шенгена",
                   "Виза ~ 20 000 ₽",
-                  "Страховка",
+                  "Спортивная страховка",
                 ].map((f) => (
                   <li key={f} className="text-[17px] text-text-body flex gap-3 items-start leading-[1.6]">
                     <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />{f}
