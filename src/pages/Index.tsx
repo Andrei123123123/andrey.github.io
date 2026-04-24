@@ -175,7 +175,7 @@ const Index = () => {
           <div className="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="animate-fade-up text-[13px] tracking-[3px] uppercase text-gold mb-5 font-semibold">
-                14–20 сентября 2026 · Тенерифе
+                <span>14–20 сентября 2026 · Тенерифе</span>
               </p>
               <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,5.2vw,72px)] leading-[1.05] text-sand-light tracking-[-0.5px]">
                 Неделя тенниса<br />на Канарах —<br /><em className="not-italic text-gold">всё под ключ</em>
