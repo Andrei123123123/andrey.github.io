@@ -469,7 +469,8 @@ const Index = () => {
               <button type="submit" disabled={formSubmitting} className="mt-4 py-4 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase cursor-pointer border-none hover:bg-gold-light transition-all duration-300 rounded-md disabled:opacity-60 disabled:cursor-not-allowed">
                 {formSubmitting ? "Отправляем..." : "Отправить заявку"}
               </button>
-              <p className="text-[13px] text-sand/25 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+              <p className="text-[13px] text-sand/40 text-center leading-[1.6]">Пришлём подробную программу и ответим лично — без рассылок и спама.</p>
+              <p className="text-[12px] text-sand/25 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
             </form>
           )}
         </div>
