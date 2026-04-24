@@ -404,10 +404,13 @@ const Index = () => {
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="cta">
         <div className="max-w-[700px] mx-auto text-center">
           <h2 className="reveal font-display font-medium text-[clamp(32px,4.5vw,52px)] text-sand-light leading-[1.1] mb-3">
-            Всего {TOTAL} мест
+            Осталось {TOTAL - BOOKED} из {TOTAL} мест
           </h2>
-          <p className="reveal text-[17px] text-sand/50 mb-12 leading-[1.7]">
+          <p className="reveal text-[17px] text-sand/50 mb-3 leading-[1.7]">
             Ответим в течение 2 часов в рабочее время
+          </p>
+          <p className="reveal text-[14px] text-gold/80 mb-12 leading-[1.6]">
+            Бронь — депозит 270€. Кемп не состоится — возврат 100%.
           </p>
 
           <div className="reveal flex flex-col sm:flex-row gap-4 mb-12">
