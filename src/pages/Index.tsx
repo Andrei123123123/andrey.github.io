@@ -413,20 +413,27 @@ const Index = () => {
             Бронь — депозит 270€. Кемп не состоится — возврат 100%.
           </p>
 
-          <div className="reveal flex flex-col sm:flex-row gap-4 mb-12">
+          <div className="reveal grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <a
               href="https://wa.me/79655096888?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%BA%D0%B5%D0%BC%D0%BF%D0%B5"
               target="_blank" rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-3 py-4 px-8 bg-[hsl(142,70%,35%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(142,70%,40%)] transition-all duration-300 rounded-md"
+              className="inline-flex items-center justify-center gap-3 py-4 px-6 bg-[hsl(142,70%,35%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(142,70%,40%)] transition-all duration-300 rounded-md"
             >
               <WhatsAppIcon size={20} /> WhatsApp
             </a>
             <a
               href="https://t.me/tennis_tenerife"
               target="_blank" rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-3 py-4 px-8 bg-[hsl(200,70%,45%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(200,70%,50%)] transition-all duration-300 rounded-md"
+              className="inline-flex items-center justify-center gap-3 py-4 px-6 bg-[hsl(200,70%,45%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(200,70%,50%)] transition-all duration-300 rounded-md"
             >
               <TelegramIcon size={20} /> Telegram
+            </a>
+            <a
+              href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI"
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 py-4 px-6 bg-[hsl(28,90%,55%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(28,90%,60%)] transition-all duration-300 rounded-md"
+            >
+              <MaxIcon size={20} /> MAX
             </a>
           </div>
 
