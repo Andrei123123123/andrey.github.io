@@ -431,7 +431,7 @@ const Index = () => {
             <a
               href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI"
               target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 py-4 px-6 bg-[hsl(28,90%,55%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(28,90%,60%)] transition-all duration-300 rounded-md"
+              className="inline-flex items-center justify-center gap-3 py-4 px-6 bg-[hsl(220,70%,25%)] text-white font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-[hsl(220,70%,32%)] transition-all duration-300 rounded-md"
             >
               <MaxIcon size={20} /> MAX
             </a>
