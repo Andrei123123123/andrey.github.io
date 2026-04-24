@@ -175,7 +175,7 @@ const Index = () => {
           <div className="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="animate-fade-up text-[13px] tracking-[3px] uppercase text-gold mb-5 font-semibold">
-                14–20 сентября 2026 · Тенерифе · 12 мест
+                14–20 сентября 2026 · Тенерифе · осталось {TOTAL - BOOKED} из {TOTAL} мест
               </p>
               <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,5.2vw,72px)] leading-[1.05] text-sand-light tracking-[-0.5px]">
                 Неделя тенниса<br />на Канарах —<br /><em className="not-italic text-gold">всё под ключ</em>
@@ -185,17 +185,17 @@ const Index = () => {
                 14–20 сентября 2026. Вилла у океана, шесть вечерних тренировок, повар, трансферы и виза. Группа до 12 человек.
               </p>
 
-              <div className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: "0.3s" }}>
-                <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
-                  <TelegramIcon size={18} /> Написать организатору
+              <div className="animate-fade-up mt-10 flex flex-col sm:flex-row sm:items-center gap-5" style={{ animationDelay: "0.3s" }}>
+                <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
+                  Забронировать место <ArrowRight size={16} />
                 </a>
-                <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-8 border-2 border-sand/30 text-sand-light font-body text-[13px] font-medium tracking-[2px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
-                  Оставить заявку <ArrowRight size={16} />
+                <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sand/80 font-body text-[14px] tracking-[1px] no-underline hover:text-gold transition-colors duration-300">
+                  <TelegramIcon size={16} /> или написать в Telegram
                 </a>
               </div>
 
               <p className="animate-fade-up mt-5 text-[13px] text-sand/60" style={{ animationDelay: "0.4s" }}>
-                Ответим лично в течение дня — без формы и обязательств
+                Бронь — депозит 270€. Кемп не состоится — 100% возврат.
               </p>
             </div>
 
