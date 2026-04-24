@@ -324,13 +324,8 @@ const Index = () => {
             Спортивная часть — фиксированная стоимость. Перелёт, виза и проживание оформляются отдельно через нашего турагента — итоговая поездка <span className="text-forest font-semibold">от ~280 000 ₽</span> из Москвы (≈ €2 800).
           </p>
 
-          {/* Депозит и гарантия */}
-          <div className="reveal mb-10 inline-flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5 px-5 py-4 bg-forest text-sand rounded-xl border border-gold/30">
-            <span className="font-display text-[20px] text-gold leading-none">270€</span>
-            <span className="text-[14px] leading-[1.5] text-sand/85">
-              Депозит для брони. <span className="text-sand-light font-semibold">Кемп не состоится — 100% возврат.</span>
-            </span>
-          </div>
+
+
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="reveal card-premium-dark card-premium-accent p-8 lg:p-12 flex flex-col">
