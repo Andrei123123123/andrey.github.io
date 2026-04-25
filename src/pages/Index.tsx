@@ -223,7 +223,66 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ─── НАШИ СИЛЬНЫЕ СТОРОНЫ ─── */}
+      <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="strengths">
+        <div className="max-w-[1200px] mx-auto">
+          <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-medium">Почему мы</p>
+          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] mb-4">
+            Наши сильные стороны
+          </h2>
+          <p className="reveal text-[17px] text-text-body leading-[1.7] mb-14 max-w-[650px]">
+            Берём на себя всё — от визы до встречи в аэропорту. Вам остаётся только играть и отдыхать.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            <article className="reveal card-premium card-premium-accent p-8 lg:p-10">
+              <div className="w-12 h-12 rounded-full bg-gold/15 flex items-center justify-center mb-6">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold">
+                  <rect x="3" y="4" width="18" height="16" rx="2" />
+                  <path d="M3 10h18M8 4v4M16 4v4" />
+                  <path d="M9 15l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 className="font-display text-[24px] text-forest leading-tight mb-3">Приглашение для визы</h3>
+              <p className="text-[16px] text-text-body leading-[1.65]">
+                Партнёр оформляет испанское приглашение, готовит документы и сопровождает подачу. Срок — 2–4 недели.
+              </p>
+            </article>
+
+            <article className="reveal card-premium card-premium-accent p-8 lg:p-10">
+              <div className="w-12 h-12 rounded-full bg-gold/15 flex items-center justify-center mb-6">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold">
+                  <path d="M2 16l10-12 10 12" />
+                  <path d="M4 16h16v4H4z" />
+                  <path d="M12 8v8" />
+                </svg>
+              </div>
+              <h3 className="font-display text-[24px] text-forest leading-tight mb-3">Полный тур под ключ</h3>
+              <p className="text-[16px] text-text-body leading-[1.65]">
+                Перелёт, проживание на вилле у океана, питание, трансферы и экскурсии — всё включено в один пакет.
+              </p>
+            </article>
+
+            <article className="reveal card-premium card-premium-accent p-8 lg:p-10">
+              <div className="w-12 h-12 rounded-full bg-gold/15 flex items-center justify-center mb-6">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold">
+                  <circle cx="9" cy="8" r="3" />
+                  <circle cx="17" cy="9" r="2.5" />
+                  <path d="M3 19c0-3 2.5-5 6-5s6 2 6 5" />
+                  <path d="M15 19c0-2 1.5-3.5 4-3.5s4 1.5 4 3.5" />
+                </svg>
+              </div>
+              <h3 className="font-display text-[24px] text-forest leading-tight mb-3">Сильное community</h3>
+              <p className="text-[16px] text-text-body leading-[1.65]">
+                Тёплая компания единомышленников: общий чат до старта, ужины, новые знакомства и связи на годы вперёд.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* ─── ПРОГРАММА ПО ДНЯМ ─── */}
+
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="programme">
         <div className="max-w-[1200px] mx-auto">
           <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-medium">14–20 сентября 2026</p>
