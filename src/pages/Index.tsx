@@ -200,20 +200,55 @@ const Index = () => {
             </div>
 
 
-            {/* Right side — 4 ключевые выгоды */}
+            {/* Right side — наши сильные стороны */}
             <div className="animate-fade-up hidden lg:block" style={{ animationDelay: "0.25s" }}>
               <div className="card-premium-dark card-premium-accent backdrop-blur-md p-8 bg-forest/40">
-                <p className="text-[13px] tracking-[3px] uppercase text-gold mb-6 font-semibold">Что вы получаете</p>
-                <ul className="flex flex-col gap-4">
+                <p className="text-[13px] tracking-[3px] uppercase text-gold mb-6 font-semibold">Наши сильные стороны</p>
+                <ul className="flex flex-col gap-6">
                   {[
-                    "6 тренировок на кортах с видом на океан",
-                    "Вилла у океана с поваром и трансферами",
-                    "Экскурсии: Тейде, яхта, сёрфинг",
-                    "Индивидуальная Шенген-виза по приглашению теннисной академии Тенерифе",
+                    {
+                      title: "Приглашение для визы",
+                      desc: "Партнёр оформляет испанское приглашение и сопровождает подачу. Срок 2–4 недели.",
+                      icon: (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <rect x="3" y="4" width="18" height="16" rx="2" />
+                          <path d="M3 10h18M8 4v4M16 4v4" />
+                          <path d="M9 15l2 2 4-4" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      title: "Полный тур под ключ",
+                      desc: "Перелёт, вилла у океана, питание, трансферы и экскурсии — всё в одном пакете.",
+                      icon: (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <path d="M2 16l10-12 10 12" />
+                          <path d="M4 16h16v4H4z" />
+                          <path d="M12 8v8" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      title: "Сильное community",
+                      desc: "Тёплая компания единомышленников: общий чат, ужины и связи на годы вперёд.",
+                      icon: (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <circle cx="9" cy="8" r="3" />
+                          <circle cx="17" cy="9" r="2.5" />
+                          <path d="M3 19c0-3 2.5-5 6-5s6 2 6 5" />
+                          <path d="M15 19c0-2 1.5-3.5 4-3.5s4 1.5 4 3.5" />
+                        </svg>
+                      ),
+                    },
                   ].map((item) => (
-                    <li key={item} className="text-[17px] text-sand/85 flex gap-3 items-start leading-[1.5]">
-                      <Check size={18} className="text-gold flex-shrink-0 mt-1" />
-                      <span>{item}</span>
+                    <li key={item.title} className="flex gap-4 items-start">
+                      <span className="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center text-gold flex-shrink-0">
+                        {item.icon}
+                      </span>
+                      <div>
+                        <p className="font-display text-[19px] text-sand-light leading-tight mb-1">{item.title}</p>
+                        <p className="text-[15px] text-sand/70 leading-[1.55]">{item.desc}</p>
+                      </div>
                     </li>
                   ))}
                 </ul>
