@@ -185,6 +185,24 @@ const Index = () => {
                 14–20 сентября 2026. Вилла у океана, шесть вечерних тренировок, повар, трансферы и виза. Группа до 12 человек.
               </p>
 
+              {/* УТП — почему именно мы */}
+              <div className="animate-fade-up mt-8 flex flex-wrap gap-2.5 max-w-[560px]" style={{ animationDelay: "0.22s" }}>
+                {[
+                  "Виза под ключ — приглашение от академии",
+                  "Всё включено: перелёт, вилла, повар, трансферы",
+                  "Камерная группа до 12 человек",
+                  "Возврат 100% если кемп не состоится",
+                ].map((utp) => (
+                  <span
+                    key={utp}
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-gold/30 bg-forest/40 backdrop-blur-sm text-[13px] text-sand/90 leading-tight"
+                  >
+                    <Check size={14} strokeWidth={2.2} className="text-gold flex-shrink-0" />
+                    {utp}
+                  </span>
+                ))}
+              </div>
+
               <div className="animate-fade-up mt-10 flex flex-col sm:flex-row sm:items-center gap-5" style={{ animationDelay: "0.3s" }}>
                 <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
                   Забронировать место <ArrowRight size={16} />
