@@ -1,9 +1,11 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useActiveSection } from "@/hooks/useActiveSection";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import ScrollProgress from "@/components/ScrollProgress";
 import TeamSection from "@/components/TeamSection";
 import VillaSection from "@/components/VillaSection";
 import CommunitySection from "@/components/CommunitySection";
@@ -66,6 +68,41 @@ const Index = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Hero parallax — translate background slightly with scroll
+  const heroBgRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    let raf = 0;
+    const update = () => {
+      const el = heroBgRef.current;
+      if (el) {
+        const y = Math.min(window.scrollY, window.innerHeight) * 0.35;
+        el.style.setProperty("--hero-parallax", `${y}px`);
+      }
+      raf = 0;
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  const navLinks = [
+    { href: "#programme", label: "Программа" },
+    { href: "#trainer", label: "Команда" },
+    { href: "#location", label: "Тенерифе" },
+    { href: "#pricing", label: "Стоимость" },
+    { href: "#faq", label: "FAQ" },
+  ];
+  const activeSection = useActiveSection(
+    navLinks.map((l) => l.href.slice(1)),
+    140,
+  );
+
   const faqs = [
     { q: "Нужна ли виза?", a: "Да, нужна испанская виза (Тенерифе — территория Испании/ЕС). Наш партнер оформляет приглашение, документы и подачу. Стоимость 20 000 ₽. Срок оформления — 2–4 недели." },
     { q: "Какой уровень игры нужен?", a: "Принимаем от начинающих (кто хочет попробовать для себя что-то новое) до уверенных любителей. В первый день разбиваем на группы по уровню. Можно выбрать теннис или падел." },
@@ -116,22 +153,27 @@ const Index = () => {
 
   return (
     <main ref={containerRef}>
+      <ScrollProgress />
       {/* ─── STICKY NAV ─── */}
       <nav className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 lg:px-16 flex justify-between items-center transition-all duration-300 ${navScrolled ? "bg-forest/95 backdrop-blur-md shadow-lg" : ""}`}>
         <span className="font-display text-[17px] italic text-gold tracking-[2px]">Tennis · Tenerife</span>
 
         <ul className="hidden lg:flex gap-8 list-none">
-          {[
-            { href: "#programme", label: "Программа" },
-            { href: "#trainer", label: "Команда" },
-            { href: "#location", label: "Тенерифе" },
-            { href: "#pricing", label: "Стоимость" },
-            { href: "#faq", label: "FAQ" },
-          ].map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="text-[15px] tracking-[1.5px] uppercase text-sand/90 no-underline hover:text-gold transition-colors duration-300 font-semibold">{l.label}</a>
-            </li>
-          ))}
+          {navLinks.map((l) => {
+            const isActive = activeSection === l.href.slice(1);
+            return (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className={`text-[15px] tracking-[1.5px] uppercase no-underline transition-colors duration-300 font-semibold ${
+                    isActive ? "nav-link-active" : "text-sand/90 hover:text-gold"
+                  }`}
+                >
+                  {l.label}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Social icons + CTA */}
@@ -164,7 +206,7 @@ const Index = () => {
 
       {/* ─── 01. HERO ─── */}
       <section className="min-h-screen relative flex flex-col justify-center overflow-hidden" id="hero">
-        <div className="absolute inset-0">
+        <div ref={heroBgRef} className="absolute inset-0 hero-parallax">
           <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover" aria-hidden="true">
             <source src="/hero-bg.mp4" type="video/mp4" />
           </video>

@@ -65,6 +65,43 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+@media (max-width: 768px) {
+  html { scroll-padding-top: 72px; }
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-fade-up, .reveal { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* Hero parallax helper — driven via CSS var --hero-parallax (px) set from JS */
+.hero-parallax {
+  will-change: transform;
+  transform: translate3d(0, var(--hero-parallax, 0px), 0) scale(1.08);
+}
+
+/* Active nav link */
+.nav-link-active {
+  color: hsl(var(--gold)) !important;
+  position: relative;
+}
+.nav-link-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  background: hsl(var(--gold));
+  opacity: 0.85;
 }
 
 @keyframes fadeUp {
