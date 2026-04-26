@@ -186,22 +186,55 @@ const Index = () => {
               </p>
 
               {/* УТП — почему именно мы */}
-              <div className="animate-fade-up mt-8 flex flex-wrap gap-2.5 max-w-[560px]" style={{ animationDelay: "0.22s" }}>
+              <ul className="animate-fade-up mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[600px] list-none" style={{ animationDelay: "0.22s" }}>
                 {[
-                  "Виза под ключ — приглашение от академии",
-                  "Всё включено: перелёт, вилла, повар, трансферы",
-                  "Камерная группа до 12 человек",
-                  "Возврат 100% если кемп не состоится",
+                  {
+                    title: "Виза под ключ",
+                    desc: "Приглашение от академии, помощь с документами и подачей",
+                    href: "#faq",
+                  },
+                  {
+                    title: "Всё включено",
+                    desc: "Перелёт, вилла у океана, повар, трансферы — без скрытых доплат",
+                    href: "#pricing",
+                  },
+                  {
+                    title: "Камерная группа",
+                    desc: "До 12 человек — внимание тренера каждому игроку",
+                    href: "#programme",
+                  },
+                  {
+                    title: "Возврат 100%",
+                    desc: "Если кемп не состоится — полностью вернём предоплату",
+                    href: "#faq",
+                  },
                 ].map((utp) => (
-                  <span
-                    key={utp}
-                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-gold/30 bg-forest/40 backdrop-blur-sm text-[13px] text-sand/90 leading-tight"
-                  >
-                    <Check size={14} strokeWidth={2.2} className="text-gold flex-shrink-0" />
-                    {utp}
-                  </span>
+                  <li key={utp.title}>
+                    <a
+                      href={utp.href}
+                      className="group relative block h-full px-5 py-4 rounded-xl border border-gold/20 bg-forest/30 backdrop-blur-md hover:border-gold/50 hover:bg-forest/50 transition-all duration-300 no-underline"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 w-7 h-7 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/25 transition-colors">
+                          <Check size={14} strokeWidth={2.4} className="text-gold" />
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-display text-[17px] text-sand-light leading-tight tracking-[-0.2px]">
+                            {utp.title}
+                          </p>
+                          <p className="mt-1 text-[13px] text-sand/70 leading-snug">
+                            {utp.desc}
+                          </p>
+                        </div>
+                        <ArrowRight
+                          size={14}
+                          className="text-gold/0 group-hover:text-gold/80 group-hover:translate-x-0.5 transition-all duration-300 mt-1.5 flex-shrink-0"
+                        />
+                      </div>
+                    </a>
+                  </li>
                 ))}
-              </div>
+              </ul>
 
               <div className="animate-fade-up mt-10 flex flex-col sm:flex-row sm:items-center gap-5" style={{ animationDelay: "0.3s" }}>
                 <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
