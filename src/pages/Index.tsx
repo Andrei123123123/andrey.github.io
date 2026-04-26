@@ -153,22 +153,27 @@ const Index = () => {
 
   return (
     <main ref={containerRef}>
+      <ScrollProgress />
       {/* ─── STICKY NAV ─── */}
       <nav className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 lg:px-16 flex justify-between items-center transition-all duration-300 ${navScrolled ? "bg-forest/95 backdrop-blur-md shadow-lg" : ""}`}>
         <span className="font-display text-[17px] italic text-gold tracking-[2px]">Tennis · Tenerife</span>
 
         <ul className="hidden lg:flex gap-8 list-none">
-          {[
-            { href: "#programme", label: "Программа" },
-            { href: "#trainer", label: "Команда" },
-            { href: "#location", label: "Тенерифе" },
-            { href: "#pricing", label: "Стоимость" },
-            { href: "#faq", label: "FAQ" },
-          ].map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="text-[15px] tracking-[1.5px] uppercase text-sand/90 no-underline hover:text-gold transition-colors duration-300 font-semibold">{l.label}</a>
-            </li>
-          ))}
+          {navLinks.map((l) => {
+            const isActive = activeSection === l.href.slice(1);
+            return (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className={`text-[15px] tracking-[1.5px] uppercase no-underline transition-colors duration-300 font-semibold ${
+                    isActive ? "nav-link-active" : "text-sand/90 hover:text-gold"
+                  }`}
+                >
+                  {l.label}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Social icons + CTA */}
