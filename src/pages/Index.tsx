@@ -1,9 +1,11 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useActiveSection } from "@/hooks/useActiveSection";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import ScrollProgress from "@/components/ScrollProgress";
 import TeamSection from "@/components/TeamSection";
 import VillaSection from "@/components/VillaSection";
 import CommunitySection from "@/components/CommunitySection";
@@ -65,6 +67,41 @@ const Index = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Hero parallax — translate background slightly with scroll
+  const heroBgRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    let raf = 0;
+    const update = () => {
+      const el = heroBgRef.current;
+      if (el) {
+        const y = Math.min(window.scrollY, window.innerHeight) * 0.35;
+        el.style.setProperty("--hero-parallax", `${y}px`);
+      }
+      raf = 0;
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  const navLinks = [
+    { href: "#programme", label: "Программа" },
+    { href: "#trainer", label: "Команда" },
+    { href: "#location", label: "Тенерифе" },
+    { href: "#pricing", label: "Стоимость" },
+    { href: "#faq", label: "FAQ" },
+  ];
+  const activeSection = useActiveSection(
+    navLinks.map((l) => l.href.slice(1)),
+    140,
+  );
 
   const faqs = [
     { q: "Нужна ли виза?", a: "Да, нужна испанская виза (Тенерифе — территория Испании/ЕС). Наш партнер оформляет приглашение, документы и подачу. Стоимость 20 000 ₽. Срок оформления — 2–4 недели." },
