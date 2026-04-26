@@ -206,7 +206,7 @@ const Index = () => {
 
       {/* ─── 01. HERO ─── */}
       <section className="min-h-screen relative flex flex-col justify-center overflow-hidden" id="hero">
-        <div className="absolute inset-0">
+        <div ref={heroBgRef} className="absolute inset-0 hero-parallax">
           <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover" aria-hidden="true">
             <source src="/hero-bg.mp4" type="video/mp4" />
           </video>
