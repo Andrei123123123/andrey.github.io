@@ -99,7 +99,7 @@ const TeamSection = () => {
                 <p className="text-[12px] text-text-muted-custom mt-0.5">виз оформлено</p>
               </div>
               <div className="text-center">
-                <p className="font-display text-[22px] font-semibold text-forest">97%</p>
+                <p className="font-display text-[22px] font-semibold text-forest">98%</p>
                 <p className="text-[12px] text-text-muted-custom mt-0.5">одобрение шенгена</p>
               </div>
               <div className="text-center">
