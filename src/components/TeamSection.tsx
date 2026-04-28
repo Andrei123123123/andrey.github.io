@@ -89,13 +89,13 @@ const TeamSection = () => {
             </div>
 
             <p className="text-[15px] text-text-body leading-[1.7] mb-6">
-              ВизаGO — визовый оператор и официальный турагент кемпа. Более 500 успешно оформленных шенгенских виз. Берёт на себя всё: приглашение от академии, подготовка документов, запись в консульство, подбор авиабилетов. Персональный менеджер от заявки до возвращения домой.
+              ВизаGO — визовый оператор и official турагент кемпа. Более 2500 успешно оформленных шенгенских виз. Берёт на себя всё: приглашение от академии, подготовка документов, запись в консульство, подбор авиабилетов. Персональный менеджер от заявки до возвращения домой.
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-3 mb-6 py-4 border-y border-border">
               <div className="text-center">
-                <p className="font-display text-[22px] font-semibold text-forest">500+</p>
+                <p className="font-display text-[22px] font-semibold text-forest">2500+</p>
                 <p className="text-[12px] text-text-muted-custom mt-0.5">виз оформлено</p>
               </div>
               <div className="text-center">
