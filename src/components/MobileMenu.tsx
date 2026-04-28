@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
+import { useBookingModal } from "@/contexts/BookingModalContext";
 
 
 const navLinks = [
