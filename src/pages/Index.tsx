@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useActiveSection } from "@/hooks/useActiveSection";
+import { useBookingModal } from "@/contexts/BookingModalContext";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import MobileMenu from "@/components/MobileMenu";
@@ -51,6 +52,7 @@ const InstagramIcon = ({ size = 16 }: { size?: number }) => (
 
 const Index = () => {
   const containerRef = useScrollReveal();
+  const { open: openBookingModal } = useBookingModal();
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [activeDay, setActiveDay] = useState(0);
   const [navScrolled, setNavScrolled] = useState(false);
@@ -197,9 +199,9 @@ const Index = () => {
               </svg>
             </a>
           </div>
-          <a href="#cta" className="py-2.5 px-6 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-gold-light transition-colors duration-300 rounded-md">
+          <button type="button" onClick={openBookingModal} className="py-2.5 px-6 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2px] uppercase border-none cursor-pointer hover:bg-gold-light transition-colors duration-300 rounded-md">
             Забронировать
-          </a>
+          </button>
         </div>
         <MobileMenu />
       </nav>
@@ -279,9 +281,9 @@ const Index = () => {
               </ul>
 
               <div className="animate-fade-up mt-10 flex flex-col sm:flex-row sm:items-center gap-5" style={{ animationDelay: "0.3s" }}>
-                <a href="#cta" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-gold-light transition-all duration-300 rounded-md">
+                <button type="button" onClick={openBookingModal} className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
                   Забронировать место <ArrowRight size={16} />
-                </a>
+                </button>
                 <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-[hsl(200,70%,45%)] text-white font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline hover:bg-[hsl(200,70%,50%)] transition-all duration-300 rounded-md">
                   <TelegramIcon size={16} /> Написать в Telegram
                 </a>
@@ -421,9 +423,9 @@ const Index = () => {
           </div>
 
           <div className="mt-14 flex flex-col sm:flex-row items-center gap-5 reveal">
-            <a href="#cta" className="inline-flex items-center gap-3 py-4 px-10 bg-forest text-gold font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline rounded-md hover:bg-forest-mid transition-all duration-300">
+            <button type="button" onClick={openBookingModal} className="inline-flex items-center gap-3 py-4 px-10 bg-forest text-gold font-body text-[13px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer rounded-md hover:bg-forest-mid transition-all duration-300">
               Забронировать <ArrowRight size={16} />
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -468,9 +470,9 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <a href="#cta" className="mt-10 py-4 text-center font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline bg-gold text-forest hover:bg-gold-light transition-all duration-300 block rounded-md">
+              <button type="button" onClick={openBookingModal} className="mt-10 py-4 text-center font-body text-[13px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer bg-gold text-forest hover:bg-gold-light transition-all duration-300 block w-full rounded-md">
                 Забронировать — €1250
-              </a>
+              </button>
             </div>
 
             <div className="reveal card-premium card-premium-accent p-8 lg:p-12 flex flex-col">

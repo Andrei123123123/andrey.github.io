@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
+import { useBookingModal } from "@/contexts/BookingModalContext";
 
 
 const navLinks = [
@@ -51,6 +52,7 @@ const socials = [
 
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
+  const { open: openBooking } = useBookingModal();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -93,13 +95,16 @@ const MobileMenu = () => {
       </nav>
 
       <div className="px-8 pb-12 space-y-6">
-        <a
-          href="#cta"
-          onClick={() => setOpen(false)}
-          className="block w-full py-4 text-center bg-gold text-forest font-body text-[13px] font-medium tracking-[3px] uppercase no-underline"
+        <button
+          type="button"
+          onClick={() => {
+            setOpen(false);
+            openBooking();
+          }}
+          className="block w-full py-4 text-center bg-gold text-forest font-body text-[13px] font-medium tracking-[3px] uppercase border-none cursor-pointer rounded-md"
         >
           Забронировать место
-        </a>
+        </button>
         <div className="flex items-center justify-center gap-6 pt-2 border-t border-gold/10">
           {socials.map((s) => (
             <a
