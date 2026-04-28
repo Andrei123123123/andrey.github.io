@@ -123,20 +123,34 @@ const BookingModal = () => {
       aria-labelledby="booking-modal-title"
     >
       <div
-        className="relative w-full sm:max-w-[520px] bg-forest border border-gold/25 sm:rounded-2xl rounded-t-2xl shadow-2xl max-h-[92vh] overflow-y-auto"
+        ref={sheetRef}
+        className="relative w-full sm:max-w-[520px] bg-forest border border-gold/25 sm:rounded-2xl rounded-t-2xl shadow-2xl max-h-[92dvh] sm:max-h-[92vh] overflow-y-auto overscroll-contain"
+        style={{
+          transform: dragY ? `translateY(${dragY}px)` : undefined,
+          transition: dragStartY.current == null ? "transform 0.25s ease-out" : "none",
+          paddingBottom: "env(safe-area-inset-bottom)",
+        }}
         onClick={(e) => e.stopPropagation()}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
       >
+        {/* Drag handle (mobile only) */}
+        <div className="sm:hidden sticky top-0 z-20 flex justify-center pt-2.5 pb-1.5 bg-forest">
+          <span className="block w-10 h-1 rounded-full bg-sand/25" aria-hidden="true" />
+        </div>
+
         {/* Close */}
         <button
           type="button"
           onClick={close}
           aria-label="Закрыть окно"
-          className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-gold/80 hover:text-gold border border-gold/20 hover:border-gold/40 bg-transparent rounded-full cursor-pointer transition-colors z-10"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-gold/80 hover:text-gold border border-gold/20 hover:border-gold/40 bg-forest/80 backdrop-blur rounded-full cursor-pointer transition-colors z-30"
         >
           <X size={18} />
         </button>
 
-        <div className="p-7 sm:p-10">
+        <div className="px-5 pt-3 pb-6 sm:p-10">
           {formSent ? (
             <div className="text-center py-4">
               <div className="w-16 h-16 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center mx-auto mb-6">
