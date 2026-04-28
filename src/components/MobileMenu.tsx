@@ -52,6 +52,7 @@ const socials = [
 
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
+  const { open: openBooking } = useBookingModal();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
