@@ -24,7 +24,7 @@ import bgPricing from "@/assets/bg-pricing.jpg";
 
 
 const BOOKED = 4;
-const TOTAL = 12;
+const TOTAL = 14;
 
 const TelegramIcon = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -226,7 +226,7 @@ const Index = () => {
               </h1>
 
               <p className="animate-fade-up mt-6 text-[19px] text-sand/85 leading-[1.6] font-medium max-w-[540px]" style={{ animationDelay: "0.15s" }}>
-                14–20 сентября 2026. Вилла у океана, шесть вечерних тренировок, повар, трансферы и виза. Группа до 12 человек.
+                14–20 сентября 2026. Вилла у океана, шесть вечерних тренировок, повар, трансферы и виза. Группа до 14 человек.
               </p>
 
               {/* УТП — почему именно мы */}
@@ -244,7 +244,7 @@ const Index = () => {
                   },
                   {
                     title: "Камерная группа",
-                    desc: "До 12 человек — внимание тренера каждому игроку",
+                    desc: "До 14 человек — внимание тренера каждому игроку",
                     href: "#programme",
                   },
                   {
