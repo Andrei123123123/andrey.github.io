@@ -162,7 +162,7 @@ const TeamSection = () => {
             {/* Stats */}
             <div className="grid grid-cols-4 gap-3 mb-6 py-4 border-y border-border">
               <div className="text-center">
-                <p className="font-display text-[22px] font-semibold text-forest">10+</p>
+                <p className="font-display text-[22px] font-semibold text-forest">15+</p>
                 <p className="text-[12px] text-text-muted-custom mt-0.5">лет работы</p>
               </div>
               <div className="text-center">
