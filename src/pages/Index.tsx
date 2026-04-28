@@ -52,6 +52,7 @@ const InstagramIcon = ({ size = 16 }: { size?: number }) => (
 
 const Index = () => {
   const containerRef = useScrollReveal();
+  const { open: openBookingModal } = useBookingModal();
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [activeDay, setActiveDay] = useState(0);
   const [navScrolled, setNavScrolled] = useState(false);
