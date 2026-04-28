@@ -470,9 +470,9 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <a href="#cta" className="mt-10 py-4 text-center font-body text-[13px] font-semibold tracking-[2.5px] uppercase no-underline bg-gold text-forest hover:bg-gold-light transition-all duration-300 block rounded-md">
+              <button type="button" onClick={openBookingModal} className="mt-10 py-4 text-center font-body text-[13px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer bg-gold text-forest hover:bg-gold-light transition-all duration-300 block w-full rounded-md">
                 Забронировать — €1250
-              </a>
+              </button>
             </div>
 
             <div className="reveal card-premium card-premium-accent p-8 lg:p-12 flex flex-col">
