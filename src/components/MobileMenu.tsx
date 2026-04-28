@@ -95,13 +95,16 @@ const MobileMenu = () => {
       </nav>
 
       <div className="px-8 pb-12 space-y-6">
-        <a
-          href="#cta"
-          onClick={() => setOpen(false)}
-          className="block w-full py-4 text-center bg-gold text-forest font-body text-[13px] font-medium tracking-[3px] uppercase no-underline"
+        <button
+          type="button"
+          onClick={() => {
+            setOpen(false);
+            openBooking();
+          }}
+          className="block w-full py-4 text-center bg-gold text-forest font-body text-[13px] font-medium tracking-[3px] uppercase border-none cursor-pointer rounded-md"
         >
           Забронировать место
-        </a>
+        </button>
         <div className="flex items-center justify-center gap-6 pt-2 border-t border-gold/10">
           {socials.map((s) => (
             <a
