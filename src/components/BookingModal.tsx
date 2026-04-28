@@ -32,6 +32,30 @@ const BookingModal = () => {
   const [formData, setFormData] = useState({ name: "", phone: "" });
   const [formSent, setFormSent] = useState(false);
   const [formSubmitting, setFormSubmitting] = useState(false);
+  const sheetRef = useRef<HTMLDivElement>(null);
+  const dragStartY = useRef<number | null>(null);
+  const [dragY, setDragY] = useState(0);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    // Only initiate drag-to-close when the sheet is scrolled to the top
+    if ((sheetRef.current?.scrollTop ?? 0) > 0) return;
+    dragStartY.current = e.touches[0].clientY;
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (dragStartY.current == null) return;
+    const delta = e.touches[0].clientY - dragStartY.current;
+    if (delta > 0) setDragY(delta);
+  };
+
+  const onTouchEnd = () => {
+    if (dragStartY.current == null) return;
+    if (dragY > 110) {
+      close();
+    }
+    dragStartY.current = null;
+    setDragY(0);
+  };
 
   // Lock body scroll when open
   useEffect(() => {
