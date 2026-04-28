@@ -199,9 +199,9 @@ const Index = () => {
               </svg>
             </a>
           </div>
-          <a href="#cta" className="py-2.5 px-6 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2px] uppercase no-underline hover:bg-gold-light transition-colors duration-300 rounded-md">
+          <button type="button" onClick={openBookingModal} className="py-2.5 px-6 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2px] uppercase border-none cursor-pointer hover:bg-gold-light transition-colors duration-300 rounded-md">
             Забронировать
-          </a>
+          </button>
         </div>
         <MobileMenu />
       </nav>
