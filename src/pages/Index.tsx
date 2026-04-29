@@ -9,6 +9,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import ScrollProgress from "@/components/ScrollProgress";
 import TeamSection from "@/components/TeamSection";
 import VillaSection from "@/components/VillaSection";
+import MenuSection from "@/components/MenuSection";
 import CommunitySection from "@/components/CommunitySection";
 
 import TenerifeSection from "@/components/TenerifeSection";
@@ -435,6 +436,9 @@ const Index = () => {
 
       {/* ─── ВИЛЛА И ПИТАНИЕ ─── */}
       <VillaSection />
+
+      {/* ─── МЕНЮ ОТ ПОВАРА ─── */}
+      <MenuSection />
 
       {/* ─── ТЕНЕРИФЕ ─── */}
       <TenerifeSection />
