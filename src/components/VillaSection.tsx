@@ -120,7 +120,7 @@ const VillaSection = () => {
   const next = () => setCurrent((c) => (c === villaImages.length - 1 ? 0 : c + 1));
 
   return (
-    <section ref={ref} className="bg-cream py-24 lg:py-32 px-6 lg:px-16">
+    <section ref={ref} id="villa" className="bg-cream py-24 lg:py-32 px-6 lg:px-16">
       <div className="max-w-[1200px] mx-auto">
         <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-semibold">Проживание и питание</p>
         <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] mb-6">
