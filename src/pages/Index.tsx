@@ -437,6 +437,9 @@ const Index = () => {
       {/* ─── ВИЛЛА И ПИТАНИЕ ─── */}
       <VillaSection />
 
+      {/* ─── МЕНЮ ОТ ПОВАРА ─── */}
+      <MenuSection />
+
       {/* ─── ТЕНЕРИФЕ ─── */}
       <TenerifeSection />
 
