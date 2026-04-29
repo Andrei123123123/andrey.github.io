@@ -96,6 +96,7 @@ const Index = () => {
 
   const navLinks = [
     { href: "#programme", label: "Программа" },
+    { href: "#villa", label: "Вилла" },
     { href: "#trainer", label: "Команда" },
     { href: "#location", label: "Тенерифе" },
     { href: "#pricing", label: "Стоимость" },
