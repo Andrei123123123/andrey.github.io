@@ -358,7 +358,7 @@ const Index = () => {
 
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="programme">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-medium">14–20 сентября 2026</p>
+          <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-medium">14–20 октября 2026</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] mb-4">
             Программа по дням
           </h2>
