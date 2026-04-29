@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChefHat, Leaf, Utensils, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChefHat, Leaf, Utensils, ChevronLeft, ChevronRight, Sunrise, UtensilsCrossed } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import menuPlaceholder from "@/assets/menu-placeholder.jpg";
 
@@ -19,9 +19,9 @@ const variants: MenuVariant[] = [
   {
     id: "med",
     label: "Средиземноморский",
-    tagline: "Сбалансированный · рыба, овощи, оливковое масло",
+    tagline: "Рыба, овощи, оливковое масло",
     description:
-      "Базовое меню для большинства гостей. Лёгкие завтраки, питательные обеды — энергия для вечерних тренировок.",
+      "Базовое меню для большинства гостей. Лёгкие завтраки и питательные обеды — энергия для вечерних тренировок.",
     icon: Utensils,
     days: [
       { day: "Пн", breakfast: "Омлет с овощами и сыром, тосты, авокадо, фрукты", lunch: "Куриная грудка гриль, киноа, овощи на пару" },
@@ -39,9 +39,9 @@ const variants: MenuVariant[] = [
     ],
   },
   {
-    id: "mix",
-    label: "Микс кухонь",
-    tagline: "Азия · домашняя · Италия",
+    id: "world",
+    label: "Гастрономический тур",
+    tagline: "Азия, Италия, домашняя кухня",
     description:
       "Альтернативный сценарий с большим разнообразием. Каждый день — другой вкус и настроение стола.",
     icon: ChefHat,
@@ -55,7 +55,7 @@ const variants: MenuVariant[] = [
       { day: "Вс", breakfast: "Круассаны, яйца, фрукты", lunch: "Поке с лососем и рисом" },
     ],
     images: [
-      { src: menuPlaceholder, alt: "Микс кухонь" },
+      { src: menuPlaceholder, alt: "Гастрономический тур" },
       { src: menuPlaceholder, alt: "Азиатские блюда" },
       { src: menuPlaceholder, alt: "Стейк с овощами" },
     ],
@@ -63,7 +63,7 @@ const variants: MenuVariant[] = [
   {
     id: "vegan",
     label: "Веганский",
-    tagline: "По запросу · полноценный по белку",
+    tagline: "По запросу, полноценный по белку",
     description:
       "Опция для гостей, которые не едят животные продукты. Готовится параллельно общему меню — без компромиссов по вкусу.",
     icon: Leaf,
@@ -87,31 +87,30 @@ const variants: MenuVariant[] = [
 const MenuSection = () => {
   const ref = useScrollReveal();
   const [activeId, setActiveId] = useState(variants[0].id);
-  const [slide, setSlide] = useState(0);
+  const [slides, setSlides] = useState<Record<string, number>>(
+    Object.fromEntries(variants.map((v) => [v.id, 0])),
+  );
   const active = variants.find((v) => v.id === activeId)!;
+  const slide = slides[active.id] ?? 0;
 
-  const switchVariant = (id: string) => {
-    setActiveId(id);
-    setSlide(0);
-  };
-
-  const prev = () => setSlide((s) => (s === 0 ? active.images.length - 1 : s - 1));
-  const next = () => setSlide((s) => (s === active.images.length - 1 ? 0 : s + 1));
+  const setSlide = (i: number) => setSlides((s) => ({ ...s, [active.id]: i }));
+  const prev = () => setSlide(slide === 0 ? active.images.length - 1 : slide - 1);
+  const next = () => setSlide(slide === active.images.length - 1 ? 0 : slide + 1);
 
   return (
-    <section ref={ref} className="bg-sand/30 py-24 lg:py-32 px-6 lg:px-16" id="menu">
+    <section ref={ref} className="bg-sand/30 py-24 lg:py-28 px-6 lg:px-16" id="menu">
       <div className="max-w-[1200px] mx-auto">
         <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-semibold">Питание</p>
-        <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] mb-6">
+        <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,52px)] text-forest leading-[1.1] mb-5">
           Меню от повара на вилле
         </h2>
-        <p className="reveal text-[18px] text-text-body leading-[1.75] max-w-[720px] mb-12">
-          Завтраки и обеды готовит личный шеф из свежих локальных продуктов. Меню адаптировано под тренировки —
-          вкусный lifestyle, а не фитнес-диета. Учитываем аллергии и предпочтения.
+        <p className="reveal text-[17px] text-text-body leading-[1.7] max-w-[680px] mb-10">
+          Завтраки и обеды готовит личный шеф из свежих локальных продуктов. Меню адаптировано под тренировки.
+          Учитываем аллергии и предпочтения.
         </p>
 
         {/* Tabs */}
-        <div className="reveal flex flex-wrap gap-2 mb-10">
+        <div className="reveal flex flex-wrap gap-2 mb-8">
           {variants.map((v) => {
             const Icon = v.icon;
             const isActive = v.id === activeId;
@@ -119,39 +118,44 @@ const MenuSection = () => {
               <button
                 key={v.id}
                 type="button"
-                onClick={() => switchVariant(v.id)}
-                className={`inline-flex items-center gap-2 px-5 py-3 rounded-full text-[14px] font-semibold tracking-[0.5px] transition-all duration-300 cursor-pointer border ${
+                onClick={() => setActiveId(v.id)}
+                className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-semibold tracking-[0.3px] transition-all duration-300 cursor-pointer border ${
                   isActive
                     ? "bg-forest text-gold border-forest shadow-md"
-                    : "bg-cream text-forest/75 border-forest/15 hover:border-gold/50 hover:text-forest"
+                    : "bg-cream text-forest/70 border-forest/15 hover:border-gold/50 hover:text-forest"
                 }`}
               >
-                <Icon size={16} strokeWidth={1.8} />
+                <Icon size={15} strokeWidth={1.8} />
                 {v.label}
               </button>
             );
           })}
         </div>
 
-        {/* Content */}
-        <div key={active.id} className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 animate-fade-in">
-          {/* Carousel */}
-          <div className="reveal">
-            <div className="relative rounded-lg overflow-hidden h-[300px] md:h-[460px]">
+        {/* Card */}
+        <div className="reveal card-premium overflow-hidden rounded-2xl bg-cream border border-forest/10 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            {/* Carousel */}
+            <div className="relative h-[280px] sm:h-[360px] lg:h-auto lg:min-h-[520px] bg-forest/10">
               {active.images.map((img, i) => (
                 <img
-                  key={i}
+                  key={`${active.id}-${i}`}
                   src={img.src}
                   alt={img.alt}
                   width={1280}
                   height={832}
                   loading="lazy"
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
                     i === slide ? "opacity-100" : "opacity-0"
                   }`}
                 />
               ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-forest/40 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest/50 via-transparent to-transparent pointer-events-none" />
+
+              <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest/70 backdrop-blur-sm text-gold text-[11px] tracking-[2px] uppercase font-semibold">
+                <active.icon size={13} strokeWidth={1.8} />
+                {active.label}
+              </div>
 
               {active.images.length > 1 && (
                 <>
@@ -159,19 +163,18 @@ const MenuSection = () => {
                     type="button"
                     onClick={prev}
                     aria-label="Предыдущее фото"
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer"
                   >
-                    <ChevronLeft size={20} />
+                    <ChevronLeft size={18} />
                   </button>
                   <button
                     type="button"
                     onClick={next}
                     aria-label="Следующее фото"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer"
                   >
-                    <ChevronRight size={20} />
+                    <ChevronRight size={18} />
                   </button>
-
                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                     {active.images.map((_, i) => (
                       <button
@@ -179,8 +182,8 @@ const MenuSection = () => {
                         type="button"
                         aria-label={`Фото ${i + 1}`}
                         onClick={() => setSlide(i)}
-                        className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer border-none ${
-                          i === slide ? "bg-gold w-8" : "bg-sand/50 w-2.5"
+                        className={`h-2 rounded-full transition-all duration-300 cursor-pointer border-none ${
+                          i === slide ? "bg-gold w-7" : "bg-sand/60 w-2"
                         }`}
                       />
                     ))}
@@ -188,33 +191,39 @@ const MenuSection = () => {
                 </>
               )}
             </div>
-            <p className="text-[13px] text-text-body/70 mt-3 italic">{active.tagline}</p>
-          </div>
 
-          {/* Days table */}
-          <div className="reveal">
-            <p className="text-[15px] text-text-body leading-[1.7] mb-6">{active.description}</p>
-            <div className="card-premium card-premium-accent p-6 lg:p-8">
-              <ul className="flex flex-col divide-y divide-forest/10">
+            {/* Days */}
+            <div className="p-7 lg:p-9">
+              <p className="text-[12px] tracking-[2.5px] uppercase text-gold/80 font-semibold mb-2">
+                {active.tagline}
+              </p>
+              <p className="text-[14.5px] text-text-body/85 leading-[1.6] mb-6">{active.description}</p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-3.5">
                 {active.days.map((d) => (
-                  <li key={d.day} className="py-3 first:pt-0 last:pb-0">
-                    <div className="flex items-baseline gap-3 mb-1.5">
-                      <span className="font-display text-[18px] text-gold font-semibold w-8">{d.day}</span>
-                      <span className="text-[12px] uppercase tracking-[2px] text-forest/60">Завтрак</span>
+                  <div key={d.day} className="border-t border-forest/10 pt-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-display text-[18px] text-forest font-semibold">{d.day}</span>
+                      <span className="h-px flex-1 bg-forest/10 mx-3" />
+                      <span className="text-[10px] uppercase tracking-[2px] text-gold/70">День</span>
                     </div>
-                    <p className="text-[14.5px] text-text-body leading-[1.55] pl-11 mb-2">{d.breakfast}</p>
-                    <div className="flex items-baseline gap-3 mb-1.5">
-                      <span className="w-8" />
-                      <span className="text-[12px] uppercase tracking-[2px] text-forest/60">Обед</span>
+                    <div className="flex gap-2 items-start text-[13.5px] text-text-body leading-[1.5] mb-1.5">
+                      <Sunrise size={13} className="text-gold/80 flex-shrink-0 mt-1" strokeWidth={1.7} />
+                      <span>{d.breakfast}</span>
                     </div>
-                    <p className="text-[14.5px] text-text-body leading-[1.55] pl-11">{d.lunch}</p>
-                  </li>
+                    <div className="flex gap-2 items-start text-[13.5px] text-text-body leading-[1.5]">
+                      <UtensilsCrossed size={13} className="text-gold/80 flex-shrink-0 mt-1" strokeWidth={1.7} />
+                      <span>{d.lunch}</span>
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
+
+              <p className="text-[12.5px] text-text-body/65 mt-6 pt-5 border-t border-forest/10 leading-[1.55] italic">
+                Ужины — отдельная история: каждый вечер шеф готовит блюда испанской и канарской кухни за общим
+                столом.
+              </p>
             </div>
-            <p className="text-[13px] text-text-body/65 mt-4 leading-[1.6]">
-              Ужины — отдельная история: каждый вечер шеф готовит блюда испанской и канарской кухни за общим столом.
-            </p>
           </div>
         </div>
       </div>
