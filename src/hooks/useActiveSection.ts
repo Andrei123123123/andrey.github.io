@@ -12,7 +12,8 @@ export function useActiveSection(ids: string[], offset = 120) {
       for (const id of ids) {
         const el = document.getElementById(id);
         if (!el) continue;
-        if (el.offsetTop <= y) current = id;
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        if (top <= y) current = id;
       }
       // Bottom of page → last
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) {
