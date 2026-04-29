@@ -358,7 +358,7 @@ const Index = () => {
 
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="programme">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-medium">14–20 сентября 2026</p>
+          <p className="reveal text-[13px] tracking-[3px] uppercase text-gold mb-4 font-medium">14–20 октября 2026</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.15] mb-4">
             Программа по дням
           </h2>
@@ -614,7 +614,7 @@ const Index = () => {
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div>
             <span className="font-display text-[17px] italic text-gold tracking-[2px] block">Tennis · Tenerife</span>
-            <span className="text-[14px] text-sand/30 mt-1 block">14–20 сентября 2026</span>
+            <span className="text-[14px] text-sand/30 mt-1 block">14–20 октября 2026</span>
           </div>
           <div className="flex items-center justify-center gap-5">
             <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/40 hover:text-gold transition-colors" aria-label="Telegram">
