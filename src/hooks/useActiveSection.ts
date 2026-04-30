@@ -1,12 +1,34 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function useActiveSection(ids: string[], offset = 120) {
   const [active, setActive] = useState<string>(ids[0] ?? "");
+  const targetHashRef = useRef<string | null>(null);
 
   useEffect(() => {
     if (!ids.length) return;
 
+    const setFromHash = () => {
+      const hashId = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+      if (!ids.includes(hashId)) return;
+      targetHashRef.current = hashId;
+      setActive((prev) => (prev === hashId ? prev : hashId));
+    };
+
     const calc = () => {
+      const targetHash = targetHashRef.current;
+      if (targetHash) {
+        const targetEl = document.getElementById(targetHash);
+        if (targetEl) {
+          const targetTop = targetEl.getBoundingClientRect().top;
+          setActive((prev) => (prev === targetHash ? prev : targetHash));
+          if (Math.abs(targetTop - offset) <= 96) {
+            targetHashRef.current = null;
+          }
+          return;
+        }
+        targetHashRef.current = null;
+      }
+
       // Pick the section whose top is closest to (and not below) the offset line.
       const line = offset;
       let current = ids[0];
@@ -33,12 +55,15 @@ export function useActiveSection(ids: string[], offset = 120) {
       setActive((prev) => (prev === current ? prev : current));
     };
 
+    setFromHash();
     calc();
     window.addEventListener("scroll", calc, { passive: true });
     window.addEventListener("resize", calc);
+    window.addEventListener("hashchange", setFromHash);
     return () => {
       window.removeEventListener("scroll", calc);
       window.removeEventListener("resize", calc);
+      window.removeEventListener("hashchange", setFromHash);
     };
   }, [ids, offset]);
 
