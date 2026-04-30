@@ -104,7 +104,7 @@ const Index = () => {
   ];
   const activeSection = useActiveSection(
     navLinks.map((l) => l.href.slice(1)),
-    100,
+    180,
   );
 
   const faqs = [
