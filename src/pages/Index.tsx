@@ -13,6 +13,7 @@ import MenuSection from "@/components/MenuSection";
 import CommunitySection from "@/components/CommunitySection";
 
 import TenerifeSection from "@/components/TenerifeSection";
+import Advantages from "@/components/Advantages";
 import { Check, ArrowRight } from "lucide-react";
 import day14 from "@/assets/day-14.jpg";
 import day15 from "@/assets/day-15.jpg";
@@ -444,6 +445,8 @@ const Index = () => {
       {/* ─── ТЕНЕРИФЕ ─── */}
       <TenerifeSection />
 
+      {/* ─── ПРЕИМУЩЕСТВА: ВИЗА · ПОЛНЫЙ ТУР · COMMUNITY ─── */}
+      <Advantages />
 
       {/* ─── ЦЕНА И ТАРИФЫ ─── */}
       <section className="relative py-24 lg:py-32 px-6 lg:px-16 overflow-hidden" id="pricing">

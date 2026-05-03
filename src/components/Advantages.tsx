@@ -7,6 +7,7 @@ import communityImg from "@/assets/community.jpg";
 const advantages = [
   {
     num: "01",
+    id: "visa",
     title: "Визовая поддержка",
     subtitle: "Пригласительное письмо от академии",
     description:
@@ -21,6 +22,7 @@ const advantages = [
   },
   {
     num: "02",
+    id: "tour",
     title: "Полный тур",
     subtitle: "Перелёт · Проживание · Питание",
     description:
@@ -35,6 +37,7 @@ const advantages = [
   },
   {
     num: "03",
+    id: "community",
     title: "Community",
     subtitle: "Больше, чем просто теннис",
     description:
@@ -63,7 +66,8 @@ const Advantages = () => {
         {advantages.map((item, i) => (
           <div
             key={item.num}
-            className={`reveal grid grid-cols-1 lg:grid-cols-2 gap-0 bg-forest overflow-hidden group transition-transform duration-300 ${
+            id={item.id}
+            className={`reveal grid grid-cols-1 lg:grid-cols-2 gap-0 bg-forest overflow-hidden group transition-transform duration-300 scroll-mt-24 ${
               i % 2 === 1 ? "lg:direction-rtl" : ""
             }`}
           >
