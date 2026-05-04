@@ -472,7 +472,7 @@ const Index = () => {
               <div className="font-display text-[56px] font-medium text-gold leading-none mb-2">€1250</div>
               <p className="text-[15px] text-sand/40 mb-10">на человека</p>
               <ul className="flex flex-col gap-3.5 flex-1">
-                {["6 тренировок теннис/падел (2 ч каждая)", "Питание от повара каждый день", "Яхта, Тейде, пляжи, сёрфинг", "Турнир и банкет в замке", "Трансферы по острову и в аэропорт", "Организация"].map((f) => (
+                {["6 тренировок теннис/падел (1,5 ч каждая)", "Питание от повара каждый день", "Яхта, Тейде, пляжи, сёрфинг", "Турнир и банкет в замке", "Трансферы по острову и в аэропорт", "Организация"].map((f) => (
                   <li key={f} className="text-[17px] text-sand/70 flex gap-3 items-start leading-[1.6]">
                     <Check size={16} className="text-gold flex-shrink-0 mt-0.5" />{f}
                   </li>
@@ -537,11 +537,12 @@ const Index = () => {
       {/* ─── ФИНАЛЬНЫЙ CTA + ФОРМА ─── */}
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="cta">
         <div className="max-w-[700px] mx-auto text-center">
-          <h2 className="reveal font-display font-medium text-[clamp(32px,4.5vw,52px)] text-sand-light leading-[1.1] mb-3" aria-hidden="true" />
-          <p className="reveal text-[17px] text-sand/50 mb-3 leading-[1.7]">
-            Ответим в течение 2 часов в рабочее время
+          <h2 className="reveal font-display font-medium text-[clamp(32px,4.5vw,52px)] text-sand-light leading-[1.1] mb-4">
+            Остались вопросы? <em className="italic text-gold">Напишите нам</em>
+          </h2>
+          <p className="reveal text-[17px] text-sand/60 mb-12 leading-[1.7]">
+            Ответим в течение 2 часов в рабочее время — без формы и обязательств
           </p>
-          <p className="reveal text-[14px] text-gold/80 mb-12 leading-[1.6]" aria-hidden="true" />
 
           <div className="reveal grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <a
