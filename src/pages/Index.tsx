@@ -2,8 +2,6 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useBookingModal } from "@/contexts/BookingModalContext";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "@/hooks/use-toast";
 import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -13,7 +11,6 @@ import MenuSection from "@/components/MenuSection";
 import CommunitySection from "@/components/CommunitySection";
 
 import TenerifeSection from "@/components/TenerifeSection";
-import Advantages from "@/components/Advantages";
 import { Check, ArrowRight } from "lucide-react";
 import day14 from "@/assets/day-14.jpg";
 import day15 from "@/assets/day-15.jpg";
@@ -58,9 +55,6 @@ const Index = () => {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [activeDay, setActiveDay] = useState(0);
   const [navScrolled, setNavScrolled] = useState(false);
-  const [formData, setFormData] = useState({ name: "", phone: "" });
-  const [formSent, setFormSent] = useState(false);
-  const [formSubmitting, setFormSubmitting] = useState(false);
 
   const toggleFaq = useCallback((i: number) => {
     setFaqOpen((prev) => (prev === i ? null : i));
@@ -114,47 +108,20 @@ const Index = () => {
     { q: "Нужна ли своя ракетка?", a: "Нет, академия предоставит. Если хотите играть своей — отлично, берите с собой." },
     { q: "Еду один — не буду ли чужим?", a: "80% участников едут одни. До отъезда создаём общий чат, где все знакомятся. После первого ужина эта тревога исчезает." },
     { q: "Сколько часов тенниса в день?", a: "1,5 часа вечерней тренировки каждый день. Итого 6 полноценных тренировок за неделю: разминка, техника, игровые сеты." },
-    { q: "Включён ли перелёт?", a: "Мы помогаем с подбором авиабилетов для комфортного перелета.  Аэропорт — Тенерифе Юг (TFS), ~9 часов из Москвы с пересадкой." },
+    { q: "Включён ли перелёт?", a: "Нет, перелёт оплачивается отдельно. Помогаем подобрать рейсы. Аэропорт — Тенерифе Юг (TFS), ~9 часов из Москвы с пересадкой." },
     { q: "Что если не смогу поехать?", a: "Кемп не состоялся — 100% возврат. Отмена за 30+ дней — полный возврат. За 14–30 дней — 50%. Менее 14 дней — без возврата." },
   ];
 
   const days = [
-    { d: "14", wd: "Пн", title: "Прилёт и знакомство", preview: "Трансфер из аэропорта, заселение на виллу у океана. Вечером — первый ужин и знакомство с группой", tags: ["Трансфер", "Ужин"], activities: ["Встреча в аэропорту TFS, трансфер на виллу", "Заселение, отдых, пляж", "Знакомство группы за ужином"], img: day14 },
-    { d: "15", wd: "Вт", title: "Санта-Крус-де-Тенерифе + Loro Parque", preview: "Loro Parque с его дельфинами и косатками, столица острова Санта-Крус-де-Тенерифе и Ботанический сад. Вечером играем в теннис или падел", tags: ["Loro Parque", "Столица", "Техника"], activities: ["Loro Parque — один из лучших зоопарков мира", "Прогулка по Санта-Крус-де-Тенерифе — столице острова", "Ботанический сад в Пуэрто-де-ла-Крус", "Вечерняя тренировка: работа над техникой ударов"], img: day15 },
-    { d: "16", wd: "Ср", title: "Яхта + корт", preview: "Морская прогулка вдоль скал Los Gigantes, купание в открытом океане с дельфинами. Вечером — подача и приём.", tags: ["Яхта", "Океан", "Подача"], activities: ["Морская прогулка вдоль побережья Los Gigantes", "Купание в открытом океане, дельфины", "Обед на яхте", "Вечерняя тренировка: подача и приём"], img: day16 },
-    { d: "17", wd: "Чт", title: "Свободный день + корт", preview: "Расслабленный день: бассейн, чёрный вулканический пляж, шоппинг или спа. Вечером - теннис или падел на закате", tags: ["Отдых", "Пляж", "Разбор"], activities: ["Отдых: бассейн, чёрный пляж, шоппинг или спа", "Свободное время на острове", "Обед", "Вечерняя тренировка: индивидуальный разбор ошибок"], img: day17 },
-    { d: "18", wd: "Пт", title: "Вулкан Тейде + корт", preview: "Подъём на высшую точку Испании (3 718 м) по канатной дороге — виды над облаками. Вечером тактика и розыгрыши.", tags: ["Вулкан", "3718 м", "Тактика"], activities: ["Тейде (3 718 м) — высшая точка Испании", "Подъём на канатной дороге, виды над облаками", "Обед", "Вечерняя тренировка: тактика и розыгрыши"], img: day18 },
-    { d: "19", wd: "Сб", title: "Сёрфинг + корт", preview: "Урок сёрфинга на волнах Атлантики — подходит для любого уровня. Вечером предтурнирная тренировка парных комбинаций.", tags: ["Сёрфинг", "Волны", "Парная игра"], activities: ["Урок сёрфинга с инструктором, любой уровень", "Волны Атлантики, пляж", "Обед", "Предтурнирная тренировка: парные комбинации"], img: day19 },
-    { d: "20", wd: "Вс", title: "Турнир и банкет", preview: "Финальный дружеский турнир, награждение победителей и прощальный ужин в средневековом замке Сан-Мигель.", tags: ["Турнир", "Награждение", "Банкет"], activities: ["Финальный дружеский турнир среди участников", "Награждение победителей", "Прощальный банкет в замке Сан-Мигель", "Трансфер в аэропорт"], img: day20 },
+    { d: "14", wd: "Ср", title: "Прилёт и знакомство", preview: "Трансфер из аэропорта, заселение на виллу у океана. Вечером — первый ужин и знакомство с группой", tags: ["Трансфер", "Ужин"], activities: ["Встреча в аэропорту TFS, трансфер на виллу", "Заселение, отдых, пляж", "Знакомство группы за ужином"], img: day14 },
+    { d: "15", wd: "Чт", title: "Санта-Крус-де-Тенерифе + Loro Parque", preview: "Loro Parque с его дельфинами и косатками, столица острова Санта-Крус-де-Тенерифе и Ботанический сад. Вечером играем в теннис или падел", tags: ["Loro Parque", "Столица", "Техника"], activities: ["Loro Parque — один из лучших зоопарков мира", "Прогулка по Санта-Крус-де-Тенерифе — столице острова", "Ботанический сад в Пуэрто-де-ла-Крус", "Вечерняя тренировка: работа над техникой ударов"], img: day15 },
+    { d: "16", wd: "Пт", title: "Яхта + корт", preview: "Морская прогулка вдоль скал Los Gigantes, купание в открытом океане с дельфинами. Вечером — подача и приём.", tags: ["Яхта", "Океан", "Подача"], activities: ["Морская прогулка вдоль побережья Los Gigantes", "Купание в открытом океане, дельфины", "Обед на яхте", "Вечерняя тренировка: подача и приём"], img: day16 },
+    { d: "17", wd: "Сб", title: "Свободный день + корт", preview: "Расслабленный день: бассейн, чёрный вулканический пляж, шоппинг или спа. Вечером - теннис или падел на закате", tags: ["Отдых", "Пляж", "Разбор"], activities: ["Отдых: бассейн, чёрный пляж, шоппинг или спа", "Свободное время на острове", "Обед", "Вечерняя тренировка: индивидуальный разбор ошибок"], img: day17 },
+    { d: "18", wd: "Вс", title: "Вулкан Тейде + корт", preview: "Подъём на высшую точку Испании (3 718 м) по канатной дороге — виды над облаками. Вечером тактика и розыгрыши.", tags: ["Вулкан", "3718 м", "Тактика"], activities: ["Тейде (3 718 м) — высшая точка Испании", "Подъём на канатной дороге, виды над облаками", "Обед", "Вечерняя тренировка: тактика и розыгрыши"], img: day18 },
+    { d: "19", wd: "Пн", title: "Сёрфинг + корт", preview: "Урок сёрфинга на волнах Атлантики — подходит для любого уровня. Вечером предтурнирная тренировка парных комбинаций.", tags: ["Сёрфинг", "Волны", "Парная игра"], activities: ["Урок сёрфинга с инструктором, любой уровень", "Волны Атлантики, пляж", "Обед", "Предтурнирная тренировка: парные комбинации"], img: day19 },
+    { d: "20", wd: "Вт", title: "Турнир и банкет", preview: "Финальный дружеский турнир, награждение победителей и прощальный ужин в средневековом замке Сан-Мигель.", tags: ["Турнир", "Награждение", "Банкет"], activities: ["Финальный дружеский турнир среди участников", "Награждение победителей", "Прощальный банкет в замке Сан-Мигель", "Трансфер в аэропорт"], img: day20 },
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (formSubmitting) return;
-    setFormSubmitting(true);
-    try {
-      const { data, error } = await supabase.functions.invoke("send-booking", {
-        body: { name: formData.name, phone: formData.phone },
-      });
-      if (error || !data?.ok) {
-        throw new Error(error?.message || "Не удалось отправить заявку");
-      }
-      setFormSent(true);
-      toast({
-        title: "Заявка отправлена ✓",
-        description: "Свяжемся с вами в течение 2 часов.",
-      });
-    } catch (err) {
-      const message = err instanceof Error ? err.message : "Что-то пошло не так";
-      toast({
-        title: "Ошибка отправки",
-        description: `${message}. Напишите нам в Telegram: @oceaninthesky`,
-        variant: "destructive",
-      });
-    } finally {
-      setFormSubmitting(false);
-    }
-  };
 
   return (
     <main ref={containerRef}>
@@ -219,7 +186,7 @@ const Index = () => {
         </div>
 
         <div className="relative z-10 px-6 lg:px-16 pt-28 pb-16 flex-1 flex items-center">
-          <div className="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-[760px] mx-auto w-full">
             <div>
               <p className="animate-fade-up text-[13px] tracking-[3px] uppercase text-gold mb-5 font-semibold">
                 <span>14–20 октября 2026 · Тенерифе</span>
@@ -295,62 +262,6 @@ const Index = () => {
               <p className="animate-fade-up mt-5 text-[13px] text-sand/60" style={{ animationDelay: "0.4s" }}>
                 Ответим лично в течение дня — без формы и обязательств
               </p>
-            </div>
-
-
-            {/* Right side — наши сильные стороны */}
-            <div className="animate-fade-up hidden lg:block" style={{ animationDelay: "0.25s" }}>
-              <div className="card-premium-dark card-premium-accent backdrop-blur-md p-8 bg-forest/40">
-                <p className="text-[13px] tracking-[3px] uppercase text-gold mb-6 font-semibold">Наши сильные стороны</p>
-                <ul className="flex flex-col gap-6">
-                  {[
-                    {
-                      title: "Приглашение для визы",
-                      desc: "Партнёр оформляет испанское приглашение и сопровождает подачу. Срок 2–4 недели.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                          <rect x="3" y="4" width="18" height="16" rx="2" />
-                          <path d="M3 10h18M8 4v4M16 4v4" />
-                          <path d="M9 15l2 2 4-4" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      title: "Полный тур под ключ",
-                      desc: "Перелёт, вилла у океана, питание, трансферы и экскурсии — всё в одном пакете.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                          <path d="M2 16l10-12 10 12" />
-                          <path d="M4 16h16v4H4z" />
-                          <path d="M12 8v8" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      title: "Сильное community",
-                      desc: "Тёплая компания единомышленников: общий чат, ужины и связи на годы вперёд.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                          <circle cx="9" cy="8" r="3" />
-                          <circle cx="17" cy="9" r="2.5" />
-                          <path d="M3 19c0-3 2.5-5 6-5s6 2 6 5" />
-                          <path d="M15 19c0-2 1.5-3.5 4-3.5s4 1.5 4 3.5" />
-                        </svg>
-                      ),
-                    },
-                  ].map((item) => (
-                    <li key={item.title} className="flex gap-4 items-start">
-                      <span className="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center text-gold flex-shrink-0">
-                        {item.icon}
-                      </span>
-                      <div>
-                        <p className="font-display text-[19px] text-sand-light leading-tight mb-1">{item.title}</p>
-                        <p className="text-[15px] text-sand/70 leading-[1.55]">{item.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -444,9 +355,6 @@ const Index = () => {
 
       {/* ─── ТЕНЕРИФЕ ─── */}
       <TenerifeSection />
-
-      {/* ─── ПРЕИМУЩЕСТВА: ВИЗА · ПОЛНЫЙ ТУР · COMMUNITY ─── */}
-      <Advantages />
 
       {/* ─── ЦЕНА И ТАРИФЫ ─── */}
       <section className="relative py-24 lg:py-32 px-6 lg:px-16 overflow-hidden" id="pricing">
@@ -568,49 +476,7 @@ const Index = () => {
             </a>
           </div>
 
-          <div className="reveal text-[14px] text-sand/30 mb-8 uppercase tracking-[3px] font-medium">или оставьте заявку</div>
-
-          {formSent ? (
-            <div className="reveal bg-forest-light/40 border border-gold/20 p-10 text-center rounded-lg">
-              <p className="font-display text-[24px] font-medium text-sand-light mb-3">Заявка принята!</p>
-              <p className="text-[17px] text-sand/60 leading-[1.7]">
-                Мы свяжемся в течение 2 часов.<br />
-                Если срочно — напишите в{" "}
-                <a href="https://wa.me/79655096888" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">WhatsApp</a> или{" "}
-                <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">Telegram</a>.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="reveal flex flex-col gap-5 text-left">
-              <div>
-                <label className="text-[13px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Имя</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-forest-light/40 border border-gold/15 text-sand-light py-4 px-5 text-[16px] outline-none focus:border-gold/40 transition-colors placeholder:text-sand/20 rounded-md"
-                  placeholder="Ваше имя"
-                />
-              </div>
-              <div>
-                <label className="text-[13px] tracking-[2px] uppercase text-sand/40 block mb-2 font-medium">Телефон</label>
-                <input
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full bg-forest-light/40 border border-gold/15 text-sand-light py-4 px-5 text-[16px] outline-none focus:border-gold/40 transition-colors placeholder:text-sand/20 rounded-md"
-                  placeholder="+7 999 999 99 99"
-                />
-              </div>
-              <button type="submit" disabled={formSubmitting} className="mt-4 py-4 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase cursor-pointer border-none hover:bg-gold-light transition-all duration-300 rounded-md disabled:opacity-60 disabled:cursor-not-allowed">
-                {formSubmitting ? "Отправляем..." : "Отправить заявку"}
-              </button>
-              <p className="text-[13px] text-sand/40 text-center leading-[1.6]">Пришлём подробную программу и ответим лично — без рассылок и спама.</p>
-              <p className="text-[12px] text-sand/25 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
-            </form>
-          )}
+          <p className="reveal text-[13px] text-sand/40 mt-2">Или напишите на почту: <a href="mailto:hello@tennerife-tennis.com" className="text-gold no-underline hover:underline">hello@tennerife-tennis.com</a></p>
         </div>
       </section>
 
@@ -654,44 +520,6 @@ const Index = () => {
 
       <StickyMobileCTA />
 
-      {/* ─── SUCCESS MODAL ─── */}
-      {formSent && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center px-6 animate-fade-in"
-          style={{ background: "rgba(28,43,30,0.85)", backdropFilter: "blur(8px)" }}
-          onClick={() => setFormSent(false)}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="success-title"
-        >
-          <div
-            className="relative max-w-[480px] w-full bg-forest border border-gold/30 rounded-2xl p-10 text-center shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="w-16 h-16 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center mx-auto mb-6">
-              <Check size={32} className="text-gold" strokeWidth={2} />
-            </div>
-            <h3 id="success-title" className="font-display text-[28px] font-medium text-sand-light mb-3">
-              Заявка отправлена!
-            </h3>
-            <p className="text-[16px] text-sand/70 leading-[1.7] mb-8">
-              Спасибо, {formData.name || "друг"}! Мы свяжемся с вами в течение 2 часов.
-              <br />Если срочно — напишите в{" "}
-              <a href="https://t.me/oceaninthesky" target="_blank" rel="noopener noreferrer" className="text-gold no-underline hover:underline">
-                Telegram
-              </a>
-              .
-            </p>
-            <button
-              type="button"
-              onClick={() => setFormSent(false)}
-              className="w-full py-4 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase border-none rounded-md hover:bg-gold-light transition-colors cursor-pointer"
-            >
-              Отлично
-            </button>
-          </div>
-        </div>
-      )}
     </main>
   );
 };
