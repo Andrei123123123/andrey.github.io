@@ -614,7 +614,7 @@ const Index = () => {
         <div className="relative z-10 max-w-[820px] mx-auto text-center">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">14–20 октября 2026</p>
             <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,68px)] text-sand-light leading-[1.05] mb-8 tracking-[-0.5px]">
-              14 амбициозных людей.<br /><em className="italic text-gold">Одна неделя на Тенерифе.</em>
+              14 человек, которые выбирают движение.<br /><em className="italic text-gold">Одна неделя на Тенерифе.</em>
             </h2>
             <p className="reveal text-[18px] md:text-[20px] text-sand/80 leading-[1.6] mb-12 max-w-[620px] mx-auto font-light">
               Теннис, вилла, океан, новые знакомства и неделя активной перезагрузки.
