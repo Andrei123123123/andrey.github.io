@@ -232,12 +232,7 @@ const BookingModal = () => {
                   </select>
                 </div>
 
-                <div>
-                  <label className={labelCls}>Чем занимаетесь</label>
-                  <input type="text" maxLength={200} value={form.occupation}
-                    onChange={(e) => update("occupation", e.target.value)}
-                    className={inputCls} placeholder="Бизнес, проект, сфера" />
-                </div>
+                {/* occupation field removed */}
 
                 <div className="flex flex-col gap-2.5 mt-1">
                   <label className="flex items-center gap-3 text-[14px] text-sand/75 cursor-pointer">
