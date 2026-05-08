@@ -19,6 +19,14 @@ import day18 from "@/assets/day-18.jpg";
 import day19 from "@/assets/day-19.jpg";
 import day20 from "@/assets/day-20.jpg";
 import bgPricing from "@/assets/bg-pricing.jpg";
+import expTennis from "@/assets/exp-tennis.jpg";
+import expLifestyle from "@/assets/exp-lifestyle.jpg";
+import expCommunity from "@/assets/exp-community.jpg";
+import audEntrepreneurs from "@/assets/aud-entrepreneurs.jpg";
+import audFounders from "@/assets/aud-founders.jpg";
+import audTravelers from "@/assets/aud-travelers.jpg";
+import audTennis from "@/assets/aud-tennis.jpg";
+import audLifestyle from "@/assets/aud-lifestyle.jpg";
 
 const TOTAL = 14;
 
