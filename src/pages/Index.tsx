@@ -191,10 +191,10 @@ const Index = () => {
               14–20 октября 2026 · Тенерифе, Испания · всего {TOTAL} мест
             </p>
             <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,6.5vw,88px)] leading-[1.02] text-sand-light tracking-[-0.5px]">
-              Закрытый теннисный ретрит<br /><em className="not-italic text-gold">для тех, кто выбирает движение</em>
+              Неделя на вилле<br /><em className="not-italic text-gold">у океана</em>
             </h1>
             <p className="animate-fade-up mt-8 text-[18px] md:text-[20px] text-sand/85 leading-[1.55] font-light max-w-[640px] mx-auto" style={{ animationDelay: "0.15s" }}>
-              7 дней тенниса, океана, виллы с поваром и сильного окружения на Тенерифе.
+              Утренние тренировки, ужины на террасе и небольшая группа людей. Всего 14 участников.
             </p>
             <div className="animate-fade-up mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4" style={{ animationDelay: "0.3s" }}>
               <button type="button" onClick={openBookingModal}
