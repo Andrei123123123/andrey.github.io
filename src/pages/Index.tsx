@@ -231,28 +231,28 @@ const Index = () => {
         <div className="max-w-[1200px] mx-auto">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Атмосфера</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.1] mb-16 max-w-[680px]">
-            Три причины, почему это<br />больше, чем кемп
+            Из чего состоит<br />эта неделя
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                tag: "01 · Теннис",
-                title: "Теннис",
-                text: "Ежедневные тренировки, игровые сессии и матчи под руководством тренеров Tenerife Tennis Academy.",
-                img: expTennis,
-              },
-              {
-                tag: "02 · Атмосфера",
-                title: "Атмосфера",
-                text: "Вилла, повар, океан, солнце, свободное время и ощущение активного премиального отдыха.",
+                tag: "01 · Вилла",
+                title: "Вилла и ужины",
+                text: "Дом у океана, повар на вилле, длинные ужины на террасе и медленные утра.",
                 img: expLifestyle,
               },
               {
-                tag: "03 · Окружение",
-                title: "Окружение",
-                text: "14 участников из предпринимательской среды — люди, с которыми интересно играть, общаться, ужинать и строить связи.",
+                tag: "02 · Океан",
+                title: "Океан и остров",
+                text: "Яхта, чёрные пляжи, вулкан Тейде, сёрфинг, закаты и свободное время.",
                 img: expCommunity,
+              },
+              {
+                tag: "03 · Теннис",
+                title: "Теннис вечером",
+                text: "Каждый вечер — корт с тренерами Tenerife Tennis Academy. Любой уровень.",
+                img: expTennis,
               },
             ].map((c) => (
               <article key={c.title} className="reveal group relative overflow-hidden rounded-2xl bg-forest-light/30 border border-gold/15 hover:border-gold/40 transition-all duration-500">
