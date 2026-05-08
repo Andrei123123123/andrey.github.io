@@ -24,7 +24,6 @@ type FormState = {
   name: string;
   telegram: string;
   level: string;
-  occupation: string;
   flightHelp: boolean;
   visaHelp: boolean;
 };
@@ -33,7 +32,6 @@ const empty: FormState = {
   name: "",
   telegram: "",
   level: "",
-  occupation: "",
   flightHelp: false,
   visaHelp: false,
 };
