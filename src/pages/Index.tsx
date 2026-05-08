@@ -98,7 +98,7 @@ const Index = () => {
   }, []);
 
   const navLinks = [
-    { href: "#experience", label: "Опыт" },
+    { href: "#experience", label: "Атмосфера" },
     { href: "#program", label: "Программа" },
     { href: "#villa", label: "Вилла" },
     { href: "#pricing", label: "Стоимость" },
@@ -191,7 +191,7 @@ const Index = () => {
               14–20 октября 2026 · Тенерифе, Испания · всего {TOTAL} мест
             </p>
             <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,6.5vw,88px)] leading-[1.02] text-sand-light tracking-[-0.5px]">
-              Закрытый теннисный ретрит<br /><em className="not-italic text-gold">для амбициозных людей</em>
+              Закрытый теннисный ретрит<br /><em className="not-italic text-gold">для тех, кто выбирает движение</em>
             </h1>
             <p className="animate-fade-up mt-8 text-[18px] md:text-[20px] text-sand/85 leading-[1.55] font-light max-w-[640px] mx-auto" style={{ animationDelay: "0.15s" }}>
               7 дней тенниса, океана, виллы с поваром и сильного окружения на Тенерифе.
@@ -218,7 +218,7 @@ const Index = () => {
             Это не просто<br /><em className="italic text-gold">теннисный кемп</em>
           </h2>
           <p className="reveal mt-10 text-[19px] md:text-[21px] text-text-body/85 leading-[1.7] max-w-[720px] mx-auto">
-            Это неделя тенниса, жизни на вилле, океанского воздуха, ужинов, новых знакомств и активного отдыха в кругу амбициозных людей.
+            Это неделя тенниса, жизни на вилле, океанского воздуха, ужинов, новых знакомств и активного отдыха в кругу тех, кто выбирает движение.
           </p>
           <p className="reveal mt-6 text-[17px] text-text-body/70 leading-[1.75] max-w-[680px] mx-auto">
             Мы собираем всего 14 участников, чтобы создать не массовый тур, а камерный ретрит — с атмосферой, уровнем и энергией.
@@ -229,7 +229,7 @@ const Index = () => {
       {/* ─── 03. EXPERIENCE — 3 cards ─── */}
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="experience">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Опыт</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Атмосфера</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.1] mb-16 max-w-[680px]">
             Три причины, почему это<br />больше, чем кемп
           </h2>
@@ -614,7 +614,7 @@ const Index = () => {
         <div className="relative z-10 max-w-[820px] mx-auto text-center">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">14–20 октября 2026</p>
             <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,68px)] text-sand-light leading-[1.05] mb-8 tracking-[-0.5px]">
-              14 амбициозных людей.<br /><em className="italic text-gold">Одна неделя на Тенерифе.</em>
+              14 человек, которые выбирают движение.<br /><em className="italic text-gold">Одна неделя на Тенерифе.</em>
             </h2>
             <p className="reveal text-[18px] md:text-[20px] text-sand/80 leading-[1.6] mb-12 max-w-[620px] mx-auto font-light">
               Теннис, вилла, океан, новые знакомства и неделя активной перезагрузки.
