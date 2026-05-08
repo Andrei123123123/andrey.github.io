@@ -374,12 +374,12 @@ const Index = () => {
       {/* ─── 08. TENNIS PROGRAM (intro) ─── */}
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="program">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Теннисная программа</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Теннис вечером</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.1] mb-5 max-w-[760px]">
-            Тренировки с командой <em className="italic text-gold">Tenerife Tennis Academy</em>
+            Корт с тренерами <em className="italic text-gold">Tenerife Tennis Academy</em>
           </h2>
           <p className="reveal text-[17px] text-sand/70 leading-[1.7] mb-14 max-w-[680px]">
-            Ежедневные тренировки, игровые задания и матчи для участников с разным уровнем подготовки.
+            Каждый вечер — час с половиной на корте. Любой уровень, без давления.
           </p>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
