@@ -505,10 +505,10 @@ const Index = () => {
         <div className="relative z-10 max-w-[1100px] mx-auto">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Стоимость участия</p>
           <h2 className="reveal font-display font-medium text-[clamp(34px,4.5vw,56px)] text-forest leading-[1.1] mb-6 max-w-[720px]">
-            Один пакет.<br /><em className="italic text-gold">Всё главное внутри.</em>
+            Один пакет.<br /><em className="italic text-gold">Без скрытых строк.</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            Обязательный пакет: теннисный кемп + проживание на вилле с поваром.
+            Вилла с поваром и теннисная программа — в одной стоимости.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6">
