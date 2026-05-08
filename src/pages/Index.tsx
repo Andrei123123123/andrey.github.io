@@ -211,19 +211,19 @@ const Index = () => {
                 tag: "01 · Tennis",
                 title: "Tennis",
                 text: "Ежедневные тренировки, игровые сессии и матчи под руководством тренеров Tenerife Tennis Academy.",
-                img: day15,
+                img: expTennis,
               },
               {
                 tag: "02 · Lifestyle",
                 title: "Lifestyle",
                 text: "Проживание на вилле, повар, океан, солнце, свободное время и атмосфера активного премиального отдыха.",
-                img: day17,
+                img: expLifestyle,
               },
               {
                 tag: "03 · Community",
                 title: "Community",
                 text: "14 участников из предпринимательской среды — люди, с которыми интересно играть, говорить, ужинать и строить связи.",
-                img: day20,
+                img: expCommunity,
               },
             ].map((c) => (
               <article key={c.title} className="reveal group relative overflow-hidden rounded-2xl bg-forest-light/30 border border-gold/15 hover:border-gold/40 transition-all duration-500">
