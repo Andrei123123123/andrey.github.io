@@ -461,10 +461,10 @@ const Index = () => {
         <div className="max-w-[900px] mx-auto">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Как проходит день</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-5">
-            Как проходит <em className="italic text-gold">день</em>
+            Один <em className="italic text-gold">день</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[600px]">
-            Баланс тенниса, отдыха, океана, общения и вечерней атмосферы.
+            Утро на корте, день у океана, вечер на террасе виллы.
           </p>
 
           <ol className="flex flex-col gap-0 list-none border-l border-gold/30 pl-8">
