@@ -313,7 +313,7 @@ const Index = () => {
             Что входит в <em className="italic text-gold">стоимость</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            Всё главное для недели тенниса, жизни на вилле и группового опыта уже включено.
+            Вилла, повар, корты и сопровождение — всё уже включено.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
