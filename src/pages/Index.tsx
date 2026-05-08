@@ -213,15 +213,15 @@ const Index = () => {
       {/* ─── 02. INTRO / POSITIONING ─── */}
       <section className="bg-cream py-28 lg:py-40 px-6 lg:px-16">
         <div className="max-w-[900px] mx-auto text-center">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">Теннис · Вилла · Океан · Окружение</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">Вилла · Океан · Теннис · Ужины</p>
           <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,64px)] text-forest leading-[1.08] tracking-[-0.5px]">
             Одна неделя<br /><em className="italic text-gold">на Тенерифе</em>
           </h2>
           <p className="reveal mt-10 text-[19px] md:text-[21px] text-text-body/85 leading-[1.7] max-w-[720px] mx-auto">
-            Это неделя тенниса, жизни на вилле, океанского воздуха, ужинов, новых знакомств и активного отдыха в кругу тех, кто выбирает движение.
+            Жизнь на вилле у океана, утренние тренировки, ужины на террасе и спокойные вечера в небольшой компании.
           </p>
           <p className="reveal mt-6 text-[17px] text-text-body/70 leading-[1.75] max-w-[680px] mx-auto">
-            Мы собираем всего 14 участников, чтобы создать не массовый тур, а камерный ретрит — с атмосферой, уровнем и энергией.
+            Всего 14 участников. Без массовости и формальностей — небольшая группа, общий стол, своё пространство.
           </p>
         </div>
       </section>
