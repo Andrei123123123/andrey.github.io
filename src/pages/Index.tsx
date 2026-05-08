@@ -523,11 +523,11 @@ const Index = () => {
 
               <div className="grid grid-cols-2 gap-4 mb-8 pt-6 border-t border-gold/20">
                 <div>
-                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Теннисный кемп</p>
+                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Теннисная программа</p>
                   <p className="font-display text-[28px] text-sand-light">€1350</p>
                 </div>
                 <div>
-                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Вилла и повар</p>
+                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Вилла и шеф-повар</p>
                   <p className="font-display text-[28px] text-sand-light">€600</p>
                 </div>
               </div>
