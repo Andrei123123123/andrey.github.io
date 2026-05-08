@@ -2,8 +2,6 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useBookingModal } from "@/contexts/BookingModalContext";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "@/hooks/use-toast";
 import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import ScrollProgress from "@/components/ScrollProgress";
