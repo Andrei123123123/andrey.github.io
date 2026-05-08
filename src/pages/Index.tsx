@@ -191,7 +191,7 @@ const Index = () => {
               14–20 октября 2026 · Тенерифе, Испания · всего {TOTAL} мест
             </p>
             <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,6.5vw,88px)] leading-[1.02] text-sand-light tracking-[-0.5px]">
-              Неделя на вилле<br /><em className="not-italic text-gold">у океана</em>
+              Теннис и падел<br /><em className="not-italic text-gold">на Тенерифе</em>
             </h1>
             <p className="animate-fade-up mt-8 text-[18px] md:text-[20px] text-sand/85 leading-[1.55] font-light max-w-[640px] mx-auto" style={{ animationDelay: "0.15s" }}>
               Утренние тренировки, ужины на террасе и небольшая группа людей. Всего 14 участников.
