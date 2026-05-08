@@ -86,23 +86,23 @@ const Index = () => {
   }, []);
 
   const navLinks = [
-    { href: "#experience", label: "Experience" },
-    { href: "#program", label: "Program" },
-    { href: "#villa", label: "Villa" },
-    { href: "#pricing", label: "Price" },
-    { href: "#faq", label: "FAQ" },
+    { href: "#experience", label: "Опыт" },
+    { href: "#program", label: "Программа" },
+    { href: "#villa", label: "Вилла" },
+    { href: "#pricing", label: "Стоимость" },
+    { href: "#faq", label: "Вопросы" },
   ];
   const activeSection = useActiveSection(navLinks.map((l) => l.href.slice(1)), 180);
 
   const faqs = [
-    { q: "Для какого уровня тенниса подходит retreat?", a: "Подходит для любителей с разным уровнем подготовки — от начинающих до опытных. При необходимости участники делятся по уровню." },
+    { q: "Для какого уровня тенниса подходит ретрит?", a: "Подходит для любителей с разным уровнем подготовки — от начинающих до опытных. При необходимости участники делятся по уровню." },
     { q: "Что входит в стоимость €1950?", a: "Кемп, ежедневные тренировки и игровые сессии, корты, проживание на вилле с поваром и организационное сопровождение." },
     { q: "Перелёт входит в стоимость?", a: "Нет. Перелёт оплачивается отдельно — ориентир €900. Мы помогаем подобрать удобный вариант." },
     { q: "Виза входит в стоимость?", a: "Нет. Шенгенская виза оплачивается отдельно — ориентир €200. Помогаем с организационными вопросами и приглашением от академии." },
     { q: "Сколько участников будет?", a: "Максимум 14 человек. Это часть формата — небольшая закрытая группа." },
     { q: "Можно ли поехать без высокого уровня игры?", a: "Да. Достаточно базового интереса к теннису и желания провести неделю активно." },
     { q: "Как забронировать место?", a: "Оставьте заявку через форму. Мы свяжемся, подтвердим детали и согласуем оплату обязательного пакета: кемп + проживание." },
-    { q: "Можно ли вернуть оплату?", a: "Если retreat не состоится — 100% возврат. Условия отмены по инициативе участника обсуждаются индивидуально перед бронированием." },
+    { q: "Можно ли вернуть оплату?", a: "Если ретрит не состоится — 100% возврат. Условия отмены по инициативе участника обсуждаются индивидуально перед бронированием." },
     { q: "На каком языке проходят тренировки?", a: "Тренировки проходят с командой Tenerife Tennis Academy. Язык согласуется ближе к старту в зависимости от состава тренеров." },
     { q: "Можно ли приехать одному?", a: "Да. Формат как раз рассчитан на людей, которые хотят попасть в активное окружение и познакомиться с новыми людьми." },
   ];
@@ -159,13 +159,13 @@ const Index = () => {
         <div className="relative z-10 px-6 lg:px-16 pt-28 pb-20 flex-1 flex items-center">
           <div className="max-w-[900px] mx-auto w-full text-center">
             <p className="animate-fade-up text-[12px] tracking-[4px] uppercase text-gold mb-8 font-medium">
-              14–20 октября 2026 · Tenerife, Spain · Only {TOTAL} spots
+              14–20 октября 2026 · Тенерифе, Испания · всего {TOTAL} мест
             </p>
             <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,6.5vw,88px)] leading-[1.02] text-sand-light tracking-[-0.5px]">
-              Private tennis retreat<br /><em className="not-italic text-gold">for ambitious people</em>
+              Закрытый теннисный ретрит<br /><em className="not-italic text-gold">для амбициозных людей</em>
             </h1>
             <p className="animate-fade-up mt-8 text-[18px] md:text-[20px] text-sand/85 leading-[1.55] font-light max-w-[640px] mx-auto" style={{ animationDelay: "0.15s" }}>
-              7 дней тенниса, океанской энергии и premium lifestyle на Тенерифе.
+              7 дней тенниса, океана, виллы с поваром и сильного окружения на Тенерифе.
             </p>
             <div className="animate-fade-up mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4" style={{ animationDelay: "0.3s" }}>
               <button type="button" onClick={openBookingModal}
@@ -184,15 +184,15 @@ const Index = () => {
       {/* ─── 02. INTRO / POSITIONING ─── */}
       <section className="bg-cream py-28 lg:py-40 px-6 lg:px-16">
         <div className="max-w-[900px] mx-auto text-center">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">Tennis · Lifestyle · Community</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">Теннис · Вилла · Океан · Окружение</p>
           <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,64px)] text-forest leading-[1.08] tracking-[-0.5px]">
-            This is not just<br /><em className="italic text-gold">a tennis camp</em>
+            Это не просто<br /><em className="italic text-gold">теннисный кемп</em>
           </h2>
           <p className="reveal mt-10 text-[19px] md:text-[21px] text-text-body/85 leading-[1.7] max-w-[720px] mx-auto">
-            Это неделя тенниса, жизни на вилле, океана, ужинов, новых знакомств и активного отдыха в кругу амбициозных людей.
+            Это неделя тенниса, жизни на вилле, океанского воздуха, ужинов, новых знакомств и активного отдыха в кругу амбициозных людей.
           </p>
           <p className="reveal mt-6 text-[17px] text-text-body/70 leading-[1.75] max-w-[680px] mx-auto">
-            Мы собираем 14 участников, чтобы создать не массовый тур, а private retreat — с атмосферой, уровнем и энергией.
+            Мы собираем всего 14 участников, чтобы создать не массовый тур, а камерный ретрит — с атмосферой, уровнем и энергией.
           </p>
         </div>
       </section>
@@ -200,7 +200,7 @@ const Index = () => {
       {/* ─── 03. EXPERIENCE — 3 cards ─── */}
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="experience">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Experience</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Опыт</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.1] mb-16 max-w-[680px]">
             Три причины, почему это<br />больше, чем кемп
           </h2>
@@ -208,21 +208,21 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                tag: "01 · Tennis",
-                title: "Tennis",
+                tag: "01 · Теннис",
+                title: "Теннис",
                 text: "Ежедневные тренировки, игровые сессии и матчи под руководством тренеров Tenerife Tennis Academy.",
                 img: expTennis,
               },
               {
-                tag: "02 · Lifestyle",
-                title: "Lifestyle",
-                text: "Проживание на вилле, повар, океан, солнце, свободное время и атмосфера активного премиального отдыха.",
+                tag: "02 · Атмосфера",
+                title: "Атмосфера",
+                text: "Вилла, повар, океан, солнце, свободное время и ощущение активного премиального отдыха.",
                 img: expLifestyle,
               },
               {
-                tag: "03 · Community",
-                title: "Community",
-                text: "14 участников из предпринимательской среды — люди, с которыми интересно играть, говорить, ужинать и строить связи.",
+                tag: "03 · Окружение",
+                title: "Окружение",
+                text: "14 участников из предпринимательской среды — люди, с которыми интересно играть, общаться, ужинать и строить связи.",
                 img: expCommunity,
               },
             ].map((c) => (
@@ -245,21 +245,21 @@ const Index = () => {
       {/* ─── 04. WHO IS THIS FOR ─── */}
       <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="who">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Who is it for</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Для кого этот ретрит</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-5 max-w-[760px]">
             Для тех, кому скучен <em className="italic text-gold">обычный отпуск</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            Retreat создан для людей, которые хотят совмещать спорт, путешествия, атмосферу и окружение.
+            Ретрит создан для людей, которые хотят совместить спорт, путешествие, атмосферу и сильное окружение.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               { t: "Предприниматели", d: "Для тех, кто много работает и хочет перезагрузиться без потери динамики.", img: audEntrepreneurs },
-              { t: "Фаундеры", d: "Для людей, которые ценят энергию, фокус и сильное окружение.", img: audFounders },
-              { t: "Активные путешественники", d: "Для тех, кто не хочет лежать у бассейна весь отпуск.", img: audTravelers },
+              { t: "Основатели проектов", d: "Для людей, которые ценят энергию, фокус и сильное окружение.", img: audFounders },
+              { t: "Любители активного отдыха", d: "Для тех, кто не хочет лежать у бассейна весь отпуск.", img: audTravelers },
               { t: "Любители тенниса", d: "Для тех, кто хочет прокачать игру в красивой локации.", img: audTennis },
-              { t: "Lifestyle-oriented", d: "Для тех, кому важны эстетика, атмосфера и уровень.", img: audLifestyle },
+              { t: "Люди с эстетикой и вкусом", d: "Для тех, кому важны атмосфера, уровень и красивый опыт.", img: audLifestyle },
             ].map((p, i) => (
               <div key={p.t} className="reveal group bg-card border border-forest/10 rounded-xl overflow-hidden hover:border-gold/40 hover:-translate-y-0.5 transition-all duration-300">
                 <div className="aspect-[4/3] overflow-hidden bg-forest">
@@ -279,28 +279,28 @@ const Index = () => {
       {/* ─── 05. WHAT'S INCLUDED ─── */}
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="included">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Retreat package</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Что входит</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-5 max-w-[760px]">
-            Что входит в <em className="italic text-gold">retreat package</em>
+            Что входит в <em className="italic text-gold">стоимость</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            Всё главное для недели тенниса, жизни на вилле и premium group experience уже включено.
+            Всё главное для недели тенниса, жизни на вилле и группового опыта уже включено.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Included */}
             <div className="reveal p-8 lg:p-10 bg-forest text-sand-light rounded-2xl border border-gold/25">
               <p className="text-[11px] tracking-[3px] uppercase text-gold mb-5 font-medium">Включено в €1950</p>
-              <h3 className="font-display text-[24px] mb-7 leading-tight">Tennis camp + villa</h3>
+              <h3 className="font-display text-[24px] mb-7 leading-tight">Кемп и вилла</h3>
               <ul className="flex flex-col gap-3.5 list-none">
                 {[
-                  "Участие в tennis camp",
+                  "Участие в теннисном кемпе",
                   "Ежедневные тренировки",
                   "Игровые сессии и матчи",
                   "Аренда кортов",
                   "Проживание на вилле",
                   "Повар: завтраки и ужины",
-                  "Group experience и нетворкинг",
+                  "Групповой опыт и нетворкинг",
                   "Организационное сопровождение",
                 ].map((f) => (
                   <li key={f} className="flex gap-3 items-start text-[15px] text-sand/85 leading-[1.6]">
@@ -346,9 +346,9 @@ const Index = () => {
       {/* ─── 08. TENNIS PROGRAM (intro) ─── */}
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="program">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Tennis program</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Теннисная программа</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.1] mb-5 max-w-[760px]">
-            Coaching by <em className="italic text-gold">Tenerife Tennis Academy</em>
+            Тренировки с командой <em className="italic text-gold">Tenerife Tennis Academy</em>
           </h2>
           <p className="reveal text-[17px] text-sand/70 leading-[1.7] mb-14 max-w-[680px]">
             Ежедневные тренировки, игровые задания и матчи для участников с разным уровнем подготовки.
@@ -356,10 +356,10 @@ const Index = () => {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
             {[
-              { t: "Technique", d: "Работа над ударами, постановка движений, корректировка." },
-              { t: "Match play", d: "Сетовая игра, развитие игровой выносливости." },
-              { t: "Tactical", d: "Тактика розыгрышей, чтение игры соперника." },
-              { t: "Group games", d: "Парные комбинации, мини-турниры внутри группы." },
+              { t: "Техника", d: "Работа над ударами, постановка движений, корректировка." },
+              { t: "Игровая практика", d: "Сетовая игра, развитие игровой выносливости." },
+              { t: "Тактика", d: "Тактика розыгрышей, чтение игры соперника." },
+              { t: "Групповые игры", d: "Парные комбинации, мини-турниры внутри группы." },
             ].map((c) => (
               <div key={c.t} className="reveal p-6 bg-forest-light/30 border border-gold/15 rounded-xl hover:border-gold/40 transition-colors">
                 <p className="font-display text-[20px] text-sand-light mb-2 leading-tight">{c.t}</p>
@@ -431,7 +431,7 @@ const Index = () => {
       {/* ─── 09. DAILY FLOW ─── */}
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="day">
         <div className="max-w-[900px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Daily flow</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Как проходит день</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-5">
             Как проходит <em className="italic text-gold">день</em>
           </h2>
@@ -441,12 +441,12 @@ const Index = () => {
 
           <ol className="flex flex-col gap-0 list-none border-l border-gold/30 pl-8">
             {[
-              ["08:00", "Morning tennis", "Утренняя тренировка на корте."],
-              ["10:30", "Breakfast", "Совместный завтрак на вилле."],
-              ["12:00", "Free time", "Океан, бассейн, recovery, свободное время."],
-              ["16:00", "Tennis session", "Игровые сессии или матчи."],
-              ["19:30", "Dinner", "Ужин от повара на террасе виллы."],
-              ["21:00", "Conversations", "Разговоры, нетворкинг, отдых."],
+              ["08:00", "Утренняя тренировка", "Тренировка на корте на свежем воздухе."],
+              ["10:30", "Завтрак", "Совместный завтрак на вилле."],
+              ["12:00", "Свободное время", "Океан, бассейн, восстановление, свободное время."],
+              ["16:00", "Игровая сессия", "Игровые сессии или матчи."],
+              ["19:30", "Ужин на вилле", "Ужин от повара на террасе виллы."],
+              ["21:00", "Общение", "Общение, нетворкинг, отдых."],
             ].map(([time, title, desc]) => (
               <li key={time} className="reveal relative pb-9 last:pb-0">
                 <span className="absolute -left-[42px] top-1 w-3 h-3 rounded-full bg-gold border-4 border-cream" />
@@ -475,12 +475,12 @@ const Index = () => {
           <div className="absolute inset-0 bg-cream/85" />
         </div>
         <div className="relative z-10 max-w-[1100px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Retreat package</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Стоимость участия</p>
           <h2 className="reveal font-display font-medium text-[clamp(34px,4.5vw,56px)] text-forest leading-[1.1] mb-6 max-w-[720px]">
             Один пакет.<br /><em className="italic text-gold">Всё главное внутри.</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            Обязательный пакет: tennis camp + проживание на вилле с поваром.
+            Обязательный пакет: теннисный кемп + проживание на вилле с поваром.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6">
@@ -488,18 +488,18 @@ const Index = () => {
             <div className="reveal p-8 lg:p-12 bg-forest text-sand-light rounded-2xl border border-gold/30 flex flex-col">
               <div className="flex items-baseline justify-between flex-wrap gap-4 mb-2">
                 <p className="text-[12px] tracking-[3px] uppercase text-gold font-medium">Tennerife Tennis Retreat</p>
-                <p className="text-[12px] tracking-[2px] uppercase text-sand/55">Only 14 spots</p>
+                <p className="text-[12px] tracking-[2px] uppercase text-sand/55">Всего 14 мест</p>
               </div>
               <div className="font-display text-[72px] md:text-[88px] font-medium text-gold leading-none mt-2 mb-2 tracking-[-2px]">€1950</div>
               <p className="text-[14px] text-sand/55 mb-8">на человека · обязательный пакет</p>
 
               <div className="grid grid-cols-2 gap-4 mb-8 pt-6 border-t border-gold/20">
                 <div>
-                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Tennis camp</p>
+                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Теннисный кемп</p>
                   <p className="font-display text-[28px] text-sand-light">€1350</p>
                 </div>
                 <div>
-                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Villa + chef</p>
+                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Вилла и повар</p>
                   <p className="font-display text-[28px] text-sand-light">€600</p>
                 </div>
               </div>
@@ -510,7 +510,7 @@ const Index = () => {
                   "Аренда кортов",
                   "Проживание на вилле",
                   "Повар: завтраки и ужины",
-                  "Premium group experience",
+                  "Групповой опыт и нетворкинг",
                   "Организационное сопровождение",
                 ].map((f) => (
                   <li key={f} className="text-[15px] text-sand/80 flex gap-3 items-start leading-[1.6]">
@@ -524,7 +524,7 @@ const Index = () => {
                 Забронировать место
               </button>
               <p className="text-[12px] text-sand/45 text-center mt-4 leading-[1.6]">
-                Full payment required to secure your place
+                Место закрепляется после оплаты обязательного пакета
               </p>
             </div>
 
@@ -555,7 +555,7 @@ const Index = () => {
       {/* ─── 14. FAQ ─── */}
       <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="faq">
         <div className="max-w-[900px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">FAQ</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Вопросы и ответы</p>
           <h2 className="reveal font-display font-medium text-[clamp(34px,4.5vw,56px)] text-forest leading-[1.1] mb-14">
             Частые вопросы
           </h2>
@@ -584,25 +584,25 @@ const Index = () => {
         </div>
         <div className="relative z-10 max-w-[820px] mx-auto text-center">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">14–20 октября 2026</p>
-          <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,68px)] text-sand-light leading-[1.05] mb-8 tracking-[-0.5px]">
-            14 ambitious people.<br /><em className="italic text-gold">One unforgettable week.</em>
-          </h2>
-          <p className="reveal text-[18px] md:text-[20px] text-sand/80 leading-[1.6] mb-12 max-w-[620px] mx-auto font-light">
-            Теннис, вилла, океан, новые знакомства и неделя активной перезагрузки на Тенерифе.
-          </p>
-          <div className="reveal flex flex-col sm:flex-row sm:justify-center items-stretch sm:items-center gap-4">
-            <button type="button" onClick={openBookingModal}
-              className="inline-flex items-center justify-center gap-3 py-4 px-12 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
-              Забронировать место <ArrowRight size={16} />
-            </button>
-            <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-transparent border border-sand/40 text-sand-light font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
-              <TelegramIcon size={15} /> Telegram
-            </a>
-          </div>
-          <p className="reveal mt-10 text-[13px] text-sand/40 tracking-[2px] uppercase">
-            Only {TOTAL} spots · Full payment required to secure your place
-          </p>
+            <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,68px)] text-sand-light leading-[1.05] mb-8 tracking-[-0.5px]">
+              14 амбициозных людей.<br /><em className="italic text-gold">Одна неделя на Тенерифе.</em>
+            </h2>
+            <p className="reveal text-[18px] md:text-[20px] text-sand/80 leading-[1.6] mb-12 max-w-[620px] mx-auto font-light">
+              Теннис, вилла, океан, новые знакомства и неделя активной перезагрузки.
+            </p>
+            <div className="reveal flex flex-col sm:flex-row sm:justify-center items-stretch sm:items-center gap-4">
+              <button type="button" onClick={openBookingModal}
+                className="inline-flex items-center justify-center gap-3 py-4 px-12 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
+                Забронировать место <ArrowRight size={16} />
+              </button>
+              <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-transparent border border-sand/40 text-sand-light font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
+                <TelegramIcon size={15} /> Telegram
+              </a>
+            </div>
+            <p className="reveal mt-10 text-[13px] text-sand/40 tracking-[2px] uppercase">
+              Всего {TOTAL} мест · Место закрепляется после оплаты
+            </p>
         </div>
       </section>
 
@@ -612,7 +612,7 @@ const Index = () => {
           <div>
             <span className="font-display text-[19px] italic text-gold tracking-[2px] block">Tennerife · Tennis</span>
             <span className="text-[13px] text-sand/45 mt-2 block">14–20 октября 2026</span>
-            <span className="text-[13px] text-sand/45 block">Tenerife, Spain</span>
+            <span className="text-[13px] text-sand/45 block">Тенерифе, Испания</span>
           </div>
           <div className="flex md:justify-center items-center gap-5">
             <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="Telegram">
