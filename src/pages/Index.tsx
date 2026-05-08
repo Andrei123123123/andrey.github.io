@@ -643,9 +643,12 @@ const Index = () => {
             <span className="text-[13px] text-sand/45 mt-2 block">14–20 октября 2026</span>
             <span className="text-[13px] text-sand/45 block">Тенерифе, Испания</span>
           </div>
-          <div className="flex md:justify-center items-center gap-5">
+          <div className="flex md:justify-center items-center gap-4 flex-wrap">
             <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="Telegram">
               <TelegramIcon size={22} />
+            </a>
+            <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="MAX">
+              <MaxIcon size={22} />
             </a>
             <a href="https://wa.me/79655096888" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="WhatsApp">
               <WhatsAppIcon size={22} />
