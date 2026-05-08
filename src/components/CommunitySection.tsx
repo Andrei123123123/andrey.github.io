@@ -54,7 +54,7 @@ const CommunitySection = () => {
   return (
     <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="community">
       <div className="max-w-[1200px] mx-auto">
-        <SectionTag>Community</SectionTag>
+        <SectionTag>Окружение</SectionTag>
         <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] max-w-[760px] mb-6">
           Едете одни — <em className="italic text-gold font-light">уезжаете со своими</em>
         </h2>
