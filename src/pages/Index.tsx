@@ -151,6 +151,23 @@ const Index = () => {
           })}
         </ul>
         <div className="hidden md:flex items-center gap-4">
+          <div className="flex items-center gap-3 pr-4 border-r border-sand/15">
+            <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="Telegram">
+              <TelegramIcon size={17} />
+            </a>
+            <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="MAX">
+              <MaxIcon size={17} />
+            </a>
+            <a href="https://wa.me/79655096888" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="WhatsApp">
+              <WhatsAppIcon size={17} />
+            </a>
+            <a href="https://instagram.com/tenerife.tennis.camp" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="Instagram">
+              <InstagramIcon size={17} />
+            </a>
+            <a href="https://vk.com/tennistenerife" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="VK">
+              <VKIcon size={17} />
+            </a>
+          </div>
           <button type="button" onClick={openBookingModal}
             className="py-2.5 px-6 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2px] uppercase border-none cursor-pointer hover:bg-gold-light transition-colors duration-300 rounded-md">
             Забронировать место
