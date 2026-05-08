@@ -191,10 +191,10 @@ const Index = () => {
               14–20 октября 2026 · Тенерифе, Испания · всего {TOTAL} мест
             </p>
             <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,6.5vw,88px)] leading-[1.02] text-sand-light tracking-[-0.5px]">
-              Теннис и падел<br /><em className="not-italic text-gold">на Тенерифе</em>
+              Закрытый теннисный ретрит<br /><em className="not-italic text-gold">для тех, кто выбирает движение</em>
             </h1>
             <p className="animate-fade-up mt-8 text-[18px] md:text-[20px] text-sand/85 leading-[1.55] font-light max-w-[640px] mx-auto" style={{ animationDelay: "0.15s" }}>
-              Утренние тренировки, ужины на террасе и небольшая группа людей. Всего 14 участников.
+              7 дней тенниса, океана, виллы с поваром и сильного окружения на Тенерифе.
             </p>
             <div className="animate-fade-up mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4" style={{ animationDelay: "0.3s" }}>
               <button type="button" onClick={openBookingModal}
@@ -213,15 +213,15 @@ const Index = () => {
       {/* ─── 02. INTRO / POSITIONING ─── */}
       <section className="bg-cream py-28 lg:py-40 px-6 lg:px-16">
         <div className="max-w-[900px] mx-auto text-center">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">Вилла · Океан · Теннис · Ужины</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">Теннис · Вилла · Океан · Окружение</p>
           <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,64px)] text-forest leading-[1.08] tracking-[-0.5px]">
             Одна неделя<br /><em className="italic text-gold">на Тенерифе</em>
           </h2>
           <p className="reveal mt-10 text-[19px] md:text-[21px] text-text-body/85 leading-[1.7] max-w-[720px] mx-auto">
-            Жизнь на вилле у океана, утренние тренировки, ужины на террасе и спокойные вечера в небольшой компании.
+            Это неделя тенниса, жизни на вилле, океанского воздуха, ужинов, новых знакомств и активного отдыха в кругу тех, кто выбирает движение.
           </p>
           <p className="reveal mt-6 text-[17px] text-text-body/70 leading-[1.75] max-w-[680px] mx-auto">
-            Всего 14 участников. Без массовости и формальностей — небольшая группа, общий стол, своё пространство.
+            Мы собираем всего 14 участников, чтобы создать не массовый тур, а камерный ретрит — с атмосферой, уровнем и энергией.
           </p>
         </div>
       </section>
@@ -231,28 +231,28 @@ const Index = () => {
         <div className="max-w-[1200px] mx-auto">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Атмосфера</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.1] mb-16 max-w-[680px]">
-            Из чего состоит<br />эта неделя
+            Три причины, почему это<br />больше, чем кемп
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                tag: "01 · Вилла",
-                title: "Вилла и ужины",
-                text: "Дом у океана, повар на вилле, длинные ужины на террасе и медленные утра.",
+                tag: "01 · Теннис",
+                title: "Теннис",
+                text: "Ежедневные тренировки, игровые сессии и матчи под руководством тренеров Tenerife Tennis Academy.",
+                img: expTennis,
+              },
+              {
+                tag: "02 · Атмосфера",
+                title: "Атмосфера",
+                text: "Вилла, повар, океан, солнце, свободное время и ощущение активного премиального отдыха.",
                 img: expLifestyle,
               },
               {
-                tag: "02 · Океан",
-                title: "Океан и остров",
-                text: "Яхта, чёрные пляжи, вулкан Тейде, сёрфинг, закаты и свободное время.",
+                tag: "03 · Окружение",
+                title: "Окружение",
+                text: "14 участников из предпринимательской среды — люди, с которыми интересно играть, общаться, ужинать и строить связи.",
                 img: expCommunity,
-              },
-              {
-                tag: "03 · Теннис",
-                title: "Теннис вечером",
-                text: "Каждый вечер — корт с тренерами Tenerife Tennis Academy. Любой уровень.",
-                img: expTennis,
               },
             ].map((c) => (
               <article key={c.title} className="reveal group relative overflow-hidden rounded-2xl bg-forest-light/30 border border-gold/15 hover:border-gold/40 transition-all duration-500">
@@ -274,21 +274,21 @@ const Index = () => {
       {/* ─── 04. WHO IS THIS FOR ─── */}
       <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="who">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Кто едет</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Для кого этот ретрит</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-5 max-w-[760px]">
-            Маленькая группа, <em className="italic text-gold">схожий ритм</em>
+            Для тех, кому скучен <em className="italic text-gold">обычный отпуск</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            14 человек, которым близок активный отдых, спорт и спокойная компания за ужином.
+            Ретрит создан для людей, которые хотят совместить спорт, путешествие, атмосферу и сильное окружение.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { t: "Предприниматели", d: "Хочется выдохнуть, но не выпасть из ритма.", img: audEntrepreneurs },
-              { t: "Основатели", d: "Ценят фокус, тишину и качественную компанию.", img: audFounders },
-              { t: "Активные путешественники", d: "Не лежат у бассейна весь отпуск.", img: audTravelers },
-              { t: "Любители тенниса", d: "Хотят играть в красивой локации.", img: audTennis },
-              { t: "С чувством вкуса", d: "Важна атмосфера, дом и ужин с видом на океан.", img: audLifestyle },
+              { t: "Предприниматели", d: "Для тех, кто много работает и хочет перезагрузиться без потери динамики.", img: audEntrepreneurs },
+              { t: "Основатели проектов", d: "Для людей, которые ценят энергию, фокус и сильное окружение.", img: audFounders },
+              { t: "Любители активного отдыха", d: "Для тех, кто не хочет лежать у бассейна весь отпуск.", img: audTravelers },
+              { t: "Любители тенниса", d: "Для тех, кто хочет прокачать игру в красивой локации.", img: audTennis },
+              { t: "Люди с эстетикой и вкусом", d: "Для тех, кому важны атмосфера, уровень и красивый опыт.", img: audLifestyle },
             ].map((p, i) => (
               <div key={p.t} className="reveal group bg-card border border-forest/10 rounded-xl overflow-hidden hover:border-gold/40 hover:-translate-y-0.5 transition-all duration-300">
                 <div className="aspect-[4/3] overflow-hidden bg-forest">
@@ -313,7 +313,7 @@ const Index = () => {
             Что входит в <em className="italic text-gold">стоимость</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            Вилла, повар, корты и сопровождение — всё уже включено.
+            Всё главное для недели тенниса, жизни на вилле и группового опыта уже включено.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
@@ -323,12 +323,13 @@ const Index = () => {
               <h3 className="font-display text-[24px] mb-7 leading-tight">Кемп и вилла</h3>
               <ul className="flex flex-col gap-3.5 list-none">
                 {[
-                  "Проживание на вилле у океана",
-                  "Завтраки и ужины от шеф-повара",
-                  "Вечерние тренировки на кортах",
+                  "Участие в теннисном кемпе",
+                  "Ежедневные тренировки",
                   "Игровые сессии и матчи",
                   "Аренда кортов",
-                  "Маленькая группа — 14 человек",
+                  "Проживание на вилле",
+                  "Повар: завтраки и ужины",
+                  "Групповой опыт и нетворкинг",
                   "Организационное сопровождение",
                 ].map((f) => (
                   <li key={f} className="flex gap-3 items-start text-[15px] text-sand/85 leading-[1.6]">
@@ -374,12 +375,12 @@ const Index = () => {
       {/* ─── 08. TENNIS PROGRAM (intro) ─── */}
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="program">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Теннис вечером</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Теннисная программа</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.1] mb-5 max-w-[760px]">
-            Корт с тренерами <em className="italic text-gold">Tenerife Tennis Academy</em>
+            Тренировки с командой <em className="italic text-gold">Tenerife Tennis Academy</em>
           </h2>
           <p className="reveal text-[17px] text-sand/70 leading-[1.7] mb-14 max-w-[680px]">
-            Каждый вечер — час с половиной на корте. Любой уровень, без давления.
+            Ежедневные тренировки, игровые задания и матчи для участников с разным уровнем подготовки.
           </p>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
@@ -461,20 +462,20 @@ const Index = () => {
         <div className="max-w-[900px] mx-auto">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Как проходит день</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-5">
-            Один <em className="italic text-gold">день</em>
+            Как проходит <em className="italic text-gold">день</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[600px]">
-            Утро на корте, день у океана, вечер на террасе виллы.
+            Баланс тенниса, отдыха, океана, общения и вечерней атмосферы.
           </p>
 
           <ol className="flex flex-col gap-0 list-none border-l border-gold/30 pl-8">
             {[
-              ["08:00", "Утренняя тренировка", "Корт у океана, утренний свет."],
-              ["10:30", "Завтрак", "Длинный завтрак на террасе виллы."],
-              ["12:00", "Океан и отдых", "Бассейн, пляж, прогулки или просто тишина."],
-              ["16:00", "Вечерний корт", "Игровая сессия или дружеский матч."],
-              ["19:30", "Ужин на вилле", "Шеф-повар, общий стол, разговоры."],
-              ["21:00", "Вечер", "Терраса, вино, океан в темноте."],
+              ["08:00", "Утренняя тренировка", "Тренировка на корте на свежем воздухе."],
+              ["10:30", "Завтрак", "Совместный завтрак на вилле."],
+              ["12:00", "Свободное время", "Океан, бассейн, восстановление, свободное время."],
+              ["16:00", "Игровая сессия", "Игровые сессии или матчи."],
+              ["19:30", "Ужин на вилле", "Ужин от повара на террасе виллы."],
+              ["21:00", "Общение", "Общение, нетворкинг, отдых."],
             ].map(([time, title, desc]) => (
               <li key={time} className="reveal relative pb-9 last:pb-0">
                 <span className="absolute -left-[42px] top-1 w-3 h-3 rounded-full bg-gold border-4 border-cream" />
@@ -505,10 +506,10 @@ const Index = () => {
         <div className="relative z-10 max-w-[1100px] mx-auto">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Стоимость участия</p>
           <h2 className="reveal font-display font-medium text-[clamp(34px,4.5vw,56px)] text-forest leading-[1.1] mb-6 max-w-[720px]">
-            Один пакет.<br /><em className="italic text-gold">Без скрытых строк.</em>
+            Один пакет.<br /><em className="italic text-gold">Всё главное внутри.</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            Вилла с поваром и теннисная программа — в одной стоимости.
+            Обязательный пакет: теннисный кемп + проживание на вилле с поваром.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6">
@@ -523,22 +524,22 @@ const Index = () => {
 
               <div className="grid grid-cols-2 gap-4 mb-8 pt-6 border-t border-gold/20">
                 <div>
-                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Теннисная программа</p>
+                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Теннисный кемп</p>
                   <p className="font-display text-[28px] text-sand-light">€1350</p>
                 </div>
                 <div>
-                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Вилла и шеф-повар</p>
+                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Вилла и повар</p>
                   <p className="font-display text-[28px] text-sand-light">€600</p>
                 </div>
               </div>
 
               <ul className="flex flex-col gap-3 mb-10 flex-1 list-none">
                 {[
-                  "Вилла у океана",
-                  "Завтраки и ужины от шеф-повара",
-                  "Вечерние тренировки и матчи",
+                  "Тренировки и игровые сессии",
                   "Аренда кортов",
-                  "Маленькая группа — 14 человек",
+                  "Проживание на вилле",
+                  "Повар: завтраки и ужины",
+                  "Групповой опыт и нетворкинг",
                   "Организационное сопровождение",
                 ].map((f) => (
                   <li key={f} className="text-[15px] text-sand/80 flex gap-3 items-start leading-[1.6]">
@@ -613,10 +614,10 @@ const Index = () => {
         <div className="relative z-10 max-w-[820px] mx-auto text-center">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">14–20 октября 2026</p>
             <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,68px)] text-sand-light leading-[1.05] mb-8 tracking-[-0.5px]">
-              14 человек.<br /><em className="italic text-gold">Одна вилла на Тенерифе.</em>
+              14 человек, которые выбирают движение.<br /><em className="italic text-gold">Одна неделя на Тенерифе.</em>
             </h2>
             <p className="reveal text-[18px] md:text-[20px] text-sand/80 leading-[1.6] mb-12 max-w-[620px] mx-auto font-light">
-              Океан, ужины, теннис и неделя в спокойном кругу.
+              Теннис, вилла, океан, новые знакомства и неделя активной перезагрузки.
             </p>
             <div className="reveal flex flex-col sm:flex-row sm:justify-center items-stretch sm:items-center gap-4">
               <button type="button" onClick={openBookingModal}
