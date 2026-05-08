@@ -23,8 +23,6 @@ const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
 type FormState = {
   name: string;
   telegram: string;
-  instagram: string;
-  age: string;
   level: string;
   occupation: string;
   flightHelp: boolean;
@@ -34,8 +32,6 @@ type FormState = {
 const empty: FormState = {
   name: "",
   telegram: "",
-  instagram: "",
-  age: "",
   level: "",
   occupation: "",
   flightHelp: false,
@@ -106,8 +102,6 @@ const BookingModal = () => {
         body: {
           name: form.name,
           telegram: form.telegram,
-          instagram: form.instagram,
-          age: form.age,
           level: form.level,
           occupation: form.occupation,
           flightHelp: form.flightHelp ? "да" : "",
@@ -217,41 +211,25 @@ const BookingModal = () => {
                     className={inputCls} placeholder="Ваше имя" />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className={labelCls}>Telegram *</label>
-                    <input type="text" required maxLength={80} value={form.telegram}
-                      onChange={(e) => update("telegram", e.target.value)}
-                      className={inputCls} placeholder="@username" />
-                  </div>
-                  <div>
-                    <label className={labelCls}>Instagram</label>
-                    <input type="text" maxLength={80} value={form.instagram}
-                      onChange={(e) => update("instagram", e.target.value)}
-                      className={inputCls} placeholder="@username" />
-                  </div>
+                <div>
+                  <label className={labelCls}>Telegram *</label>
+                  <input type="text" required maxLength={80} value={form.telegram}
+                    onChange={(e) => update("telegram", e.target.value)}
+                    className={inputCls} placeholder="@username" />
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className={labelCls}>Возраст</label>
-                    <input type="number" min={16} max={99} value={form.age}
-                      onChange={(e) => update("age", e.target.value)}
-                      className={inputCls} placeholder="32" />
-                  </div>
-                  <div>
-                    <label className={labelCls}>Уровень тенниса</label>
-                    <select value={form.level}
-                      onChange={(e) => update("level", e.target.value)}
-                      className={inputCls + " appearance-none cursor-pointer"}>
-                      <option value="">Выберите</option>
-                      <option value="Никогда не играл">Никогда не играл</option>
-                      <option value="Начинающий">Начинающий</option>
-                      <option value="Любитель">Любитель</option>
-                      <option value="Уверенный любитель">Уверенный любитель</option>
-                      <option value="Опытный">Опытный</option>
-                    </select>
-                  </div>
+                <div>
+                  <label className={labelCls}>Уровень тенниса</label>
+                  <select value={form.level}
+                    onChange={(e) => update("level", e.target.value)}
+                    className={inputCls + " appearance-none cursor-pointer"}>
+                    <option value="">Выберите</option>
+                    <option value="Никогда не играл">Никогда не играл</option>
+                    <option value="Начинающий">Начинающий</option>
+                    <option value="Любитель">Любитель</option>
+                    <option value="Уверенный любитель">Уверенный любитель</option>
+                    <option value="Опытный">Опытный</option>
+                  </select>
                 </div>
 
                 <div>

@@ -48,6 +48,18 @@ const InstagramIcon = ({ size = 16 }: { size?: number }) => (
   </svg>
 );
 
+const MaxIcon = ({ size = 16 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M5 2h14a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3zm7 4a6 6 0 1 0 3.6 10.8l1.9 1.4a.6.6 0 0 0 .96-.48v-3.06A6 6 0 0 0 12 6zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" />
+  </svg>
+);
+
+const VKIcon = ({ size = 16 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.525-2.049-1.714-1.033-1.01-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.863 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.204.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.254-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.049.17.474-.085.72-.576.72z" />
+  </svg>
+);
+
 const Index = () => {
   const containerRef = useScrollReveal();
   const { open: openBookingModal } = useBookingModal();
@@ -139,6 +151,23 @@ const Index = () => {
           })}
         </ul>
         <div className="hidden md:flex items-center gap-4">
+          <div className="flex items-center gap-3 pr-4 border-r border-sand/15">
+            <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="Telegram">
+              <TelegramIcon size={17} />
+            </a>
+            <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="MAX">
+              <MaxIcon size={17} />
+            </a>
+            <a href="https://wa.me/79655096888" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="WhatsApp">
+              <WhatsAppIcon size={17} />
+            </a>
+            <a href="https://instagram.com/tenerife.tennis.camp" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="Instagram">
+              <InstagramIcon size={17} />
+            </a>
+            <a href="https://vk.com/tennistenerife" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="VK">
+              <VKIcon size={17} />
+            </a>
+          </div>
           <button type="button" onClick={openBookingModal}
             className="py-2.5 px-6 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2px] uppercase border-none cursor-pointer hover:bg-gold-light transition-colors duration-300 rounded-md">
             Забронировать место
@@ -614,15 +643,21 @@ const Index = () => {
             <span className="text-[13px] text-sand/45 mt-2 block">14–20 октября 2026</span>
             <span className="text-[13px] text-sand/45 block">Тенерифе, Испания</span>
           </div>
-          <div className="flex md:justify-center items-center gap-5">
+          <div className="flex md:justify-center items-center gap-4 flex-wrap">
             <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="Telegram">
               <TelegramIcon size={22} />
+            </a>
+            <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="MAX">
+              <MaxIcon size={22} />
             </a>
             <a href="https://wa.me/79655096888" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="WhatsApp">
               <WhatsAppIcon size={22} />
             </a>
             <a href="https://instagram.com/tenerife.tennis.camp" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="Instagram">
               <InstagramIcon size={22} />
+            </a>
+            <a href="https://vk.com/tennistenerife" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="VK">
+              <VKIcon size={22} />
             </a>
             <a href="mailto:hello@tennerife-tennis.com" className="text-[13px] text-sand/55 hover:text-gold transition-colors no-underline">
               hello@tennerife-tennis.com
