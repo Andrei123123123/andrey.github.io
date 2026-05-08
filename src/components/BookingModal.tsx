@@ -23,8 +23,6 @@ const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
 type FormState = {
   name: string;
   telegram: string;
-  instagram: string;
-  age: string;
   level: string;
   occupation: string;
   flightHelp: boolean;
@@ -34,8 +32,6 @@ type FormState = {
 const empty: FormState = {
   name: "",
   telegram: "",
-  instagram: "",
-  age: "",
   level: "",
   occupation: "",
   flightHelp: false,
