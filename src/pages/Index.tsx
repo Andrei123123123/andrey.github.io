@@ -19,6 +19,14 @@ import day18 from "@/assets/day-18.jpg";
 import day19 from "@/assets/day-19.jpg";
 import day20 from "@/assets/day-20.jpg";
 import bgPricing from "@/assets/bg-pricing.jpg";
+import expTennis from "@/assets/exp-tennis.jpg";
+import expLifestyle from "@/assets/exp-lifestyle.jpg";
+import expCommunity from "@/assets/exp-community.jpg";
+import audEntrepreneurs from "@/assets/aud-entrepreneurs.jpg";
+import audFounders from "@/assets/aud-founders.jpg";
+import audTravelers from "@/assets/aud-travelers.jpg";
+import audTennis from "@/assets/aud-tennis.jpg";
+import audLifestyle from "@/assets/aud-lifestyle.jpg";
 
 const TOTAL = 14;
 
@@ -203,19 +211,19 @@ const Index = () => {
                 tag: "01 · Tennis",
                 title: "Tennis",
                 text: "Ежедневные тренировки, игровые сессии и матчи под руководством тренеров Tenerife Tennis Academy.",
-                img: day15,
+                img: expTennis,
               },
               {
                 tag: "02 · Lifestyle",
                 title: "Lifestyle",
                 text: "Проживание на вилле, повар, океан, солнце, свободное время и атмосфера активного премиального отдыха.",
-                img: day17,
+                img: expLifestyle,
               },
               {
                 tag: "03 · Community",
                 title: "Community",
                 text: "14 участников из предпринимательской среды — люди, с которыми интересно играть, говорить, ужинать и строить связи.",
-                img: day20,
+                img: expCommunity,
               },
             ].map((c) => (
               <article key={c.title} className="reveal group relative overflow-hidden rounded-2xl bg-forest-light/30 border border-gold/15 hover:border-gold/40 transition-all duration-500">
@@ -247,16 +255,21 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { t: "Предприниматели", d: "Для тех, кто много работает и хочет перезагрузиться без потери динамики." },
-              { t: "Фаундеры", d: "Для людей, которые ценят энергию, фокус и сильное окружение." },
-              { t: "Активные путешественники", d: "Для тех, кто не хочет лежать у бассейна весь отпуск." },
-              { t: "Любители тенниса", d: "Для тех, кто хочет прокачать игру в красивой локации." },
-              { t: "Lifestyle-oriented", d: "Для тех, кому важны эстетика, атмосфера и уровень." },
+              { t: "Предприниматели", d: "Для тех, кто много работает и хочет перезагрузиться без потери динамики.", img: audEntrepreneurs },
+              { t: "Фаундеры", d: "Для людей, которые ценят энергию, фокус и сильное окружение.", img: audFounders },
+              { t: "Активные путешественники", d: "Для тех, кто не хочет лежать у бассейна весь отпуск.", img: audTravelers },
+              { t: "Любители тенниса", d: "Для тех, кто хочет прокачать игру в красивой локации.", img: audTennis },
+              { t: "Lifestyle-oriented", d: "Для тех, кому важны эстетика, атмосфера и уровень.", img: audLifestyle },
             ].map((p, i) => (
-              <div key={p.t} className="reveal p-7 lg:p-8 bg-card border border-forest/10 rounded-xl hover:border-gold/40 hover:-translate-y-0.5 transition-all duration-300">
-                <p className="text-[11px] tracking-[3px] uppercase text-gold/70 mb-3 font-medium">0{i + 1}</p>
-                <h3 className="font-display text-[22px] text-forest mb-3 leading-tight">{p.t}</h3>
-                <p className="text-[15px] text-text-body/75 leading-[1.65]">{p.d}</p>
+              <div key={p.t} className="reveal group bg-card border border-forest/10 rounded-xl overflow-hidden hover:border-gold/40 hover:-translate-y-0.5 transition-all duration-300">
+                <div className="aspect-[4/3] overflow-hidden bg-forest">
+                  <img src={p.img} alt="" className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy" />
+                </div>
+                <div className="p-7 lg:p-8">
+                  <p className="text-[11px] tracking-[3px] uppercase text-gold/70 mb-3 font-medium">0{i + 1}</p>
+                  <h3 className="font-display text-[22px] text-forest mb-3 leading-tight">{p.t}</h3>
+                  <p className="text-[15px] text-text-body/75 leading-[1.65]">{p.d}</p>
+                </div>
               </div>
             ))}
           </div>
