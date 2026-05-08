@@ -271,37 +271,16 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── 04. WHO IS THIS FOR ─── */}
+      {/* ─── 04. ФОРМАТ ─── */}
       <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="who">
-        <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Для кого этот ретрит</p>
-          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-5 max-w-[760px]">
-            Для тех, кому скучен <em className="italic text-gold">обычный отпуск</em>
+        <div className="max-w-[1100px] mx-auto">
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Формат</p>
+          <h2 className="reveal font-display font-medium text-[clamp(36px,4.6vw,56px)] text-forest leading-[1.05] mb-7 max-w-[760px]">
+            14 мест<br /><em className="italic text-gold font-light">на одну неделю</em>
           </h2>
-          <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            Ретрит создан для людей, которые хотят совместить спорт, путешествие, атмосферу и сильное окружение.
+          <p className="reveal text-[18px] text-text-body/80 leading-[1.7] max-w-[620px]">
+            Небольшая группа, вилла у океана, ежедневный теннис и спокойный ритм — без массового формата и суеты.
           </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
-              { t: "Предприниматели", d: "Для тех, кто много работает и хочет перезагрузиться без потери динамики.", img: audEntrepreneurs },
-              { t: "Основатели проектов", d: "Для людей, которые ценят энергию, фокус и сильное окружение.", img: audFounders },
-              { t: "Любители активного отдыха", d: "Для тех, кто не хочет лежать у бассейна весь отпуск.", img: audTravelers },
-              { t: "Любители тенниса", d: "Для тех, кто хочет прокачать игру в красивой локации.", img: audTennis },
-              { t: "Люди с эстетикой и вкусом", d: "Для тех, кому важны атмосфера, уровень и красивый опыт.", img: audLifestyle },
-            ].map((p, i) => (
-              <div key={p.t} className="reveal group bg-card border border-forest/10 rounded-xl overflow-hidden hover:border-gold/40 hover:-translate-y-0.5 transition-all duration-300">
-                <div className="aspect-[4/3] overflow-hidden bg-forest">
-                  <img src={p.img} alt="" className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy" />
-                </div>
-                <div className="p-7 lg:p-8">
-                  <p className="text-[11px] tracking-[3px] uppercase text-gold/70 mb-3 font-medium">0{i + 1}</p>
-                  <h3 className="font-display text-[22px] text-forest mb-3 leading-tight">{p.t}</h3>
-                  <p className="text-[15px] text-text-body/75 leading-[1.65]">{p.d}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
