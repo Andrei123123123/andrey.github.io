@@ -255,16 +255,21 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { t: "Предприниматели", d: "Для тех, кто много работает и хочет перезагрузиться без потери динамики." },
-              { t: "Фаундеры", d: "Для людей, которые ценят энергию, фокус и сильное окружение." },
-              { t: "Активные путешественники", d: "Для тех, кто не хочет лежать у бассейна весь отпуск." },
-              { t: "Любители тенниса", d: "Для тех, кто хочет прокачать игру в красивой локации." },
-              { t: "Lifestyle-oriented", d: "Для тех, кому важны эстетика, атмосфера и уровень." },
+              { t: "Предприниматели", d: "Для тех, кто много работает и хочет перезагрузиться без потери динамики.", img: audEntrepreneurs },
+              { t: "Фаундеры", d: "Для людей, которые ценят энергию, фокус и сильное окружение.", img: audFounders },
+              { t: "Активные путешественники", d: "Для тех, кто не хочет лежать у бассейна весь отпуск.", img: audTravelers },
+              { t: "Любители тенниса", d: "Для тех, кто хочет прокачать игру в красивой локации.", img: audTennis },
+              { t: "Lifestyle-oriented", d: "Для тех, кому важны эстетика, атмосфера и уровень.", img: audLifestyle },
             ].map((p, i) => (
-              <div key={p.t} className="reveal p-7 lg:p-8 bg-card border border-forest/10 rounded-xl hover:border-gold/40 hover:-translate-y-0.5 transition-all duration-300">
-                <p className="text-[11px] tracking-[3px] uppercase text-gold/70 mb-3 font-medium">0{i + 1}</p>
-                <h3 className="font-display text-[22px] text-forest mb-3 leading-tight">{p.t}</h3>
-                <p className="text-[15px] text-text-body/75 leading-[1.65]">{p.d}</p>
+              <div key={p.t} className="reveal group bg-card border border-forest/10 rounded-xl overflow-hidden hover:border-gold/40 hover:-translate-y-0.5 transition-all duration-300">
+                <div className="aspect-[4/3] overflow-hidden bg-forest">
+                  <img src={p.img} alt="" className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy" />
+                </div>
+                <div className="p-7 lg:p-8">
+                  <p className="text-[11px] tracking-[3px] uppercase text-gold/70 mb-3 font-medium">0{i + 1}</p>
+                  <h3 className="font-display text-[22px] text-forest mb-3 leading-tight">{p.t}</h3>
+                  <p className="text-[15px] text-text-body/75 leading-[1.65]">{p.d}</p>
+                </div>
               </div>
             ))}
           </div>
