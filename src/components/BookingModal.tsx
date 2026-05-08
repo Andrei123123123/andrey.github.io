@@ -101,7 +101,6 @@ const BookingModal = () => {
           name: form.name,
           telegram: form.telegram,
           level: form.level,
-          occupation: form.occupation,
           flightHelp: form.flightHelp ? "да" : "",
           visaHelp: form.visaHelp ? "да" : "",
         },
