@@ -656,6 +656,9 @@ const Index = () => {
             <a href="https://instagram.com/tenerife.tennis.camp" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="Instagram">
               <InstagramIcon size={22} />
             </a>
+            <a href="https://vk.com/tennistenerife" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="VK">
+              <VKIcon size={22} />
+            </a>
             <a href="mailto:hello@tennerife-tennis.com" className="text-[13px] text-sand/55 hover:text-gold transition-colors no-underline">
               hello@tennerife-tennis.com
             </a>
