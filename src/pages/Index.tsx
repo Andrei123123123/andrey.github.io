@@ -215,7 +215,7 @@ const Index = () => {
         <div className="max-w-[900px] mx-auto text-center">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">Теннис · Вилла · Океан · Окружение</p>
           <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,64px)] text-forest leading-[1.08] tracking-[-0.5px]">
-            Это не просто<br /><em className="italic text-gold">теннисный кемп</em>
+            Одна неделя<br /><em className="italic text-gold">на Тенерифе</em>
           </h2>
           <p className="reveal mt-10 text-[19px] md:text-[21px] text-text-body/85 leading-[1.7] max-w-[720px] mx-auto">
             Это неделя тенниса, жизни на вилле, океанского воздуха, ужинов, новых знакомств и активного отдыха в кругу тех, кто выбирает движение.
