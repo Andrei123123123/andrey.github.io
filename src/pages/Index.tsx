@@ -229,7 +229,7 @@ const Index = () => {
       {/* ─── 03. EXPERIENCE — 3 cards ─── */}
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="experience">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Опыт</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Атмосфера</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.1] mb-16 max-w-[680px]">
             Три причины, почему это<br />больше, чем кемп
           </h2>
