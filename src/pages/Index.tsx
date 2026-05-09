@@ -4,6 +4,7 @@ import { useActiveSection } from "@/hooks/useActiveSection";
 import { useBookingModal } from "@/contexts/BookingModalContext";
 import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import FloatingTelegram from "@/components/FloatingTelegram";
 import ScrollProgress from "@/components/ScrollProgress";
 import TeamSection from "@/components/TeamSection";
 import VillaSection from "@/components/VillaSection";
@@ -647,6 +648,7 @@ const Index = () => {
       </footer>
 
       <StickyMobileCTA />
+      <FloatingTelegram />
     </main>
   );
 };
