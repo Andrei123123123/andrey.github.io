@@ -648,6 +648,7 @@ const Index = () => {
       </footer>
 
       <StickyMobileCTA />
+      <FloatingTelegram />
     </main>
   );
 };
