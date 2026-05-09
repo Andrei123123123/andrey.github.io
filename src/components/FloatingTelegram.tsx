@@ -22,7 +22,7 @@ const FloatingTelegram = () => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Написать в Telegram"
-      className={`fixed z-40 bottom-6 right-6 md:bottom-8 md:right-8 bottom-[80px] flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-gold text-forest shadow-[0_8px_24px_rgba(0,0,0,0.25)] hover:bg-gold-light transition-all duration-300 ${
+      className={`fixed z-40 right-5 md:right-8 bottom-[84px] md:bottom-8 flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-gold text-forest shadow-[0_8px_24px_rgba(0,0,0,0.25)] hover:bg-gold-light transition-all duration-300 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"
       }`}
     >
