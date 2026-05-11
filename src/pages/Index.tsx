@@ -434,6 +434,93 @@ const Index = () => {
       {/* ─── 12. COMMUNITY ─── */}
       <CommunitySection />
 
+      {/* ─── 12.5 FIT — Подойдёт / Не подойдёт ─── */}
+      <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="fit">
+        <div className="max-w-[1100px] mx-auto">
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Формат не для всех</p>
+          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-14 max-w-[760px]">
+            Кому подойдёт<br /><em className="italic text-gold">и кому нет</em>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <div className="reveal p-8 lg:p-10 bg-card border border-forest/10 rounded-2xl">
+              <p className="text-[11px] tracking-[3px] uppercase text-gold mb-5 font-medium">Подойдёт</p>
+              <ul className="flex flex-col gap-3.5 list-none">
+                {[
+                  "Любите теннис и хотите играть каждый день",
+                  "Цените камерный формат и небольшую группу",
+                  "Ищете окружение из предпринимателей и фаундеров",
+                  "Готовы к ритму: корт, океан, ужин, разговор",
+                  "Хотите неделю без рабочей суеты, но не «отключиться»",
+                ].map((f) => (
+                  <li key={f} className="flex gap-3 items-start text-[15px] text-text-body/85 leading-[1.65]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold mt-[10px] flex-shrink-0" />{f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="reveal p-8 lg:p-10 bg-forest text-sand-light rounded-2xl border border-gold/20">
+              <p className="text-[11px] tracking-[3px] uppercase text-gold/80 mb-5 font-medium">Не подойдёт</p>
+              <ul className="flex flex-col gap-3.5 list-none">
+                {[
+                  "Если ищете массовый тур или анимацию",
+                  "Если хотите всё включено в формате отельного клуба",
+                  "Если теннис — не в фокусе недели",
+                  "Если не готовы к камерному формату на 14 человек",
+                  "Если рассчитываете «доработать неделю» — здесь иначе",
+                ].map((f) => (
+                  <li key={f} className="flex gap-3 items-start text-[15px] text-sand/75 leading-[1.65]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold/70 mt-[10px] flex-shrink-0" />{f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <p className="reveal mt-10 text-[14px] text-text-body/55 max-w-[640px]">
+            Каждую заявку рассматриваем лично. Это не фильтр, а способ собрать правильный состав группы.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── 12.6 FOUNDER'S LETTER ─── */}
+      <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16">
+        <div className="max-w-[760px] mx-auto">
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">От организатора</p>
+          <blockquote className="reveal font-display font-light italic text-[clamp(22px,2.4vw,30px)] text-forest leading-[1.45] tracking-[-0.3px]">
+            «Я собираю эту неделю для людей, с которыми мне самому хотелось бы провести семь дней — на корте, у океана и за общим столом. Без массового формата, без апселлов и без лишнего шума».
+          </blockquote>
+          <p className="reveal mt-8 text-[14px] tracking-[2px] uppercase text-text-body/60">
+            — Команда Tennerife Tennis
+          </p>
+        </div>
+      </section>
+
+      {/* ─── 12.7 BOOKING STEPS ─── */}
+      <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="how-to-book">
+        <div className="max-w-[1100px] mx-auto">
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Как попасть в группу</p>
+          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.1] mb-14 max-w-[760px]">
+            Три шага<br /><em className="italic text-gold">до подтверждения</em>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { n: "01", t: "Заявка", d: "Заполняете короткую форму. Имя и Telegram — остальное по желанию." },
+              { n: "02", t: "Короткий разговор", d: "Связываемся в течение суток. Рассказываем детали, отвечаем на вопросы, понимаем уровень." },
+              { n: "03", t: "Подтверждение", d: "Если всё совпадает — закрепляем место за вами после оплаты." },
+            ].map((s) => (
+              <div key={s.n} className="reveal p-7 bg-forest-light/30 border border-gold/15 rounded-xl">
+                <p className="font-display text-[40px] text-gold leading-none mb-4">{s.n}</p>
+                <p className="font-display text-[22px] text-sand-light mb-2 leading-tight">{s.t}</p>
+                <p className="text-[14px] text-sand/65 leading-[1.65]">{s.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── 13. PRICE ─── */}
       <section className="relative py-24 lg:py-32 px-6 lg:px-16 overflow-hidden" id="pricing">
         <div className="absolute inset-0">
