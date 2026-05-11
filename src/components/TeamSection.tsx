@@ -1,3 +1,4 @@
+import { Check, Send } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import vizagoLogo from "@/assets/vizago-logo.jpeg";
 import ttaLogo from "@/assets/tta-logo.png";
@@ -25,45 +26,79 @@ const TeamSection = () => {
               name: "Подковыркин Андрей",
               link: "https://t.me/oceaninthesky",
               role: "Организатор",
-               desc: "Теннисист-любитель, который однажды решил, что играть на корте на канарских островах с видом на вулкан лучше, чем на корте у МКАДа. Так появился этот кемп. Отвечает за всё, что происходит до вашего прилёта: вилла, визы, билеты, партнёры, финансы. ",
-              placeholder: "Фото организатора",
+              desc: "Теннисист-любитель, который однажды решил, что играть на корте на канарских островах с видом на вулкан лучше, чем на корте у МКАДа. Так появился этот кемп.",
+              responsibilities: [
+                "Вилла, билеты, визы",
+                "Финансы и партнёры",
+                "Подготовка кемпа до прилёта",
+              ],
               photo: andreyPhoto,
             },
             {
               name: "Еманаков Иван",
               link: "https://t.me/solonikkillamd",
               role: "Организатор",
-              desc: "Отвечает за всё, что происходит после вашего прилёта. Яхта, Тейде, сёрфинг, банкет — его работа. Два минивэна, расписание активностей и решение любых вопросов на месте — тоже его. Если что-то пойдёт не по плану, он уже знает, что делать.",
-              placeholder: "Фото со-организатора",
+              desc: "Отвечает за всё, что происходит после вашего прилёта. Если что-то пойдёт не по плану, он уже знает, что делать.",
+              responsibilities: [
+                "Яхта, Тейде, сёрфинг",
+                "Трансфер и расписание активностей",
+                "Решение любых вопросов на месте",
+              ],
               photo: ivanPhoto,
             },
           ].map((person) => (
             <div key={person.name} className="reveal card-premium overflow-hidden flex flex-col">
-              <div className="aspect-[4/3] bg-sand-light flex items-center justify-center">
-                {person.photo ? (
-                  <div className="h-36 w-36 rounded-full border border-gold/30 bg-card p-1.5 shadow-lg">
-                    <img src={person.photo} alt={person.name} className="h-full w-full rounded-full object-cover" />
-                  </div>
-                ) : (
-                  <div className="text-center">
-                    <div className="w-24 h-24 rounded-full bg-forest/15 border-2 border-gold/30 mx-auto mb-4 flex items-center justify-center">
-                      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-gold/40">
-                        <circle cx="12" cy="8" r="4" />
-                        <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
-                      </svg>
-                    </div>
-                    <p className="text-[13px] tracking-[2px] uppercase text-text-muted-custom">{person.placeholder}</p>
-                  </div>
-                )}
+              {/* Photo zone with decorative background */}
+              <div
+                className="relative h-[260px] flex items-center justify-center overflow-hidden"
+                style={{
+                  background:
+                    "radial-gradient(circle at 50% 45%, hsl(var(--sand-light)) 0%, hsl(var(--cream)) 65%, hsl(var(--sand)) 100%)",
+                }}
+              >
+                <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-gold/15" />
+                <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] rounded-full border border-gold/25" />
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-[0.18]"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(hsl(var(--gold) / 0.35) 1px, transparent 1px)",
+                    backgroundSize: "18px 18px",
+                  }}
+                />
+                <div className="relative h-36 w-36 rounded-full border border-gold/40 bg-card p-1.5 shadow-xl">
+                  <img src={person.photo} alt={person.name} className="h-full w-full rounded-full object-cover" />
+                </div>
+                <span className="absolute bottom-5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold/40 bg-card/90 backdrop-blur-sm text-[11px] tracking-[2px] uppercase text-gold font-semibold">
+                  {person.role}
+                </span>
               </div>
-              <div className="p-8">
-                <h3 className="font-display text-[24px] font-medium text-forest mb-1">
-                  <a href={person.link} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors no-underline">
-                    {person.name}
-                  </a>
+
+              {/* Body */}
+              <div className="p-8 flex flex-col flex-1">
+                <h3 className="font-display text-[24px] font-medium text-forest mb-3">
+                  {person.name}
                 </h3>
-                <p className="text-[13px] tracking-[2px] uppercase text-gold mb-4 font-medium">{person.role}</p>
-                <p className="text-[16px] text-text-body leading-[1.7]">{person.desc}</p>
+                <p className="text-[15.5px] text-text-body leading-[1.7] mb-5">{person.desc}</p>
+
+                <div className="grid grid-cols-1 gap-2.5 mb-6 pt-5 border-t border-border">
+                  {person.responsibilities.map((item) => (
+                    <div key={item} className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-gold flex-shrink-0 mt-1" strokeWidth={2.2} />
+                      <span className="text-[14.5px] text-text-body leading-[1.5]">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <a
+                  href={person.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-gold/50 text-forest text-[14px] font-semibold tracking-[0.5px] hover:bg-gold hover:text-forest hover:border-gold transition-all no-underline"
+                >
+                  <Send size={15} strokeWidth={2} />
+                  Написать в Telegram
+                </a>
               </div>
             </div>
           ))}
