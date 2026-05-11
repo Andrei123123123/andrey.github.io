@@ -184,7 +184,7 @@ const Index = () => {
         <div className="relative z-10 px-6 lg:px-16 pt-28 pb-20 flex-1 flex items-center">
           <div className="max-w-[900px] mx-auto w-full text-center">
             <p className="animate-fade-up text-[12px] tracking-[4px] uppercase text-gold mb-8 font-medium">
-              14–20 октября 2026 · Тенерифе, Испания · всего {TOTAL} мест
+              18–24 октября 2026 · Тенерифе, Испания · всего {TOTAL} мест
             </p>
             <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,6.5vw,88px)] leading-[1.02] text-sand-light tracking-[-0.5px]">
               Закрытый теннисный кемп<br />
@@ -626,7 +626,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/70 to-forest/85" />
         </div>
         <div className="relative z-10 max-w-[820px] mx-auto text-center">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">14–20 октября 2026</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">18–24 октября 2026</p>
             <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,68px)] text-sand-light leading-[1.05] mb-8 tracking-[-0.5px]">
               14 человек, которые выбирают движение.<br /><em className="italic text-gold">Одна неделя на Тенерифе.</em>
             </h2>
@@ -654,7 +654,7 @@ const Index = () => {
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
           <div>
             <span className="font-display text-[19px] italic text-gold tracking-[2px] block">Tennerife · Tennis</span>
-            <span className="text-[13px] text-sand/45 mt-2 block">14–20 октября 2026</span>
+            <span className="text-[13px] text-sand/45 mt-2 block">18–24 октября 2026</span>
             <span className="text-[13px] text-sand/45 block">Тенерифе, Испания</span>
           </div>
           <div className="flex md:justify-center items-center gap-4 flex-wrap">
