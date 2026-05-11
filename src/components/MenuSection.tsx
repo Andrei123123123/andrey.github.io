@@ -1,7 +1,16 @@
 import { useState } from "react";
 import { ChefHat, Leaf, Utensils, ChevronLeft, ChevronRight, Sunrise, UtensilsCrossed } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import menuPlaceholder from "@/assets/menu-placeholder.jpg";
+import menuPaella from "@/assets/menu-paella.png";
+import menuFish from "@/assets/menu-fish.png";
+import menuShrimpPasta from "@/assets/menu-shrimp-pasta.png";
+import menuBreakfast from "@/assets/menu-breakfast.png";
+import menuTapas from "@/assets/menu-tapas.png";
+import menuCheese from "@/assets/menu-cheese.png";
+import menuBolognese from "@/assets/menu-bolognese.png";
+import menuCabbageRolls from "@/assets/menu-cabbage-rolls.png";
+import menuOats from "@/assets/menu-oats.png";
+import menuZucchini from "@/assets/menu-zucchini.png";
 
 type Day = { day: string; breakfast: string; lunch: string };
 
