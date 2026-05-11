@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Check, MapPin, Sun, Mountain, Plane, ChevronLeft, ChevronRight } from "lucide-react";
 import tenerife1 from "@/assets/tenerife-1.jpg";
+import tenerife2 from "@/assets/tenerife-2.jpg";
+import tenerife3 from "@/assets/tenerife-3.jpg";
+import tenerife4 from "@/assets/tenerife-4.jpg";
 import tenerife5 from "@/assets/tenerife-5.jpg";
+import tenerife6 from "@/assets/tenerife-6.jpg";
 import tenerife7 from "@/assets/tenerife-7.jpg";
 import tenerife8 from "@/assets/tenerife-8.jpg";
 import tenerife9 from "@/assets/tenerife-9.jpg";
@@ -10,10 +14,14 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const images = [
   { src: tenerife1, alt: "Побережье Тенерифе — чёрный вулканический пляж" },
-  { src: tenerife7, alt: "Вулкан Тейде над облаками на рассвете" },
-  { src: tenerife9, alt: "Деревня Маска в зелёной долине среди скал" },
+  { src: tenerife2, alt: "Виды Тенерифе" },
+  { src: tenerife3, alt: "Виды Тенерифе" },
+  { src: tenerife4, alt: "Виды Тенерифе" },
   { src: tenerife5, alt: "Бирюзовые воды у скал Los Gigantes" },
+  { src: tenerife6, alt: "Виды Тенерифе" },
+  { src: tenerife7, alt: "Вулкан Тейде над облаками на рассвете" },
   { src: tenerife8, alt: "Бирюзовые волны и чёрные вулканические камни" },
+  { src: tenerife9, alt: "Деревня Маска в зелёной долине среди скал" },
   { src: tenerife10, alt: "Закат над Атлантикой с видом на Ла Гомеру" },
 ];
 
