@@ -46,7 +46,7 @@ const VKIcon = ({ size = 18 }: { size?: number }) => (
 const socials = [
   { href: "https://t.me/tennis_tenerife", label: "Telegram", icon: <TelegramIcon size={18} /> },
   { href: "https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI", label: "MAX", icon: <MaxIcon size={18} /> },
-  { href: "https://wa.me/79655096888", label: "WhatsApp", icon: <WhatsAppIcon size={18} /> },
+  { href: "https://api.whatsapp.com/send/?phone=89655096888", label: "WhatsApp", icon: <WhatsAppIcon size={18} /> },
   { href: "https://instagram.com/tenerife.tennis.camp", label: "Instagram", icon: <InstagramIcon size={18} /> },
   { href: "https://vk.com/tennistenerife", label: "VK", icon: <VKIcon size={18} /> },
 ];
@@ -137,7 +137,7 @@ const MobileMenu = () => {
           <TelegramIcon size={18} />
         </a>
         <a
-          href="https://wa.me/79655096888"
+          href="https://api.whatsapp.com/send/?phone=89655096888"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp"

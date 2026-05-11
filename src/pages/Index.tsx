@@ -153,7 +153,7 @@ const Index = () => {
             <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="MAX">
               <MaxIcon size={17} />
             </a>
-            <a href="https://wa.me/79655096888" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="WhatsApp">
+            <a href="https://api.whatsapp.com/send/?phone=89655096888" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="WhatsApp">
               <WhatsAppIcon size={17} />
             </a>
             <a href="https://instagram.com/tenerife.tennis.camp" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="Instagram">
@@ -668,7 +668,7 @@ const Index = () => {
             <a href="https://max.ru/join/9wYM0HGN_D99_aZwmjCL4Aaombn8s4Qhb7K3Qge-1gI" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="MAX">
               <MaxIcon size={22} />
             </a>
-            <a href="https://wa.me/79655096888" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="WhatsApp">
+            <a href="https://api.whatsapp.com/send/?phone=89655096888" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="WhatsApp">
               <WhatsAppIcon size={22} />
             </a>
             <a href="https://instagram.com/tenerife.tennis.camp" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="Instagram">
