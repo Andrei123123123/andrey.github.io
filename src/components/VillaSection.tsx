@@ -8,26 +8,22 @@ import pool from "@/assets/villa-pool.avif";
 import bbq from "@/assets/villa-bbq.avif";
 import bedroom1 from "@/assets/villa-bedroom-1.avif";
 import bedroom2 from "@/assets/villa-bedroom-2.avif";
-import bedroom3 from "@/assets/villa-bedroom-3.jpg";
 import bedroom4 from "@/assets/villa-bedroom-4.avif";
 import bathroom1 from "@/assets/villa-bathroom-1.avif";
 import bathroom2 from "@/assets/villa-bathroom-2.avif";
-import bathroom3 from "@/assets/villa-bathroom-3.avif";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const villaImages = [
-  { src: pool, alt: "Бассейн с подогревом" },
-  { src: bbq, alt: "Зона барбекю с бассейном на заднем плане" },
-  { src: livingRoom, alt: "Светлая гостиная с панорамными окнами" },
+  { src: pool, alt: "Подогреваемый бассейн и джакузи" },
+  { src: bbq, alt: "Сад и зона барбекю у бассейна" },
+  { src: livingRoom, alt: "Просторная гостиная с панорамными окнами" },
   { src: dining, alt: "Обеденная зона для общих ужинов" },
-  { src: terrace, alt: "Терраса для отдыха под солнцем Тенерифе" },
-  { src: bedroom1, alt: "Уютная спальня с натуральным светом" },
-  { src: bedroom2, alt: "Просторная спальня с видом на сад" },
-  { src: bedroom3, alt: "Спальня с мягким светом" },
-  { src: bedroom4, alt: "Минималистичная спальня в тёплых тонах" },
-  { src: bathroom1, alt: "Современная ванная комната" },
-  { src: bathroom2, alt: "Ванная с тропическим душем" },
-  { src: bathroom3, alt: "Светлая ванная комната" },
+  { src: terrace, alt: "Открытая терраса с шезлонгами" },
+  { src: bedroom1, alt: "Светлая спальня с видом на сад" },
+  { src: bedroom2, alt: "Просторная спальня виллы Ginevra" },
+  { src: bedroom4, alt: "Спальня в тёплых натуральных тонах" },
+  { src: bathroom1, alt: "Ванная комната с тропическим душем" },
+  { src: bathroom2, alt: "Современная ванная комната" },
 ];
 
 const detailCards: { title: string; icon: LucideIcon; items: string[] }[] = [
@@ -35,24 +31,24 @@ const detailCards: { title: string; icon: LucideIcon; items: string[] }[] = [
     title: "Проживание",
     icon: Home,
     items: [
-      "Вилла 650 м² в престижной Чайофе",
-      "10 спален, до 16 гостей",
-      "Главная вилла, квартира и студия",
-      "Прямой выход к бассейну и саду",
-      "Просторная гостиная и обеденный стол на 8",
-      "Полностью оборудованные кухни",
-      "Терраса с видом на океан",
+      "Villa Ginevra — 600 м² в престижной Чайофе",
+      "16 спален и 16 ванных комнат",
+      "Каждому участнику — своя спальня",
+      "Просторная гостиная с панорамными окнами",
+      "Полностью оборудованная кухня",
+      "Кондиционеры, Wi-Fi для видеозвонков",
+      "Бельё и полотенца включены",
     ],
   },
   {
-    title: "Бассейн и сад",
+    title: "Бассейн, сад и спа",
     icon: Waves,
     items: [
-      "Бассейн с подогревом 5,6 × 3,9 м",
-      "Контролируемый доступ для детей",
-      "Огромный сад с пальмами и газоном",
-      "Зона барбекю и тенистая столовая",
-      "Шезлонги и зона отдыха с видом на море",
+      "Подогреваемый бассейн и джакузи",
+      "Частная сауна и турецкая баня",
+      "Большой сад, открытая и крытая террасы",
+      "Зона барбекю и обеденный стол на улице",
+      "Шезлонги, лежаки, зонтики, душ у бассейна",
     ],
   },
   {
@@ -70,11 +66,12 @@ const detailCards: { title: string; icon: LucideIcon; items: string[] }[] = [
     title: "Локация и удобства",
     icon: MapPin,
     items: [
-      "5 минут до Лос-Кристианос и Коста-Адехе",
-      "Рядом аквапарк Siam Park",
-      "Wi-Fi 600 Мбит/с во всех комнатах",
-      "Кондиционеры, стиральная машина",
-      "Частная парковка на 5 машин",
+      "Тихая Чайофа рядом с Ароной",
+      "Вид на океан и горы",
+      "Супермаркет в 160 м, ресторан в 330 м",
+      "Пляж Лос-Кристианос — 5,3 км",
+      "Аэропорт Тенерифе Юг (TFS) — 17 км",
+      "Бесплатная парковка у виллы",
     ],
   },
 ];
