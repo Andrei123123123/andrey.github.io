@@ -585,6 +585,13 @@ const Index = () => {
               </p>
             </div>
           </div>
+
+          <p className="reveal mt-12 text-center text-[13px] text-text-body/65 leading-[1.7]">
+            Опоздали в этот выпуск?{" "}
+            <a href="/season-02" className="text-gold underline underline-offset-4 decoration-gold/40 hover:decoration-gold transition-colors no-underline">
+              Оставьте заявку в Season 02 →
+            </a>
+          </p>
         </div>
       </section>
 
@@ -675,6 +682,9 @@ const Index = () => {
             </a>
           </div>
           <div className="md:text-right space-y-2">
+            <a href="/season-02" className="text-[13px] text-sand/55 hover:text-gold transition-colors block no-underline">
+              Season 02 — waitlist
+            </a>
             <a href="/privacy" className="text-[13px] text-sand/55 hover:text-gold transition-colors block no-underline">
               Политика конфиденциальности
             </a>
