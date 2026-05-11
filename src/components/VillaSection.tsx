@@ -11,6 +11,15 @@ import bedroom2 from "@/assets/villa-bedroom-2.avif";
 import bedroom4 from "@/assets/villa-bedroom-4.avif";
 import bathroom1 from "@/assets/villa-bathroom-1.avif";
 import bathroom2 from "@/assets/villa-bathroom-2.avif";
+import extra1 from "@/assets/villa-extra-1.avif";
+import extra2 from "@/assets/villa-extra-2.avif";
+import extra3 from "@/assets/villa-extra-3.avif";
+import extra4 from "@/assets/villa-extra-4.avif";
+import extra5 from "@/assets/villa-extra-5.avif";
+import extra6 from "@/assets/villa-extra-6.avif";
+import extra7 from "@/assets/villa-extra-7.avif";
+import extra8 from "@/assets/villa-extra-8.avif";
+import extra9 from "@/assets/villa-extra-9.avif";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const villaImages = [
@@ -24,6 +33,15 @@ const villaImages = [
   { src: bedroom4, alt: "Спальня в тёплых натуральных тонах" },
   { src: bathroom1, alt: "Ванная комната с тропическим душем" },
   { src: bathroom2, alt: "Современная ванная комната" },
+  { src: extra1, alt: "Вид на виллу и сад" },
+  { src: extra2, alt: "Лаунж-зона у бассейна" },
+  { src: extra3, alt: "Закатный свет на террасе" },
+  { src: extra4, alt: "Уютный уголок для отдыха" },
+  { src: extra5, alt: "Зона ужина под открытым небом" },
+  { src: extra6, alt: "Спальня с панорамным окном" },
+  { src: extra7, alt: "Сауна на территории виллы" },
+  { src: extra8, alt: "Кухня, полностью оборудованная" },
+  { src: extra9, alt: "Вид с террасы на океан и горы" },
 ];
 
 const detailCards: { title: string; icon: LucideIcon; items: string[] }[] = [
