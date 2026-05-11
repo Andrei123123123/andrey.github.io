@@ -24,24 +24,14 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const villaImages = [
   { src: pool, alt: "Просторная белая кухня с видом на горы" },
-  { src: bbq, alt: "Спальня с двумя кроватями в зелёных тонах" },
   { src: livingRoom, alt: "Светлая гостиная с выходом на террасу" },
-  { src: dining, alt: "Лаунж-зона на террасе на закате" },
   { src: terrace, alt: "Подогреваемый бассейн на закате" },
+  { src: dining, alt: "Лаунж-зона на террасе на закате" },
   { src: bedroom1, alt: "Уютная спальня с деревянным изголовьем" },
-  { src: bedroom2, alt: "Терраса с шезлонгами и пальмами" },
-  { src: bedroom4, alt: "Бассейн с подсветкой вечером" },
   { src: bathroom1, alt: "Джакузи в люкс-сюите" },
-  { src: bathroom2, alt: "Вид на виллу с высоты на закате" },
-  { src: extra1, alt: "Спальня с кондиционером и шкафом" },
   { src: extra2, alt: "Турецкая баня (хамам) с мозаикой" },
-  { src: extra3, alt: "Крытая терраса с обеденной зоной" },
   { src: extra4, alt: "Большой обеденный стол под навесом" },
-  { src: extra5, alt: "Спальня с прямым выходом к бассейну" },
-  { src: extra6, alt: "Ванная комната с ванной у живой стены" },
-  { src: extra7, alt: "Джакузи на открытой террасе" },
-  { src: extra8, alt: "Сюит со встроенным джакузи и ТВ" },
-  { src: extra9, alt: "Бассейн и сад с пальмами вечером" },
+  { src: bathroom2, alt: "Вид на виллу с высоты на закате" },
 ];
 
 const detailCards: { title: string; icon: LucideIcon; items: string[] }[] = [
