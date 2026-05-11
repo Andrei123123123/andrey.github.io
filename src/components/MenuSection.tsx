@@ -1,7 +1,16 @@
 import { useState } from "react";
 import { ChefHat, Leaf, Utensils, ChevronLeft, ChevronRight, Sunrise, UtensilsCrossed } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import menuPlaceholder from "@/assets/menu-placeholder.jpg";
+import menuPaella from "@/assets/menu-paella.png";
+import menuFish from "@/assets/menu-fish.png";
+import menuShrimpPasta from "@/assets/menu-shrimp-pasta.png";
+import menuBreakfast from "@/assets/menu-breakfast.png";
+import menuTapas from "@/assets/menu-tapas.png";
+import menuCheese from "@/assets/menu-cheese.png";
+import menuBolognese from "@/assets/menu-bolognese.png";
+import menuCabbageRolls from "@/assets/menu-cabbage-rolls.png";
+import menuOats from "@/assets/menu-oats.png";
+import menuZucchini from "@/assets/menu-zucchini.png";
 
 type Day = { day: string; breakfast: string; lunch: string };
 
@@ -33,9 +42,10 @@ const variants: MenuVariant[] = [
       { day: "Вс", breakfast: "Яйца бенедикт, салат, фрукты", lunch: "Рыба на гриле, булгур, овощи" },
     ],
     images: [
-      { src: menuPlaceholder, alt: "Средиземноморское меню" },
-      { src: menuPlaceholder, alt: "Свежая рыба и овощи" },
-      { src: menuPlaceholder, alt: "Обед на террасе" },
+      { src: menuPaella, alt: "Паэлья де мариска с морепродуктами" },
+      { src: menuFish, alt: "Рыба, запечённая с зеленью и овощами" },
+      { src: menuShrimpPasta, alt: "Паста с креветками в сливочном соусе" },
+      { src: menuBreakfast, alt: "Завтрак: яйца, тосты с песто, фрукты" },
     ],
   },
   {
@@ -55,9 +65,10 @@ const variants: MenuVariant[] = [
       { day: "Вс", breakfast: "Круассаны, яйца, фрукты", lunch: "Поке с лососем и рисом" },
     ],
     images: [
-      { src: menuPlaceholder, alt: "Гастрономический тур" },
-      { src: menuPlaceholder, alt: "Азиатские блюда" },
-      { src: menuPlaceholder, alt: "Стейк с овощами" },
+      { src: menuTapas, alt: "Доска с испанскими тапас и сырами" },
+      { src: menuCheese, alt: "Сырная и закусочная тарелка" },
+      { src: menuBolognese, alt: "Спагетти болоньезе с пармезаном" },
+      { src: menuCabbageRolls, alt: "Голубцы под томатным соусом" },
     ],
   },
   {
@@ -77,9 +88,9 @@ const variants: MenuVariant[] = [
       { day: "Вс", breakfast: "Смузи, орехи, фрукты", lunch: "Рис с фасолью и овощами по-латиноамерикански" },
     ],
     images: [
-      { src: menuPlaceholder, alt: "Веганское меню" },
-      { src: menuPlaceholder, alt: "Будда-боул" },
-      { src: menuPlaceholder, alt: "Свежие овощи" },
+      { src: menuOats, alt: "Овсянка с бананом — основа веганского завтрака" },
+      { src: menuZucchini, alt: "Фаршированные цукини с овощами" },
+      { src: menuBreakfast, alt: "Лёгкий завтрак с овощами и фруктами" },
     ],
   },
 ];
