@@ -156,7 +156,7 @@ const MenuSection = () => {
                   width={1280}
                   height={832}
                   loading="lazy"
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
                     i === slide ? "opacity-100" : "opacity-0"
                   }`}
                 />
