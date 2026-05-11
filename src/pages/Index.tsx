@@ -408,8 +408,8 @@ const Index = () => {
           <div className="reveal grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[820px]">
             <div>
               <p className="text-[11px] tracking-[3px] uppercase text-gold/80 mb-3 font-medium">Утро</p>
-              <p className="font-display text-[24px] text-forest leading-[1.25] mb-2">Корт</p>
-              <p className="text-[15px] text-text-body/70 leading-[1.65]">Тренировка на свежем воздухе. Завтрак на вилле.</p>
+              <p className="font-display text-[24px] text-forest leading-[1.25] mb-2">Релакс</p>
+              <p className="text-[15px] text-text-body/70 leading-[1.65]">Завтрак на вилле.</p>
             </div>
             <div>
               <p className="text-[11px] tracking-[3px] uppercase text-gold/80 mb-3 font-medium">День</p>
@@ -418,7 +418,7 @@ const Index = () => {
             </div>
             <div>
               <p className="text-[11px] tracking-[3px] uppercase text-gold/80 mb-3 font-medium">Вечер</p>
-              <p className="font-display text-[24px] text-forest leading-[1.25] mb-2">Стол</p>
+              <p className="font-display text-[24px] text-forest leading-[1.25] mb-2">Корт</p>
               <p className="text-[15px] text-text-body/70 leading-[1.65]">Игровая сессия и ужин от шефа на террасе.</p>
             </div>
           </div>
