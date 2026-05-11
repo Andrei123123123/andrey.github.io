@@ -171,63 +171,41 @@ const Index = () => {
         <MobileMenu />
       </nav>
 
-      {/* ─── 01. HERO — editorial ─── */}
-      <section className="min-h-[100svh] lg:min-h-screen relative flex flex-col overflow-hidden" id="hero">
+      {/* ─── 01. HERO ─── */}
+      <section className="min-h-[100svh] lg:min-h-screen relative flex flex-col justify-center overflow-hidden" id="hero">
         <div ref={heroBgRef} className="absolute inset-0 hero-parallax">
-          <video autoPlay muted loop playsInline preload="auto" poster="/hero-poster.jpg" className="w-full h-full object-cover" aria-hidden="true" style={{ filter: "grayscale(35%) contrast(1.05)" }}>
+          <video autoPlay muted loop playsInline preload="auto" poster="/hero-poster.jpg" className="w-full h-full object-cover" aria-hidden="true">
             <source src="/hero-bg.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(20,32,22,0.55) 0%, rgba(20,32,22,0.78) 60%, rgba(20,32,22,0.92) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(rgba(20,32,22,0.65), rgba(20,32,22,0.78))" }} />
         </div>
 
-        {/* Editorial corner labels */}
-        <div className="relative z-10 hidden md:flex justify-between items-start px-16 pt-28 text-[10px] tracking-[3px] uppercase text-sand/55 font-medium pointer-events-none">
-          <span className="animate-fade-up">N 28°00′ · W 16°43′</span>
-          <span className="animate-fade-up" style={{ animationDelay: "0.1s" }}>Season 01 · Vol. I</span>
-        </div>
-
-        {/* Main content — left aligned editorial */}
-        <div className="relative z-10 px-6 lg:px-16 flex-1 flex items-center pb-24 pt-28 md:pt-12">
-          <div className="max-w-[1200px] mx-auto w-full">
-            <div className="max-w-[860px]">
-              <p className="animate-fade-up text-[11px] tracking-[5px] uppercase text-gold mb-10 font-medium">
-                Tennerife · Private Tennis Retreat
-              </p>
-              <h1 className="animate-fade-up font-display font-light text-[clamp(44px,7.5vw,108px)] leading-[0.98] text-sand-light tracking-[-1.5px]" style={{ animationDelay: "0.1s" }}>
-                Семь дней<br />
-                на одной вилле<br />
-                <em className="italic font-light text-gold">у океана.</em>
-              </h1>
-              <div className="animate-fade-up mt-12 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-x-16 gap-y-6 max-w-[760px]" style={{ animationDelay: "0.25s" }}>
-                <div className="flex flex-col gap-1">
-                  <span className="text-[10px] tracking-[3px] uppercase text-sand/45 font-medium">Daten</span>
-                  <span className="text-[15px] text-sand/85 font-light">18 — 24 октября 2026</span>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <span className="text-[10px] tracking-[3px] uppercase text-sand/45 font-medium">Format</span>
-                  <span className="text-[15px] text-sand/85 font-light">{TOTAL} участников · одна вилла · ежедневный теннис</span>
-                </div>
-              </div>
-
-              <div className="animate-fade-up mt-14 flex flex-col sm:flex-row sm:items-center gap-8" style={{ animationDelay: "0.4s" }}>
-                <button type="button" onClick={openBookingModal}
-                  className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[11px] font-semibold tracking-[3px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
-                  Оставить заявку <ArrowRight size={14} />
-                </button>
-                <a href="#program"
-                  className="inline-flex items-center gap-3 text-sand/65 font-body text-[11px] font-medium tracking-[3px] uppercase no-underline hover:text-gold transition-colors duration-300 group">
-                  <span className="w-10 h-px bg-sand/35 group-hover:bg-gold transition-colors" />
-                  Программа недели
-                </a>
-              </div>
+        <div className="relative z-10 px-6 lg:px-16 pt-28 pb-20 flex-1 flex items-center">
+          <div className="max-w-[900px] mx-auto w-full text-center">
+            <p className="animate-fade-up text-[12px] tracking-[4px] uppercase text-gold mb-8 font-medium">
+              18–24 октября 2026 · Тенерифе · {TOTAL} мест
+            </p>
+            <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,6.5vw,88px)] leading-[1.02] text-sand-light tracking-[-0.5px]">
+              Частная теннисная неделя<br />
+              <em className="not-italic text-gold">на Тенерифе</em>
+            </h1>
+            <p className="animate-fade-up mt-8 text-[18px] md:text-[20px] text-sand/85 leading-[1.55] font-light max-w-[640px] mx-auto" style={{ animationDelay: "0.15s" }}>
+              Семь дней. Четырнадцать человек. Одна вилла у океана.
+            </p>
+            <div className="animate-fade-up mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4" style={{ animationDelay: "0.3s" }}>
+              <button type="button" onClick={openBookingModal}
+                className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
+                Оставить заявку <ArrowRight size={16} />
+              </button>
+              <a href="#program"
+                className="inline-flex items-center justify-center text-sand/70 font-body text-[12px] font-medium tracking-[2.5px] uppercase no-underline hover:text-gold transition-colors duration-300 underline underline-offset-8 decoration-sand/20 hover:decoration-gold py-4 px-2">
+                Программа недели
+              </a>
             </div>
+            <p className="animate-fade-up mt-8 text-[12px] tracking-[2px] uppercase text-sand/45" style={{ animationDelay: "0.45s" }}>
+              Каждую заявку рассматриваем лично
+            </p>
           </div>
-        </div>
-
-        {/* Bottom editorial line */}
-        <div className="relative z-10 hidden md:flex justify-between items-end px-16 pb-10 text-[10px] tracking-[3px] uppercase text-sand/40 font-medium pointer-events-none">
-          <span>Tenerife · Canary Islands</span>
-          <span>Каждую заявку рассматриваем лично</span>
         </div>
       </section>
 
