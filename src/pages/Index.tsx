@@ -117,13 +117,13 @@ const Index = () => {
 
   // Week programme (existing rich content kept)
   const days = [
-    { d: "14", wd: "Ср", title: "Прилёт и заселение", preview: "Трансфер из аэропорта, заселение на виллу у океана. Вечером — первый ужин и знакомство.", tags: ["Arrival", "Dinner"], activities: ["Встреча в аэропорту TFS, трансфер на виллу", "Заселение, отдых, океан", "Совместный ужин и знакомство группы"], img: day14, imgPos: "center 70%" },
-    { d: "15", wd: "Чт", title: "Санта-Крус + Loro Parque", preview: "Loro Parque, столица острова и ботанический сад. Вечером — теннис или падел.", tags: ["Loro Parque", "Tennis"], activities: ["Loro Parque", "Прогулка по Санта-Крус-де-Тенерифе", "Ботанический сад", "Вечерняя тренировка: техника"], img: day15 },
-    { d: "16", wd: "Пт", title: "Яхта + корт", preview: "Морская прогулка вдоль скал Los Gigantes, купание в океане. Вечером — подача и приём.", tags: ["Yacht", "Ocean"], activities: ["Прогулка вдоль Los Gigantes", "Купание в океане, дельфины", "Обед на яхте", "Вечерняя тренировка: подача и приём"], img: day16 },
-    { d: "17", wd: "Сб", title: "Свободный день + корт", preview: "Бассейн, чёрный вулканический пляж, шоппинг или спа. Вечером — теннис на закате.", tags: ["Free time", "Sunset tennis"], activities: ["Отдых: бассейн, чёрный пляж, спа", "Свободное время", "Обед", "Вечерняя тренировка: разбор ошибок"], img: day17 },
-    { d: "18", wd: "Вс", title: "Вулкан Тейде + корт", preview: "Подъём на высшую точку Испании. Вечером — тактика и розыгрыши.", tags: ["Teide 3718m", "Tactics"], activities: ["Тейде — высшая точка Испании", "Подъём на канатной дороге", "Обед", "Вечерняя тренировка: тактика"], img: day18 },
-    { d: "19", wd: "Пн", title: "Сёрфинг + корт", preview: "Урок сёрфинга на волнах Атлантики. Вечером — парные комбинации.", tags: ["Surf", "Doubles"], activities: ["Урок сёрфинга для любого уровня", "Волны Атлантики", "Обед", "Вечерняя тренировка: парная игра"], img: day19 },
-    { d: "20", wd: "Вт", title: "Финал на винодельне Bodegas Reverón", preview: "Дружеский турнир и награждение. Вечером — закрытый ужин на винодельне в горах юга Тенерифе. Локальная кухня, авторская подача, дегустация вин с вулканических террас. ", tags: ["Tournament", "Wine"], activities: ["Финальный дружеский турнир среди участников", "Награждение и итоги недели", "Закрытый ужин на винодельне Bodegas Reverón", "Дегустация вин с вулканических террас", "Трансфер в аэропорт"], img: day20, imgPos: "center 25%" },
+    { d: "18", wd: "Вс", title: "Прилёт и заселение", preview: "Трансфер из аэропорта, заселение на виллу у океана. Вечером — первый ужин и знакомство.", tags: ["Arrival", "Dinner"], activities: ["Встреча в аэропорту TFS, трансфер на виллу", "Заселение, отдых, океан", "Совместный ужин и знакомство группы"], img: day14, imgPos: "center 70%" },
+    { d: "19", wd: "Пн", title: "Санта-Крус + Loro Parque", preview: "Loro Parque, столица острова и ботанический сад. Вечером — теннис или падел.", tags: ["Loro Parque", "Tennis"], activities: ["Loro Parque", "Прогулка по Санта-Крус-де-Тенерифе", "Ботанический сад", "Вечерняя тренировка: техника"], img: day15 },
+    { d: "20", wd: "Вт", title: "Яхта + корт", preview: "Морская прогулка вдоль скал Los Gigantes, купание в океане. Вечером — подача и приём.", tags: ["Yacht", "Ocean"], activities: ["Прогулка вдоль Los Gigantes", "Купание в океане, дельфины", "Обед на яхте", "Вечерняя тренировка: подача и приём"], img: day16 },
+    { d: "21", wd: "Ср", title: "Свободный день + корт", preview: "Бассейн, чёрный вулканический пляж, шоппинг или спа. Вечером — теннис на закате.", tags: ["Free time", "Sunset tennis"], activities: ["Отдых: бассейн, чёрный пляж, спа", "Свободное время", "Обед", "Вечерняя тренировка: разбор ошибок"], img: day17 },
+    { d: "22", wd: "Чт", title: "Вулкан Тейде + корт", preview: "Подъём на высшую точку Испании. Вечером — тактика и розыгрыши.", tags: ["Teide 3718m", "Tactics"], activities: ["Тейде — высшая точка Испании", "Подъём на канатной дороге", "Обед", "Вечерняя тренировка: тактика"], img: day18 },
+    { d: "23", wd: "Пт", title: "Сёрфинг + корт", preview: "Урок сёрфинга на волнах Атлантики. Вечером — парные комбинации.", tags: ["Surf", "Doubles"], activities: ["Урок сёрфинга для любого уровня", "Волны Атлантики", "Обед", "Вечерняя тренировка: парная игра"], img: day19 },
+    { d: "24", wd: "Сб", title: "Финал на винодельне Bodegas Reverón", preview: "Дружеский турнир и награждение. Вечером — закрытый ужин на винодельне в горах юга Тенерифе. Локальная кухня, авторская подача, дегустация вин с вулканических террас. ", tags: ["Tournament", "Wine"], activities: ["Финальный дружеский турнир среди участников", "Награждение и итоги недели", "Закрытый ужин на винодельне Bodegas Reverón", "Дегустация вин с вулканических террас", "Трансфер в аэропорт"], img: day20, imgPos: "center 25%" },
   ];
 
   return (
@@ -184,7 +184,7 @@ const Index = () => {
         <div className="relative z-10 px-6 lg:px-16 pt-28 pb-20 flex-1 flex items-center">
           <div className="max-w-[900px] mx-auto w-full text-center">
             <p className="animate-fade-up text-[12px] tracking-[4px] uppercase text-gold mb-8 font-medium">
-              14–20 октября 2026 · Тенерифе, Испания · всего {TOTAL} мест
+              18–24 октября 2026 · Тенерифе, Испания · всего {TOTAL} мест
             </p>
             <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,6.5vw,88px)] leading-[1.02] text-sand-light tracking-[-0.5px]">
               Закрытый теннисный кемп<br />
@@ -626,7 +626,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/70 to-forest/85" />
         </div>
         <div className="relative z-10 max-w-[820px] mx-auto text-center">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">14–20 октября 2026</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">18–24 октября 2026</p>
             <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,68px)] text-sand-light leading-[1.05] mb-8 tracking-[-0.5px]">
               14 человек, которые выбирают движение.<br /><em className="italic text-gold">Одна неделя на Тенерифе.</em>
             </h2>
@@ -654,7 +654,7 @@ const Index = () => {
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
           <div>
             <span className="font-display text-[19px] italic text-gold tracking-[2px] block">Tennerife · Tennis</span>
-            <span className="text-[13px] text-sand/45 mt-2 block">14–20 октября 2026</span>
+            <span className="text-[13px] text-sand/45 mt-2 block">18–24 октября 2026</span>
             <span className="text-[13px] text-sand/45 block">Тенерифе, Испания</span>
           </div>
           <div className="flex md:justify-center items-center gap-4 flex-wrap">
