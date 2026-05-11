@@ -130,7 +130,7 @@ const CommunitySection = () => {
 
             <div className="bg-forest/40 p-10 lg:p-14 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gold/15">
               <p className="font-display text-[22px] lg:text-[26px] font-light text-sand-light leading-[1.35] mb-6">
-                Присоединяйтесь к закрытому чату — познакомитесь с участниками ещё до вылета.
+                Присоединяйтесь к нам — познакомитесь с нами еще до вылета!
               </p>
               <a
                 href="https://t.me/tennis_tenerife"
