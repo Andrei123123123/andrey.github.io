@@ -478,6 +478,13 @@ const Index = () => {
               </li>
             ))}
           </ol>
+
+          <div className="reveal mt-14 flex justify-center">
+            <button type="button" onClick={openBookingModal}
+              className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
+              Забронировать место <ArrowRight size={16} />
+            </button>
+          </div>
         </div>
       </section>
 
