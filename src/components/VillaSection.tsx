@@ -1,25 +1,15 @@
 import { useState } from "react";
-import { BadgeCheck, CarFront, Check, ChefHat, ChevronLeft, ChevronRight, Home, MapPin, Plane, TreePalm, Waves, type LucideIcon } from "lucide-react";
+import { BadgeCheck, CarFront, Check, ChefHat, ChevronLeft, ChevronRight, Home, MapPin, Plane, Waves, type LucideIcon } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import livingRoom from "@/assets/villa-living-room.avif";
 import dining from "@/assets/villa-dining.avif";
 import terrace from "@/assets/villa-terrace.avif";
 import pool from "@/assets/villa-pool.avif";
-import bbq from "@/assets/villa-bbq.avif";
 import bedroom1 from "@/assets/villa-bedroom-1.avif";
-import bedroom2 from "@/assets/villa-bedroom-2.avif";
-import bedroom4 from "@/assets/villa-bedroom-4.avif";
 import bathroom1 from "@/assets/villa-bathroom-1.avif";
 import bathroom2 from "@/assets/villa-bathroom-2.avif";
-import extra1 from "@/assets/villa-extra-1.avif";
 import extra2 from "@/assets/villa-extra-2.avif";
-import extra3 from "@/assets/villa-extra-3.avif";
 import extra4 from "@/assets/villa-extra-4.avif";
-import extra5 from "@/assets/villa-extra-5.avif";
-import extra6 from "@/assets/villa-extra-6.avif";
-import extra7 from "@/assets/villa-extra-7.avif";
-import extra8 from "@/assets/villa-extra-8.avif";
-import extra9 from "@/assets/villa-extra-9.avif";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const villaImages = [

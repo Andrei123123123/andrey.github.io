@@ -20,9 +20,8 @@ import day18 from "@/assets/day-18.jpg";
 import day19 from "@/assets/day-19.jpg";
 import day20 from "@/assets/day20-winery.jpg";
 import bgPricing from "@/assets/bg-pricing.jpg";
-import expTennis from "@/assets/exp-tennis.jpg";
-import expLifestyle from "@/assets/exp-lifestyle.jpg";
-import expCommunity from "@/assets/exp-community.jpg";
+
+
 
 const TOTAL = 14;
 
