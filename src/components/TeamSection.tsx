@@ -48,28 +48,16 @@ const TeamSection = () => {
             },
           ].map((person) => (
             <div key={person.name} className="reveal card-premium overflow-hidden flex flex-col">
-              {/* Photo zone with decorative background */}
-              <div
-                className="relative h-[260px] flex items-center justify-center overflow-hidden"
-                style={{
-                  background:
-                    "radial-gradient(circle at 50% 45%, hsl(var(--sand-light)) 0%, hsl(var(--cream)) 65%, hsl(var(--sand)) 100%)",
-                }}
-              >
-                <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-gold/15" />
-                <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] rounded-full border border-gold/25" />
-                <div
-                  className="pointer-events-none absolute inset-0 opacity-[0.18]"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(hsl(var(--gold) / 0.35) 1px, transparent 1px)",
-                    backgroundSize: "18px 18px",
-                  }}
+              {/* Photo zone — full-width portrait */}
+              <div className="relative w-full h-[360px] lg:h-[420px] overflow-hidden bg-sand-light">
+                <img
+                  src={person.photo}
+                  alt={person.name}
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  loading="lazy"
                 />
-                <div className="relative h-36 w-36 rounded-full border border-gold/40 bg-card p-1.5 shadow-xl">
-                  <img src={person.photo} alt={person.name} className="h-full w-full rounded-full object-cover" />
-                </div>
-                <span className="absolute bottom-5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold/40 bg-card/90 backdrop-blur-sm text-[11px] tracking-[2px] uppercase text-gold font-semibold">
+                <div className="absolute inset-0 bg-gradient-to-t from-forest/55 via-forest/15 to-transparent pointer-events-none" />
+                <span className="absolute top-4 right-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold/40 bg-card/90 backdrop-blur-sm text-[11px] tracking-[2px] uppercase text-gold font-semibold">
                   {person.role}
                 </span>
               </div>
