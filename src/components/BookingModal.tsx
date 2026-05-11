@@ -6,7 +6,7 @@ import { toast } from "@/hooks/use-toast";
 import { useBookingModal } from "@/contexts/BookingModalContext";
 
 const TELEGRAM_URL = "https://t.me/tennis_tenerife";
-const WHATSAPP_URL = "https://wa.me/79655096888";
+const WHATSAPP_URL = "https://api.whatsapp.com/send/?phone=89655096888";
 
 const TelegramIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
