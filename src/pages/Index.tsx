@@ -220,6 +220,12 @@ const Index = () => {
           <p className="reveal mt-6 text-[17px] text-text-body/70 leading-[1.75] max-w-[680px] mx-auto">
             Мы собираем всего 14 участников, чтобы создать не массовый тур, а камерный ретрит — с атмосферой, уровнем и энергией.
           </p>
+          <div className="reveal mt-10 flex flex-col sm:flex-row sm:justify-center gap-4">
+            <button type="button" onClick={openBookingModal}
+              className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
+              Забронировать место <ArrowRight size={16} />
+            </button>
+          </div>
         </div>
       </section>
 
