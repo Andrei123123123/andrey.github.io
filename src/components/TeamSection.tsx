@@ -53,7 +53,7 @@ const TeamSection = () => {
                 <img
                   src={person.photo}
                   alt={person.name}
-                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest/55 via-forest/15 to-transparent pointer-events-none" />
