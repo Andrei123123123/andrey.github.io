@@ -602,6 +602,20 @@ const Index = () => {
               </div>
             </div>
           ))}
+
+          <div className="reveal mt-14 text-center">
+            <p className="text-[15px] text-text-body/70 mb-5">Не нашли ответ на свой вопрос?</p>
+            <div className="flex flex-col sm:flex-row sm:justify-center items-stretch sm:items-center gap-4">
+              <button type="button" onClick={openBookingModal}
+                className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
+                Оставить заявку <ArrowRight size={16} />
+              </button>
+              <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-transparent border border-forest/30 text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
+                <TelegramIcon size={15} /> Написать в Telegram
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
