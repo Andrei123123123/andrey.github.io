@@ -42,9 +42,10 @@ const variants: MenuVariant[] = [
       { day: "Вс", breakfast: "Яйца бенедикт, салат, фрукты", lunch: "Рыба на гриле, булгур, овощи" },
     ],
     images: [
-      { src: menuPlaceholder, alt: "Средиземноморское меню" },
-      { src: menuPlaceholder, alt: "Свежая рыба и овощи" },
-      { src: menuPlaceholder, alt: "Обед на террасе" },
+      { src: menuPaella, alt: "Паэлья де мариска с морепродуктами" },
+      { src: menuFish, alt: "Рыба, запечённая с зеленью и овощами" },
+      { src: menuShrimpPasta, alt: "Паста с креветками в сливочном соусе" },
+      { src: menuBreakfast, alt: "Завтрак: яйца, тосты с песто, фрукты" },
     ],
   },
   {
