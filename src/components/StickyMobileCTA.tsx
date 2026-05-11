@@ -8,7 +8,7 @@ const StickyMobileCTA = () => {
   useEffect(() => {
     const onScroll = () => {
       const scrolled = window.scrollY > window.innerHeight;
-      const ctaSection = document.getElementById("cta");
+      const ctaSection = document.getElementById("apply");
       let ctaVisible = false;
       if (ctaSection) {
         const rect = ctaSection.getBoundingClientRect();
@@ -30,9 +30,9 @@ const StickyMobileCTA = () => {
       <button
         type="button"
         onClick={open}
-        className="block w-full py-3.5 text-center bg-gold text-forest font-body text-[13px] font-medium tracking-[3px] uppercase border-none cursor-pointer rounded-md"
+        className="block w-full py-3 text-center bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer rounded-md"
       >
-        Забронировать место
+        Оставить заявку
       </button>
     </div>
   );

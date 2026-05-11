@@ -10,7 +10,7 @@ const CookieConsent = () => {
   useEffect(() => {
     try {
       if (!localStorage.getItem(STORAGE_KEY)) {
-        const t = setTimeout(() => setVisible(true), 800);
+        const t = setTimeout(() => setVisible(true), 1200);
         return () => clearTimeout(t);
       }
     } catch {
@@ -33,33 +33,32 @@ const CookieConsent = () => {
     <div
       role="dialog"
       aria-live="polite"
-      aria-label="Уведомление о cookie и политике конфиденциальности"
-      className="fixed bottom-0 left-0 right-0 z-50 animate-fade-in"
-      style={{ background: "rgba(28,43,30,0.95)", backdropFilter: "blur(8px)" }}
+      aria-label="Уведомление о cookie"
+      className="fixed bottom-4 left-4 right-4 sm:right-auto sm:left-6 sm:bottom-6 z-50 sm:max-w-[340px] animate-fade-in rounded-lg shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
+      style={{ background: "rgba(28,43,30,0.96)", backdropFilter: "blur(10px)" }}
     >
-      <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-2.5 md:py-3 flex items-center gap-3 md:gap-5 border-t border-gold/15">
-        <p className="font-body text-[12px] md:text-[13px] leading-[1.4] text-sand/80 flex-1">
+      <div className="px-4 py-3 flex items-start gap-3 border border-gold/15 rounded-lg">
+        <p className="font-body text-[12px] leading-[1.5] text-sand/80 flex-1">
           Используем cookie для аналитики.{" "}
           <Link
             to="/privacy"
             className="text-gold/90 underline underline-offset-2 hover:text-gold"
           >
-            Политика конфиденциальности
+            Подробнее
           </Link>
         </p>
-
         <button
           onClick={accept}
-          className="px-4 md:px-5 py-1.5 md:py-2 bg-gold/90 text-forest font-body text-[11px] tracking-[2px] uppercase font-semibold hover:bg-gold transition-colors rounded-sm shrink-0"
+          className="px-3 py-1 bg-gold/90 text-forest font-body text-[10.5px] tracking-[1.5px] uppercase font-semibold hover:bg-gold transition-colors rounded-sm shrink-0"
         >
           Ок
         </button>
         <button
           onClick={accept}
           aria-label="Закрыть"
-          className="p-1 text-sand/50 hover:text-sand transition-colors shrink-0"
+          className="p-0.5 text-sand/50 hover:text-sand transition-colors shrink-0"
         >
-          <X size={16} />
+          <X size={14} />
         </button>
       </div>
     </div>

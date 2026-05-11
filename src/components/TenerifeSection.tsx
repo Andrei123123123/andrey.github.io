@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { Check, MapPin, Sun, Mountain, Plane, ChevronLeft, ChevronRight } from "lucide-react";
 import tenerife1 from "@/assets/tenerife-1.jpg";
-import tenerife2 from "@/assets/tenerife-2.jpg";
-import tenerife3 from "@/assets/tenerife-3.jpg";
-import tenerife4 from "@/assets/tenerife-4.jpg";
 import tenerife5 from "@/assets/tenerife-5.jpg";
-import tenerife6 from "@/assets/tenerife-6.jpg";
 import tenerife7 from "@/assets/tenerife-7.jpg";
 import tenerife8 from "@/assets/tenerife-8.jpg";
 import tenerife9 from "@/assets/tenerife-9.jpg";
@@ -14,14 +10,10 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const images = [
   { src: tenerife1, alt: "Побережье Тенерифе — чёрный вулканический пляж" },
-  { src: tenerife2, alt: "Вулкан Тейде на закате" },
   { src: tenerife7, alt: "Вулкан Тейде над облаками на рассвете" },
-  { src: tenerife3, alt: "Колоритные улочки Тенерифе" },
   { src: tenerife9, alt: "Деревня Маска в зелёной долине среди скал" },
-  { src: tenerife4, alt: "Скалы Los Gigantes" },
   { src: tenerife5, alt: "Бирюзовые воды у скал Los Gigantes" },
   { src: tenerife8, alt: "Бирюзовые волны и чёрные вулканические камни" },
-  { src: tenerife6, alt: "Чёрный вулканический пляж Тенерифе" },
   { src: tenerife10, alt: "Закат над Атлантикой с видом на Ла Гомеру" },
 ];
 
@@ -81,14 +73,13 @@ const TenerifeSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14">
           {[
             { icon: <Sun size={22} strokeWidth={1.7} />, num: "25–27°C", label: "Температура воздуха" },
             { icon: <Mountain size={22} strokeWidth={1.7} />, num: "300+", label: "Солнечных дней в году" },
             { icon: <Plane size={22} strokeWidth={1.7} />, num: "~9 ч", label: "Перелёт с пересадкой" },
-            { icon: <MapPin size={22} strokeWidth={1.7} />, num: "∞", label: "Красоты острова" },
           ].map((f) => (
-            <div key={f.label} className="reveal card-premium-dark card-premium-accent p-6 text-center">
+            <div key={f.label} className="reveal card-premium-dark p-6 text-center">
               <div className="w-12 h-12 rounded-full border border-gold/30 bg-gold/10 text-gold mx-auto mb-3 flex items-center justify-center">{f.icon}</div>
               <span className="font-display text-[36px] font-semibold text-gold leading-none block">{f.num}</span>
               <span className="text-[13px] tracking-[1px] text-sand/60 mt-2 block">{f.label}</span>

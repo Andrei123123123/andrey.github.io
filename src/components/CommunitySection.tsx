@@ -12,7 +12,7 @@ const formatItems = [
   {
     icon: Users,
     title: "Камерная группа",
-    text: "Максимум 14 участников. Все на одной вилле, на одних кортах, за одним столом.",
+    text: "Четырнадцать участников. Все на одной вилле, на одних кортах, за одним столом.",
   },
   {
     icon: Heart,
@@ -22,7 +22,7 @@ const formatItems = [
   {
     icon: MessageCircle,
     title: "Чат до и после",
-    text: "За месяц до старта собираем общий Telegram-чат — приезжаете уже к своим. После кемпа связь остаётся.",
+    text: "За месяц до старта собираем общий Telegram-чат. После недели связь остаётся.",
   },
 ];
 
@@ -44,8 +44,8 @@ const activities = [
   },
   {
     icon: Users,
-    label: "Финальный турнир и банкет в замке",
-    description: "В последний день — дружеский турнир среди участников, награждение и прощальный ужин в средневековом замке Сан-Мигель с рыцарским шоу.",
+    label: "Финал на винодельне Bodegas Reverón",
+    description: "В последний день — дружеский турнир, награждение и закрытый ужин на винодельне в горах юга Тенерифе с дегустацией вин с вулканических террас.",
   },
 ];
 
@@ -56,17 +56,17 @@ const CommunitySection = () => {
       <div className="max-w-[1200px] mx-auto">
         <SectionTag>Окружение</SectionTag>
         <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-forest leading-[1.1] max-w-[760px] mb-6">
-          Едете одни — <em className="italic text-gold font-light">уезжаете со своими</em>
+          Приезжаете одни. <em className="italic text-gold font-light">Уезжаете в кругу.</em>
         </h2>
         <p className="reveal text-[18px] text-text-body leading-[1.75] max-w-[680px] mb-16">
-          Кемп — это не только теннис. Это неделя с людьми, которые разделяют ваш ритм жизни:
+          Это не только теннис. Это неделя с людьми, которые разделяют тот же ритм:
           активный отдых, спорт, океан и хорошая компания за ужином.
         </p>
 
         {/* Format cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {formatItems.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="reveal card-premium card-premium-accent p-8 lg:p-10">
+            <div key={title} className="reveal card-premium p-8 lg:p-10">
               <div className="w-12 h-12 rounded-full border border-gold/25 bg-gold/10 text-gold flex items-center justify-center mb-6">
                 <Icon size={20} strokeWidth={1.5} />
               </div>
@@ -130,7 +130,7 @@ const CommunitySection = () => {
 
             <div className="bg-forest/40 p-10 lg:p-14 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gold/15">
               <p className="font-display text-[22px] lg:text-[26px] font-light text-sand-light leading-[1.35] mb-6">
-                Присоединяйтесь к нам — познакомитесь с нами еще до вылета!
+                Общий чат открываем за месяц до прилёта.
               </p>
               <a
                 href="https://t.me/tennis_tenerife"

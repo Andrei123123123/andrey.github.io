@@ -20,9 +20,8 @@ import day18 from "@/assets/day-18.jpg";
 import day19 from "@/assets/day-19.jpg";
 import day20 from "@/assets/day20-winery.jpg";
 import bgPricing from "@/assets/bg-pricing.jpg";
-import expTennis from "@/assets/exp-tennis.jpg";
-import expLifestyle from "@/assets/exp-lifestyle.jpg";
-import expCommunity from "@/assets/exp-community.jpg";
+
+
 
 const TOTAL = 14;
 
@@ -104,7 +103,7 @@ const Index = () => {
 
   const faqs = [
     { q: "Для какого уровня тенниса подходит ретрит?", a: "Подходит для любителей с разным уровнем подготовки — от начинающих до опытных. При необходимости участники делятся по уровню." },
-    { q: "Что входит в стоимость €1950?", a: "Кемп, ежедневные тренировки и игровые сессии, корты, проживание на вилле с поваром и организационное сопровождение." },
+    { q: "Что входит в стоимость €1950?", a: "Ретрит, ежедневные тренировки и игровые сессии, корты, проживание на вилле с поваром и организационное сопровождение." },
     { q: "Перелёт входит в стоимость?", a: "Нет. Перелёт оплачивается отдельно — ориентир €900. Мы помогаем подобрать удобный вариант." },
     { q: "Виза входит в стоимость?", a: "Нет. Шенгенская виза оплачивается отдельно — ориентир €200. Помогаем с организационными вопросами и приглашением от академии." },
     { q: "Сколько участников будет?", a: "Максимум 14 человек. Это часть формата — небольшая закрытая группа." },
@@ -184,25 +183,28 @@ const Index = () => {
         <div className="relative z-10 px-6 lg:px-16 pt-28 pb-20 flex-1 flex items-center">
           <div className="max-w-[900px] mx-auto w-full text-center">
             <p className="animate-fade-up text-[12px] tracking-[4px] uppercase text-gold mb-8 font-medium">
-              18–24 октября 2026 · Тенерифе, Испания · всего {TOTAL} мест
+              18–24 октября 2026 · Тенерифе · {TOTAL} мест
             </p>
             <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,6.5vw,88px)] leading-[1.02] text-sand-light tracking-[-0.5px]">
-              Закрытый теннисный кемп<br />
+              Частная теннисная неделя<br />
               <em className="not-italic text-gold">на Тенерифе</em>
             </h1>
             <p className="animate-fade-up mt-8 text-[18px] md:text-[20px] text-sand/85 leading-[1.55] font-light max-w-[640px] mx-auto" style={{ animationDelay: "0.15s" }}>
-              7 дней тенниса, океана, виллы с поваром и сильного окружения для тех, кто выбирает движение.
+              Семь дней. Четырнадцать человек. Одна вилла у океана.
             </p>
             <div className="animate-fade-up mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4" style={{ animationDelay: "0.3s" }}>
               <button type="button" onClick={openBookingModal}
                 className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
-                Забронировать место <ArrowRight size={16} />
+                Оставить заявку <ArrowRight size={16} />
               </button>
               <a href="#program"
-                className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-transparent border border-sand/40 text-sand-light font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
-                Смотреть программу
+                className="inline-flex items-center justify-center text-sand/70 font-body text-[12px] font-medium tracking-[2.5px] uppercase no-underline hover:text-gold transition-colors duration-300 underline underline-offset-8 decoration-sand/20 hover:decoration-gold py-4 px-2">
+                Программа недели
               </a>
             </div>
+            <p className="animate-fade-up mt-8 text-[12px] tracking-[2px] uppercase text-sand/45" style={{ animationDelay: "0.45s" }}>
+              Каждую заявку рассматриваем лично
+            </p>
           </div>
         </div>
       </section>
@@ -215,62 +217,11 @@ const Index = () => {
             Одна неделя<br /><em className="italic text-gold">на Тенерифе</em>
           </h2>
           <p className="reveal mt-10 text-[19px] md:text-[21px] text-text-body/85 leading-[1.7] max-w-[720px] mx-auto">
-            Это неделя тенниса, жизни на вилле, океанского воздуха, ужинов, новых знакомств и активного отдыха в кругу тех, кто выбирает движение.
+            Теннис, жизнь на вилле, океанский воздух, ужины и новые знакомства — в кругу людей с тем же ритмом.
           </p>
           <p className="reveal mt-6 text-[17px] text-text-body/70 leading-[1.75] max-w-[680px] mx-auto">
-            Мы собираем всего 14 участников, чтобы создать не массовый тур, а камерный ретрит — с атмосферой, уровнем и энергией.
+            Четырнадцать участников. Не массовый тур, а камерный ретрит — с атмосферой, уровнем и энергией.
           </p>
-          <div className="reveal mt-10 flex flex-col sm:flex-row sm:justify-center gap-4">
-            <button type="button" onClick={openBookingModal}
-              className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
-              Забронировать место <ArrowRight size={16} />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 03. EXPERIENCE — 3 cards ─── */}
-      <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="experience">
-        <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Атмосфера</p>
-          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.1] mb-16 max-w-[680px]">
-            Три причины, почему это<br />больше, чем кемп
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                tag: "01 · Теннис",
-                title: "Теннис",
-                text: "Ежедневные тренировки, игровые сессии и матчи под руководством тренеров Tenerife Tennis Academy.",
-                img: expTennis,
-              },
-              {
-                tag: "02 · Атмосфера",
-                title: "Атмосфера",
-                text: "Вилла, повар, океан, солнце, свободное время и ощущение активного премиального отдыха.",
-                img: expLifestyle,
-              },
-              {
-                tag: "03 · Компания",
-                title: "Компания",
-                text: "Камерная группа до 14 человек — спокойные ужины на вилле, разговоры на закате, наслаждение Канарскими островами",
-                img: expCommunity,
-              },
-            ].map((c) => (
-              <article key={c.title} className="reveal group relative overflow-hidden rounded-2xl bg-forest-light/30 border border-gold/15 hover:border-gold/40 transition-all duration-500">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img src={c.img} alt="" className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/40 to-transparent" />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-7 lg:p-8">
-                  <p className="text-[11px] tracking-[3px] uppercase text-gold/80 mb-2 font-medium">{c.tag}</p>
-                  <h3 className="font-display text-[28px] text-sand-light mb-3 leading-tight">{c.title}</h3>
-                  <p className="text-[15px] text-sand/75 leading-[1.6]">{c.text}</p>
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -302,10 +253,10 @@ const Index = () => {
             {/* Included */}
             <div className="reveal p-8 lg:p-10 bg-forest text-sand-light rounded-2xl border border-gold/25">
               <p className="text-[11px] tracking-[3px] uppercase text-gold mb-5 font-medium">Включено в €1950</p>
-              <h3 className="font-display text-[24px] mb-7 leading-tight">Кемп, личный повар и вилла</h3>
+              <h3 className="font-display text-[24px] mb-7 leading-tight">Ретрит, повар и вилла</h3>
               <ul className="flex flex-col gap-3.5 list-none">
                 {[
-                  "Участие в теннисном кемпе",
+                  "Участие в ретрите",
                   "Ежедневные тренировки",
                   "Трансфер по Тенерифе",
                   "Аренда кортов",
@@ -346,14 +297,10 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="reveal mt-14 flex flex-col sm:flex-row sm:justify-center items-stretch sm:items-center gap-4">
-            <button type="button" onClick={openBookingModal}
-              className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
-              Забронировать место <ArrowRight size={16} />
-            </button>
+          <div className="reveal mt-14 flex justify-center">
             <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-transparent border border-forest/30 text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
-              <TelegramIcon size={15} /> Задать вопрос
+              className="inline-flex items-center justify-center gap-2 text-forest/70 font-body text-[12px] font-medium tracking-[2.5px] uppercase no-underline hover:text-gold transition-colors duration-300 underline underline-offset-8 decoration-forest/15 hover:decoration-gold py-3 px-2">
+              <TelegramIcon size={14} /> Задать вопрос в Telegram
             </a>
           </div>
         </div>
@@ -453,37 +400,27 @@ const Index = () => {
       {/* ─── 09. DAILY FLOW ─── */}
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="day">
         <div className="max-w-[900px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Как проходит день</p>
-          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-5">
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Ритм недели</p>
+          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-10">
             Как проходит <em className="italic text-gold">день</em>
           </h2>
-          <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[600px]">
-            Баланс тенниса, отдыха, океана, общения и вечерней атмосферы.
-          </p>
 
-          <ol className="flex flex-col gap-0 list-none border-l border-gold/30 pl-8">
-            {[
-              ["08:00", "Утренняя тренировка", "Тренировка на корте на свежем воздухе."],
-              ["10:30", "Завтрак", "Совместный завтрак на вилле."],
-              ["12:00", "Свободное время", "Океан, бассейн, восстановление, свободное время."],
-              ["16:00", "Игровая сессия", "Игровые сессии или матчи."],
-              ["19:30", "Ужин на вилле", "Ужин от повара на террасе виллы."],
-              ["21:00", "Общение", "Общение, нетворкинг, отдых."],
-            ].map(([time, title, desc]) => (
-              <li key={time} className="reveal relative pb-9 last:pb-0">
-                <span className="absolute -left-[42px] top-1 w-3 h-3 rounded-full bg-gold border-4 border-cream" />
-                <p className="font-display text-[14px] tracking-[2px] uppercase text-gold mb-1 font-medium">{time}</p>
-                <p className="font-display text-[24px] md:text-[26px] text-forest leading-tight mb-1">{title}</p>
-                <p className="text-[15px] text-text-body/70 leading-[1.6]">{desc}</p>
-              </li>
-            ))}
-          </ol>
-
-          <div className="reveal mt-14 flex justify-center">
-            <button type="button" onClick={openBookingModal}
-              className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
-              Забронировать место <ArrowRight size={16} />
-            </button>
+          <div className="reveal grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[820px]">
+            <div>
+              <p className="text-[11px] tracking-[3px] uppercase text-gold/80 mb-3 font-medium">Утро</p>
+              <p className="font-display text-[24px] text-forest leading-[1.25] mb-2">Корт</p>
+              <p className="text-[15px] text-text-body/70 leading-[1.65]">Тренировка на свежем воздухе. Завтрак на вилле.</p>
+            </div>
+            <div>
+              <p className="text-[11px] tracking-[3px] uppercase text-gold/80 mb-3 font-medium">День</p>
+              <p className="font-display text-[24px] text-forest leading-[1.25] mb-2">Океан</p>
+              <p className="text-[15px] text-text-body/70 leading-[1.65]">Бассейн, пляж, активности или свободное время.</p>
+            </div>
+            <div>
+              <p className="text-[11px] tracking-[3px] uppercase text-gold/80 mb-3 font-medium">Вечер</p>
+              <p className="font-display text-[24px] text-forest leading-[1.25] mb-2">Стол</p>
+              <p className="text-[15px] text-text-body/70 leading-[1.65]">Игровая сессия и ужин от шефа на террасе.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -506,10 +443,10 @@ const Index = () => {
         <div className="relative z-10 max-w-[1100px] mx-auto">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Стоимость участия</p>
           <h2 className="reveal font-display font-medium text-[clamp(34px,4.5vw,56px)] text-forest leading-[1.1] mb-6 max-w-[720px]">
-            Один пакет.<br /><em className="italic text-gold">Всё главное внутри.</em>
+            Один пакет.<br /><em className="italic text-gold">Без апселлов.</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            Обязательный пакет: теннисный кемп + проживание на вилле с поваром.
+            Ретрит и проживание на вилле с поваром. Без дополнительных опций.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6">
@@ -550,10 +487,10 @@ const Index = () => {
 
               <button type="button" onClick={openBookingModal}
                 className="py-4 text-center font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer bg-gold text-forest hover:bg-gold-light transition-all duration-300 w-full rounded-md">
-                Забронировать место
+                Оставить заявку
               </button>
-              <p className="text-[12px] text-sand/45 text-center mt-4 leading-[1.6]">
-                Место закрепляется после оплаты обязательного пакета
+              <p className="text-[12px] text-sand/55 text-center mt-4 leading-[1.6]">
+                Каждую заявку рассматриваем лично. Место закрепляется после оплаты.
               </p>
             </div>
 
@@ -604,17 +541,11 @@ const Index = () => {
           ))}
 
           <div className="reveal mt-14 text-center">
-            <p className="text-[15px] text-text-body/70 mb-5">Не нашли ответ на свой вопрос?</p>
-            <div className="flex flex-col sm:flex-row sm:justify-center items-stretch sm:items-center gap-4">
-              <button type="button" onClick={openBookingModal}
-                className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
-                Оставить заявку <ArrowRight size={16} />
-              </button>
-              <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-transparent border border-forest/30 text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
-                <TelegramIcon size={15} /> Написать в Telegram
-              </a>
-            </div>
+            <p className="text-[15px] text-text-body/70 mb-5">Не нашли ответ?</p>
+            <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 text-forest/75 font-body text-[12px] font-medium tracking-[2.5px] uppercase no-underline hover:text-gold transition-colors duration-300 underline underline-offset-8 decoration-forest/15 hover:decoration-gold py-3 px-2">
+              <TelegramIcon size={14} /> Написать в Telegram
+            </a>
           </div>
         </div>
       </section>
@@ -628,23 +559,19 @@ const Index = () => {
         <div className="relative z-10 max-w-[820px] mx-auto text-center">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">18–24 октября 2026</p>
             <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,68px)] text-sand-light leading-[1.05] mb-8 tracking-[-0.5px]">
-              14 человек, которые выбирают движение.<br /><em className="italic text-gold">Одна неделя на Тенерифе.</em>
+              Четырнадцать человек.<br /><em className="italic text-gold">Одна неделя на Тенерифе.</em>
             </h2>
             <p className="reveal text-[18px] md:text-[20px] text-sand/80 leading-[1.6] mb-12 max-w-[620px] mx-auto font-light">
-              Теннис, вилла, океан, новые знакомства и неделя активной перезагрузки.
+              Теннис, вилла, океан и неделя в правильном кругу.
             </p>
-            <div className="reveal flex flex-col sm:flex-row sm:justify-center items-stretch sm:items-center gap-4">
+            <div className="reveal flex justify-center">
               <button type="button" onClick={openBookingModal}
                 className="inline-flex items-center justify-center gap-3 py-4 px-12 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
-                Забронировать место <ArrowRight size={16} />
+                Оставить заявку <ArrowRight size={16} />
               </button>
-              <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-transparent border border-sand/40 text-sand-light font-body text-[12px] font-semibold tracking-[2.5px] uppercase no-underline hover:border-gold hover:text-gold transition-all duration-300 rounded-md">
-                <TelegramIcon size={15} /> Telegram
-              </a>
             </div>
-            <p className="reveal mt-10 text-[13px] text-sand/40 tracking-[2px] uppercase">
-              Всего {TOTAL} мест · Место закрепляется после оплаты
+            <p className="reveal mt-10 text-[13px] text-sand/45 tracking-[2px] uppercase">
+              {TOTAL} мест · Каждую заявку рассматриваем лично
             </p>
         </div>
       </section>

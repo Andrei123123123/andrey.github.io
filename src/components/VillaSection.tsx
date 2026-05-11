@@ -1,47 +1,27 @@
 import { useState } from "react";
-import { BadgeCheck, CarFront, Check, ChefHat, ChevronLeft, ChevronRight, Home, MapPin, Plane, TreePalm, Waves, type LucideIcon } from "lucide-react";
+import { BadgeCheck, CarFront, Check, ChefHat, ChevronLeft, ChevronRight, Home, MapPin, Plane, Waves, type LucideIcon } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import livingRoom from "@/assets/villa-living-room.avif";
 import dining from "@/assets/villa-dining.avif";
 import terrace from "@/assets/villa-terrace.avif";
 import pool from "@/assets/villa-pool.avif";
-import bbq from "@/assets/villa-bbq.avif";
 import bedroom1 from "@/assets/villa-bedroom-1.avif";
-import bedroom2 from "@/assets/villa-bedroom-2.avif";
-import bedroom4 from "@/assets/villa-bedroom-4.avif";
 import bathroom1 from "@/assets/villa-bathroom-1.avif";
 import bathroom2 from "@/assets/villa-bathroom-2.avif";
-import extra1 from "@/assets/villa-extra-1.avif";
 import extra2 from "@/assets/villa-extra-2.avif";
-import extra3 from "@/assets/villa-extra-3.avif";
 import extra4 from "@/assets/villa-extra-4.avif";
-import extra5 from "@/assets/villa-extra-5.avif";
-import extra6 from "@/assets/villa-extra-6.avif";
-import extra7 from "@/assets/villa-extra-7.avif";
-import extra8 from "@/assets/villa-extra-8.avif";
-import extra9 from "@/assets/villa-extra-9.avif";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const villaImages = [
   { src: pool, alt: "Просторная белая кухня с видом на горы" },
-  { src: bbq, alt: "Спальня с двумя кроватями в зелёных тонах" },
   { src: livingRoom, alt: "Светлая гостиная с выходом на террасу" },
-  { src: dining, alt: "Лаунж-зона на террасе на закате" },
   { src: terrace, alt: "Подогреваемый бассейн на закате" },
+  { src: dining, alt: "Лаунж-зона на террасе на закате" },
   { src: bedroom1, alt: "Уютная спальня с деревянным изголовьем" },
-  { src: bedroom2, alt: "Терраса с шезлонгами и пальмами" },
-  { src: bedroom4, alt: "Бассейн с подсветкой вечером" },
   { src: bathroom1, alt: "Джакузи в люкс-сюите" },
-  { src: bathroom2, alt: "Вид на виллу с высоты на закате" },
-  { src: extra1, alt: "Спальня с кондиционером и шкафом" },
   { src: extra2, alt: "Турецкая баня (хамам) с мозаикой" },
-  { src: extra3, alt: "Крытая терраса с обеденной зоной" },
   { src: extra4, alt: "Большой обеденный стол под навесом" },
-  { src: extra5, alt: "Спальня с прямым выходом к бассейну" },
-  { src: extra6, alt: "Ванная комната с ванной у живой стены" },
-  { src: extra7, alt: "Джакузи на открытой террасе" },
-  { src: extra8, alt: "Сюит со встроенным джакузи и ТВ" },
-  { src: extra9, alt: "Бассейн и сад с пальмами вечером" },
+  { src: bathroom2, alt: "Вид на виллу с высоты на закате" },
 ];
 
 const detailCards: { title: string; icon: LucideIcon; items: string[] }[] = [
