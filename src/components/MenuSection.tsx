@@ -65,9 +65,10 @@ const variants: MenuVariant[] = [
       { day: "Вс", breakfast: "Круассаны, яйца, фрукты", lunch: "Поке с лососем и рисом" },
     ],
     images: [
-      { src: menuPlaceholder, alt: "Гастрономический тур" },
-      { src: menuPlaceholder, alt: "Азиатские блюда" },
-      { src: menuPlaceholder, alt: "Стейк с овощами" },
+      { src: menuTapas, alt: "Доска с испанскими тапас и сырами" },
+      { src: menuCheese, alt: "Сырная и закусочная тарелка" },
+      { src: menuBolognese, alt: "Спагетти болоньезе с пармезаном" },
+      { src: menuCabbageRolls, alt: "Голубцы под томатным соусом" },
     ],
   },
   {
