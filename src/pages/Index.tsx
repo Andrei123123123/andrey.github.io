@@ -434,55 +434,38 @@ const Index = () => {
       {/* ─── 12. COMMUNITY ─── */}
       <CommunitySection />
 
-      {/* ─── 12.5 FIT — Подойдёт / Не подойдёт ─── */}
+      {/* ─── 12.5 FIT — Кому подойдёт ─── */}
       <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="fit">
         <div className="max-w-[1100px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Формат не для всех</p>
-          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-14 max-w-[760px]">
-            Кому подойдёт<br /><em className="italic text-gold">и кому нет</em>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Формат</p>
+          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-6 max-w-[760px]">
+            Кому подойдёт<br /><em className="italic text-gold">эта неделя</em>
           </h2>
+          <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
+            Камерный формат на 14 человек — поэтому собираем группу осознанно.
+          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            <div className="reveal p-8 lg:p-10 bg-card border border-forest/10 rounded-2xl">
-              <p className="text-[11px] tracking-[3px] uppercase text-gold mb-5 font-medium">Подойдёт</p>
-              <ul className="flex flex-col gap-3.5 list-none">
-                {[
-                  "Любите теннис и хотите играть каждый день",
-                  "Цените камерный формат и небольшую группу",
-                  "Ищете окружение из предпринимателей и фаундеров",
-                  "Готовы к ритму: корт, океан, ужин, разговор",
-                  "Хотите неделю без рабочей суеты, но не «отключиться»",
-                ].map((f) => (
-                  <li key={f} className="flex gap-3 items-start text-[15px] text-text-body/85 leading-[1.65]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold mt-[10px] flex-shrink-0" />{f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="reveal p-8 lg:p-10 bg-forest text-sand-light rounded-2xl border border-gold/20">
-              <p className="text-[11px] tracking-[3px] uppercase text-gold/80 mb-5 font-medium">Не подойдёт</p>
-              <ul className="flex flex-col gap-3.5 list-none">
-                {[
-                  "Если ищете массовый тур или анимацию",
-                  "Если хотите всё включено в формате отельного клуба",
-                  "Если теннис — не в фокусе недели",
-                  "Если не готовы к камерному формату на 14 человек",
-                  "Если рассчитываете «доработать неделю» — здесь иначе",
-                ].map((f) => (
-                  <li key={f} className="flex gap-3 items-start text-[15px] text-sand/75 leading-[1.65]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold/70 mt-[10px] flex-shrink-0" />{f}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 max-w-[920px]">
+            {[
+              "Любите теннис и хотите играть каждый день",
+              "Цените камерный формат и небольшую группу",
+              "Ищете окружение из предпринимателей и фаундеров",
+              "Готовы к ритму: корт, океан, ужин, разговор",
+              "Хотите неделю без рабочей суеты, но не «отключиться»",
+              "Едете за атмосферой, людьми и темпом — не за анимацией",
+            ].map((f) => (
+              <div key={f} className="flex gap-3 items-start text-[16px] text-text-body/85 leading-[1.65]">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold mt-[10px] flex-shrink-0" />{f}
+              </div>
+            ))}
           </div>
 
-          <p className="reveal mt-10 text-[14px] text-text-body/55 max-w-[640px]">
-            Каждую заявку рассматриваем лично. Это не фильтр, а способ собрать правильный состав группы.
+          <p className="reveal mt-12 text-[14px] text-text-body/55 max-w-[640px]">
+            Каждую заявку рассматриваем лично — чтобы собрать правильный состав группы.
           </p>
         </div>
       </section>
+
 
       {/* ─── 12.6 FOUNDER'S LETTER ─── */}
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16">
