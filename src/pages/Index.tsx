@@ -117,7 +117,7 @@ const Index = () => {
 
   // Week programme (existing rich content kept)
   const days = [
-    { d: "14", wd: "Ср", title: "Прилёт и заселение", preview: "Трансфер из аэропорта, заселение на виллу у океана. Вечером — первый ужин и знакомство.", tags: ["Arrival", "Dinner"], activities: ["Встреча в аэропорту TFS, трансфер на виллу", "Заселение, отдых, океан", "Совместный ужин и знакомство группы"], img: day14 },
+    { d: "14", wd: "Ср", title: "Прилёт и заселение", preview: "Трансфер из аэропорта, заселение на виллу у океана. Вечером — первый ужин и знакомство.", tags: ["Arrival", "Dinner"], activities: ["Встреча в аэропорту TFS, трансфер на виллу", "Заселение, отдых, океан", "Совместный ужин и знакомство группы"], img: day14, imgPos: "center 70%" },
     { d: "15", wd: "Чт", title: "Санта-Крус + Loro Parque", preview: "Loro Parque, столица острова и ботанический сад. Вечером — теннис или падел.", tags: ["Loro Parque", "Tennis"], activities: ["Loro Parque", "Прогулка по Санта-Крус-де-Тенерифе", "Ботанический сад", "Вечерняя тренировка: техника"], img: day15 },
     { d: "16", wd: "Пт", title: "Яхта + корт", preview: "Морская прогулка вдоль скал Los Gigantes, купание в океане. Вечером — подача и приём.", tags: ["Yacht", "Ocean"], activities: ["Прогулка вдоль Los Gigantes", "Купание в океане, дельфины", "Обед на яхте", "Вечерняя тренировка: подача и приём"], img: day16 },
     { d: "17", wd: "Сб", title: "Свободный день + корт", preview: "Бассейн, чёрный вулканический пляж, шоппинг или спа. Вечером — теннис на закате.", tags: ["Free time", "Sunset tennis"], activities: ["Отдых: бассейн, чёрный пляж, спа", "Свободное время", "Обед", "Вечерняя тренировка: разбор ошибок"], img: day17 },
@@ -413,7 +413,7 @@ const Index = () => {
 
                     <div className="overflow-hidden transition-all duration-500" style={{ maxHeight: isOpen ? "600px" : "0" }}>
                       <div className="mx-2 -mt-2 rounded-b-2xl overflow-hidden bg-forest border border-t-0 border-gold/20">
-                        <img src={day.img} alt={`День ${day.d} — ${day.title}`} className="w-full h-[200px] md:h-[280px] object-cover" loading="lazy" />
+                        <img src={day.img} alt={`День ${day.d} — ${day.title}`} className="w-full h-[200px] md:h-[280px] object-cover" style={{ objectPosition: (day as any).imgPos ?? "center" }} loading="lazy" />
                         <div className="p-5 md:p-6">
                           <ul className="flex flex-col gap-2.5 list-none">
                             {day.activities.map((a) => (
