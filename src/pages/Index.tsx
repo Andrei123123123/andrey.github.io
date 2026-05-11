@@ -15,7 +15,7 @@ import { Check, ArrowRight } from "lucide-react";
 import day14 from "@/assets/day-14.jpg";
 import day15 from "@/assets/day-15.jpg";
 import day16 from "@/assets/day-16.jpg";
-import day17 from "@/assets/day-17.jpg";
+import day17 from "@/assets/day17-beach.jpg";
 import day18 from "@/assets/day-18.jpg";
 import day19 from "@/assets/day-19.jpg";
 import day20 from "@/assets/day20-winery.jpg";
