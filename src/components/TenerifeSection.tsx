@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { Check, MapPin, Sun, Mountain, Plane, ChevronLeft, ChevronRight } from "lucide-react";
 import tenerife1 from "@/assets/tenerife-1.jpg";
-import tenerife2 from "@/assets/tenerife-2.jpg";
-import tenerife3 from "@/assets/tenerife-3.jpg";
-import tenerife4 from "@/assets/tenerife-4.jpg";
 import tenerife5 from "@/assets/tenerife-5.jpg";
-import tenerife6 from "@/assets/tenerife-6.jpg";
 import tenerife7 from "@/assets/tenerife-7.jpg";
 import tenerife8 from "@/assets/tenerife-8.jpg";
 import tenerife9 from "@/assets/tenerife-9.jpg";
