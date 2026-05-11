@@ -88,9 +88,9 @@ const variants: MenuVariant[] = [
       { day: "Вс", breakfast: "Смузи, орехи, фрукты", lunch: "Рис с фасолью и овощами по-латиноамерикански" },
     ],
     images: [
-      { src: menuPlaceholder, alt: "Веганское меню" },
-      { src: menuPlaceholder, alt: "Будда-боул" },
-      { src: menuPlaceholder, alt: "Свежие овощи" },
+      { src: menuOats, alt: "Овсянка с бананом — основа веганского завтрака" },
+      { src: menuZucchini, alt: "Фаршированные цукини с овощами" },
+      { src: menuBreakfast, alt: "Лёгкий завтрак с овощами и фруктами" },
     ],
   },
 ];
