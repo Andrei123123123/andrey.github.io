@@ -36,6 +36,8 @@ Deno.serve(async (req) => {
     const flightHelp = clean(body?.flightHelp, 10);
     const visaHelp = clean(body?.visaHelp, 10);
     const beenTenerife = clean(body?.beenTenerife, 10);
+    const season = clean(body?.season, 20);
+    const note = clean(body?.note, 1000);
 
     if (!name || (!telegram && !phone)) {
       return new Response(
@@ -47,8 +49,13 @@ Deno.serve(async (req) => {
     const escape = (s: string) =>
       s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+    const isWaitlist = season === "02" || season === "season-02";
+    const title = isWaitlist
+      ? `⏳ <b>Waitlist Season 02 — Tennerife Tennis Retreat</b>`
+      : `🎾 <b>Новая заявка — Tennerife Tennis Retreat</b>`;
+
     const lines: string[] = [
-      `🎾 <b>Новая заявка — Tennerife Tennis Retreat</b>`,
+      title,
       ``,
       `<b>Имя:</b> ${escape(name)}`,
     ];
@@ -61,7 +68,8 @@ Deno.serve(async (req) => {
     if (beenTenerife) lines.push(`<b>Был на Тенерифе:</b> ${escape(beenTenerife)}`);
     if (flightHelp) lines.push(`<b>Нужен перелёт:</b> ${escape(flightHelp)}`);
     if (visaHelp) lines.push(`<b>Нужна виза:</b> ${escape(visaHelp)}`);
-    lines.push(``, `<i>tennerife-tennis.com</i>`);
+    if (note) lines.push(``, `<b>Комментарий:</b>`, escape(note));
+    lines.push(``, `<i>tennerife-tennis.com${isWaitlist ? " · /season-02" : ""}</i>`);
 
     const text = lines.join("\n");
 

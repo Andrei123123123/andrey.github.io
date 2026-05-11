@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Privacy from "./pages/Privacy.tsx";
+import SeasonTwo from "./pages/SeasonTwo.tsx";
 import CookieConsent from "./components/CookieConsent";
 import { BookingModalProvider } from "./contexts/BookingModalContext";
 import BookingModal from "./components/BookingModal";
@@ -22,6 +23,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/season-02" element={<SeasonTwo />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
