@@ -191,7 +191,7 @@ const Index = () => {
               <em className="not-italic text-gold">на Тенерифе</em>
             </h1>
             <p className="animate-fade-up mt-8 text-[18px] md:text-[20px] text-sand/85 leading-[1.55] font-light max-w-[640px] mx-auto" style={{ animationDelay: "0.15s" }}>
-              7 дней тенниса, океана, виллы с поваром и сильного окружения на Тенерифе.
+              7 дней тенниса, океана, виллы с поваром и сильного окружения для тех, кто выбирает движение.
             </p>
             <div className="animate-fade-up mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4" style={{ animationDelay: "0.3s" }}>
               <button type="button" onClick={openBookingModal}
