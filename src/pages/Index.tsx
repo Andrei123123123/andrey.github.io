@@ -253,7 +253,7 @@ const Index = () => {
             {/* Included */}
             <div className="reveal p-8 lg:p-10 bg-forest text-sand-light rounded-2xl border border-gold/25">
               <p className="text-[11px] tracking-[3px] uppercase text-gold mb-5 font-medium">Включено в €1950</p>
-              <h3 className="font-display text-[24px] mb-7 leading-tight">Ретрит, повар и вилла</h3>
+              <h3 className="font-display text-[24px] mb-7 leading-tight">Участие в кемпе, повар и вилла</h3>
               <ul className="flex flex-col gap-3.5 list-none">
                 {[
                   "Участие в ретрите",
