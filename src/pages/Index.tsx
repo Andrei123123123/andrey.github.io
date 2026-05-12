@@ -437,7 +437,7 @@ const Index = () => {
       {/* ─── 12.5 FIT — Кому подойдёт ─── */}
       <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="fit">
         <div className="max-w-[1100px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Формат</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Подбор группы</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-6 max-w-[760px]">
             Кому подойдёт<br /><em className="italic text-gold">эта неделя</em>
           </h2>
