@@ -93,7 +93,6 @@ const Index = () => {
   }, []);
 
   const navLinks = [
-    { href: "#experience", label: "Атмосфера" },
     { href: "#program", label: "Программа" },
     { href: "#villa", label: "Вилла" },
     { href: "#pricing", label: "Стоимость" },
