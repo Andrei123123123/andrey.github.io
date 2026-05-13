@@ -224,19 +224,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── 04. ФОРМАТ ─── */}
-      <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="who">
-        <div className="max-w-[1100px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Формат</p>
-          <h2 className="reveal font-display font-medium text-[clamp(36px,4.6vw,56px)] text-forest leading-[1.05] mb-7 max-w-[760px]">
-            14 мест<br /><em className="italic text-gold font-light">на одну неделю</em>
-          </h2>
-          <p className="reveal text-[18px] text-text-body/80 leading-[1.7] max-w-[620px]">
-            Небольшая группа, вилла у океана, ежедневный теннис и спокойный ритм — без массового формата и суеты.
-          </p>
-        </div>
-      </section>
-
       {/* ─── 05. WHAT'S INCLUDED ─── */}
       <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="included">
         <div className="max-w-[1200px] mx-auto">
