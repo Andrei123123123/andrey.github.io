@@ -123,8 +123,8 @@ const DetailsCarousel = () => (
           );
         })}
       </CarouselContent>
-      <CarouselPrevious className="hidden md:flex -left-4 bg-forest/80 text-gold border-gold/20 hover:bg-forest" />
-      <CarouselNext className="hidden md:flex -right-4 bg-forest/80 text-gold border-gold/20 hover:bg-forest" />
+      <CarouselPrevious className="flex left-2 md:-left-4 bg-forest/80 text-gold border-gold/20 hover:bg-forest" />
+      <CarouselNext className="flex right-2 md:-right-4 bg-forest/80 text-gold border-gold/20 hover:bg-forest" />
     </Carousel>
   </div>
 );
