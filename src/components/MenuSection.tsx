@@ -35,7 +35,12 @@ const MenuSection = () => {
           локальных продуктов. Адаптируем под предпочтения: пескетариан, веган, без глютена — по запросу.
         </p>
 
-        <div className="reveal relative rounded-2xl overflow-hidden bg-forest/5">
+        <div
+          className="reveal relative rounded-2xl overflow-hidden bg-forest/5"
+          role="region"
+          aria-roledescription="карусель"
+          aria-label="Фотографии блюд"
+        >
           <div className="relative h-[320px] md:h-[520px]">
             {images.map((img, i) => (
               <img
@@ -71,7 +76,8 @@ const MenuSection = () => {
                 <button
                   key={i}
                   type="button"
-                  aria-label={`Фото ${i + 1}`}
+                  aria-label={`Фото ${i + 1} из ${images.length}`}
+                  aria-current={i === slide ? "true" : undefined}
                   onClick={() => setSlide(i)}
                   className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer border-none ${
                     i === slide ? "bg-gold w-8" : "bg-forest/20 w-1.5"
