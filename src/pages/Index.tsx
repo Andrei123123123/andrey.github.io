@@ -363,7 +363,7 @@ const Index = () => {
 
                     <div className="overflow-hidden transition-all duration-500" style={{ maxHeight: isOpen ? "600px" : "0" }}>
                       <div className="mx-2 -mt-2 rounded-b-2xl overflow-hidden bg-forest border border-t-0 border-gold/20">
-                        <img src={day.img} alt={`День ${day.d} — ${day.title}`} className="w-full h-[200px] md:h-[280px] object-cover" style={{ objectPosition: (day as any).imgPos ?? "center" }} loading="lazy" />
+                        <img src={day.img} alt={`День ${day.d} на Тенерифе — ${day.title}`} className="w-full h-[200px] md:h-[280px] object-cover" style={{ objectPosition: (day as any).imgPos ?? "center" }} loading="lazy" />
                         <div className="p-5 md:p-6">
                           <ul className="flex flex-col gap-2.5 list-none">
                             {day.activities.map((a) => (
@@ -493,7 +493,7 @@ const Index = () => {
       {/* ─── 13. PRICE ─── */}
       <section className="relative py-24 lg:py-32 px-6 lg:px-16 overflow-hidden" id="pricing">
         <div className="absolute inset-0">
-          <img src={bgPricing} alt="" className="w-full h-full object-cover opacity-25" loading="lazy" />
+          <img src={bgPricing} alt="" aria-hidden="true" className="w-full h-full object-cover opacity-25" loading="lazy" />
           <div className="absolute inset-0 bg-cream/85" />
         </div>
         <div className="relative z-10 max-w-[1100px] mx-auto">
@@ -616,7 +616,7 @@ const Index = () => {
       {/* ─── 15. APPLICATION CTA ─── */}
       <section className="relative py-28 lg:py-40 px-6 lg:px-16 overflow-hidden bg-forest" id="apply">
         <div className="absolute inset-0 opacity-25">
-          <img src={day20} alt="" className="w-full h-full object-cover" loading="lazy" />
+          <img src={day20} alt="" aria-hidden="true" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/70 to-forest/85" />
         </div>
         <div className="relative z-10 max-w-[820px] mx-auto text-center">

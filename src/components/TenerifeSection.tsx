@@ -44,7 +44,12 @@ const TenerifeSection = () => {
         </p>
 
         {/* Photo carousel */}
-        <div className="reveal relative rounded-lg overflow-hidden mb-14">
+        <div
+          className="reveal relative rounded-lg overflow-hidden mb-14"
+          role="region"
+          aria-roledescription="карусель"
+          aria-label="Фотографии Тенерифе"
+        >
           <div className="relative h-[320px] md:h-[520px]">
             {images.map((img, i) => (
               <img
@@ -53,14 +58,25 @@ const TenerifeSection = () => {
                 alt={img.alt}
                 className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${i === current ? "opacity-100" : "opacity-0"}`}
                 loading="lazy"
+                aria-hidden={i === current ? undefined : true}
               />
             ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-forest/10 to-transparent pointer-events-none" />
 
-            <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer">
+            <button
+              type="button"
+              onClick={prev}
+              aria-label="Предыдущее фото Тенерифе"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer"
+            >
               <ChevronLeft size={22} />
             </button>
-            <button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer">
+            <button
+              type="button"
+              onClick={next}
+              aria-label="Следующее фото Тенерифе"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer"
+            >
               <ChevronRight size={22} />
             </button>
 
@@ -68,16 +84,22 @@ const TenerifeSection = () => {
               {images.map((_, i) => (
                 <button
                   key={i}
+                  type="button"
                   onClick={() => setCurrent(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer border-none ${i === current ? "bg-gold w-8" : "bg-sand/40"}`}
+                  aria-label={`Фото ${i + 1} из ${images.length}`}
+                  aria-current={i === current ? "true" : undefined}
+                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer border-none ${i === current ? "bg-gold w-8" : "bg-sand/40 w-2.5"}`}
                 />
               ))}
             </div>
-
-            <div className="absolute bottom-12 left-6">
-              <p className="text-[14px] text-sand/90 font-medium drop-shadow-lg">{images[current].alt}</p>
-            </div>
           </div>
+
+          <p
+            aria-live="polite"
+            className="text-[13px] md:text-[14px] text-sand/70 mt-3 px-1"
+          >
+            {images[current].alt}
+          </p>
         </div>
 
         {/* Stats */}

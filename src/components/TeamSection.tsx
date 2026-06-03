@@ -52,7 +52,7 @@ const TeamSection = () => {
               <div className="relative w-full h-[360px] lg:h-[420px] overflow-hidden bg-sand-light">
                 <img
                   src={person.photo}
-                  alt={person.name}
+                  alt={`${person.name} — ${person.role}, Tennerife Tennis Retreat`}
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   loading="lazy"
                 />

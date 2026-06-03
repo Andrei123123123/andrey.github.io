@@ -148,7 +148,12 @@ const VillaSection = () => {
         </p>
 
         {/* Villa photo carousel */}
-        <div className="reveal relative rounded-lg overflow-hidden mb-10">
+        <div
+          className="reveal relative rounded-lg overflow-hidden mb-10"
+          role="region"
+          aria-roledescription="карусель"
+          aria-label="Фотографии виллы"
+        >
           <div className="relative h-[320px] md:h-[500px]">
             {villaImages.map((img, i) => (
               <img
@@ -157,14 +162,25 @@ const VillaSection = () => {
                 alt={img.alt}
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === current ? "opacity-100" : "opacity-0"}`}
                 loading="lazy"
+                aria-hidden={i === current ? undefined : true}
               />
             ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-forest/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest/50 via-transparent to-transparent pointer-events-none" />
 
-            <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer">
+            <button
+              type="button"
+              onClick={prev}
+              aria-label="Предыдущее фото виллы"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer"
+            >
               <ChevronLeft size={22} />
             </button>
-            <button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer">
+            <button
+              type="button"
+              onClick={next}
+              aria-label="Следующее фото виллы"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer"
+            >
               <ChevronRight size={22} />
             </button>
 
@@ -172,16 +188,22 @@ const VillaSection = () => {
               {villaImages.map((_, i) => (
                 <button
                   key={i}
+                  type="button"
                   onClick={() => setCurrent(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer border-none ${i === current ? "bg-gold w-8" : "bg-sand/40"}`}
+                  aria-label={`Фото ${i + 1} из ${villaImages.length}`}
+                  aria-current={i === current ? "true" : undefined}
+                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer border-none ${i === current ? "bg-gold w-8" : "bg-sand/40 w-2.5"}`}
                 />
               ))}
             </div>
-
-            <div className="absolute bottom-12 left-6">
-              <p className="text-[14px] text-sand/90 font-medium drop-shadow-lg">{villaImages[current].alt}</p>
-            </div>
           </div>
+
+          <p
+            aria-live="polite"
+            className="text-[13px] md:text-[14px] text-text-body/75 mt-3 px-1"
+          >
+            {villaImages[current].alt}
+          </p>
         </div>
 
         {/* Details carousel */}
