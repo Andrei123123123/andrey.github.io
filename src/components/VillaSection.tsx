@@ -24,9 +24,9 @@ import extra9 from "@/assets/villa-extra-9.avif";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const villaImages = [
-  { src: pool, alt: "Подогреваемый бассейн на закате" },
-  { src: livingRoom, alt: "Светлая гостиная с выходом на террасу" },
   { src: terrace, alt: "Терраса с видом на океан" },
+  { src: livingRoom, alt: "Светлая гостиная с выходом на террасу" },
+  { src: pool, alt: "Подогреваемый бассейн на закате" },
   { src: dining, alt: "Лаунж-зона на террасе на закате" },
   { src: bedroom1, alt: "Уютная спальня с деревянным изголовьем" },
   { src: bedroom2, alt: "Спальня на вилле" },
