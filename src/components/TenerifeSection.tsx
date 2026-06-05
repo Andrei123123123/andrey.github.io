@@ -58,7 +58,7 @@ const TenerifeSection = () => {
           aria-roledescription="карусель"
           aria-label="Фотографии Тенерифе"
         >
-          <div className="relative h-[320px] md:h-[520px]">
+          <div className="relative h-[320px] md:h-[520px] touch-pan-y" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             {images.map((img, i) => (
               <img
                 key={i}
