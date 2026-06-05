@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { BadgeCheck, CarFront, Check, ChefHat, ChevronLeft, ChevronRight, Home, MapPin, Plane, Waves, type LucideIcon } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import livingRoom from "@/assets/villa-living-room.avif";
@@ -135,6 +135,14 @@ const VillaSection = () => {
 
   const prev = () => setCurrent((c) => (c === 0 ? villaImages.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === villaImages.length - 1 ? 0 : c + 1));
+  const touchStartX = useRef<number | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 50) (dx < 0 ? next : prev)();
+    touchStartX.current = null;
+  };
 
   return (
     <section ref={ref} id="villa" className="bg-cream py-24 lg:py-32 px-6 lg:px-16">
@@ -154,7 +162,7 @@ const VillaSection = () => {
           aria-roledescription="карусель"
           aria-label="Фотографии виллы"
         >
-          <div className="relative h-[320px] md:h-[500px]">
+          <div className="relative h-[320px] md:h-[500px] touch-pan-y" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             {villaImages.map((img, i) => (
               <img
                 key={i}

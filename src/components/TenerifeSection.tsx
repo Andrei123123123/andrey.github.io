@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Check, MapPin, Sun, Mountain, Plane, ChevronLeft, ChevronRight } from "lucide-react";
 import tenerife1 from "@/assets/tenerife-1.jpg";
 import tenerife2 from "@/assets/tenerife-2.jpg";
@@ -31,6 +31,14 @@ const TenerifeSection = () => {
 
   const prev = () => setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+  const touchStartX = useRef<number | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 50) (dx < 0 ? next : prev)();
+    touchStartX.current = null;
+  };
 
   return (
     <section ref={ref} className="relative py-24 lg:py-32 px-6 lg:px-16 bg-forest overflow-hidden" id="location">
@@ -50,7 +58,7 @@ const TenerifeSection = () => {
           aria-roledescription="карусель"
           aria-label="Фотографии Тенерифе"
         >
-          <div className="relative h-[320px] md:h-[520px]">
+          <div className="relative h-[320px] md:h-[520px] touch-pan-y" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             {images.map((img, i) => (
               <img
                 key={i}
