@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Check, MapPin, Sun, Mountain, Plane, ChevronLeft, ChevronRight } from "lucide-react";
 import tenerife1 from "@/assets/tenerife-1.jpg";
 import tenerife2 from "@/assets/tenerife-2.jpg";
