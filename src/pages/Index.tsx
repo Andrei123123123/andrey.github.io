@@ -509,7 +509,7 @@ const Index = () => {
             {/* Main card */}
             <div className="reveal p-8 lg:p-12 bg-forest text-sand-light rounded-2xl border border-gold/30 flex flex-col">
               <div className="flex items-baseline justify-between flex-wrap gap-4 mb-2">
-                <p className="text-[12px] tracking-[3px] uppercase text-gold font-medium">Tennerife Tennis Retreat</p>
+                <p className="text-[12px] tracking-[3px] uppercase text-gold font-medium">Tennerife Tennis Camp</p>
                 <p className="text-[12px] tracking-[2px] uppercase text-sand/55">Всего 14 мест</p>
               </div>
               <div className="font-display text-[72px] md:text-[88px] font-medium text-gold leading-none mt-2 mb-2 tracking-[-2px]">€1950</div>
