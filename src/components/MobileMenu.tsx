@@ -11,6 +11,7 @@ const navLinks = [
   { href: "#location", label: "Тенерифе" },
   { href: "#pricing", label: "Стоимость" },
   { href: "#faq", label: "FAQ" },
+  { href: "/season-02", label: "Season 02 →" },
 ];
 
 const TelegramIcon = ({ size = 18 }: { size?: number }) => (
