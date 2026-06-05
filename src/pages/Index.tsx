@@ -97,6 +97,7 @@ const Index = () => {
     { href: "#villa", label: "Вилла" },
     { href: "#pricing", label: "Стоимость" },
     { href: "#faq", label: "Вопросы" },
+    { href: "/season-02", label: "Season 02", external: true },
   ];
   const activeSection = useActiveSection(navLinks.map((l) => l.href.slice(1)), 180);
 
@@ -111,6 +112,8 @@ const Index = () => {
     { q: "Можно ли вернуть оплату?", a: "Если кемп не состоится — 100% возврат. Условия отмены по инициативе участника обсуждаются индивидуально перед бронированием." },
     { q: "На каком языке проходят тренировки?", a: "Тренировки проходят с командой Tenerife Tennis Academy. Язык согласуется ближе к старту в зависимости от состава тренеров." },
     { q: "Можно ли приехать одному?", a: "Да. Формат как раз рассчитан на людей, которые хотят попасть в активное окружение и познакомиться с новыми людьми. Проживание в вилле предусмотрено для индивидуального заселения в комнаты" },
+    { q: "А если не попаду в этот сезон?", a: "Места ограничены — 14 человек, и группа быстро закрывается. Можно оставить заявку в лист ожидания Season 02 (осень 2027) — участникам вейтлиста мы откроем продажи на 2 недели раньше остальных. Форма — на странице /season-02." },
+    { q: "Где почитать договор?", a: "Публичный договор-оферта доступен на странице /contract. В нём прописаны состав услуг, стоимость, условия оплаты и возврата. Бронируя место, вы соглашаетесь с офертой." },
   ];
 
   // Week programme (existing rich content kept)
@@ -548,6 +551,12 @@ const Index = () => {
               <p className="text-[12px] text-sand/55 text-center mt-4 leading-[1.6]">
                 Каждую заявку рассматриваем лично. Место закрепляется после оплаты.
               </p>
+              <p className="text-[11px] text-sand/40 text-center mt-2 leading-[1.6]">
+                Бронируя место, вы соглашаетесь с{" "}
+                <a href="/contract" className="text-gold/70 underline decoration-gold/30 hover:text-gold no-underline-hover">
+                  договором-офертой
+                </a>
+              </p>
             </div>
 
             {/* Side card — additional */}
@@ -639,6 +648,23 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ─── SEASON 02 STRIP ─── */}
+      <aside className="bg-forest border-t border-gold/15 py-5 px-6 lg:px-16">
+        <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-center sm:text-left">
+          <p className="text-[13px] md:text-[14px] text-sand/70 leading-[1.5]">
+            <span className="text-gold font-medium">Сезон 2026 закрывается.</span>{" "}
+            Не успели — оставьте заявку в лист ожидания Season 02.
+          </p>
+          <a
+            href="/season-02"
+            className="inline-flex items-center justify-center gap-2 text-gold font-body text-[12px] font-medium tracking-[2px] uppercase no-underline hover:text-gold-light transition-colors whitespace-nowrap"
+          >
+            Лист ожидания <ArrowRight size={14} />
+          </a>
+        </div>
+      </aside>
+
+
       {/* ─── FOOTER ─── */}
       <footer className="bg-[hsl(137,22%,8%)] py-14 px-6 lg:px-16">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
@@ -673,6 +699,9 @@ const Index = () => {
             </a>
             <a href="/privacy" className="text-[13px] text-sand/55 hover:text-gold transition-colors block no-underline">
               Политика конфиденциальности
+            </a>
+            <a href="/contract" className="text-[13px] text-sand/55 hover:text-gold transition-colors block no-underline">
+              Договор-оферта
             </a>
             <span className="text-[13px] text-sand/40 block">© 2026 Tennerife Tennis</span>
           </div>

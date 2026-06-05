@@ -251,7 +251,14 @@ const BookingModal = () => {
                   {submitting ? "Отправляем..." : "Отправить заявку"}
                 </button>
                 <p className="text-[11px] text-sand/40 text-center leading-[1.6]">
-                  Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                  Отправляя заявку, вы соглашаетесь с{" "}
+                  <a href="/contract" target="_blank" rel="noopener noreferrer" className="text-gold/80 underline decoration-gold/30 hover:text-gold">
+                    договором-офертой
+                  </a>{" "}
+                  и{" "}
+                  <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-gold/80 underline decoration-gold/30 hover:text-gold">
+                    политикой конфиденциальности
+                  </a>
                 </p>
               </form>
             </>
