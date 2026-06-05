@@ -162,7 +162,7 @@ const VillaSection = () => {
           aria-roledescription="карусель"
           aria-label="Фотографии виллы"
         >
-          <div className="relative h-[320px] md:h-[500px]">
+          <div className="relative h-[320px] md:h-[500px] touch-pan-y" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             {villaImages.map((img, i) => (
               <img
                 key={i}
