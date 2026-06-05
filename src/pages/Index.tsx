@@ -502,7 +502,7 @@ const Index = () => {
             Один пакет.<br /><em className="italic text-gold">Без апселлов.</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            Ретрит и проживание на вилле с поваром. Без дополнительных опций.
+            Кемп и проживание на вилле с поваром. Без дополнительных опций.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6">
