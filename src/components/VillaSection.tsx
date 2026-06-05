@@ -135,6 +135,14 @@ const VillaSection = () => {
 
   const prev = () => setCurrent((c) => (c === 0 ? villaImages.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === villaImages.length - 1 ? 0 : c + 1));
+  const touchStartX = useRef<number | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 50) (dx < 0 ? next : prev)();
+    touchStartX.current = null;
+  };
 
   return (
     <section ref={ref} id="villa" className="bg-cream py-24 lg:py-32 px-6 lg:px-16">
