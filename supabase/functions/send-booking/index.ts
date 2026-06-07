@@ -1,7 +1,31 @@
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
+const ALLOWED_ORIGINS = [
+  "https://tennerife-tennis.com",
+  "https://www.tennerife-tennis.com",
+  "https://tennis-tenerife.lovable.app",
+];
+const ALLOWED_ORIGIN_SUFFIXES = [".lovable.app", ".lovableproject.com"];
+
+const baseCorsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Vary": "Origin",
 };
+
+const isOriginAllowed = (origin: string | null): boolean => {
+  if (!origin) return false;
+  if (ALLOWED_ORIGINS.includes(origin)) return true;
+  try {
+    const host = new URL(origin).hostname;
+    return ALLOWED_ORIGIN_SUFFIXES.some((s) => host.endsWith(s));
+  } catch {
+    return false;
+  }
+};
+
+const buildCors = (origin: string | null) => ({
+  ...baseCorsHeaders,
+  "Access-Control-Allow-Origin": isOriginAllowed(origin) ? (origin as string) : "null",
+});
 
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/telegram";
 
@@ -9,8 +33,18 @@ const clean = (v: unknown, max = 200) =>
   typeof v === "string" ? v.trim().slice(0, max) : "";
 
 Deno.serve(async (req) => {
+  const origin = req.headers.get("origin");
+  const corsHeaders = buildCors(origin);
+
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
+  }
+
+  if (!isOriginAllowed(origin)) {
+    return new Response(JSON.stringify({ ok: false, error: "Forbidden" }), {
+      status: 403,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
   }
 
   try {
