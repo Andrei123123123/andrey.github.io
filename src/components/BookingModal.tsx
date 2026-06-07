@@ -202,22 +202,22 @@ const BookingModal = () => {
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-left">
                 <div>
-                  <label className={labelCls}>Имя *</label>
-                  <input type="text" required maxLength={100} value={form.name}
+                  <label htmlFor="booking-name" className={labelCls}>Имя *</label>
+                  <input id="booking-name" type="text" required maxLength={100} value={form.name}
                     onChange={(e) => update("name", e.target.value)}
                     className={inputCls} placeholder="Ваше имя" />
                 </div>
 
                 <div>
-                  <label className={labelCls}>Telegram *</label>
-                  <input type="text" required maxLength={80} value={form.telegram}
+                  <label htmlFor="booking-telegram" className={labelCls}>Telegram *</label>
+                  <input id="booking-telegram" type="text" required maxLength={80} value={form.telegram}
                     onChange={(e) => update("telegram", e.target.value)}
                     className={inputCls} placeholder="@username" />
                 </div>
 
                 <div>
-                  <label className={labelCls}>Уровень тенниса</label>
-                  <select value={form.level}
+                  <label htmlFor="booking-level" className={labelCls}>Уровень тенниса</label>
+                  <select id="booking-level" value={form.level}
                     onChange={(e) => update("level", e.target.value)}
                     className={inputCls + " appearance-none cursor-pointer"}>
                     <option value="">Выберите</option>
@@ -228,6 +228,7 @@ const BookingModal = () => {
                     <option value="Опытный">Опытный</option>
                   </select>
                 </div>
+
 
                 {/* occupation field removed */}
 
