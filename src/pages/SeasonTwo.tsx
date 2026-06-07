@@ -35,6 +35,14 @@ const SeasonTwo = () => {
 
   return (
     <main className="min-h-screen bg-forest text-sand-light">
+      <Helmet>
+        <title>Season 02 — лист ожидания Tennerife Tennis Retreat (осень 2027)</title>
+        <meta name="description" content="Лист ожидания на Season 02 Tennerife Tennis Retreat — осень 2027. Участникам вейтлиста открываем продажи на 2 недели раньше публичного старта." />
+        <link rel="canonical" href="https://tennerife-tennis.com/season-02" />
+        <meta property="og:url" content="https://tennerife-tennis.com/season-02" />
+        <meta property="og:title" content="Season 02 — лист ожидания Tennerife Tennis Retreat" />
+        <meta property="og:description" content="Лист ожидания Season 02 — осень 2027. Приоритетный доступ к продажам за 2 недели до публичного старта." />
+      </Helmet>
       {/* Hero */}
       <section className="relative min-h-[100svh] flex flex-col">
         <div className="absolute inset-0">
