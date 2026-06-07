@@ -1,21 +1,23 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowLeft } from "lucide-react";
 
 const Contract = () => {
   useEffect(() => {
-    document.title = "Договор-оферта — Tennerife Tennis Camp";
-    const meta = document.querySelector('meta[name="description"]');
-    const prev = meta?.getAttribute("content") ?? null;
-    if (meta) meta.setAttribute("content", "Публичный договор-оферта на участие в Tennerife Tennis Camp 18–24 октября 2026.");
     window.scrollTo(0, 0);
-    return () => {
-      if (meta && prev !== null) meta.setAttribute("content", prev);
-    };
   }, []);
 
   return (
     <div className="min-h-screen bg-sand">
+      <Helmet>
+        <title>Договор-оферта — Tennerife Tennis Camp</title>
+        <meta name="description" content="Публичный договор-оферта Tennerife Tennis Camp 18–24 октября 2026: состав услуг, стоимость €1950, условия оплаты, отмены и возврата." />
+        <link rel="canonical" href="https://tennerife-tennis.com/contract" />
+        <meta property="og:url" content="https://tennerife-tennis.com/contract" />
+        <meta property="og:title" content="Договор-оферта — Tennerife Tennis Camp" />
+        <meta property="og:description" content="Состав услуг, стоимость, условия оплаты и возврата по Tennerife Tennis Camp 2026." />
+      </Helmet>
       <header className="border-b border-forest/10 bg-sand-light">
         <div className="max-w-[900px] mx-auto px-6 md:px-10 py-6 flex items-center justify-between">
           <Link
