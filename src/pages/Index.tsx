@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useBookingModal } from "@/contexts/BookingModalContext";
@@ -129,7 +130,16 @@ const Index = () => {
 
   return (
     <main ref={containerRef}>
+      <Helmet>
+        <title>Tennerife Tennis Retreat — Тенерифе, 18–24 окт 2026</title>
+        <meta name="description" content="Неделя на Тенерифе: 7 дней тенниса/падела, вилла с поваром, океан, lifestyle и нетворкинг. 18–24 октября 2026. 14 мест." />
+        <link rel="canonical" href="https://tennerife-tennis.com/" />
+        <meta property="og:url" content="https://tennerife-tennis.com/" />
+        <meta property="og:title" content="Tennerife Tennis Retreat — Тенерифе, 18–24 окт 2026" />
+        <meta property="og:description" content="Неделя на Тенерифе: 7 дней тенниса/падела, вилла с поваром, океан, lifestyle и нетворкинг. 18–24 октября 2026." />
+      </Helmet>
       <ScrollProgress />
+
 
       {/* ─── NAV ─── */}
       <nav className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 lg:px-16 flex justify-between items-center transition-all duration-300 ${navScrolled ? "bg-forest/95 backdrop-blur-md shadow-lg" : ""}`}>

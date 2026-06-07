@@ -1,15 +1,23 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowLeft } from "lucide-react";
 
 const Privacy = () => {
   useEffect(() => {
-    document.title = "Политика конфиденциальности — Tennis Tenerife";
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="min-h-screen bg-sand">
+      <Helmet>
+        <title>Политика конфиденциальности — Tennerife Tennis</title>
+        <meta name="description" content="Как мы обрабатываем персональные данные участников Tennerife Tennis Camp: цели, основания, сроки и права субъекта данных." />
+        <link rel="canonical" href="https://tennerife-tennis.com/privacy" />
+        <meta property="og:url" content="https://tennerife-tennis.com/privacy" />
+        <meta property="og:title" content="Политика конфиденциальности — Tennerife Tennis" />
+        <meta property="og:description" content="Обработка персональных данных участников Tennerife Tennis Camp." />
+      </Helmet>
       <header className="border-b border-forest/10 bg-sand-light">
         <div className="max-w-[900px] mx-auto px-6 md:px-10 py-6 flex items-center justify-between">
           <Link
