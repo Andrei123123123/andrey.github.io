@@ -76,8 +76,9 @@ const SeasonTwo = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                   <div>
-                    <label className="block text-[11px] tracking-[2px] uppercase text-sand/55 mb-2 font-medium">Имя</label>
+                    <label htmlFor="season2-name" className="block text-[11px] tracking-[2px] uppercase text-sand/55 mb-2 font-medium">Имя</label>
                     <input
+                      id="season2-name"
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
@@ -87,8 +88,9 @@ const SeasonTwo = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] tracking-[2px] uppercase text-sand/55 mb-2 font-medium">Telegram</label>
+                    <label htmlFor="season2-telegram" className="block text-[11px] tracking-[2px] uppercase text-sand/55 mb-2 font-medium">Telegram</label>
                     <input
+                      id="season2-telegram"
                       type="text"
                       value={telegram}
                       onChange={(e) => setTelegram(e.target.value)}
@@ -98,8 +100,9 @@ const SeasonTwo = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] tracking-[2px] uppercase text-sand/55 mb-2 font-medium">Комментарий <span className="opacity-50 normal-case tracking-normal">— по желанию</span></label>
+                    <label htmlFor="season2-note" className="block text-[11px] tracking-[2px] uppercase text-sand/55 mb-2 font-medium">Комментарий <span className="opacity-50 normal-case tracking-normal">— по желанию</span></label>
                     <textarea
+                      id="season2-note"
                       value={note}
                       onChange={(e) => setNote(e.target.value)}
                       rows={3}
