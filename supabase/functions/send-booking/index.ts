@@ -58,6 +58,16 @@ Deno.serve(async (req) => {
 
     const body = await req.json().catch(() => ({}));
 
+    // Honeypot: silently accept bot submissions
+    const honeypot = clean(body?.website ?? body?.hp, 200);
+    if (honeypot) {
+      return new Response(JSON.stringify({ ok: true }), {
+        status: 200,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+
     // Extended application form fields
     const name = clean(body?.name, 100);
     const telegram = clean(body?.telegram, 80);
