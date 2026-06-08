@@ -41,7 +41,7 @@ const StickyMobileCTA = () => {
 
       {/* Desktop sticky CTA */}
       <div
-        className={`hidden md:flex fixed bottom-6 right-6 z-40 items-center gap-4 pl-5 pr-2 py-2 rounded-full border border-gold/30 shadow-2xl transition-all duration-300 ${
+        className={`hidden md:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-40 items-center gap-4 pl-5 pr-2 py-2 rounded-full border border-gold/30 shadow-2xl transition-all duration-300 ${
           visible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"
         }`}
         style={{ background: "rgba(28,43,30,0.95)", backdropFilter: "blur(12px)" }}
