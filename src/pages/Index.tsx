@@ -98,7 +98,6 @@ const Index = () => {
     { href: "#villa", label: "Вилла" },
     { href: "#pricing", label: "Стоимость" },
     { href: "#faq", label: "Вопросы" },
-    { href: "/season-02", label: "Season 02", external: true },
   ];
   const activeSection = useActiveSection(navLinks.map((l) => l.href.slice(1)), 180);
 
