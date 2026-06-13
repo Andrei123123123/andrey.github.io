@@ -59,7 +59,7 @@ const SeasonTwo = () => {
         <div className="relative z-10 flex-1 flex items-center px-6 lg:px-16 py-20">
           <div className="max-w-[920px] mx-auto w-full">
             <p className="text-[12px] tracking-[4px] uppercase text-gold mb-8 font-medium">
-              Season 02 · Осень 2027
+              SEASON 02 · ВЕСНА 2027
             </p>
             <h1 className="font-display font-medium text-[clamp(40px,6.5vw,88px)] leading-[1.02] tracking-[-0.5px] max-w-[820px]">
               Места на сезон 2026<br /><em className="not-italic text-gold">распределяются.</em>
