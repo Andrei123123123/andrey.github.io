@@ -107,7 +107,7 @@ const TeamSection = () => {
                     ВизаGO
                   </a>
                 </h3>
-                <p className="text-[14px] text-text-muted-custom">Визовый оператор · Турагент ретрита</p>
+                <p className="text-[14px] text-text-muted-custom">Визовый оператор · Турагент&nbsp;</p>
               </div>
             </div>
 
@@ -174,7 +174,7 @@ const TeamSection = () => {
                     Tenerife Tennis Academy
                   </a>
                 </h3>
-                <p className="text-[14px] text-text-muted-custom">Теннисная академия · Спортивный партнёр ретрита</p>
+                <p className="text-[14px] text-text-muted-custom">Теннисная академия · Спортивный партнёр</p>
               </div>
             </div>
 
