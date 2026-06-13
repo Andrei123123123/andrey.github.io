@@ -36,7 +36,7 @@ const TeamSection = () => {
             },
             {
               name: "Еманаков Иван",
-              link: "https://t.me/solonikkillamd",
+              link: "https://t.me/Solonik3",
               role: "Организатор",
               desc: "Отвечает за всё, что происходит после вашего прилёта. Если что-то пойдёт не по плану, он уже знает, что делать.",
               responsibilities: [
