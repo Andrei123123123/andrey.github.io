@@ -210,26 +210,10 @@ const Index = () => {
                 Программа недели
               </a>
             </div>
-            <p className="animate-fade-up mt-8 text-[12px] tracking-[2px] uppercase text-sand/45" style={{ animationDelay: "0.45s" }}>
-              Каждую заявку рассматриваем лично
-            </p>
           </div>
         </div>
       </section>
 
-      {/* ─── 02. INTRO / POSITIONING ─── */}
-      <section className="bg-cream py-28 lg:py-40 px-6 lg:px-16">
-        <div className="max-w-[900px] mx-auto text-center">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">Теннис · Вилла · Океан · Окружение</p>
-          <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,64px)] text-forest leading-[1.08] tracking-[-0.5px]">
-            Одна неделя<br /><em className="italic text-gold">на Тенерифе</em>
-          </h2>
-          <p className="reveal mt-10 text-[19px] md:text-[21px] text-text-body/85 leading-[1.7] max-w-[720px] mx-auto">
-            Теннис, жизнь на вилле, океанский воздух, ужины и новые знакомства — в кругу людей с тем же ритмом.
-          </p>
-
-        </div>
-      </section>
 
       {/* ─── 05. WHAT'S INCLUDED ─── */}
 
@@ -339,13 +323,9 @@ const Index = () => {
       {/* ─── 12.5 FIT — Кому подойдёт ─── */}
       <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="fit">
         <div className="max-w-[1100px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Подбор группы</p>
-          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-6 max-w-[760px]">
+          <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-14 max-w-[760px]">
             Кому подойдёт<br /><em className="italic text-gold">эта неделя</em>
           </h2>
-          <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            Камерный формат на 14 человек — поэтому собираем группу осознанно.
-          </p>
 
           <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 max-w-[920px]">
             {[
@@ -361,9 +341,6 @@ const Index = () => {
             ))}
           </div>
 
-          <p className="reveal mt-12 text-[14px] text-text-body/55 max-w-[640px]">
-            Каждую заявку рассматриваем лично — чтобы собрать правильный состав группы.
-          </p>
         </div>
       </section>
 
@@ -373,7 +350,7 @@ const Index = () => {
         <div className="max-w-[760px] mx-auto">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">От организатора</p>
           <blockquote className="reveal font-display font-light italic text-[clamp(22px,2.4vw,30px)] text-forest leading-[1.45] tracking-[-0.3px]">
-            «Я собираю эту неделю для людей, с которыми мне самому хотелось бы провести семь дней — на корте, у океана и за общим столом. Без массового формата, без апселлов и без лишнего шума».
+            «Я собираю эту неделю для людей, с которыми мне самому хотелось бы провести семь дней — на корте, у океана и за общим столом».
           </blockquote>
           <p className="reveal mt-8 text-[14px] tracking-[2px] uppercase text-text-body/60">
             — Команда Tennerife Tennis
@@ -493,12 +470,6 @@ const Index = () => {
             </div>
           </div>
 
-          <p className="reveal mt-12 text-center text-[13px] text-text-body/65 leading-[1.7]">
-            Опоздали в этот выпуск?{" "}
-            <a href="/season-02" className="text-gold underline underline-offset-4 decoration-gold/40 hover:decoration-gold transition-colors no-underline">
-              Оставьте заявку в Season 02 →
-            </a>
-          </p>
         </div>
       </section>
 
@@ -543,7 +514,7 @@ const Index = () => {
         <div className="relative z-10 max-w-[820px] mx-auto text-center">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">18–24 октября 2026</p>
             <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,68px)] text-sand-light leading-[1.05] mb-8 tracking-[-0.5px]">
-              Четырнадцать человек.<br /><em className="italic text-gold">Одна неделя на Тенерифе.</em>
+              Готовы<br /><em className="italic text-gold">поехать?</em>
             </h2>
             <p className="reveal text-[18px] md:text-[20px] text-sand/80 leading-[1.6] mb-12 max-w-[620px] mx-auto font-light">
               Теннис, вилла, океан и неделя в правильном кругу.
@@ -554,9 +525,6 @@ const Index = () => {
                 Оставить заявку <ArrowRight size={16} />
               </button>
             </div>
-            <p className="reveal mt-10 text-[13px] text-sand/45 tracking-[2px] uppercase">
-              {TOTAL} мест · Каждую заявку рассматриваем лично
-            </p>
         </div>
       </section>
 
