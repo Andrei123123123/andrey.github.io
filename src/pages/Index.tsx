@@ -345,18 +345,8 @@ const Index = () => {
       </section>
 
 
-      {/* ─── 12.6 FOUNDER'S LETTER ─── */}
-      <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16">
-        <div className="max-w-[760px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">От организатора</p>
-          <blockquote className="reveal font-display font-light italic text-[clamp(22px,2.4vw,30px)] text-forest leading-[1.45] tracking-[-0.3px]">
-            «Я собираю эту неделю для людей, с которыми мне самому хотелось бы провести семь дней — на корте, у океана и за общим столом».
-          </blockquote>
-          <p className="reveal mt-8 text-[14px] tracking-[2px] uppercase text-text-body/60">
-            — Команда Tennerife Tennis
-          </p>
-        </div>
-      </section>
+
+
 
       {/* ─── 12.7 BOOKING STEPS ─── */}
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="how-to-book">
