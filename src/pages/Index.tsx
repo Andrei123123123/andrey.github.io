@@ -305,7 +305,11 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ─── 04. VILLA ─── */}
+      <VillaSection />
 
+      {/* ─── 05. MENU ─── */}
+      <MenuSection />
 
 
       {/* ─── 10. TENERIFE ─── */}
