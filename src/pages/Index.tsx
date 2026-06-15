@@ -216,13 +216,9 @@ const Index = () => {
       </section>
 
 
-      {/* ─── 05. WHAT'S INCLUDED ─── */}
+      {/* ─── 02. WHAT'S INCLUDED ─── */}
+      <WhatsIncludedSection />
 
-      {/* ─── 06. VILLA ─── */}
-      <VillaSection />
-
-      {/* ─── 07. MENU ─── */}
-      <MenuSection />
 
       {/* ─── 08. TENNIS PROGRAM (intro) ─── */}
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="program">
