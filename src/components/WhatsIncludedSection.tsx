@@ -17,7 +17,8 @@ const WhatsIncludedSection = () => {
         <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Что включено</p>
         <h2 className="reveal font-display font-medium text-[clamp(28px,3.5vw,44px)] text-sand-light leading-[1.15] mb-5 max-w-[680px]">
           Неделя на Тенерифе.<br />
-          <em className="italic text-gold">Всё включено</em>.&nbsp;помогаем с перелётом и визой.
+          <em className="italic text-gold">Всё включено</em>.&nbsp;<br />
+          Помогаем с перелётом и визой.
         </h2>
         <p className="reveal text-[16px] text-sand/65 leading-[1.7] mb-12 max-w-[600px]">
           Один пакет €1950. Без апселлов и скрытых опций.
