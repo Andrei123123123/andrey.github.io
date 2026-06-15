@@ -3,10 +3,10 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const items = [
   { icon: Dumbbell, t: "Тренировки", d: "Теннис и падел с командой академии" },
-  { icon: Home, t: "Вилла", d: "Частная вилла у океана, своя комната" },
+  { icon: Home, t: "Вилла", d: "Частная вилла у океана, своя комната с ванной" },
   { icon: ChefHat, t: "Повар", d: "Завтраки, обеды и ужины на вилле" },
   { icon: Map, t: "Активности", d: "Яхта, Тейде, сёрфинг, винодельня" },
-  { icon: Compass, t: "Сопровождение", d: "Трансфер, виза, перелёт — помогаем" },
+  { icon: Compass, t: "Сопровождение", d: "Трансфер;\n виза, перелёт — помогаем" },
 ];
 
 const WhatsIncludedSection = () => {
@@ -33,7 +33,7 @@ const WhatsIncludedSection = () => {
                   <Icon size={18} strokeWidth={1.7} />
                 </span>
                 <p className="font-display text-[18px] text-sand-light mb-1.5 leading-tight">{it.t}</p>
-                <p className="text-[13px] text-sand/60 leading-[1.55]">Трансфер;<br />&nbsp;виза, перелёт — помогаем</p>
+                <p className="text-[13px] text-sand/60 leading-[1.55] whitespace-pre-line">{it.d}</p>
               </div>
             );
           })}
