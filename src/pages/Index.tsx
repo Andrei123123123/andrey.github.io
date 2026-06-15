@@ -12,6 +12,7 @@ import VillaSection from "@/components/VillaSection";
 import MenuSection from "@/components/MenuSection";
 import CommunitySection from "@/components/CommunitySection";
 import TenerifeSection from "@/components/TenerifeSection";
+import WhatsIncludedSection from "@/components/WhatsIncludedSection";
 import { Check, ArrowRight } from "lucide-react";
 import day14 from "@/assets/day-14.jpg";
 import day15 from "@/assets/day-15.jpg";
@@ -215,13 +216,9 @@ const Index = () => {
       </section>
 
 
-      {/* ─── 05. WHAT'S INCLUDED ─── */}
+      {/* ─── 02. WHAT'S INCLUDED ─── */}
+      <WhatsIncludedSection />
 
-      {/* ─── 06. VILLA ─── */}
-      <VillaSection />
-
-      {/* ─── 07. MENU ─── */}
-      <MenuSection />
 
       {/* ─── 08. TENNIS PROGRAM (intro) ─── */}
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="program">
@@ -308,7 +305,11 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ─── 04. VILLA ─── */}
+      <VillaSection />
 
+      {/* ─── 05. MENU ─── */}
+      <MenuSection />
 
 
       {/* ─── 10. TENERIFE ─── */}
