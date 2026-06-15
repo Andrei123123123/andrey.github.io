@@ -33,7 +33,7 @@ const WhatsIncludedSection = () => {
                   <Icon size={18} strokeWidth={1.7} />
                 </span>
                 <p className="font-display text-[18px] text-sand-light mb-1.5 leading-tight">{it.t}</p>
-                <p className="text-[13px] text-sand/60 leading-[1.55]">{it.d}</p>
+                <p className="text-[13px] text-sand/60 leading-[1.55]">Трансфер;<br />&nbsp;виза, перелёт — помогаем</p>
               </div>
             );
           })}
