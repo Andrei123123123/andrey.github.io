@@ -12,6 +12,7 @@ import VillaSection from "@/components/VillaSection";
 import MenuSection from "@/components/MenuSection";
 import CommunitySection from "@/components/CommunitySection";
 import TenerifeSection from "@/components/TenerifeSection";
+import WhatsIncludedSection from "@/components/WhatsIncludedSection";
 import { Check, ArrowRight } from "lucide-react";
 import day14 from "@/assets/day-14.jpg";
 import day15 from "@/assets/day-15.jpg";
