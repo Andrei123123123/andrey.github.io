@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet-async";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useBookingModal } from "@/contexts/BookingModalContext";
+import { useT, useLang } from "@/i18n/LanguageContext";
+import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 import MobileMenu from "@/components/MobileMenu";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import FloatingTelegram from "@/components/FloatingTelegram";
@@ -22,8 +24,6 @@ import day18 from "@/assets/day-18.jpg";
 import day19 from "@/assets/day-19.jpg";
 import day20 from "@/assets/day20-winery.jpg";
 import bgPricing from "@/assets/bg-pricing.jpg";
-
-
 
 const TOTAL = 14;
 
@@ -63,6 +63,8 @@ const Index = () => {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [activeDay, setActiveDay] = useState(0);
   const [navScrolled, setNavScrolled] = useState(false);
+  const t = useT();
+  const { lang } = useLang();
 
   const toggleFaq = useCallback((i: number) => {
     setFaqOpen((prev) => (prev === i ? null : i));
@@ -95,50 +97,103 @@ const Index = () => {
   }, []);
 
   const navLinks = [
-    { href: "#program", label: "Программа" },
-    { href: "#villa", label: "Вилла" },
-    { href: "#pricing", label: "Стоимость" },
-    { href: "#faq", label: "Вопросы" },
+    { href: "#program", label: t("Программа", "Programme") },
+    { href: "#villa", label: t("Вилла", "Villa") },
+    { href: "#pricing", label: t("Стоимость", "Pricing") },
+    { href: "#faq", label: t("Вопросы", "FAQ") },
   ];
   const activeSection = useActiveSection(navLinks.map((l) => l.href.slice(1)), 180);
 
   const faqs = [
-    { q: "Для какого уровня тенниса подходит кемп?", a: "Подходит для любителей с разным уровнем — от начинающих до опытных. Достаточно базового интереса к теннису и желания провести неделю активно. При необходимости делим группу по уровню." },
-    { q: "Что входит в стоимость €1950?", a: "Участие в кемпе, трансфер, ежедневные тренировки теннис / падел, аренда кортов и оборудования, активности на каждый день, проживание на вилле с поваром, завтраки, обеды, ужины и общая атмосфера." },
-    { q: "Что не входит в стоимость?", a: "Перелёт (ориентир €900) и шенгенская виза (ориентир €200) оплачиваются отдельно. Помогаем подобрать удобный рейс и с организационными вопросами по визе, включая приглашение от академии." },
-    { q: "Сколько участников будет?", a: "Максимум 14 человек. Это часть формата — небольшая закрытая группа." },
-    { q: "Можно ли приехать одному?", a: "Да. Формат как раз рассчитан на людей, которые хотят попасть в активное окружение и познакомиться с новыми людьми. Проживание на вилле — индивидуальное заселение в комнаты." },
-    { q: "Как забронировать место?", a: "Оставьте заявку через форму или напишите в мессенджере. Свяжемся, подтвердим детали и согласуем оплату обязательного пакета: кемп + проживание." },
-    { q: "Можно ли вернуть оплату?", a: "Если кемп не состоится — 100% возврат. Условия отмены по инициативе участника обсуждаются индивидуально перед бронированием. Полный текст — в договоре-оферте на /contract." },
-    { q: "А если не попаду в этот сезон?", a: "Места ограничены — 14 человек, и группа быстро закрывается. Можно оставить заявку в лист ожидания Season 02 — участникам вейтлиста откроем продажи на 2 недели раньше остальных. Форма на /season-02." },
+    {
+      q: t("Для какого уровня тенниса подходит кемп?", "What tennis level is this retreat for?"),
+      a: t(
+        "Подходит для любителей с разным уровнем — от начинающих до опытных. Достаточно базового интереса к теннису и желания провести неделю активно. При необходимости делим группу по уровню.",
+        "Suitable for amateurs of any level — from beginners to experienced players. A basic interest in tennis and a desire to spend an active week is enough. We split the group by level when needed."
+      ),
+    },
+    {
+      q: t("Что входит в стоимость €1950?", "What does €1950 include?"),
+      a: t(
+        "Участие в кемпе, трансфер, ежедневные тренировки теннис / падел, аренда кортов и оборудования, активности на каждый день, проживание на вилле с поваром, завтраки, обеды, ужины и общая атмосфера.",
+        "Retreat participation, airport transfer, daily tennis and padel sessions, court and equipment rental, daily activities, stay at the villa with a private chef, all meals and the shared atmosphere."
+      ),
+    },
+    {
+      q: t("Что не входит в стоимость?", "What's not included?"),
+      a: t(
+        "Перелёт (ориентир €900) и шенгенская виза (ориентир €200) оплачиваются отдельно. Помогаем подобрать удобный рейс и с организационными вопросами по визе, включая приглашение от академии.",
+        "Flights (~€900) and Schengen visa (~€200) are paid separately. We help you choose a convenient flight and with visa logistics, including the academy invitation."
+      ),
+    },
+    {
+      q: t("Сколько участников будет?", "How many guests will there be?"),
+      a: t(
+        "Максимум 14 человек. Это часть формата — небольшая закрытая группа.",
+        "Maximum 14 people. A small, closed group is part of the format."
+      ),
+    },
+    {
+      q: t("Можно ли приехать одному?", "Can I come alone?"),
+      a: t(
+        "Да. Формат как раз рассчитан на людей, которые хотят попасть в активное окружение и познакомиться с новыми людьми. Проживание на вилле — индивидуальное заселение в комнаты.",
+        "Yes. The format is built for people who want to land in an active circle and meet new people. Rooms at the villa are private."
+      ),
+    },
+    {
+      q: t("Как забронировать место?", "How do I book?"),
+      a: t(
+        "Оставьте заявку через форму или напишите в мессенджере. Свяжемся, подтвердим детали и согласуем оплату обязательного пакета: кемп + проживание.",
+        "Send a short application or message us. We'll be in touch, confirm details and arrange payment of the package: retreat + villa."
+      ),
+    },
+    {
+      q: t("Можно ли вернуть оплату?", "Can I get a refund?"),
+      a: t(
+        "Если кемп не состоится — 100% возврат. Условия отмены по инициативе участника обсуждаются индивидуально перед бронированием. Полный текст — в договоре-оферте на /contract.",
+        "If the retreat doesn't take place — full 100% refund. Cancellation terms by the guest are discussed individually before booking. Full text in the terms of service at /contract."
+      ),
+    },
+    {
+      q: t("А если не попаду в этот сезон?", "What if I don't make it this season?"),
+      a: t(
+        "Места ограничены — 14 человек, и группа быстро закрывается. Можно оставить заявку в лист ожидания Season 02 — участникам вейтлиста откроем продажи на 2 недели раньше остальных. Форма на /season-02.",
+        "Spots are limited to 14 and the group fills quickly. You can join the Season 02 waitlist — waitlist guests get access two weeks before the public sale. Form at /season-02."
+      ),
+    },
   ];
 
-
-  // Week programme (existing rich content kept)
   const days = [
-    { d: "18", wd: "Вс", title: "Прилёт и заселение", preview: "Трансфер из аэропорта, заселение на виллу у океана. Вечером — первый ужин и знакомство.", tags: ["Arrival", "Dinner"], activities: ["Встреча в аэропорту TFS, трансфер на виллу", "Заселение, отдых, океан", "Совместный ужин и знакомство группы"], img: day14, imgPos: "center 70%" },
-    { d: "19", wd: "Пн", title: "Санта-Крус + Loro Parque", preview: "Loro Parque, столица острова и ботанический сад. Вечером — теннис или падел.", tags: ["Loro Parque", "Tennis"], activities: ["Loro Parque", "Прогулка по Санта-Крус-де-Тенерифе", "Ботанический сад", "Вечерняя тренировка: техника"], img: day15 },
-    { d: "20", wd: "Вт", title: "Яхта + корт", preview: "Морская прогулка вдоль скал Los Gigantes, купание в океане. Вечером — подача и приём.", tags: ["Yacht", "Ocean"], activities: ["Прогулка вдоль Los Gigantes", "Купание в океане, дельфины", "Обед на яхте", "Вечерняя тренировка: подача и приём"], img: day16 },
-    { d: "21", wd: "Ср", title: "Свободный день + корт", preview: "Бассейн, чёрный вулканический пляж, шоппинг или спа. Вечером — теннис на закате.", tags: ["Free time", "Sunset tennis"], activities: ["Отдых: бассейн, чёрный пляж, спа", "Свободное время", "Обед", "Вечерняя тренировка: разбор ошибок"], img: day17 },
-    { d: "22", wd: "Чт", title: "Вулкан Тейде + корт", preview: "Подъём на высшую точку Испании. Вечером — тактика и розыгрыши.", tags: ["Teide 3718m", "Tactics"], activities: ["Тейде — высшая точка Испании", "Подъём на канатной дороге", "Обед", "Вечерняя тренировка: тактика"], img: day18 },
-    { d: "23", wd: "Пт", title: "Сёрфинг + корт", preview: "Урок сёрфинга на волнах Атлантики. Вечером — парные комбинации.", tags: ["Surf", "Doubles"], activities: ["Урок сёрфинга для любого уровня", "Волны Атлантики", "Обед", "Вечерняя тренировка: парная игра"], img: day19 },
-    { d: "24", wd: "Сб", title: "Финал на винодельне Bodegas Reverón", preview: "Дружеский турнир и награждение. Вечером — закрытый ужин на винодельне в горах юга Тенерифе. Локальная кухня, авторская подача, дегустация вин с вулканических террас. ", tags: ["Tournament", "Wine"], activities: ["Финальный дружеский турнир среди участников", "Награждение и итоги недели", "Закрытый ужин на винодельне Bodegas Reverón", "Дегустация вин с вулканических террас", "Трансфер в аэропорт"], img: day20, imgPos: "center 25%" },
+    { d: "18", wd: t("Вс", "Sun"), title: t("Прилёт и заселение", "Arrival & check-in"), preview: t("Трансфер из аэропорта, заселение на виллу у океана. Вечером — первый ужин и знакомство.", "Airport transfer, check-in at the oceanfront villa. First dinner and introductions in the evening."), tags: ["Arrival", "Dinner"], activities: [t("Встреча в аэропорту TFS, трансфер на виллу", "Meet at TFS airport, transfer to the villa"), t("Заселение, отдых, океан", "Check-in, rest, ocean"), t("Совместный ужин и знакомство группы", "Shared dinner and group introductions")], img: day14, imgPos: "center 70%" },
+    { d: "19", wd: t("Пн", "Mon"), title: t("Санта-Крус + Loro Parque", "Santa Cruz + Loro Parque"), preview: t("Loro Parque, столица острова и ботанический сад. Вечером — теннис или падел.", "Loro Parque, the island's capital and botanical garden. Tennis or padel in the evening."), tags: ["Loro Parque", "Tennis"], activities: [t("Loro Parque", "Loro Parque"), t("Прогулка по Санта-Крус-де-Тенерифе", "Walk around Santa Cruz de Tenerife"), t("Ботанический сад", "Botanical garden"), t("Вечерняя тренировка: техника", "Evening training: technique")], img: day15 },
+    { d: "20", wd: t("Вт", "Tue"), title: t("Яхта + корт", "Yacht + court"), preview: t("Морская прогулка вдоль скал Los Gigantes, купание в океане. Вечером — подача и приём.", "Sailing along the Los Gigantes cliffs, ocean swim. Evening session on serve and return."), tags: ["Yacht", "Ocean"], activities: [t("Прогулка вдоль Los Gigantes", "Sailing along Los Gigantes"), t("Купание в океане, дельфины", "Ocean swim, dolphins"), t("Обед на яхте", "Lunch on board"), t("Вечерняя тренировка: подача и приём", "Evening training: serve & return")], img: day16 },
+    { d: "21", wd: t("Ср", "Wed"), title: t("Свободный день + корт", "Free day + court"), preview: t("Бассейн, чёрный вулканический пляж, шоппинг или спа. Вечером — теннис на закате.", "Pool, black volcanic beach, shopping or spa. Tennis at sunset in the evening."), tags: ["Free time", "Sunset tennis"], activities: [t("Отдых: бассейн, чёрный пляж, спа", "Rest: pool, black beach, spa"), t("Свободное время", "Free time"), t("Обед", "Lunch"), t("Вечерняя тренировка: разбор ошибок", "Evening training: error review")], img: day17 },
+    { d: "22", wd: t("Чт", "Thu"), title: t("Вулкан Тейде + корт", "Mount Teide + court"), preview: t("Подъём на высшую точку Испании. Вечером — тактика и розыгрыши.", "Climb to Spain's highest point. Evening session on tactics and rallies."), tags: ["Teide 3718m", "Tactics"], activities: [t("Тейде — высшая точка Испании", "Teide — highest peak in Spain"), t("Подъём на канатной дороге", "Cable car ascent"), t("Обед", "Lunch"), t("Вечерняя тренировка: тактика", "Evening training: tactics")], img: day18 },
+    { d: "23", wd: t("Пт", "Fri"), title: t("Сёрфинг + корт", "Surfing + court"), preview: t("Урок сёрфинга на волнах Атлантики. Вечером — парные комбинации.", "Surf lesson on the Atlantic. Doubles combinations in the evening."), tags: ["Surf", "Doubles"], activities: [t("Урок сёрфинга для любого уровня", "Surf lesson for any level"), t("Волны Атлантики", "Atlantic waves"), t("Обед", "Lunch"), t("Вечерняя тренировка: парная игра", "Evening training: doubles")], img: day19 },
+    { d: "24", wd: t("Сб", "Sat"), title: t("Финал на винодельне Bodegas Reverón", "Finale at Bodegas Reverón winery"), preview: t("Дружеский турнир и награждение. Вечером — закрытый ужин на винодельне в горах юга Тенерифе. Локальная кухня, авторская подача, дегустация вин с вулканических террас. ", "Friendly tournament and awards. Private dinner at a winery in the southern Tenerife mountains. Local cuisine, signature plating, tasting of wines from volcanic terraces."), tags: ["Tournament", "Wine"], activities: [t("Финальный дружеский турнир среди участников", "Final friendly tournament"), t("Награждение и итоги недели", "Awards and the week's recap"), t("Закрытый ужин на винодельне Bodegas Reverón", "Private dinner at Bodegas Reverón"), t("Дегустация вин с вулканических террас", "Tasting of volcanic-terrace wines"), t("Трансфер в аэропорт", "Airport transfer")], img: day20, imgPos: "center 25%" },
   ];
 
   return (
     <main ref={containerRef}>
       <Helmet>
-        <title>Tennerife Tennis Retreat — Тенерифе, 18–24 окт 2026</title>
-        <meta name="description" content="Неделя на Тенерифе: 7 дней тенниса/падела, вилла с поваром, океан, lifestyle и нетворкинг. 18–24 октября 2026. 14 мест." />
+        <html lang={lang === "en" ? "en" : "ru"} />
+        <title>{t("Tennerife Tennis Retreat — Тенерифе, 18–24 окт 2026", "Tennerife Tennis Retreat — Tenerife, 18–24 Oct 2026")}</title>
+        <meta name="description" content={t(
+          "Неделя на Тенерифе: 7 дней тенниса/падела, вилла с поваром, океан, lifestyle и нетворкинг. 18–24 октября 2026. 14 мест.",
+          "A week in Tenerife: 7 days of tennis and padel, a villa with a private chef, the ocean, lifestyle and quiet networking. 18–24 October 2026. 14 spots."
+        )} />
         <link rel="canonical" href="https://tennerife-tennis.com/" />
         <meta property="og:url" content="https://tennerife-tennis.com/" />
-        <meta property="og:title" content="Tennerife Tennis Retreat — Тенерифе, 18–24 окт 2026" />
-        <meta property="og:description" content="Неделя на Тенерифе: 7 дней тенниса/падела, вилла с поваром, океан, lifestyle и нетворкинг. 18–24 октября 2026." />
+        <meta property="og:title" content={t("Tennerife Tennis Retreat — Тенерифе, 18–24 окт 2026", "Tennerife Tennis Retreat — Tenerife, 18–24 Oct 2026")} />
+        <meta property="og:description" content={t(
+          "Неделя на Тенерифе: 7 дней тенниса/падела, вилла с поваром, океан, lifestyle и нетворкинг. 18–24 октября 2026.",
+          "A week in Tenerife: 7 days of tennis and padel, villa with a private chef, ocean, lifestyle and networking. 18–24 October 2026."
+        )} />
       </Helmet>
       <ScrollProgress />
 
 
-      {/* ─── NAV ─── */}
+      {/* NAV */}
       <nav className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 lg:px-16 flex justify-between items-center transition-all duration-300 ${navScrolled ? "bg-forest/95 backdrop-blur-md shadow-lg" : ""}`}>
         <span className="font-display text-[17px] italic text-gold tracking-[2px]">Tennerife · Tennis</span>
         <ul className="hidden md:flex gap-6 lg:gap-8 list-none">
@@ -155,7 +210,8 @@ const Index = () => {
           })}
         </ul>
         <div className="hidden md:flex items-center gap-4">
-          <div className="flex items-center gap-3 pr-4 border-r border-sand/15">
+          <LanguageSwitcher />
+          <div className="flex items-center gap-3 pr-4 border-r border-sand/15 pl-2">
             <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/70 hover:text-gold transition-colors" aria-label="Telegram">
               <TelegramIcon size={17} />
             </a>
@@ -174,13 +230,13 @@ const Index = () => {
           </div>
           <button type="button" onClick={openBookingModal}
             className="py-2.5 px-6 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2px] uppercase border-none cursor-pointer hover:bg-gold-light transition-colors duration-300 rounded-md">
-            Забронировать место
+            {t("Забронировать место", "Reserve a spot")}
           </button>
         </div>
         <MobileMenu />
       </nav>
 
-      {/* ─── 01. HERO ─── */}
+      {/* HERO */}
       <section className="min-h-[100svh] lg:min-h-screen relative flex flex-col justify-center overflow-hidden" id="hero">
         <div ref={heroBgRef} className="absolute inset-0 hero-parallax">
           <video autoPlay muted loop playsInline preload="auto" poster="/hero-poster.jpg" className="w-full h-full object-cover" aria-hidden="true">
@@ -192,23 +248,23 @@ const Index = () => {
         <div className="relative z-10 px-6 lg:px-16 pt-28 pb-20 flex-1 flex items-center">
           <div className="max-w-[900px] mx-auto w-full text-center">
             <p className="animate-fade-up text-[12px] tracking-[4px] uppercase text-gold mb-8 font-medium">
-              18–24 октября 2026 · Тенерифе · {TOTAL} мест
+              {t(`18–24 октября 2026 · Тенерифе · ${TOTAL} мест`, `18–24 October 2026 · Tenerife · ${TOTAL} spots`)}
             </p>
             <h1 className="animate-fade-up font-display font-medium text-[clamp(40px,6.5vw,88px)] leading-[1.02] text-sand-light tracking-[-0.5px]">
-              Теннис, падел и океан<br />
-              <em className="not-italic text-gold">на Тенерифе</em>
+              {t("Теннис, падел и океан", "Tennis, padel and the ocean")}<br />
+              <em className="not-italic text-gold">{t("на Тенерифе", "in Tenerife")}</em>
             </h1>
             <p className="animate-fade-up mt-8 text-[18px] md:text-[20px] text-sand/85 leading-[1.55] font-light max-w-[640px] mx-auto" style={{ animationDelay: "0.15s" }}>
-              Семь дней. Четырнадцать человек. Одна вилла у океана.
+              {t("Семь дней. Четырнадцать человек. Одна вилла у океана.", "Seven days. Fourteen people. One oceanfront villa.")}
             </p>
             <div className="animate-fade-up mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4" style={{ animationDelay: "0.3s" }}>
               <button type="button" onClick={openBookingModal}
                 className="inline-flex items-center justify-center gap-3 py-4 px-10 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
-                Оставить заявку <ArrowRight size={16} />
+                {t("Оставить заявку", "Apply now")} <ArrowRight size={16} />
               </button>
               <a href="#program"
                 className="inline-flex items-center justify-center text-sand/70 font-body text-[12px] font-medium tracking-[2.5px] uppercase no-underline hover:text-gold transition-colors duration-300 underline underline-offset-8 decoration-sand/20 hover:decoration-gold py-4 px-2">
-                Программа недели
+                {t("Программа недели", "Week programme")}
               </a>
             </div>
           </div>
@@ -216,27 +272,29 @@ const Index = () => {
       </section>
 
 
-      {/* ─── 02. WHAT'S INCLUDED ─── */}
       <WhatsIncludedSection />
 
 
-      {/* ─── 08. TENNIS PROGRAM (intro) ─── */}
+      {/* TENNIS PROGRAM */}
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="program">
         <div className="max-w-[1200px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Теннисная программа</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">{t("Теннисная программа", "Tennis programme")}</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.1] mb-5 max-w-[760px]">
-            Тренировки с командой <em className="italic text-gold">Tenerife Tennis Academy</em>
+            {t("Тренировки с командой", "Training with the team of")} <em className="italic text-gold">Tenerife Tennis Academy</em>
           </h2>
           <p className="reveal text-[17px] text-sand/70 leading-[1.7] mb-14 max-w-[680px]">
-            Ежедневные тренировки, игровые задания и матчи для участников с разным уровнем подготовки.
+            {t(
+              "Ежедневные тренировки, игровые задания и матчи для участников с разным уровнем подготовки.",
+              "Daily training, drills and matches for players of every level."
+            )}
           </p>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
             {[
-              { t: "Техника", d: "Работа над ударами, постановка движений, корректировка." },
-              { t: "Игровая практика", d: "Сетовая игра, развитие игровой выносливости." },
-              { t: "Тактика", d: "Тактика розыгрышей, чтение игры соперника." },
-              { t: "Групповые игры", d: "Парные комбинации, мини-турниры внутри группы." },
+              { t: t("Техника", "Technique"), d: t("Работа над ударами, постановка движений, корректировка.", "Stroke work, movement, corrections.") },
+              { t: t("Игровая практика", "Match play"), d: t("Сетовая игра, развитие игровой выносливости.", "Set play and on-court endurance.") },
+              { t: t("Тактика", "Tactics"), d: t("Тактика розыгрышей, чтение игры соперника.", "Rally tactics and reading your opponent.") },
+              { t: t("Групповые игры", "Group play"), d: t("Парные комбинации, мини-турниры внутри группы.", "Doubles combinations, internal mini-tournaments.") },
             ].map((c) => (
               <div key={c.t} className="reveal p-6 bg-forest-light/30 border border-gold/15 rounded-xl hover:border-gold/40 transition-colors">
                 <p className="font-display text-[20px] text-sand-light mb-2 leading-tight">{c.t}</p>
@@ -245,11 +303,11 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Week programme — accordion (kept rich content) */}
+          {/* Week programme — accordion */}
           <div className="max-w-[920px]">
-            <p className="reveal text-[11px] tracking-[3px] uppercase text-gold/70 mb-3 font-medium">Программа недели</p>
+            <p className="reveal text-[11px] tracking-[3px] uppercase text-gold/70 mb-3 font-medium">{t("Программа недели", "Week programme")}</p>
             <h3 className="reveal font-display text-[clamp(24px,2.5vw,32px)] text-sand-light mb-10 leading-tight">
-              Семь дней на Тенерифе
+              {t("Семь дней на Тенерифе", "Seven days in Tenerife")}
             </h3>
 
             <div className="flex flex-col gap-3">
@@ -285,7 +343,7 @@ const Index = () => {
 
                     <div className="overflow-hidden transition-all duration-500" style={{ maxHeight: isOpen ? "600px" : "0" }}>
                       <div className="mx-2 -mt-2 rounded-b-2xl overflow-hidden bg-forest border border-t-0 border-gold/20">
-                        <img src={day.img} alt={`День ${day.d} на Тенерифе — ${day.title}`} className="w-full h-[200px] md:h-[280px] object-cover" style={{ objectPosition: (day as any).imgPos ?? "center" }} loading="lazy" />
+                        <img src={day.img} alt={t(`День ${day.d} на Тенерифе — ${day.title}`, `Day ${day.d} in Tenerife — ${day.title}`)} className="w-full h-[200px] md:h-[280px] object-cover" style={{ objectPosition: (day as { imgPos?: string }).imgPos ?? "center" }} loading="lazy" />
                         <div className="p-5 md:p-6">
                           <ul className="flex flex-col gap-2.5 list-none">
                             {day.activities.map((a) => (
@@ -305,63 +363,48 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── 04. VILLA ─── */}
       <VillaSection />
-
-      {/* ─── 05. MENU ─── */}
       <MenuSection />
-
-
-      {/* ─── 10. TENERIFE ─── */}
       <TenerifeSection />
-
-      {/* ─── 11. TRAINERS ─── */}
       <TeamSection />
-
-      {/* ─── 12. COMMUNITY ─── */}
       <CommunitySection />
 
-      {/* ─── 12.5 FIT — Кому подойдёт ─── */}
+      {/* FIT */}
       <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="fit">
         <div className="max-w-[1100px] mx-auto">
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-forest leading-[1.1] mb-14 max-w-[760px]">
-            Кому подойдёт<br /><em className="italic text-gold">эта неделя</em>
+            {t("Кому подойдёт", "Who this week")}<br /><em className="italic text-gold">{t("эта неделя", "is for")}</em>
           </h2>
 
           <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 max-w-[920px]">
             {[
-              "Любите теннис и хотите играть каждый день",
-              "Цените камерный формат и небольшую группу",
-              "Ищете окружение из предпринимателей и фаундеров",
-              "Едете за атмосферой, людьми и темпом — не за анимацией",
+              t("Любите теннис и хотите играть каждый день", "You love tennis and want to play every day"),
+              t("Цените камерный формат и небольшую группу", "You value an intimate format and a small group"),
+              t("Ищете окружение из предпринимателей и фаундеров", "You're looking for a circle of entrepreneurs and founders"),
+              t("Едете за атмосферой, людьми и темпом — не за анимацией", "You travel for atmosphere, people and pace — not for an animator"),
             ].map((f) => (
-
               <div key={f} className="flex gap-3 items-start text-[16px] text-text-body/85 leading-[1.65]">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold mt-[10px] flex-shrink-0" />{f}
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
 
-
-
-
-      {/* ─── 12.7 BOOKING STEPS ─── */}
+      {/* BOOKING STEPS */}
       <section className="bg-forest py-24 lg:py-32 px-6 lg:px-16" id="how-to-book">
         <div className="max-w-[1100px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Как попасть в группу</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">{t("Как попасть в группу", "How to join")}</p>
           <h2 className="reveal font-display font-medium text-[clamp(32px,4vw,52px)] text-sand-light leading-[1.1] mb-14 max-w-[760px]">
-            Три шага<br /><em className="italic text-gold">до подтверждения</em>
+            {t("Три шага", "Three steps")}<br /><em className="italic text-gold">{t("до подтверждения", "to confirmation")}</em>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { n: "01", t: "Заявка", d: "Заполняете короткую форму. Имя и Telegram — остальное по желанию." },
-              { n: "02", t: "Короткий разговор", d: "Связываемся в течение суток. Рассказываем детали, отвечаем на вопросы, понимаем уровень." },
-              { n: "03", t: "Подтверждение", d: "Если всё совпадает — закрепляем место за вами после оплаты." },
+              { n: "01", t: t("Заявка", "Application"), d: t("Заполняете короткую форму. Имя и Telegram — остальное по желанию.", "Fill out a short form. Name and Telegram — the rest is optional.") },
+              { n: "02", t: t("Короткий разговор", "Short conversation"), d: t("Связываемся в течение суток. Рассказываем детали, отвечаем на вопросы, понимаем уровень.", "We get back within a day. We share details, answer questions, get a feel for your level.") },
+              { n: "03", t: t("Подтверждение", "Confirmation"), d: t("Если всё совпадает — закрепляем место за вами после оплаты.", "If everything aligns — your spot is locked in once payment is in.") },
             ].map((s) => (
               <div key={s.n} className="reveal p-7 bg-forest-light/30 border border-gold/15 rounded-xl">
                 <p className="font-display text-[40px] text-gold leading-none mb-4">{s.n}</p>
@@ -373,50 +416,49 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── 13. PRICE ─── */}
+      {/* PRICE */}
       <section className="relative py-24 lg:py-32 px-6 lg:px-16 overflow-hidden" id="pricing">
         <div className="absolute inset-0">
           <img src={bgPricing} alt="" aria-hidden="true" className="w-full h-full object-cover opacity-25" loading="lazy" />
           <div className="absolute inset-0 bg-cream/85" />
         </div>
         <div className="relative z-10 max-w-[1100px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Стоимость участия</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">{t("Стоимость участия", "Pricing")}</p>
           <h2 className="reveal font-display font-medium text-[clamp(34px,4.5vw,56px)] text-forest leading-[1.1] mb-6 max-w-[720px]">
-            Один пакет.<br /><em className="italic text-gold">Без апселлов.</em>
+            {t("Один пакет.", "One package.")}<br /><em className="italic text-gold">{t("Без апселлов.", "No upsells.")}</em>
           </h2>
           <p className="reveal text-[17px] text-text-body/75 leading-[1.7] mb-14 max-w-[640px]">
-            Кемп и проживание на вилле с поваром. Без дополнительных опций.
+            {t("Кемп и проживание на вилле с поваром. Без дополнительных опций.", "Retreat and stay at the villa with a private chef. No add-ons.")}
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6">
-            {/* Main card */}
             <div className="reveal p-8 lg:p-12 bg-forest text-sand-light rounded-2xl border border-gold/30 flex flex-col">
               <div className="flex items-baseline justify-between flex-wrap gap-4 mb-2">
                 <p className="text-[12px] tracking-[3px] uppercase text-gold font-medium">Tennerife Tennis Camp</p>
-                <p className="text-[12px] tracking-[2px] uppercase text-sand/55">Всего 14 мест</p>
+                <p className="text-[12px] tracking-[2px] uppercase text-sand/55">{t("Всего 14 мест", "Only 14 spots")}</p>
               </div>
               <div className="font-display text-[72px] md:text-[88px] font-medium text-gold leading-none mt-2 mb-2 tracking-[-2px]">€1950</div>
-              <p className="text-[14px] text-sand/55 mb-8">на человека · обязательный пакет</p>
+              <p className="text-[14px] text-sand/55 mb-8">{t("на человека · обязательный пакет", "per person · required package")}</p>
 
               <div className="grid grid-cols-2 gap-4 mb-8 pt-6 border-t border-gold/20">
                 <div>
-                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Теннисный кемп</p>
+                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">{t("Теннисный кемп", "Tennis retreat")}</p>
                   <p className="font-display text-[28px] text-sand-light">€1350</p>
                 </div>
                 <div>
-                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">Вилла и повар</p>
+                  <p className="text-[11px] tracking-[2px] uppercase text-sand/45 mb-1">{t("Вилла и повар", "Villa and chef")}</p>
                   <p className="font-display text-[28px] text-sand-light">€600</p>
                 </div>
               </div>
 
               <ul className="flex flex-col gap-3 mb-10 flex-1 list-none">
                 {[
-                  "Ежедневные тренировки теннис / падел",
-                  "Аренда кортов и оборудования",
-                  "Проживание на вилле",
-                  "Активности на Тенерифе",
-                  "Завтраки, обеды, ужины и общая атмосфера",
-                  "Организационное сопровождение",
+                  t("Ежедневные тренировки теннис / падел", "Daily tennis and padel training"),
+                  t("Аренда кортов и оборудования", "Court and equipment rental"),
+                  t("Проживание на вилле", "Stay at the villa"),
+                  t("Активности на Тенерифе", "Tenerife activities"),
+                  t("Завтраки, обеды, ужины и общая атмосфера", "All meals and the shared atmosphere"),
+                  t("Организационное сопровождение", "Full logistical support"),
                 ].map((f) => (
                   <li key={f} className="text-[15px] text-sand/80 flex gap-3 items-start leading-[1.6]">
                     <Check size={16} className="text-gold flex-shrink-0 mt-1" />{f}
@@ -426,50 +468,48 @@ const Index = () => {
 
               <button type="button" onClick={openBookingModal}
                 className="py-4 text-center font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer bg-gold text-forest hover:bg-gold-light transition-all duration-300 w-full rounded-md">
-                Оставить заявку
+                {t("Оставить заявку", "Apply now")}
               </button>
               <p className="text-[12px] text-sand/55 text-center mt-4 leading-[1.6]">
-                Каждую заявку рассматриваем лично. Место закрепляется после оплаты.
+                {t("Каждую заявку рассматриваем лично. Место закрепляется после оплаты.", "Every application is reviewed personally. Your spot is held after payment.")}
               </p>
               <p className="text-[11px] text-sand/40 text-center mt-2 leading-[1.6]">
-                Бронируя место, вы соглашаетесь с{" "}
+                {t("Бронируя место, вы соглашаетесь с", "By booking, you agree to the")}{" "}
                 <a href="/contract" className="text-gold/70 underline decoration-gold/30 hover:text-gold no-underline-hover">
-                  договором-офертой
+                  {t("договором-офертой", "terms of service")}
                 </a>
               </p>
             </div>
 
-            {/* Side card — additional */}
             <div className="reveal p-8 lg:p-10 bg-card border border-forest/15 rounded-2xl flex flex-col">
-              <p className="text-[11px] tracking-[3px] uppercase text-gold/80 mb-4 font-medium">Дополнительно</p>
-              <h3 className="font-display text-[24px] text-forest mb-6 leading-tight">Помогаем организовать</h3>
+              <p className="text-[11px] tracking-[3px] uppercase text-gold/80 mb-4 font-medium">{t("Дополнительно", "Additional")}</p>
+              <h3 className="font-display text-[24px] text-forest mb-6 leading-tight">{t("Помогаем организовать", "We help arrange")}</h3>
               <ul className="flex flex-col gap-5 flex-1 list-none">
                 <li>
-                  <p className="text-[12px] tracking-[2px] uppercase text-text-body/55 mb-1">Перелёт</p>
+                  <p className="text-[12px] tracking-[2px] uppercase text-text-body/55 mb-1">{t("Перелёт", "Flights")}</p>
                   <p className="font-display text-[22px] text-forest">~€900</p>
-                  <p className="text-[13px] text-text-body/65 mt-1">Помогаем подобрать удобный рейс</p>
+                  <p className="text-[13px] text-text-body/65 mt-1">{t("Помогаем подобрать удобный рейс", "We help find a convenient flight")}</p>
                 </li>
                 <li>
-                  <p className="text-[12px] tracking-[2px] uppercase text-text-body/55 mb-1">Шенгенская виза</p>
+                  <p className="text-[12px] tracking-[2px] uppercase text-text-body/55 mb-1">{t("Шенгенская виза", "Schengen visa")}</p>
                   <p className="font-display text-[22px] text-forest">~€200</p>
-                  <p className="text-[13px] text-text-body/65 mt-1">Приглашение от академии и сопровождение</p>
+                  <p className="text-[13px] text-text-body/65 mt-1">{t("Приглашение от академии и сопровождение", "Academy invitation and full support")}</p>
                 </li>
               </ul>
               <p className="text-[12px] text-text-body/55 mt-8 leading-[1.6] pt-6 border-t border-forest/10">
-                Оплачиваются отдельно. С перелётом и визой команда помогает.
+                {t("Оплачиваются отдельно. С перелётом и визой команда помогает.", "Paid separately. The team helps with both flights and visa.")}
               </p>
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* ─── 14. FAQ ─── */}
+      {/* FAQ */}
       <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="faq">
         <div className="max-w-[900px] mx-auto">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">Вопросы и ответы</p>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">{t("Вопросы и ответы", "Questions & answers")}</p>
           <h2 className="reveal font-display font-medium text-[clamp(34px,4.5vw,56px)] text-forest leading-[1.1] mb-14">
-            Частые вопросы
+            {t("Частые вопросы", "Frequently asked")}
           </h2>
           {faqs.map((faq, i) => (
             <div key={i} className="reveal border-b border-forest/10">
@@ -487,62 +527,62 @@ const Index = () => {
           ))}
 
           <div className="reveal mt-14 text-center">
-            <p className="text-[15px] text-text-body/70 mb-5">Не нашли ответ?</p>
+            <p className="text-[15px] text-text-body/70 mb-5">{t("Не нашли ответ?", "Didn't find your answer?")}</p>
             <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 text-forest/75 font-body text-[12px] font-medium tracking-[2.5px] uppercase no-underline hover:text-gold transition-colors duration-300 underline underline-offset-8 decoration-forest/15 hover:decoration-gold py-3 px-2">
-              <TelegramIcon size={14} /> Написать в Telegram
+              <TelegramIcon size={14} /> {t("Написать в Telegram", "Message us on Telegram")}
             </a>
           </div>
         </div>
       </section>
 
-      {/* ─── 15. APPLICATION CTA ─── */}
+      {/* APPLICATION CTA */}
       <section className="relative py-28 lg:py-40 px-6 lg:px-16 overflow-hidden bg-forest" id="apply">
         <div className="absolute inset-0 opacity-25">
           <img src={day20} alt="" aria-hidden="true" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/70 to-forest/85" />
         </div>
         <div className="relative z-10 max-w-[820px] mx-auto text-center">
-          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">18–24 октября 2026</p>
-            <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,68px)] text-sand-light leading-[1.05] mb-8 tracking-[-0.5px]">
-              Готовы<br /><em className="italic text-gold">поехать?</em>
-            </h2>
-            <p className="reveal text-[18px] md:text-[20px] text-sand/80 leading-[1.6] mb-12 max-w-[620px] mx-auto font-light">
-              Теннис, вилла, океан и неделя в правильном кругу.
-            </p>
-            <div className="reveal flex justify-center">
-              <button type="button" onClick={openBookingModal}
-                className="inline-flex items-center justify-center gap-3 py-4 px-12 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
-                Оставить заявку <ArrowRight size={16} />
-              </button>
-            </div>
+          <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-6 font-medium">{t("18–24 октября 2026", "18–24 October 2026")}</p>
+          <h2 className="reveal font-display font-medium text-[clamp(34px,5vw,68px)] text-sand-light leading-[1.05] mb-8 tracking-[-0.5px]">
+            {t("Готовы", "Ready")}<br /><em className="italic text-gold">{t("поехать?", "to go?")}</em>
+          </h2>
+          <p className="reveal text-[18px] md:text-[20px] text-sand/80 leading-[1.6] mb-12 max-w-[620px] mx-auto font-light">
+            {t("Теннис, вилла, океан и неделя в правильном кругу.", "Tennis, villa, ocean and a week in the right circle.")}
+          </p>
+          <div className="reveal flex justify-center">
+            <button type="button" onClick={openBookingModal}
+              className="inline-flex items-center justify-center gap-3 py-4 px-12 bg-gold text-forest font-body text-[12px] font-semibold tracking-[2.5px] uppercase border-none cursor-pointer hover:bg-gold-light transition-all duration-300 rounded-md">
+              {t("Оставить заявку", "Apply now")} <ArrowRight size={16} />
+            </button>
+          </div>
         </div>
       </section>
 
-      {/* ─── SEASON 02 STRIP ─── */}
+      {/* SEASON 02 STRIP */}
       <aside className="bg-forest border-t border-gold/15 py-5 px-6 lg:px-16">
         <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-center sm:text-left">
           <p className="text-[13px] md:text-[14px] text-sand/70 leading-[1.5]">
-            <span className="text-gold font-medium">Сезон 2026 закрывается.</span>{" "}
-            Не успели — оставьте заявку в лист ожидания Season 02.
+            <span className="text-gold font-medium">{t("Сезон 2026 закрывается.", "Season 2026 is closing.")}</span>{" "}
+            {t("Не успели — оставьте заявку в лист ожидания Season 02.", "Missed it? Join the Season 02 waitlist.")}
           </p>
           <a
             href="/season-02"
             className="inline-flex items-center justify-center gap-2 text-gold font-body text-[12px] font-medium tracking-[2px] uppercase no-underline hover:text-gold-light transition-colors whitespace-nowrap"
           >
-            Лист ожидания <ArrowRight size={14} />
+            {t("Лист ожидания", "Waitlist")} <ArrowRight size={14} />
           </a>
         </div>
       </aside>
 
 
-      {/* ─── FOOTER ─── */}
+      {/* FOOTER */}
       <footer className="bg-[hsl(137,22%,8%)] py-14 px-6 lg:px-16">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
           <div>
             <span className="font-display text-[19px] italic text-gold tracking-[2px] block">Tennerife · Tennis</span>
-            <span className="text-[13px] text-sand/45 mt-2 block">18–24 октября 2026</span>
-            <span className="text-[13px] text-sand/45 block">Тенерифе, Испания</span>
+            <span className="text-[13px] text-sand/45 mt-2 block">{t("18–24 октября 2026", "18–24 October 2026")}</span>
+            <span className="text-[13px] text-sand/45 block">{t("Тенерифе, Испания", "Tenerife, Spain")}</span>
           </div>
           <div className="flex md:justify-center items-center gap-4 flex-wrap">
             <a href="https://t.me/tennis_tenerife" target="_blank" rel="noopener noreferrer" className="text-sand/50 hover:text-gold transition-colors" aria-label="Telegram">
@@ -566,13 +606,13 @@ const Index = () => {
           </div>
           <div className="md:text-right space-y-2">
             <a href="/season-02" className="text-[13px] text-sand/55 hover:text-gold transition-colors block no-underline">
-              Season 02 — waitlist
+              {t("Season 02 — лист ожидания", "Season 02 — waitlist")}
             </a>
             <a href="/privacy" className="text-[13px] text-sand/55 hover:text-gold transition-colors block no-underline">
-              Политика конфиденциальности
+              {t("Политика конфиденциальности", "Privacy policy")}
             </a>
             <a href="/contract" className="text-[13px] text-sand/55 hover:text-gold transition-colors block no-underline">
-              Договор-оферта
+              {t("Договор-оферта", "Terms of service")}
             </a>
             <span className="text-[13px] text-sand/40 block">© 2026 Tennerife Tennis</span>
           </div>

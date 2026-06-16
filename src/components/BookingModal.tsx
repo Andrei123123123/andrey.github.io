@@ -4,6 +4,7 @@ import { X, Check } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { useBookingModal } from "@/contexts/BookingModalContext";
+import { useT } from "@/i18n/LanguageContext";
 
 const TELEGRAM_URL = "https://t.me/tennis_tenerife";
 const WHATSAPP_URL = "https://api.whatsapp.com/send/?phone=89655096888";
@@ -47,6 +48,7 @@ const BookingModal = () => {
   const sheetRef = useRef<HTMLDivElement>(null);
   const dragStartY = useRef<number | null>(null);
   const [dragY, setDragY] = useState(0);
+  const t = useT();
 
   const onTouchStart = (e: React.TouchEvent) => {
     if ((sheetRef.current?.scrollTop ?? 0) > 0) return;
@@ -90,7 +92,7 @@ const BookingModal = () => {
     if (submitting) return;
 
     if (!form.name.trim() || !form.telegram.trim()) {
-      toast({ title: "Заполните имя и Telegram", variant: "destructive" });
+      toast({ title: t("Заполните имя и Telegram", "Please fill in name and Telegram"), variant: "destructive" });
       return;
     }
 
@@ -107,12 +109,12 @@ const BookingModal = () => {
       });
       if (error || !data?.ok) throw new Error(error?.message || "Не удалось отправить");
       setSent(true);
-      toast({ title: "Заявка отправлена ✓", description: "Свяжемся в ближайшее время." });
+      toast({ title: t("Заявка отправлена ✓", "Application sent ✓"), description: t("Свяжемся в ближайшее время.", "We'll be in touch shortly.") });
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Что-то пошло не так";
+      const message = err instanceof Error ? err.message : t("Что-то пошло не так", "Something went wrong");
       toast({
-        title: "Ошибка отправки",
-        description: `${message}. Напишите в Telegram: @oceaninthesky`,
+        title: t("Ошибка отправки", "Submission error"),
+        description: `${message}. ${t("Напишите в Telegram:", "Message us on Telegram:")} @oceaninthesky`,
         variant: "destructive",
       });
     } finally {
@@ -152,7 +154,7 @@ const BookingModal = () => {
         <button
           type="button"
           onClick={close}
-          aria-label="Закрыть окно"
+          aria-label={t("Закрыть окно", "Close window")}
           className="absolute top-3 right-3 sm:top-4 sm:right-4 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-gold/80 hover:text-gold border border-gold/20 hover:border-gold/40 bg-forest/80 backdrop-blur rounded-full cursor-pointer transition-colors z-30"
         >
           <X size={18} />
@@ -165,10 +167,13 @@ const BookingModal = () => {
                 <Check size={32} className="text-gold" strokeWidth={2} />
               </div>
               <h3 className="font-display text-[28px] font-medium text-sand-light mb-3">
-                Спасибо{form.name ? `, ${form.name}` : ""}.
+                {t("Спасибо", "Thank you")}{form.name ? `, ${form.name}` : ""}.
               </h3>
               <p className="text-[15px] text-sand/70 leading-[1.7] mb-8">
-                Мы получили заявку и свяжемся с вами в ближайшее время — подтвердим детали и поможем с дальнейшими шагами.
+                {t(
+                  "Мы получили заявку и свяжемся с вами в ближайшее время — подтвердим детали и поможем с дальнейшими шагами.",
+                  "We've received your application and will be in touch shortly — to confirm details and help with the next steps."
+                )}
               </p>
               <div className="grid grid-cols-2 gap-2.5 mb-6">
                 <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer"
@@ -182,30 +187,33 @@ const BookingModal = () => {
               </div>
               <button type="button" onClick={close}
                 className="w-full py-4 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase border-none rounded-md hover:bg-gold-light transition-colors cursor-pointer">
-                Закрыть
+                {t("Закрыть", "Close")}
               </button>
             </div>
           ) : (
             <>
               <p className="text-[12px] tracking-[3px] uppercase text-gold mb-3 font-semibold">
-                Tennerife Tennis Retreat · 14 мест
+                {t("Tennerife Tennis Retreat · 14 мест", "Tennerife Tennis Retreat · 14 spots")}
               </p>
               <h3
                 id="booking-modal-title"
                 className="font-display text-[26px] sm:text-[30px] font-medium text-sand-light leading-[1.15] mb-2"
               >
-                Забронировать место
+                {t("Забронировать место", "Reserve your spot")}
               </h3>
               <p className="text-[14px] text-sand/60 leading-[1.6] mb-6">
-                Оставьте заявку — мы свяжемся с вами, подтвердим детали и поможем с дальнейшими шагами.
+                {t(
+                  "Оставьте заявку — мы свяжемся с вами, подтвердим детали и поможем с дальнейшими шагами.",
+                  "Send a short application — we'll get in touch, confirm details and help with the next steps."
+                )}
               </p>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-left">
                 <div>
-                  <label htmlFor="booking-name" className={labelCls}>Имя *</label>
+                  <label htmlFor="booking-name" className={labelCls}>{t("Имя *", "Name *")}</label>
                   <input id="booking-name" type="text" required maxLength={100} value={form.name}
                     onChange={(e) => update("name", e.target.value)}
-                    className={inputCls} placeholder="Ваше имя" />
+                    className={inputCls} placeholder={t("Ваше имя", "Your name")} />
                 </div>
 
                 <div>
@@ -216,49 +224,46 @@ const BookingModal = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="booking-level" className={labelCls}>Уровень тенниса</label>
+                  <label htmlFor="booking-level" className={labelCls}>{t("Уровень тенниса", "Tennis level")}</label>
                   <select id="booking-level" value={form.level}
                     onChange={(e) => update("level", e.target.value)}
                     className={inputCls + " appearance-none cursor-pointer"}>
-                    <option value="">Выберите</option>
-                    <option value="Никогда не играл">Никогда не играл</option>
-                    <option value="Начинающий">Начинающий</option>
-                    <option value="Любитель">Любитель</option>
-                    <option value="Уверенный любитель">Уверенный любитель</option>
-                    <option value="Опытный">Опытный</option>
+                    <option value="">{t("Выберите", "Select")}</option>
+                    <option value="Никогда не играл">{t("Никогда не играл", "Never played")}</option>
+                    <option value="Начинающий">{t("Начинающий", "Beginner")}</option>
+                    <option value="Любитель">{t("Любитель", "Amateur")}</option>
+                    <option value="Уверенный любитель">{t("Уверенный любитель", "Strong amateur")}</option>
+                    <option value="Опытный">{t("Опытный", "Experienced")}</option>
                   </select>
                 </div>
-
-
-                {/* occupation field removed */}
 
                 <div className="flex flex-col gap-2.5 mt-1">
                   <label className="flex items-center gap-3 text-[14px] text-sand/75 cursor-pointer">
                     <input type="checkbox" checked={form.flightHelp}
                       onChange={(e) => update("flightHelp", e.target.checked)}
                       className="w-4 h-4 accent-gold cursor-pointer" />
-                    Нужна помощь с подбором перелёта
+                    {t("Нужна помощь с подбором перелёта", "I'd like help with flights")}
                   </label>
                   <label className="flex items-center gap-3 text-[14px] text-sand/75 cursor-pointer">
                     <input type="checkbox" checked={form.visaHelp}
                       onChange={(e) => update("visaHelp", e.target.checked)}
                       className="w-4 h-4 accent-gold cursor-pointer" />
-                    Нужна помощь с шенгенской визой
+                    {t("Нужна помощь с шенгенской визой", "I'd like help with the Schengen visa")}
                   </label>
                 </div>
 
                 <button type="submit" disabled={submitting}
                   className="mt-3 py-4 bg-gold text-forest font-body text-[13px] font-semibold tracking-[2.5px] uppercase cursor-pointer border-none hover:bg-gold-light transition-all duration-300 rounded-md disabled:opacity-60 disabled:cursor-not-allowed">
-                  {submitting ? "Отправляем..." : "Отправить заявку"}
+                  {submitting ? t("Отправляем...", "Sending...") : t("Отправить заявку", "Send application")}
                 </button>
                 <p className="text-[11px] text-sand/40 text-center leading-[1.6]">
-                  Отправляя заявку, вы соглашаетесь с{" "}
+                  {t("Отправляя заявку, вы соглашаетесь с", "By submitting, you agree to the")}{" "}
                   <a href="/contract" target="_blank" rel="noopener noreferrer" className="text-gold/80 underline decoration-gold/30 hover:text-gold">
-                    договором-офертой
+                    {t("договором-офертой", "terms of service")}
                   </a>{" "}
-                  и{" "}
+                  {t("и", "and")}{" "}
                   <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-gold/80 underline decoration-gold/30 hover:text-gold">
-                    политикой конфиденциальности
+                    {t("политикой конфиденциальности", "privacy policy")}
                   </a>
                 </p>
               </form>

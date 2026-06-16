@@ -1,29 +1,52 @@
-## Что меняем
+# План: двуязычный сайт (RU/EN)
 
-### 1. Порядок секций
-Текущий: Hero → Villa → Menu → Program → Tenerife → Team → Community → Fit → Booking Steps → Pricing → FAQ
+## Что делаем
+1. Добавляем лёгкий i18n без библиотек: контекст `LanguageProvider` + хук `useT()`.
+2. По умолчанию — RU. Выбор языка сохраняем в `localStorage` (`lang`), URL не трогаем.
+3. В шапке (Navigation, desktop + mobile) — компактный переключатель `RU / EN`.
+4. Перевожу весь контент сайта на английский в премиум-тоне (private, curated, retreat, ocean energy и т.д.).
+5. Обновляю `<html lang>` динамически при переключении.
 
-Новый: Hero → **WhatsIncluded (новый короткий)** → **Program** → Villa → Menu → Tenerife → Team → Community → Fit → Booking Steps → Pricing → FAQ
+## Архитектура переводов
 
-Логика: после Hero человек сразу видит «что это вообще» и теннисную программу — основное обещание ретрита. Бытовое (вилла, меню) идёт ниже как поддержка.
+```text
+src/i18n/
+  LanguageContext.tsx    // provider, useLang(), useT()
+  translations.ts        // { ru: {...}, en: {...} } — плоские ключи по секциям
+  LanguageSwitcher.tsx   // кнопка RU | EN
+```
 
-### 2. Вернуть короткий блок «Что входит»
-Маленькая секция-обзор сразу после Hero (бэкграунд `bg-forest`, чтобы плавно перетекало из тёмного Hero):
+- `useT()` возвращает функцию `t("hero.title")`.
+- Ключи группируются по компонентам: `nav.*`, `hero.*`, `whatsIncluded.*`, `programme.*`, `villa.*`, `team.*`, `tenerife.*`, `menu.*`, `pricing.*`, `faq.*`, `community.*`, `partners.*`, `footer.*`, `booking.*`, `notFound.*`, `cookie.*`.
+- Provider оборачивает App в `src/App.tsx`.
 
-- 5 пунктов с иконками: Тренировки · Вилла · Повар · Активности · Сопровождение
-- Один параграф-лид: «Неделя на Тенерифе. Всё включено — кроме перелёта и визы.»
-- Без CTA (CTA уже есть в Hero)
+## Переключатель языка
+- Desktop: справа в Navigation, перед CTA «Забронировать».
+- Mobile: в шапке MobileMenu (вверху overlay) и в обычной мобильной шапке.
+- Вид: две маленькие кнопки `RU` / `EN`, активная — gold, неактивная — sand/60. Без флагов, премиально и тихо.
 
-Это снимает ощущение «провала» между Hero и большим блоком Villa, и даёт скан-обзор для тех, кто не будет читать всё.
+## Какие файлы трогаем
+Замена строк через `t(...)` в:
+- `Navigation`, `MobileMenu`, `StickyMobileCTA`, `FloatingTelegram` (aria-labels)
+- `HeroSection`, `WhatsIncludedSection`, `ProgrammeSection`, `VillaSection`, `TeamSection`, `TenerifeSection`, `MenuSection`, `CommunitySection`, `PartnersSection`, `PricingSection`, `FAQSection`, `Footer`
+- `BookingModal` (поля формы, плейсхолдеры, ошибки, success)
+- `CookieConsent`
+- `pages/NotFound.tsx`, `pages/Privacy.tsx`, `pages/Contract.tsx`, `pages/SeasonTwo.tsx`
+- `index.html` (title/description оставляем RU как дефолт; динамический title/description обновляется через провайдер при смене языка)
 
-### 3. Sticky mobile CTA
-Проверено: `StickyMobileCTA` уже рендерится в `Index.tsx:581` и работает — появляется после первого экрана и скрывается над секцией `#apply`. Секции `#apply` в текущей структуре нет, поэтому CTA висит до самого футера. Это ок, ничего менять не нужно — просто подтверждаю.
+## SEO
+- Один URL, язык переключается клиентом. `<html lang>` синхронизируется. JSON-LD оставляем на RU как основном (можно дополнить, если попросишь).
+- Канонический URL не меняется.
 
-## Технические детали
+## Тон перевода (EN)
+- Короткие, уверенные фразы. Никакого AI-fluff и продажного «hurry up».
+- Лексика: private retreat, ambitious people, curated week, ocean energy, community, lifestyle.
+- Заголовок Hero: *Private tennis retreat for ambitious people*.
+- Цены оставляем `€1950`, даты `18–24 October 2026`.
 
-- Файл: `src/pages/Index.tsx` — переставить JSX-блоки секций без изменения их содержимого.
-- Новый компонент: `src/components/WhatsIncludedSection.tsx` — короткая секция (~80 строк), 5 карточек в grid, та же стилистика что и «Кому подойдёт»/Booking Steps (forest background, gold accents, Playfair заголовок).
-- Удалить мёртвый комментарий `{/* ─── 05. WHAT'S INCLUDED ─── */}` — заменить на новый компонент.
-- Память (`mem://project/funnel-structure`) обновлю, чтобы зафиксировать новый порядок.
+## Что НЕ делаем
+- Не добавляем библиотеку i18next (избыточно для двух языков).
+- Не меняем структуру роутов и URL.
+- Не трогаем интеграцию с Telegram и edge-функцию.
 
-Никаких изменений в логике, формах, ценах, текстах существующих секций.
+После апрува переключаюсь в build mode и реализую за один проход.
