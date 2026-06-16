@@ -2,8 +2,13 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft } from "lucide-react";
+import { useT, useLang } from "@/i18n/LanguageContext";
+import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 
 const Contract = () => {
+  const t = useT();
+  const { lang } = useLang();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -11,12 +16,12 @@ const Contract = () => {
   return (
     <div className="min-h-screen bg-sand">
       <Helmet>
-        <title>Договор-оферта — Tennerife Tennis Camp</title>
-        <meta name="description" content="Публичный договор-оферта Tennerife Tennis Camp 18–24 октября 2026: состав услуг, стоимость €1950, условия оплаты, отмены и возврата." />
+        <title>{t("Договор-оферта — Tennerife Tennis Camp", "Terms of Service — Tennerife Tennis Camp")}</title>
+        <meta name="description" content={t(
+          "Публичный договор-оферта Tennerife Tennis Camp 18–24 октября 2026: состав услуг, стоимость €1950, условия оплаты, отмены и возврата.",
+          "Tennerife Tennis Camp public offer 18–24 October 2026: services, €1950 price, payment, cancellation and refund terms."
+        )} />
         <link rel="canonical" href="https://tennerife-tennis.com/contract" />
-        <meta property="og:url" content="https://tennerife-tennis.com/contract" />
-        <meta property="og:title" content="Договор-оферта — Tennerife Tennis Camp" />
-        <meta property="og:description" content="Состав услуг, стоимость, условия оплаты и возврата по Tennerife Tennis Camp 2026." />
       </Helmet>
       <header className="border-b border-forest/10 bg-sand-light">
         <div className="max-w-[900px] mx-auto px-6 md:px-10 py-6 flex items-center justify-between">
@@ -24,22 +29,33 @@ const Contract = () => {
             to="/"
             className="inline-flex items-center gap-2 font-body text-[12px] tracking-[2px] uppercase text-forest hover:text-gold transition-colors"
           >
-            <ArrowLeft size={14} /> На главную
+            <ArrowLeft size={14} /> {t("На главную", "Home")}
           </Link>
-          <span className="font-display text-[18px] text-forest">Tennerife · Tennis</span>
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher variant="dark" />
+            <span className="font-display text-[18px] text-forest">Tennerife · Tennis</span>
+          </div>
         </div>
       </header>
 
       <main className="max-w-[820px] mx-auto px-6 md:px-10 py-16 md:py-24">
         <p className="font-body text-[12px] tracking-[3px] uppercase text-gold mb-5 font-semibold">
-          Публичный договор
+          {t("Публичный договор", "Public offer")}
         </p>
         <h1 className="font-display text-[36px] md:text-[48px] leading-[1.15] text-forest mb-4">
-          Договор-оферта на участие в Tennerife Tennis Camp
+          {t("Договор-оферта на участие в Tennerife Tennis Camp", "Terms of service — Tennerife Tennis Camp")}
         </h1>
-        <p className="font-body text-[13px] tracking-[2px] uppercase text-text-body/70 mb-12">
-          Редакция от 5 июня 2026 г.
+        <p className="font-body text-[13px] tracking-[2px] uppercase text-text-body/70 mb-6">
+          {t("Редакция от 5 июня 2026 г.", "Edition of 5 June 2026")}
         </p>
+
+        {lang === "en" && (
+          <p className="font-body text-[14px] text-text-body/75 leading-[1.65] mb-12 p-4 border-l-2 border-gold bg-card/40 rounded-r-md">
+            This document is the public offer governed by Russian law. The Russian version below is the legally binding text — please switch to RU above for the authoritative wording.
+          </p>
+        )}
+
+
 
         <div className="font-body text-[16px] leading-[1.75] text-text-body space-y-8">
           <section>
