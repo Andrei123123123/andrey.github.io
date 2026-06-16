@@ -183,13 +183,13 @@ const Contract = () => {
             to="/"
             className="inline-flex items-center gap-2 font-body text-[12px] tracking-[2px] uppercase text-forest hover:text-gold transition-colors"
           >
-            <ArrowLeft size={14} /> Вернуться на главную
+            <ArrowLeft size={14} /> {t("Вернуться на главную", "Back to home")}
           </Link>
           <Link
             to="/privacy"
             className="font-body text-[12px] tracking-[2px] uppercase text-text-body/60 hover:text-gold transition-colors"
           >
-            Политика конфиденциальности →
+            {t("Политика конфиденциальности", "Privacy policy")} →
           </Link>
         </div>
       </main>

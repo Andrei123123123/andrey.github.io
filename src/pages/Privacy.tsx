@@ -286,7 +286,7 @@ const Privacy = () => {
             to="/"
             className="inline-flex items-center gap-2 font-body text-[12px] tracking-[2px] uppercase text-forest hover:text-gold transition-colors"
           >
-            <ArrowLeft size={14} /> Вернуться на главную
+            <ArrowLeft size={14} /> {t("Вернуться на главную", "Back to home")}
           </Link>
         </div>
       </main>
