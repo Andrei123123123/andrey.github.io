@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useT } from "@/i18n/LanguageContext";
 
 const TelegramIcon = ({ size = 22 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -8,6 +9,7 @@ const TelegramIcon = ({ size = 22 }: { size?: number }) => (
 
 const FloatingTelegram = () => {
   const [visible, setVisible] = useState(false);
+  const t = useT();
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.6);
@@ -21,7 +23,7 @@ const FloatingTelegram = () => {
       href="https://t.me/tennis_tenerife"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Написать в Telegram"
+      aria-label={t("Написать в Telegram", "Message us on Telegram")}
       className={`fixed z-40 right-5 md:right-8 bottom-[84px] md:bottom-8 flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-gold text-forest shadow-[0_8px_24px_rgba(0,0,0,0.25)] hover:bg-gold-light transition-all duration-300 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"
       }`}
@@ -32,3 +34,4 @@ const FloatingTelegram = () => {
 };
 
 export default FloatingTelegram;
+

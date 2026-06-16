@@ -11,23 +11,25 @@ import tenerife8 from "@/assets/tenerife-8.jpg";
 import tenerife9 from "@/assets/tenerife-9.jpg";
 import tenerife10 from "@/assets/tenerife-10.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-
-const images = [
-  { src: tenerife1, alt: "Побережье Тенерифе — чёрный вулканический пляж" },
-  { src: tenerife2, alt: "Виды Тенерифе" },
-  { src: tenerife3, alt: "Виды Тенерифе" },
-  { src: tenerife4, alt: "Виды Тенерифе" },
-  { src: tenerife5, alt: "Бирюзовые воды у скал Los Gigantes" },
-  { src: tenerife6, alt: "Виды Тенерифе" },
-  { src: tenerife7, alt: "Вулкан Тейде над облаками на рассвете" },
-  { src: tenerife8, alt: "Бирюзовые волны и чёрные вулканические камни" },
-  { src: tenerife9, alt: "Деревня Маска в зелёной долине среди скал" },
-  { src: tenerife10, alt: "Закат над Атлантикой с видом на Ла Гомеру" },
-];
+import { useT } from "@/i18n/LanguageContext";
 
 const TenerifeSection = () => {
   const ref = useScrollReveal();
   const [current, setCurrent] = useState(0);
+  const t = useT();
+
+  const images = [
+    { src: tenerife1, alt: t("Побережье Тенерифе — чёрный вулканический пляж", "Tenerife coastline — black volcanic beach") },
+    { src: tenerife2, alt: t("Виды Тенерифе", "Tenerife views") },
+    { src: tenerife3, alt: t("Виды Тенерифе", "Tenerife views") },
+    { src: tenerife4, alt: t("Виды Тенерифе", "Tenerife views") },
+    { src: tenerife5, alt: t("Бирюзовые воды у скал Los Gigantes", "Turquoise waters by Los Gigantes cliffs") },
+    { src: tenerife6, alt: t("Виды Тенерифе", "Tenerife views") },
+    { src: tenerife7, alt: t("Вулкан Тейде над облаками на рассвете", "Mount Teide above the clouds at dawn") },
+    { src: tenerife8, alt: t("Бирюзовые волны и чёрные вулканические камни", "Turquoise waves and black volcanic rocks") },
+    { src: tenerife9, alt: t("Деревня Маска в зелёной долине среди скал", "Masca village in a green valley among cliffs") },
+    { src: tenerife10, alt: t("Закат над Атлантикой с видом на Ла Гомеру", "Sunset over the Atlantic with a view of La Gomera") },
+  ];
 
   const prev = () => setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
@@ -43,20 +45,22 @@ const TenerifeSection = () => {
   return (
     <section ref={ref} className="relative py-24 lg:py-32 px-6 lg:px-16 bg-forest overflow-hidden" id="location">
       <div className="max-w-[1200px] mx-auto">
-        <p className="reveal text-[13px] tracking-[3px] uppercase text-gold/70 mb-4 font-semibold">Место</p>
+        <p className="reveal text-[13px] tracking-[3px] uppercase text-gold/70 mb-4 font-semibold">{t("Место", "Location")}</p>
         <h2 className="reveal font-display font-semibold text-[clamp(36px,4.5vw,56px)] text-sand-light leading-[1.1] mb-6">
-          Тенерифе — остров<br className="hidden md:block" /> вечного лета
+          {t("Тенерифе — остров", "Tenerife — island")}<br className="hidden md:block" /> {t("вечного лета", "of endless summer")}
         </h2>
         <p className="reveal text-[18px] text-sand/70 leading-[1.75] max-w-[650px] mb-14">
-          Круглый год мягкий климат, потрясающая природа и атмосфера, в которой хочется играть и отдыхать одновременно.
+          {t(
+            "Круглый год мягкий климат, потрясающая природа и атмосфера, в которой хочется играть и отдыхать одновременно.",
+            "Mild climate year-round, breathtaking nature and an atmosphere where you want to play and rest at the same time."
+          )}
         </p>
 
-        {/* Photo carousel */}
         <div
           className="reveal relative rounded-lg overflow-hidden mb-14"
           role="region"
-          aria-roledescription="карусель"
-          aria-label="Фотографии Тенерифе"
+          aria-roledescription={t("карусель", "carousel")}
+          aria-label={t("Фотографии Тенерифе", "Photos of Tenerife")}
         >
           <div className="relative h-[320px] md:h-[520px] touch-pan-y" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             {images.map((img, i) => (
@@ -74,7 +78,7 @@ const TenerifeSection = () => {
             <button
               type="button"
               onClick={prev}
-              aria-label="Предыдущее фото Тенерифе"
+              aria-label={t("Предыдущее фото Тенерифе", "Previous Tenerife photo")}
               className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer"
             >
               <ChevronLeft size={22} />
@@ -82,7 +86,7 @@ const TenerifeSection = () => {
             <button
               type="button"
               onClick={next}
-              aria-label="Следующее фото Тенерифе"
+              aria-label={t("Следующее фото Тенерифе", "Next Tenerife photo")}
               className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-forest/60 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-forest/80 transition-colors cursor-pointer"
             >
               <ChevronRight size={22} />
@@ -94,7 +98,7 @@ const TenerifeSection = () => {
                   key={i}
                   type="button"
                   onClick={() => setCurrent(i)}
-                  aria-label={`Фото ${i + 1} из ${images.length}`}
+                  aria-label={t(`Фото ${i + 1} из ${images.length}`, `Photo ${i + 1} of ${images.length}`)}
                   aria-current={i === current ? "true" : undefined}
                   className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer border-none ${i === current ? "bg-gold w-8" : "bg-sand/40 w-2.5"}`}
                 />
@@ -110,12 +114,11 @@ const TenerifeSection = () => {
           </p>
         </div>
 
-        {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14">
           {[
-            { icon: <Sun size={22} strokeWidth={1.7} />, num: "25–27°C", label: "Температура воздуха" },
-            { icon: <Mountain size={22} strokeWidth={1.7} />, num: "300+", label: "Солнечных дней в году" },
-            { icon: <Plane size={22} strokeWidth={1.7} />, num: "~9 ч", label: "Перелёт с пересадкой" },
+            { icon: <Sun size={22} strokeWidth={1.7} />, num: "25–27°C", label: t("Температура воздуха", "Air temperature") },
+            { icon: <Mountain size={22} strokeWidth={1.7} />, num: "300+", label: t("Солнечных дней в году", "Sunny days a year") },
+            { icon: <Plane size={22} strokeWidth={1.7} />, num: t("~9 ч", "~9 hrs"), label: t("Перелёт с пересадкой", "Flight with one stop") },
           ].map((f) => (
             <div key={f.label} className="reveal card-premium-dark p-6 text-center">
               <div className="w-12 h-12 rounded-full border border-gold/30 bg-gold/10 text-gold mx-auto mb-3 flex items-center justify-center">{f.icon}</div>
@@ -125,17 +128,16 @@ const TenerifeSection = () => {
           ))}
         </div>
 
-        {/* Two columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="reveal">
-            <h3 className="font-display text-[24px] font-semibold text-sand-light mb-5">Почему Тенерифе</h3>
+            <h3 className="font-display text-[24px] font-semibold text-sand-light mb-5">{t("Почему Тенерифе", "Why Tenerife")}</h3>
             <ul className="flex flex-col gap-3.5">
               {[
-                "Вечная весна — комфортно играть круглый год",
-                "Вулканические пейзажи и чёрные пляжи",
-                "Тёплое море — купаться после тренировки",
-                "Стабильная погода без резких перепадов",
-                "Дружелюбная атмосфера и безопасность",
+                t("Вечная весна — комфортно играть круглый год", "Eternal spring — comfortable tennis year-round"),
+                t("Вулканические пейзажи и чёрные пляжи", "Volcanic landscapes and black-sand beaches"),
+                t("Тёплое море — купаться после тренировки", "Warm ocean — swim after training"),
+                t("Стабильная погода без резких перепадов", "Stable weather without sudden changes"),
+                t("Дружелюбная атмосфера и безопасность", "Friendly atmosphere and a safe island"),
               ].map((f) => (
                 <li key={f} className="text-[16px] text-sand/70 flex gap-3 items-start leading-[1.65]">
                   <Check size={16} className="text-gold flex-shrink-0 mt-1" />{f}
@@ -144,14 +146,14 @@ const TenerifeSection = () => {
             </ul>
           </div>
           <div className="reveal">
-            <h3 className="font-display text-[24px] font-semibold text-sand-light mb-5">Как добраться</h3>
+            <h3 className="font-display text-[24px] font-semibold text-sand-light mb-5">{t("Как добраться", "How to get there")}</h3>
             <ul className="flex flex-col gap-3.5">
               {[
-                "Рейсы из Москвы и Питера с одной пересадкой",
-                "Аэропорт Тенерифе Юг (TFS) — ближайший к кортам",
-                "Трансфер аэропорт → вилла включён в стоимость",
-                "Помогаем с выбором рейсов и стыковок",
-                "Шенгенская виза — оформляем с приглашением",
+                t("Рейсы из Москвы и Питера с одной пересадкой", "Flights from Moscow and St. Petersburg with one stop"),
+                t("Аэропорт Тенерифе Юг (TFS) — ближайший к кортам", "Tenerife South (TFS) — closest airport to the courts"),
+                t("Трансфер аэропорт → вилла включён в стоимость", "Airport → villa transfer included"),
+                t("Помогаем с выбором рейсов и стыковок", "We help you choose flights and connections"),
+                t("Шенгенская виза — оформляем с приглашением", "Schengen visa — we provide an invitation"),
               ].map((f) => (
                 <li key={f} className="text-[16px] text-sand/70 flex gap-3 items-start leading-[1.65]">
                   <MapPin size={16} className="text-gold flex-shrink-0 mt-1" />{f}

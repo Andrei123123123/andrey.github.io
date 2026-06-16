@@ -2,16 +2,9 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
 import { useBookingModal } from "@/contexts/BookingModalContext";
+import { useT } from "@/i18n/LanguageContext";
+import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 
-
-const navLinks = [
-  { href: "#programme", label: "Программа" },
-  { href: "#trainer", label: "Команда" },
-  { href: "#villa", label: "Вилла" },
-  { href: "#location", label: "Тенерифе" },
-  { href: "#pricing", label: "Стоимость" },
-  { href: "#faq", label: "FAQ" },
-];
 
 const TelegramIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -54,6 +47,16 @@ const socials = [
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
   const { open: openBooking } = useBookingModal();
+  const t = useT();
+
+  const navLinks = [
+    { href: "#programme", label: t("Программа", "Programme") },
+    { href: "#trainer", label: t("Команда", "Team") },
+    { href: "#villa", label: t("Вилла", "Villa") },
+    { href: "#location", label: t("Тенерифе", "Tenerife") },
+    { href: "#pricing", label: t("Стоимость", "Pricing") },
+    { href: "#faq", label: t("FAQ", "FAQ") },
+  ];
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -73,13 +76,16 @@ const MobileMenu = () => {
         <span className="font-display text-[15px] italic text-gold tracking-[3px] uppercase">
           Tennis · Tenerife
         </span>
-        <button
-          onClick={() => setOpen(false)}
-          className="w-10 h-10 flex items-center justify-center text-gold border border-gold/20 bg-transparent cursor-pointer"
-          aria-label="Закрыть меню"
-        >
-          <X size={20} />
-        </button>
+        <div className="flex items-center gap-3">
+          <LanguageSwitcher />
+          <button
+            onClick={() => setOpen(false)}
+            className="w-10 h-10 flex items-center justify-center text-gold border border-gold/20 bg-transparent cursor-pointer"
+            aria-label={t("Закрыть меню", "Close menu")}
+          >
+            <X size={20} />
+          </button>
+        </div>
       </div>
 
       <nav className="flex-1 flex flex-col justify-center px-8 gap-1">
@@ -104,7 +110,7 @@ const MobileMenu = () => {
           }}
           className="block w-full py-4 text-center bg-gold text-forest font-body text-[13px] font-medium tracking-[3px] uppercase border-none cursor-pointer rounded-md"
         >
-          Забронировать место
+          {t("Забронировать место", "Reserve your spot")}
         </button>
         <div className="flex items-center justify-center gap-6 pt-2 border-t border-gold/10">
           {socials.map((s) => (
@@ -126,7 +132,8 @@ const MobileMenu = () => {
 
   return (
     <>
-      <div className="md:hidden flex items-center gap-3">
+      <div className="md:hidden flex items-center gap-2">
+        <LanguageSwitcher />
         <a
           href="https://t.me/tennis_tenerife"
           target="_blank"
@@ -148,7 +155,7 @@ const MobileMenu = () => {
         <button
           onClick={() => setOpen(true)}
           className="w-10 h-10 flex items-center justify-center text-gold border border-gold/20 bg-transparent cursor-pointer ml-1"
-          aria-label="Открыть меню"
+          aria-label={t("Открыть меню", "Open menu")}
         >
           <Menu size={20} />
         </button>

@@ -2,8 +2,13 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft } from "lucide-react";
+import { useT, useLang } from "@/i18n/LanguageContext";
+import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 
 const Privacy = () => {
+  const t = useT();
+  const { lang } = useLang();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -11,12 +16,12 @@ const Privacy = () => {
   return (
     <div className="min-h-screen bg-sand">
       <Helmet>
-        <title>Политика конфиденциальности — Tennerife Tennis</title>
-        <meta name="description" content="Как мы обрабатываем персональные данные участников Tennerife Tennis Camp: цели, основания, сроки и права субъекта данных." />
+        <title>{t("Политика конфиденциальности — Tennerife Tennis", "Privacy Policy — Tennerife Tennis")}</title>
+        <meta name="description" content={t(
+          "Как мы обрабатываем персональные данные участников Tennerife Tennis Camp: цели, основания, сроки и права субъекта данных.",
+          "How we process personal data of Tennerife Tennis Camp guests: purposes, grounds, retention and data subject rights."
+        )} />
         <link rel="canonical" href="https://tennerife-tennis.com/privacy" />
-        <meta property="og:url" content="https://tennerife-tennis.com/privacy" />
-        <meta property="og:title" content="Политика конфиденциальности — Tennerife Tennis" />
-        <meta property="og:description" content="Обработка персональных данных участников Tennerife Tennis Camp." />
       </Helmet>
       <header className="border-b border-forest/10 bg-sand-light">
         <div className="max-w-[900px] mx-auto px-6 md:px-10 py-6 flex items-center justify-between">
@@ -24,19 +29,30 @@ const Privacy = () => {
             to="/"
             className="inline-flex items-center gap-2 font-body text-[12px] tracking-[2px] uppercase text-forest hover:text-gold transition-colors"
           >
-            <ArrowLeft size={14} /> На главную
+            <ArrowLeft size={14} /> {t("На главную", "Home")}
           </Link>
-          <span className="font-display text-[18px] text-forest">Tennis Tenerife</span>
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher variant="dark" />
+            <span className="font-display text-[18px] text-forest">Tennis Tenerife</span>
+          </div>
         </div>
       </header>
 
       <main className="max-w-[820px] mx-auto px-6 md:px-10 py-16 md:py-24">
         <h1 className="font-display text-[36px] md:text-[48px] leading-[1.15] text-forest mb-4">
-          Политика в отношении обработки персональных данных
+          {t("Политика в отношении обработки персональных данных", "Privacy & Personal Data Policy")}
         </h1>
-        <p className="font-body text-[13px] tracking-[2px] uppercase text-text-body/70 mb-12">
-          Редакция от 22 апреля 2026 г.
+        <p className="font-body text-[13px] tracking-[2px] uppercase text-text-body/70 mb-6">
+          {t("Редакция от 22 апреля 2026 г.", "Edition of 22 April 2026")}
         </p>
+
+        {lang === "en" && (
+          <p className="font-body text-[14px] text-text-body/75 leading-[1.65] mb-12 p-4 border-l-2 border-gold bg-card/40 rounded-r-md">
+            This document is governed by Russian Federal Law No. 152-FZ. The Russian version below is the legally binding text — please switch to RU above for the authoritative wording.
+          </p>
+        )}
+
+
 
         <div className="font-body text-[16px] leading-[1.75] text-text-body space-y-8">
           <section>
