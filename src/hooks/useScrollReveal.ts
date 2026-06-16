@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
+import { useLang } from "@/i18n/LanguageContext";
 
 export function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
+  const { lang } = useLang();
 
   useEffect(() => {
     const el = ref.current;
@@ -21,7 +23,7 @@ export function useScrollReveal() {
 
     targets.forEach((t) => observer.observe(t));
     return () => observer.disconnect();
-  }, []);
+  }, [lang]);
 
   return ref;
 }
