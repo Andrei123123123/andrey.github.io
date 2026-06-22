@@ -1,5 +1,6 @@
 import { useT } from "@/i18n/LanguageContext";
-import schengenAsset from "@/assets/schengen-info.png.asset.json";
+
+const schengenAsset = { url: "/schengen-info.png" };
 
 const SchengenSection = () => {
   const t = useT();
