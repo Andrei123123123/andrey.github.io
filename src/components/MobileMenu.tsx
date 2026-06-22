@@ -55,6 +55,7 @@ const MobileMenu = () => {
     { href: "#villa", label: t("Вилла", "Villa") },
     { href: "#location", label: t("Тенерифе", "Tenerife") },
     { href: "#pricing", label: t("Стоимость", "Pricing") },
+    { href: "#visa", label: t("Виза", "Visa") },
     { href: "#faq", label: t("FAQ", "FAQ") },
   ];
 

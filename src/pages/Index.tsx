@@ -15,6 +15,7 @@ import MenuSection from "@/components/MenuSection";
 import CommunitySection from "@/components/CommunitySection";
 import TenerifeSection from "@/components/TenerifeSection";
 import WhatsIncludedSection from "@/components/WhatsIncludedSection";
+import SchengenSection from "@/components/SchengenSection";
 import { Check, ArrowRight } from "lucide-react";
 import day14 from "@/assets/day-14.jpg";
 import day15 from "@/assets/day-15.jpg";
@@ -100,6 +101,7 @@ const Index = () => {
     { href: "#program", label: t("Программа", "Programme") },
     { href: "#villa", label: t("Вилла", "Villa") },
     { href: "#pricing", label: t("Стоимость", "Pricing") },
+    { href: "#visa", label: t("Виза", "Visa") },
     { href: "#faq", label: t("Вопросы", "FAQ") },
   ];
   const activeSection = useActiveSection(navLinks.map((l) => l.href.slice(1)), 180);
@@ -504,8 +506,10 @@ const Index = () => {
         </div>
       </section>
 
+      <SchengenSection />
+
       {/* FAQ */}
-      <section className="bg-sand-light py-24 lg:py-32 px-6 lg:px-16" id="faq">
+      <section className="bg-cream py-24 lg:py-32 px-6 lg:px-16" id="faq">
         <div className="max-w-[900px] mx-auto">
           <p className="reveal text-[12px] tracking-[4px] uppercase text-gold mb-5 font-medium">{t("Вопросы и ответы", "Questions & answers")}</p>
           <h2 className="reveal font-display font-medium text-[clamp(34px,4.5vw,56px)] text-forest leading-[1.1] mb-14">
