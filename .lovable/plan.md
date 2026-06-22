@@ -1,52 +1,28 @@
-# План: двуязычный сайт (RU/EN)
+## Цель
+Добавить на главную страницу секцию с инфографикой о документах для шенгенской визы, а также ссылку на неё в навигацию сверху.
 
-## Что делаем
-1. Добавляем лёгкий i18n без библиотек: контекст `LanguageProvider` + хук `useT()`.
-2. По умолчанию — RU. Выбор языка сохраняем в `localStorage` (`lang`), URL не трогаем.
-3. В шапке (Navigation, desktop + mobile) — компактный переключатель `RU / EN`.
-4. Перевожу весь контент сайта на английский в премиум-тоне (private, curated, retreat, ocean energy и т.д.).
-5. Обновляю `<html lang>` динамически при переключении.
+## Шаги реализации
 
-## Архитектура переводов
+### 1. Загрузка изображения как Asset
+- Загрузить `user-uploads://image-18.png` через `lovable-assets create` в `src/assets/schengen-info.png.asset.json`.
+- Убедиться, что исходный бинарный файл не остаётся в репозитории.
 
-```text
-src/i18n/
-  LanguageContext.tsx    // provider, useLang(), useT()
-  translations.ts        // { ru: {...}, en: {...} } — плоские ключи по секциям
-  LanguageSwitcher.tsx   // кнопка RU | EN
-```
+### 2. Компонент `SchengenSection`
+- Создать `src/components/SchengenSection.tsx`.
+- Внутри: заголовок `t("Документы для визы", "Visa documents")` + подзаголовок с кратким пояснением.
+- Картинка выводится через `<img src={schengenAsset.url} alt="..." />` с адаптивной шириной (`max-w-4xl w-full mx-auto rounded-lg shadow-xl`).
+- Секция оформлена в стиле сайта (фон `bg-sand/5`, отступы `py-20 md:py-28`, шрифт `font-display`).
 
-- `useT()` возвращает функцию `t("hero.title")`.
-- Ключи группируются по компонентам: `nav.*`, `hero.*`, `whatsIncluded.*`, `programme.*`, `villa.*`, `team.*`, `tenerife.*`, `menu.*`, `pricing.*`, `faq.*`, `community.*`, `partners.*`, `footer.*`, `booking.*`, `notFound.*`, `cookie.*`.
-- Provider оборачивает App в `src/App.tsx`.
+### 3. Встраивание в главную страницу
+- В `src/pages/Index.tsx` добавить импорт `SchengenSection`.
+- Вставить компонент после секции Pricing (`#pricing`) и перед FAQ (`#faq`), с якорем `id="visa"`.
 
-## Переключатель языка
-- Desktop: справа в Navigation, перед CTA «Забронировать».
-- Mobile: в шапке MobileMenu (вверху overlay) и в обычной мобильной шапке.
-- Вид: две маленькие кнопки `RU` / `EN`, активная — gold, неактивная — sand/60. Без флагов, премиально и тихо.
+### 4. Обновление навигации
+- В `src/pages/Index.tsx` (десктоп-меню) в массив `navLinks` добавить пункт:
+  `{ href: "#visa", label: t("Виза", "Visa") }` перед FAQ.
+- В `src/components/MobileMenu.tsx` в массив `navLinks` добавить тот же пункт в том же порядке.
 
-## Какие файлы трогаем
-Замена строк через `t(...)` в:
-- `Navigation`, `MobileMenu`, `StickyMobileCTA`, `FloatingTelegram` (aria-labels)
-- `HeroSection`, `WhatsIncludedSection`, `ProgrammeSection`, `VillaSection`, `TeamSection`, `TenerifeSection`, `MenuSection`, `CommunitySection`, `PartnersSection`, `PricingSection`, `FAQSection`, `Footer`
-- `BookingModal` (поля формы, плейсхолдеры, ошибки, success)
-- `CookieConsent`
-- `pages/NotFound.tsx`, `pages/Privacy.tsx`, `pages/Contract.tsx`, `pages/SeasonTwo.tsx`
-- `index.html` (title/description оставляем RU как дефолт; динамический title/description обновляется через провайдер при смене языка)
-
-## SEO
-- Один URL, язык переключается клиентом. `<html lang>` синхронизируется. JSON-LD оставляем на RU как основном (можно дополнить, если попросишь).
-- Канонический URL не меняется.
-
-## Тон перевода (EN)
-- Короткие, уверенные фразы. Никакого AI-fluff и продажного «hurry up».
-- Лексика: private retreat, ambitious people, curated week, ocean energy, community, lifestyle.
-- Заголовок Hero: *Private tennis retreat for ambitious people*.
-- Цены оставляем `€1950`, даты `18–24 October 2026`.
-
-## Что НЕ делаем
-- Не добавляем библиотеку i18next (избыточно для двух языков).
-- Не меняем структуру роутов и URL.
-- Не трогаем интеграцию с Telegram и edge-функцию.
-
-После апрува переключаюсь в build mode и реализую за один проход.
+### 5. Проверка
+- Проверить, что секция появляется и на RU, и на EN.
+- Проверить, что при клике «Виза» в меню происходит плавный скролл к секции.
+- Проверить отображение на мобильном (картинка не вылазит за экран).
