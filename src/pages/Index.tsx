@@ -489,7 +489,7 @@ const Index = () => {
               <ul className="flex flex-col gap-5 flex-1 list-none">
                 <li>
                   <p className="text-[12px] tracking-[2px] uppercase text-text-body/55 mb-1">{t("Перелёт", "Flights")}</p>
-                  <p className="font-display text-[22px] text-forest">~€900</p>
+                  <p className="font-display text-[22px] text-forest">~€600</p>
                   <p className="text-[13px] text-text-body/65 mt-1">{t("Помогаем подобрать удобный рейс", "We help find a convenient flight")}</p>
                 </li>
                 <li>
